@@ -1,0 +1,16 @@
+name: PluginTemplate
+version: 1.0.0
+main: com.schotzgoblin.main.QuestSystem
+description: A plugin template
+author: Schotzgoblin
+website: https://papermc.io
+api-version: '1.20'
+commands:
+  quest:
+    description: Main command for the quest system
+    usage: /<command> [subcommand]
+    aliases: [q]
+permissions:
+  quest.admin:
+    description: Permission to manage quests
+    default: op
