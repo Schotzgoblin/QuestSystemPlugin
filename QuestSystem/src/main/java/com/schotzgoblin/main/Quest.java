@@ -1,6 +1,13 @@
 package com.schotzgoblin.main;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.Map;
+
 public class Quest {
+    private static final Gson gson = new Gson();
     private String name;
     private String description;
     private Map<String, Object> rewards; // could be a more specific type
@@ -66,24 +73,20 @@ public class Quest {
         this.objective = objective;
     }
 
-    // Method to check if the quest is completed
     public boolean isCompleted() {
         return this.status == QuestStatus.COMPLETED;
     }
-
-    // Serialization to store in database
-    public String serialize() {
-        // Convert the quest object to a string representation for storage
-        // Example: JSON or another format
-        return String.format("{\"name\": \"%s\", \"description\": \"%s\", \"rewards\": %s, \"status\": \"%s\", \"timeLimit\": %d, \"objective\": \"%s\"}",
-                name, description, rewards.toString(), status, timeLimit, objective);
+    public String serializeRewards() {
+        return gson.toJson(rewards);
     }
 
-    // Deserialization to create a quest object from a string
-    public static Quest deserialize(String serializedQuest) {
-        // Convert the string representation back to a Quest object
-        // Example: Parse JSON or another format
-        // This is just a placeholder, implement the actual deserialization logic
-        return null;
+    public static Map<String, Object> deserializeRewards(String rewardsJson) {
+        Type type = new TypeToken<Map<String, Object>>() {}.getType();
+        return gson.fromJson(rewardsJson, type);
+    }
+
+    public String serialize() {
+        return String.format("{\"name\": \"%s\", \"description\": \"%s\", \"rewards\": %s, \"status\": \"%s\", \"timeLimit\": %d, \"objective\": \"%s\"}",
+                name, description, rewards.toString(), status, timeLimit, objective);
     }
 }

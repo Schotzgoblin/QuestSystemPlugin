@@ -16,6 +16,8 @@ import org.jetbrains.annotations.NotNull;
 
 public class QuestSystem extends JavaPlugin implements Listener, PluginMessageListener {
     final String bungeeCordChannelName = "BungeeCord";
+    private QuestManager questManager;
+    private DatabaseHandler databaseHandler;
 
     @Override
     public void onLoad() {
@@ -29,6 +31,11 @@ public class QuestSystem extends JavaPlugin implements Listener, PluginMessageLi
         Bukkit.getPluginManager().registerEvents(this, this);
         Bukkit.getMessenger().registerOutgoingPluginChannel(this, bungeeCordChannelName);
         Bukkit.getMessenger().registerIncomingPluginChannel(this, bungeeCordChannelName, this);
+
+        databaseHandler = new DatabaseHandler(this);
+        questManager = new QuestManager(this, databaseHandler);
+
+        getCommand("quest").setExecutor(new QuestCommand(questManager));
     }
 
     @Override

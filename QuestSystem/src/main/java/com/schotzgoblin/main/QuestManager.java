@@ -17,7 +17,6 @@ public class QuestManager {
 
     private void loadQuests() {
         this.quests = new HashMap<>();
-        // Load quests from the database
     }
 
     public void createQuest(String name, String description, Map<String, Object> rewards) {
