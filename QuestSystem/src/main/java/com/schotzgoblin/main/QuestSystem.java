@@ -44,6 +44,7 @@ public class QuestSystem extends JavaPlugin implements Listener, PluginMessageLi
         Bukkit.getLogger().info("Shutting down");
         Bukkit.getMessenger().unregisterOutgoingPluginChannel(this, bungeeCordChannelName);
         Bukkit.getMessenger().unregisterIncomingPluginChannel(this, bungeeCordChannelName);
+        HibernateUtil.shutdown();
     }
 
     @EventHandler

@@ -21,7 +21,7 @@ public class QuestCommand implements CommandExecutor {
 
         // Handle subcommands (create, accept, complete, etc.)
         if (args[0].equalsIgnoreCase("create") && sender.hasPermission("quest.admin")) {
-            // Create quest logic
+            questManager.createQuest("Test Quest", "This is a test quest", null, "Kill 10 zombies", 10);
         } else if (args[0].equalsIgnoreCase("accept")) {
             // Accept quest logic
         } else if (args[0].equalsIgnoreCase("status")) {

@@ -1,7 +1,7 @@
-name: PluginTemplate
+name: QuestSystem
 version: 1.0.0
 main: com.schotzgoblin.main.QuestSystem
-description: A plugin template
+description: A simple quest system for Minecraft
 author: Schotzgoblin
 website: https://papermc.io
 api-version: '1.20'

@@ -1,6 +1,7 @@
 package com.schotzgoblin.main;
 
 import com.schotzgoblin.database.Quest;
+import com.schotzgoblin.database.Reward;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,15 +21,18 @@ public class QuestManager {
     }
 
     private void loadQuests() {
-        this.quests = new ArrayList<>();
+        this.quests = databaseHandler.getAll(Quest.class);
     }
 
-    public void createQuest(String name, String description, Map<String, Object> rewards) {
-        // Create a new quest and store it in the database
+    public void createQuest(String name, String description, List<Reward> rewards, String objective, int timeLimit) {
+        Quest quest = new Quest(name, description, timeLimit, objective);
+        databaseHandler.save(quest);
     }
 
     public void deleteQuest(String name) {
-        // Delete the quest from the database
+        Quest savedQuest = databaseHandler.getQuestByName(name);
+        System.out.println("Saved Quest: " + savedQuest.getName());
+        databaseHandler.delete(savedQuest);
     }
 
     public Quest getQuest(String name) {
