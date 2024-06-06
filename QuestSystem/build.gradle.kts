@@ -14,11 +14,14 @@ repositories {
 configurations {}
 
 dependencies {
-    implementation("org.hibernate.orm:hibernate-core:6.5.2.Final")
+    implementation("org.hibernate:hibernate-core:6.1.2.Final")
+    implementation ("com.h2database:h2:2.2.220")
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     compileOnly("io.papermc.paper:paper-api:1.20.6-R0.1-SNAPSHOT")
     compileOnly("net.md-5:bungeecord-api:1.19-R0.1-SNAPSHOT")
+    implementation("org.hibernate:hibernate-jpamodelgen:6.1.1.Final")
+    implementation("org.glassfish.jaxb:jaxb-runtime:4.0.0")
 }
 
 java {

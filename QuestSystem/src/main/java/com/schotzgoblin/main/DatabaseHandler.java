@@ -1,7 +1,6 @@
 package com.schotzgoblin.main;
 
 import com.schotzgoblin.database.Quest;
-import org.bukkit.plugin.java.JavaPlugin;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;

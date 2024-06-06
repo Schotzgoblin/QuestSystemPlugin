@@ -1,219 +1,65 @@
-[22:22:09] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[22:22:12] [ServerMain/INFO]: Loaded 1174 recipes
-[22:22:12] [ServerMain/INFO]: Loaded 1271 advancements
-[22:22:12] [Server thread/INFO]: Starting minecraft server version 1.20.4
-[22:22:12] [Server thread/INFO]: Loading properties
-[22:22:12] [Server thread/INFO]: This server is running Paper version git-Paper-496 (MC: 1.20.4) (Implementing API version 1.20.4-R0.1-SNAPSHOT) (Git: 7ac24a1 on ver/1.20.4)
-[22:22:14] [Server thread/INFO]: Using 4 threads for Netty based IO
-[22:22:14] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[22:22:14] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
+[17:35:47] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[17:35:49] [ServerMain/INFO]: Loaded 1174 recipes
+[17:35:49] [ServerMain/INFO]: Loaded 1271 advancements
+[17:35:50] [Server thread/INFO]: Starting minecraft server version 1.20.4
+[17:35:50] [Server thread/INFO]: Loading properties
+[17:35:50] [Server thread/INFO]: This server is running Paper version git-Paper-496 (MC: 1.20.4) (Implementing API version 1.20.4-R0.1-SNAPSHOT) (Git: 7ac24a1 on ver/1.20.4)
+[17:35:51] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[17:35:51] [Server thread/INFO]: Using 4 threads for Netty based IO
+[17:35:51] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
     We recommend installing the spark profiler as a replacement: https://spark.lucko.me/
     For more information please visit: https://github.com/PaperMC/Paper/issues/8948
-[22:22:14] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 3 worker threads, and gen parallelism of 3 threads
-[22:22:15] [Server thread/INFO]: Default game type: SURVIVAL
-[22:22:15] [Server thread/INFO]: Generating keypair
-[22:22:15] [Server thread/INFO]: Starting Minecraft server on *:25566
-[22:22:15] [Server thread/INFO]: Using default channel type
-[22:22:15] [Server thread/INFO]: Paper: Using Java compression from Velocity.
-[22:22:15] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
-[22:22:15] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[22:22:15] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
-[22:22:15] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
-[22:22:15] [Server thread/WARN]: Whilst this makes it possible to use BungeeCord, unless access to your server is properly restricted, it also opens up the ability for hackers to connect with any username they choose.
-[22:22:15] [Server thread/WARN]: Please see http://www.spigotmc.org/wiki/firewall-guide/ for further information.
-[22:22:15] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
-[22:22:15] [Server thread/INFO]: Preparing level "world"
-[22:22:16] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[22:22:16] [Server thread/INFO]: Time elapsed: 307 ms
-[22:22:16] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[22:22:16] [Server thread/INFO]: Time elapsed: 29 ms
-[22:22:16] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[22:22:16] [Server thread/INFO]: Time elapsed: 33 ms
-[22:22:16] [Server thread/INFO]: Running delayed init tasks
-[22:22:16] [Server thread/INFO]: Done (3.803s)! For help, type "help"
-[22:22:16] [Server thread/INFO]: Timings Reset
-[22:22:37] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
-[22:22:37] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
-[22:22:37] [Server thread/INFO]: Using 4 threads for Netty based IO
-[22:22:37] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[22:22:37] [Server thread/INFO]: Loaded 1174 recipes
-[22:22:37] [Server thread/INFO]: Loaded 1271 advancements
-[22:22:38] [Server thread/ERROR]: [ModernPluginLoadingStrategy] Could not load plugin 'QuestSystem-1.0-SNAPSHOT.jar' in folder 'plugins'
-org.bukkit.plugin.InvalidPluginException: Cannot find main class `com.jastermaster.template.PluginTemplate'
-	at org.bukkit.plugin.java.PluginClassLoader.<init>(PluginClassLoader.java:80) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at io.papermc.paper.plugin.provider.type.spigot.SpigotPluginProvider.createInstance(SpigotPluginProvider.java:123) ~[paper-1.20.4.jar:git-Paper-496]
-	at io.papermc.paper.plugin.provider.type.spigot.SpigotPluginProvider.createInstance(SpigotPluginProvider.java:35) ~[paper-1.20.4.jar:git-Paper-496]
-	at io.papermc.paper.plugin.entrypoint.strategy.modern.ModernPluginLoadingStrategy.loadProviders(ModernPluginLoadingStrategy.java:116) ~[paper-1.20.4.jar:git-Paper-496]
-	at io.papermc.paper.plugin.storage.SimpleProviderStorage.enter(SimpleProviderStorage.java:38) ~[paper-1.20.4.jar:git-Paper-496]
-	at io.papermc.paper.plugin.entrypoint.LaunchEntryPointHandler.enter(LaunchEntryPointHandler.java:36) ~[paper-1.20.4.jar:git-Paper-496]
-	at org.bukkit.craftbukkit.v1_20_R3.CraftServer.loadPlugins(CraftServer.java:507) ~[paper-1.20.4.jar:git-Paper-496]
-	at org.bukkit.craftbukkit.v1_20_R3.CraftServer.reload(CraftServer.java:1112) ~[paper-1.20.4.jar:git-Paper-496]
-	at org.bukkit.Bukkit.reload(Bukkit.java:1024) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at org.bukkit.command.defaults.ReloadCommand.execute(ReloadCommand.java:54) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at org.bukkit.command.SimpleCommandMap.dispatch(SimpleCommandMap.java:155) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at org.bukkit.craftbukkit.v1_20_R3.CraftServer.dispatchCommand(CraftServer.java:999) ~[paper-1.20.4.jar:git-Paper-496]
-	at org.bukkit.craftbukkit.v1_20_R3.CraftServer.dispatchServerCommand(CraftServer.java:984) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.dedicated.DedicatedServer.handleConsoleInputs(DedicatedServer.java:501) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.dedicated.DedicatedServer.tickChildren(DedicatedServer.java:448) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:1525) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1226) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319) ~[paper-1.20.4.jar:git-Paper-496]
-	at java.lang.Thread.run(Thread.java:1583) ~[?:?]
-Caused by: java.lang.ClassNotFoundException: com.jastermaster.template.PluginTemplate
-	at org.bukkit.plugin.java.PluginClassLoader.loadClass0(PluginClassLoader.java:197) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at org.bukkit.plugin.java.PluginClassLoader.loadClass(PluginClassLoader.java:164) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[?:?]
-	at java.lang.Class.forName0(Native Method) ~[?:?]
-	at java.lang.Class.forName(Class.java:534) ~[?:?]
-	at java.lang.Class.forName(Class.java:513) ~[?:?]
-	at org.bukkit.plugin.java.PluginClassLoader.<init>(PluginClassLoader.java:78) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	... 18 more
-[22:22:38] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[22:22:38] [Server thread/INFO]: CONSOLE: Reload complete.
-[22:22:38] [Server thread/INFO]: Timings Reset
-[22:23:30] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
-[22:23:30] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
-[22:23:30] [Server thread/INFO]: Using 4 threads for Netty based IO
-[22:23:30] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[22:23:31] [Server thread/INFO]: Loaded 1174 recipes
-[22:23:31] [Server thread/INFO]: Loaded 1271 advancements
-[22:23:31] [Server thread/INFO]: [PluginTemplate] Loading server plugin PluginTemplate v1.0.0
-[22:23:31] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[22:23:31] [Server thread/INFO]: [PluginTemplate] Enabling PluginTemplate v1.0.0
-[22:23:31] [Server thread/INFO]: Hello World
-[22:23:31] [Server thread/INFO]: CONSOLE: Reload complete.
-[22:23:31] [Server thread/INFO]: Timings Reset
-[22:23:36] [User Authenticator #0/INFO]: UUID of player Schotzgoblin is cdfb5f90-21c3-4aa8-be6f-39d8780b88f7
-[22:23:36] [Server thread/INFO]: Schotzgoblin joined the game
-[22:23:36] [Server thread/INFO]: Schotzgoblin[/127.0.0.1:58393] logged in with entity id 54 at ([world]65.5, 142.0, 44.5)
-[22:23:41] [Server thread/INFO]: Schotzgoblin issued server command: /paper:callback 90d78164-bc56-4642-913e-7b3df9165e0a
-[22:23:41] [Server thread/INFO]: Schotzgoblin lost connection: Disconnected
-[22:23:41] [Server thread/INFO]: Schotzgoblin left the game
-[22:24:56] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
-[22:24:56] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
-[22:24:56] [Server thread/INFO]: Using 4 threads for Netty based IO
-[22:24:56] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[22:24:56] [Server thread/INFO]: [PluginTemplate] Disabling PluginTemplate v1.0.0
-[22:24:56] [Server thread/INFO]: Shutting down
-[22:24:57] [Server thread/INFO]: Loaded 1174 recipes
-[22:24:57] [Server thread/INFO]: Loaded 1271 advancements
-[22:24:57] [Server thread/INFO]: [PluginTemplate] Loading server plugin PluginTemplate v1.0.0
-[22:24:57] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[22:24:57] [Server thread/INFO]: [PluginTemplate] Enabling PluginTemplate v1.0.0
-[22:24:57] [Server thread/INFO]: Hello World
-[22:24:57] [Server thread/INFO]: CONSOLE: Reload complete.
-[22:24:57] [Server thread/INFO]: Timings Reset
-[22:25:02] [User Authenticator #1/INFO]: UUID of player Schotzgoblin is cdfb5f90-21c3-4aa8-be6f-39d8780b88f7
-[22:25:02] [Server thread/INFO]: Schotzgoblin joined the game
-[22:25:02] [Server thread/INFO]: Schotzgoblin[/127.0.0.1:58662] logged in with entity id 73 at ([world]65.73463422397728, 142.0, 45.260364056665246)
-[22:25:04] [Server thread/INFO]: Schotzgoblin issued server command: /paper:callback 2763638b-d6c9-43a3-b71c-8765ab6beb7f
-[22:25:04] [Server thread/INFO]: Schotzgoblin lost connection: Disconnected
-[22:25:04] [Server thread/INFO]: Schotzgoblin left the game
-[22:26:39] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
-[22:26:39] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
-[22:26:39] [Server thread/INFO]: Using 4 threads for Netty based IO
-[22:26:39] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[22:26:39] [Server thread/INFO]: [PluginTemplate] Disabling PluginTemplate v1.0.0
-[22:26:39] [Server thread/INFO]: Shutting down
-[22:26:39] [Server thread/INFO]: Loaded 1174 recipes
-[22:26:39] [Server thread/INFO]: Loaded 1271 advancements
-[22:26:39] [Server thread/INFO]: [PluginTemplate] Loading server plugin PluginTemplate v1.0.0
-[22:26:39] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[22:26:39] [Server thread/INFO]: [PluginTemplate] Enabling PluginTemplate v1.0.0
-[22:26:39] [Server thread/INFO]: Hello World
-[22:26:39] [Server thread/INFO]: CONSOLE: Reload complete.
-[22:26:39] [Server thread/INFO]: Timings Reset
-[22:26:43] [User Authenticator #2/INFO]: UUID of player Schotzgoblin is cdfb5f90-21c3-4aa8-be6f-39d8780b88f7
-[22:26:43] [Server thread/INFO]: Schotzgoblin joined the game
-[22:26:43] [Server thread/INFO]: Schotzgoblin[/127.0.0.1:50346] logged in with entity id 82 at ([world]65.76124253331612, 142.0, 45.68614561708393)
-[22:26:46] [Server thread/INFO]: Schotzgoblin issued server command: /paper:callback 9a742258-be22-4849-bccc-0fc32a5890f1
-[22:26:46] [Server thread/ERROR]: null
-org.bukkit.command.CommandException: Unhandled exception executing 'paper:callback 9a742258-be22-4849-bccc-0fc32a5890f1' in io.papermc.paper.command.CallbackCommand(callback)
-	at org.bukkit.command.SimpleCommandMap.dispatch(SimpleCommandMap.java:165) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at org.bukkit.craftbukkit.v1_20_R3.CraftServer.dispatchCommand(CraftServer.java:999) ~[paper-1.20.4.jar:git-Paper-496]
-	at org.bukkit.craftbukkit.v1_20_R3.command.BukkitCommandWrapper.run(BukkitCommandWrapper.java:64) ~[paper-1.20.4.jar:git-Paper-496]
-	at com.mojang.brigadier.context.ContextChain.runExecutable(ContextChain.java:73) ~[brigadier-1.2.9.jar:?]
-	at net.minecraft.commands.execution.tasks.ExecuteCommand.execute(ExecuteCommand.java:31) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.commands.execution.tasks.ExecuteCommand.execute(ExecuteCommand.java:19) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.commands.execution.UnboundEntryAction.lambda$bind$0(UnboundEntryAction.java:8) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.commands.execution.CommandQueueEntry.a(CommandQueueEntry.java:5) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.commands.execution.ExecutionContext.runCommandQueue(ExecutionContext.java:103) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.commands.Commands.executeCommandInContext(Commands.java:434) ~[?:?]
-	at net.minecraft.commands.Commands.performCommand(Commands.java:336) ~[?:?]
-	at net.minecraft.commands.Commands.performCommand(Commands.java:323) ~[?:?]
-	at net.minecraft.server.network.ServerGamePacketListenerImpl.performChatCommand(ServerGamePacketListenerImpl.java:2230) ~[?:?]
-	at net.minecraft.server.network.ServerGamePacketListenerImpl.lambda$handleChatCommand$14(ServerGamePacketListenerImpl.java:2190) ~[?:?]
-	at net.minecraft.util.thread.BlockableEventLoop.lambda$submitAsync$0(BlockableEventLoop.java:59) ~[?:?]
-	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768) ~[?:?]
-	at net.minecraft.server.TickTask.run(TickTask.java:18) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:149) ~[?:?]
-	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[?:?]
-	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:1465) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:123) ~[?:?]
-	at net.minecraft.server.MinecraftServer.pollTaskInternal(MinecraftServer.java:1442) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.MinecraftServer.pollTask(MinecraftServer.java:1365) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:133) ~[?:?]
-	at net.minecraft.server.MinecraftServer.waitUntilNextTick(MinecraftServer.java:1343) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1232) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319) ~[paper-1.20.4.jar:git-Paper-496]
-	at java.lang.Thread.run(Thread.java:1583) ~[?:?]
-Caused by: org.bukkit.plugin.messaging.ChannelNotRegisteredException: Attempted to send a plugin message through the unregistered channel `BungeeCord'.
-	at org.bukkit.plugin.messaging.StandardMessenger.validatePluginMessage(StandardMessenger.java:544) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at org.bukkit.craftbukkit.v1_20_R3.entity.CraftPlayer.sendPluginMessage(CraftPlayer.java:2337) ~[paper-1.20.4.jar:git-Paper-496]
-	at com.schotzgoblin.main.QuestSystem.sendPlayerToServer(QuestSystem.java:65) ~[QuestSystem-1.0-SNAPSHOT.jar:?]
-	at com.schotzgoblin.main.QuestSystem.lambda$onPlayerJoin$0(QuestSystem.java:47) ~[QuestSystem-1.0-SNAPSHOT.jar:?]
-	at io.papermc.paper.adventure.providers.ClickCallbackProviderImpl$CallbackManager.runCallback(ClickCallbackProviderImpl.java:55) ~[paper-1.20.4.jar:git-Paper-496]
-	at io.papermc.paper.command.CallbackCommand.execute(CallbackCommand.java:32) ~[paper-1.20.4.jar:?]
-	at org.bukkit.command.SimpleCommandMap.dispatch(SimpleCommandMap.java:155) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	... 28 more
-[22:26:47] [Server thread/INFO]: Schotzgoblin issued server command: /paper:callback 9a742258-be22-4849-bccc-0fc32a5890f1
-[22:26:47] [Server thread/INFO]: Schotzgoblin issued server command: /paper:callback 9a742258-be22-4849-bccc-0fc32a5890f1
-[22:26:50] [Server thread/INFO]: Schotzgoblin issued server command: /paper:callback 9a742258-be22-4849-bccc-0fc32a5890f1
-[22:26:50] [Server thread/INFO]: Schotzgoblin issued server command: /paper:callback 9a742258-be22-4849-bccc-0fc32a5890f1
-[22:26:51] [Server thread/INFO]: Schotzgoblin issued server command: /paper:callback 9a742258-be22-4849-bccc-0fc32a5890f1
-[22:27:55] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
-[22:27:55] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
-[22:27:55] [Server thread/INFO]: Using 4 threads for Netty based IO
-[22:27:55] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[22:27:55] [Server thread/INFO]: [PluginTemplate] Disabling PluginTemplate v1.0.0
-[22:27:55] [Server thread/INFO]: Shutting down
-[22:27:56] [Server thread/INFO]: Loaded 1174 recipes
-[22:27:56] [Server thread/INFO]: Loaded 1271 advancements
-[22:27:56] [Server thread/INFO]: [PluginTemplate] Loading server plugin PluginTemplate v1.0.0
-[22:27:56] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[22:27:56] [Server thread/INFO]: [PluginTemplate] Enabling PluginTemplate v1.0.0
-[22:27:56] [Server thread/INFO]: Hello World
-[22:27:56] [Server thread/ERROR]: Error occurred while enabling PluginTemplate v1.0.0 (Is it up to date?)
-java.lang.IllegalArgumentException: Channel must be entirely lowercase (attempted to use com.schotzgoblin.main:BungeeCord)
-	at org.bukkit.plugin.messaging.StandardMessenger.validateAndCorrectChannel(StandardMessenger.java:507) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at org.bukkit.plugin.messaging.StandardMessenger.registerOutgoingPluginChannel(StandardMessenger.java:183) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at com.schotzgoblin.main.QuestSystem.onEnable(QuestSystem.java:30) ~[QuestSystem-1.0-SNAPSHOT.jar:?]
+[17:35:51] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 3 worker threads, and gen parallelism of 3 threads
+[17:35:52] [Server thread/INFO]: Default game type: SURVIVAL
+[17:35:52] [Server thread/INFO]: Generating keypair
+[17:35:52] [Server thread/INFO]: Starting Minecraft server on *:25566
+[17:35:52] [Server thread/INFO]: Using default channel type
+[17:35:52] [Server thread/INFO]: Paper: Using Java compression from Velocity.
+[17:35:52] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[17:35:52] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[17:35:52] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[17:35:52] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[17:35:52] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[17:35:52] [Server thread/WARN]: Whilst this makes it possible to use BungeeCord, unless access to your server is properly restricted, it also opens up the ability for hackers to connect with any username they choose.
+[17:35:52] [Server thread/WARN]: Please see http://www.spigotmc.org/wiki/firewall-guide/ for further information.
+[17:35:52] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[17:35:52] [Server thread/INFO]: Preparing level "world"
+[17:35:52] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[17:35:53] [Server thread/INFO]: Time elapsed: 165 ms
+[17:35:53] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[17:35:53] [Server thread/INFO]: Time elapsed: 33 ms
+[17:35:53] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[17:35:53] [Server thread/INFO]: Time elapsed: 24 ms
+[17:35:53] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[17:35:53] [Server thread/INFO]: Hello World
+[17:35:53] [Server thread/ERROR]: Error occurred while enabling QuestSystem v1.0.0 (Is it up to date?)
+java.lang.NoClassDefFoundError: org/hibernate/service/ServiceRegistry
+	at com.schotzgoblin.main.DatabaseHandler.getAll(DatabaseHandler.java:40) ~[QuestSystem-1.0.jar:?]
+	at com.schotzgoblin.main.QuestManager.loadQuests(QuestManager.java:24) ~[QuestSystem-1.0.jar:?]
+	at com.schotzgoblin.main.QuestManager.<init>(QuestManager.java:20) ~[QuestSystem-1.0.jar:?]
+	at com.schotzgoblin.main.QuestSystem.onEnable(QuestSystem.java:36) ~[QuestSystem-1.0.jar:?]
 	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:287) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
 	at io.papermc.paper.plugin.manager.PaperPluginInstanceManager.enablePlugin(PaperPluginInstanceManager.java:188) ~[paper-1.20.4.jar:git-Paper-496]
 	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.enablePlugin(PaperPluginManagerImpl.java:104) ~[paper-1.20.4.jar:git-Paper-496]
 	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:507) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
 	at org.bukkit.craftbukkit.v1_20_R3.CraftServer.enablePlugin(CraftServer.java:639) ~[paper-1.20.4.jar:git-Paper-496]
 	at org.bukkit.craftbukkit.v1_20_R3.CraftServer.enablePlugins(CraftServer.java:550) ~[paper-1.20.4.jar:git-Paper-496]
-	at org.bukkit.craftbukkit.v1_20_R3.CraftServer.reload(CraftServer.java:1114) ~[paper-1.20.4.jar:git-Paper-496]
-	at org.bukkit.Bukkit.reload(Bukkit.java:1024) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at org.bukkit.command.defaults.ReloadCommand.execute(ReloadCommand.java:54) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at org.bukkit.command.SimpleCommandMap.dispatch(SimpleCommandMap.java:155) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at org.bukkit.craftbukkit.v1_20_R3.CraftServer.dispatchCommand(CraftServer.java:999) ~[paper-1.20.4.jar:git-Paper-496]
-	at org.bukkit.craftbukkit.v1_20_R3.CraftServer.dispatchServerCommand(CraftServer.java:984) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.dedicated.DedicatedServer.handleConsoleInputs(DedicatedServer.java:501) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.dedicated.DedicatedServer.tickChildren(DedicatedServer.java:448) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:1525) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1226) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.loadWorld0(MinecraftServer.java:671) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.loadLevel(MinecraftServer.java:431) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.dedicated.DedicatedServer.initServer(DedicatedServer.java:309) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1131) ~[paper-1.20.4.jar:git-Paper-496]
 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319) ~[paper-1.20.4.jar:git-Paper-496]
 	at java.lang.Thread.run(Thread.java:1583) ~[?:?]
-[22:27:56] [Server thread/INFO]: [PluginTemplate] Disabling PluginTemplate v1.0.0
-[22:27:56] [Server thread/INFO]: Shutting down
-[22:27:56] [Server thread/ERROR]: Error occurred while disabling PluginTemplate v1.0.0
-java.lang.IllegalArgumentException: Channel must be entirely lowercase (attempted to use com.schotzgoblin.main:BungeeCord)
-	at org.bukkit.plugin.messaging.StandardMessenger.validateAndCorrectChannel(StandardMessenger.java:507) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at org.bukkit.plugin.messaging.StandardMessenger.unregisterOutgoingPluginChannel(StandardMessenger.java:196) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at com.schotzgoblin.main.QuestSystem.onDisable(QuestSystem.java:38) ~[QuestSystem-1.0-SNAPSHOT.jar:?]
+Caused by: java.lang.ClassNotFoundException: org.hibernate.service.ServiceRegistry
+	at org.bukkit.plugin.java.PluginClassLoader.loadClass0(PluginClassLoader.java:197) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.java.PluginClassLoader.loadClass(PluginClassLoader.java:164) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[?:?]
+	... 16 more
+[17:35:53] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
+[17:35:53] [Server thread/INFO]: Shutting down
+[17:35:53] [Server thread/ERROR]: Error occurred while disabling QuestSystem v1.0.0
+java.lang.NoClassDefFoundError: org/hibernate/service/ServiceRegistry
+	at com.schotzgoblin.main.QuestSystem.onDisable(QuestSystem.java:47) ~[QuestSystem-1.0.jar:?]
 	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:290) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
 	at io.papermc.paper.plugin.manager.PaperPluginInstanceManager.disablePlugin(PaperPluginInstanceManager.java:223) ~[paper-1.20.4.jar:git-Paper-496]
 	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.disablePlugin(PaperPluginManagerImpl.java:109) ~[paper-1.20.4.jar:git-Paper-496]
@@ -223,65 +69,18 @@ java.lang.IllegalArgumentException: Channel must be entirely lowercase (attempte
 	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:507) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
 	at org.bukkit.craftbukkit.v1_20_R3.CraftServer.enablePlugin(CraftServer.java:639) ~[paper-1.20.4.jar:git-Paper-496]
 	at org.bukkit.craftbukkit.v1_20_R3.CraftServer.enablePlugins(CraftServer.java:550) ~[paper-1.20.4.jar:git-Paper-496]
-	at org.bukkit.craftbukkit.v1_20_R3.CraftServer.reload(CraftServer.java:1114) ~[paper-1.20.4.jar:git-Paper-496]
-	at org.bukkit.Bukkit.reload(Bukkit.java:1024) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at org.bukkit.command.defaults.ReloadCommand.execute(ReloadCommand.java:54) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at org.bukkit.command.SimpleCommandMap.dispatch(SimpleCommandMap.java:155) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at org.bukkit.craftbukkit.v1_20_R3.CraftServer.dispatchCommand(CraftServer.java:999) ~[paper-1.20.4.jar:git-Paper-496]
-	at org.bukkit.craftbukkit.v1_20_R3.CraftServer.dispatchServerCommand(CraftServer.java:984) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.dedicated.DedicatedServer.handleConsoleInputs(DedicatedServer.java:501) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.dedicated.DedicatedServer.tickChildren(DedicatedServer.java:448) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:1525) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1226) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.loadWorld0(MinecraftServer.java:671) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.loadLevel(MinecraftServer.java:431) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.dedicated.DedicatedServer.initServer(DedicatedServer.java:309) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1131) ~[paper-1.20.4.jar:git-Paper-496]
 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319) ~[paper-1.20.4.jar:git-Paper-496]
 	at java.lang.Thread.run(Thread.java:1583) ~[?:?]
-[22:27:56] [Server thread/INFO]: CONSOLE: Reload complete.
-[22:27:56] [Server thread/INFO]: Timings Reset
-[22:30:07] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
-[22:30:07] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
-[22:30:07] [Server thread/INFO]: Using 4 threads for Netty based IO
-[22:30:07] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[22:30:08] [Server thread/INFO]: Loaded 1174 recipes
-[22:30:08] [Server thread/INFO]: Loaded 1271 advancements
-[22:30:08] [Server thread/INFO]: [PluginTemplate] Loading server plugin PluginTemplate v1.0.0
-[22:30:08] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[22:30:08] [Server thread/INFO]: [PluginTemplate] Enabling PluginTemplate v1.0.0
-[22:30:08] [Server thread/INFO]: Hello World
-[22:30:08] [Server thread/INFO]: CONSOLE: Reload complete.
-[22:30:08] [Server thread/INFO]: Timings Reset
-[22:30:15] [Server thread/INFO]: Schotzgoblin lost connection: Disconnected
-[22:30:15] [Server thread/INFO]: Schotzgoblin left the game
-[22:30:16] [User Authenticator #3/INFO]: UUID of player Schotzgoblin is cdfb5f90-21c3-4aa8-be6f-39d8780b88f7
-[22:30:16] [Server thread/INFO]: Schotzgoblin joined the game
-[22:30:16] [Server thread/INFO]: Schotzgoblin[/127.0.0.1:55703] logged in with entity id 202 at ([world]65.74066175924708, 143.0, 46.94200656323065)
-[22:30:19] [Server thread/INFO]: Schotzgoblin issued server command: /paper:callback e0237578-0189-4563-b62d-805f2093db4c
-[22:30:20] [Server thread/INFO]: Schotzgoblin issued server command: /paper:callback e0237578-0189-4563-b62d-805f2093db4c
-[22:30:20] [Server thread/INFO]: Schotzgoblin issued server command: /paper:callback e0237578-0189-4563-b62d-805f2093db4c
-[22:30:20] [Server thread/INFO]: Schotzgoblin issued server command: /paper:callback e0237578-0189-4563-b62d-805f2093db4c
-[22:30:20] [Server thread/INFO]: Schotzgoblin issued server command: /paper:callback e0237578-0189-4563-b62d-805f2093db4c
-[22:30:20] [Server thread/INFO]: Schotzgoblin issued server command: /paper:callback e0237578-0189-4563-b62d-805f2093db4c
-[22:30:31] [Server thread/INFO]: Schotzgoblin issued server command: /paper:callback e0237578-0189-4563-b62d-805f2093db4c
-[22:30:31] [Server thread/INFO]: Schotzgoblin issued server command: /paper:callback e0237578-0189-4563-b62d-805f2093db4c
-[22:30:31] [Server thread/INFO]: Schotzgoblin issued server command: /paper:callback e0237578-0189-4563-b62d-805f2093db4c
-[22:32:06] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
-[22:32:06] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
-[22:32:06] [Server thread/INFO]: Using 4 threads for Netty based IO
-[22:32:06] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[22:32:06] [Server thread/INFO]: [PluginTemplate] Disabling PluginTemplate v1.0.0
-[22:32:06] [Server thread/INFO]: Shutting down
-[22:32:07] [Server thread/INFO]: Loaded 1174 recipes
-[22:32:07] [Server thread/INFO]: Loaded 1271 advancements
-[22:32:07] [Server thread/INFO]: [PluginTemplate] Loading server plugin PluginTemplate v1.0.0
-[22:32:07] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[22:32:07] [Server thread/INFO]: [PluginTemplate] Enabling PluginTemplate v1.0.0
-[22:32:07] [Server thread/INFO]: Hello World
-[22:32:07] [Server thread/INFO]: CONSOLE: Reload complete.
-[22:32:07] [Server thread/INFO]: Timings Reset
-[22:32:22] [Server thread/INFO]: Schotzgoblin lost connection: Disconnected
-[22:32:22] [Server thread/INFO]: Schotzgoblin left the game
-[22:32:26] [User Authenticator #4/INFO]: UUID of player Schotzgoblin is cdfb5f90-21c3-4aa8-be6f-39d8780b88f7
-[22:32:26] [Server thread/INFO]: Schotzgoblin joined the game
-[22:32:26] [Server thread/INFO]: Schotzgoblin[/127.0.0.1:50998] logged in with entity id 247 at ([world]65.74066175924708, 143.0, 46.94200656323065)
-[22:32:28] [Server thread/INFO]: Schotzgoblin issued server command: /paper:callback 9c784910-61d6-4036-baab-c0048726f254
-[22:32:28] [Server thread/INFO]: Schotzgoblin lost connection: Disconnected
-[22:32:28] [Server thread/INFO]: Schotzgoblin left the game
+Caused by: java.lang.ClassNotFoundException: org.hibernate.service.ServiceRegistry
+	at org.bukkit.plugin.java.PluginClassLoader.loadClass0(PluginClassLoader.java:197) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.java.PluginClassLoader.loadClass(PluginClassLoader.java:164) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[?:?]
+	... 16 more
+[17:35:53] [Server thread/INFO]: Running delayed init tasks
+[17:35:53] [Server thread/INFO]: Done (3.225s)! For help, type "help"
+[17:35:53] [Server thread/INFO]: Timings Reset
+[17:35:55] [Server thread/WARN]: [EntityLookup] Entity uuid already exists: 477ca547-7f9b-4993-98d4-0271224ee159, mapped to EntityBat['Bat'/21, uuid='477ca547-7f9b-4993-98d4-0271224ee159', l='ServerLevel[world]', x=109.92, y=30.36, z=31.77, cpos=[6, 1], tl=1858, v=true], can't add EntityBat['Bat'/36, uuid='477ca547-7f9b-4993-98d4-0271224ee159', l='ServerLevel[world]', x=108.19, y=30.87, z=32.84, cpos=[6, 2], tl=1867, v=false]
