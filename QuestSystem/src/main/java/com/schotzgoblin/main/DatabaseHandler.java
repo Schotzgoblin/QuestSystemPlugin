@@ -11,24 +11,54 @@ import java.sql.*;
 import java.util.logging.Level;
 
 public class DatabaseHandler {
-    private final SessionFactory sessionFactory;
-    private final JavaPlugin plugin;
-
-    public DatabaseHandler(JavaPlugin plugin) {
-        this.plugin = plugin;
-        Configuration config = new Configuration();
-        config.configure(); // Configure using hibernate.cfg.xml
-        sessionFactory = config.buildSessionFactory();
-//        sessionFactory = new MetadataSources(config.buildSessionFactory()).buildMetadata().buildSessionFactory();
+    public void save(Object entity) {
+        Transaction transaction = null;
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            transaction = session.beginTransaction();
+            session.save(entity);
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }
     }
 
-    private Session getSession() {
-        return sessionFactory.openSession();
+    public <T> T get(Class<T> clazz, int id) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            return session.get(clazz, id);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
-    public void close() {
-        if (sessionFactory != null && !sessionFactory.isClosed()) {
-            sessionFactory.close();
+    public void update(Object entity) {
+        Transaction transaction = null;
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            transaction = session.beginTransaction();
+            session.update(entity);
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }
+    }
+
+    public void delete(Object entity) {
+        Transaction transaction = null;
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            transaction = session.beginTransaction();
+            session.delete(entity);
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
         }
     }
 }

@@ -32,7 +32,7 @@ public class QuestSystem extends JavaPlugin implements Listener, PluginMessageLi
         Bukkit.getMessenger().registerOutgoingPluginChannel(this, bungeeCordChannelName);
         Bukkit.getMessenger().registerIncomingPluginChannel(this, bungeeCordChannelName, this);
 
-        databaseHandler = new DatabaseHandler(this);
+        databaseHandler = new DatabaseHandler();
         questManager = new QuestManager(this, databaseHandler);
 
         getCommand("quest").setExecutor(new QuestCommand(questManager));
