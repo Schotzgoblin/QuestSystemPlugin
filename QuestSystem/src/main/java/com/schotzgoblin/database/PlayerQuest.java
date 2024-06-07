@@ -7,8 +7,10 @@ public class PlayerQuest implements Identifiable{
     private String playerUuid;
 
     private Quest quest;
+    private int questId;
 
     private QuestStatus questStatus;
+    private int questStatusId;
 
     public PlayerQuest() {
     }
@@ -17,6 +19,22 @@ public class PlayerQuest implements Identifiable{
         this.playerUuid = playerUuid;
         this.quest = quest;
         this.questStatus = questStatus;
+    }
+
+    public int getQuestStatusId() {
+        return questStatusId;
+    }
+
+    public void setQuestStatusId(int questStatusId) {
+        this.questStatusId = questStatusId;
+    }
+
+    public int getQuestId() {
+        return questId;
+    }
+
+    public void setQuestId(int questId) {
+        this.questId = questId;
     }
 
     public int getId() {
@@ -49,5 +67,15 @@ public class PlayerQuest implements Identifiable{
 
     public void setQuestStatus(QuestStatus questStatus) {
         this.questStatus = questStatus;
+    }
+
+    @Override
+    public String toString() {
+        return "PlayerQuest{" +
+                "id=" + id +
+                ", playerUuid='" + playerUuid + '\'' +
+                ", quest=" + questId +
+                ", questStatus=" + questStatusId +
+                '}';
     }
 }

@@ -37,7 +37,7 @@ public class QuestSystem extends JavaPlugin implements Listener, PluginMessageLi
 
         databaseHandler = new DatabaseHandler();
         questManager = new QuestManager(this, databaseHandler);
-        addListener(new InitLobby(this));
+        addListener(new QuestNpc(this, databaseHandler));
         registerCommand("quest",new QuestCommand(questManager));
     }
     private void addListener(Listener listener) {

@@ -1,12 +1,14 @@
 package com.schotzgoblin.database;
 
 
-public class QuestReward implements Identifiable{
+public class QuestReward implements Identifiable {
     private int id;
 
     private Quest quest;
+    private int questId;
 
     private Reward reward;
+    private int rewardId;
 
     public QuestReward() {
     }
@@ -14,6 +16,22 @@ public class QuestReward implements Identifiable{
     public QuestReward(Quest quest, Reward reward) {
         this.quest = quest;
         this.reward = reward;
+    }
+
+    public int getQuestId() {
+        return questId;
+    }
+
+    public void setQuestId(int questId) {
+        this.questId = questId;
+    }
+
+    public int getRewardId() {
+        return rewardId;
+    }
+
+    public void setRewardId(int rewardId) {
+        this.rewardId = rewardId;
     }
 
     public int getId() {

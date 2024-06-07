@@ -1,12 +1,13 @@
 package com.schotzgoblin.database;
 
 
-public class Reward implements Identifiable{
+public class Reward implements Identifiable {
     private int id;
 
     private String name;
 
     private RewardType rewardType;
+    private int rewardTypeId;
 
     private int amount;
 
@@ -18,6 +19,14 @@ public class Reward implements Identifiable{
         this.name = name;
         this.rewardType = rewardType;
         this.amount = amount;
+    }
+
+    public int getRewardTypeId() {
+        return rewardTypeId;
+    }
+
+    public void setRewardTypeId(int rewardTypeId) {
+        this.rewardTypeId = rewardTypeId;
     }
 
     public int getId() {
