@@ -1,23 +1,13 @@
 package com.schotzgoblin.database;
 
-import jakarta.persistence.*;
 
-@Entity
-@Table(name = "player_quest")
-public class PlayerQuest {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class PlayerQuest implements Identifiable{
     private int id;
 
-    @Column(name = "player_uuid", nullable = false)
     private String playerUuid;
 
-    @ManyToOne
-    @JoinColumn(name = "quest_id", nullable = false)
     private Quest quest;
 
-    @ManyToOne
-    @JoinColumn(name = "quest_status_id", nullable = false)
     private QuestStatus questStatus;
 
     public PlayerQuest() {

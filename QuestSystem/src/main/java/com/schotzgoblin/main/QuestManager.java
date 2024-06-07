@@ -27,16 +27,22 @@ public class QuestManager {
     public void createQuest(String name, String description, List<Reward> rewards, String objective, int timeLimit) {
         Quest quest = new Quest(name, description, timeLimit, objective);
         databaseHandler.save(quest);
+        loadQuests();
     }
 
     public void deleteQuest(String name) {
         Quest savedQuest = databaseHandler.getQuestByName(name);
         System.out.println("Saved Quest: " + savedQuest.getName());
         databaseHandler.delete(savedQuest);
+        loadQuests();
     }
 
     public Quest getQuest(String name) {
         return quests.stream().filter(quest -> quest.getName().equals(name)).findFirst().orElse(null);
+    }
+
+    public List<Quest> getQuests() {
+        return quests;
     }
 
 }

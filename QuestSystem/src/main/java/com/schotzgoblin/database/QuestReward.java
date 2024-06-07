@@ -1,22 +1,11 @@
 package com.schotzgoblin.database;
 
 
-import jakarta.persistence.*;
-import org.hibernate.mapping.Set;
-
-@Entity
-@Table(name = "quest_reward")
-public class QuestReward {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class QuestReward implements Identifiable{
     private int id;
 
-    @ManyToOne
-    @JoinColumn(name = "quest_id", nullable = false)
     private Quest quest;
 
-    @ManyToOne
-    @JoinColumn(name = "reward_id", nullable = false)
     private Reward reward;
 
     public QuestReward() {

@@ -1,16 +1,9 @@
 package com.schotzgoblin.database;
 
-import jakarta.persistence.*;
-import org.hibernate.mapping.Set;
 
-@Entity
-@Table(name = "quest_status")
-public class QuestStatus {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class QuestStatus implements Identifiable{
     private int id;
 
-    @Column(name = "status", nullable = false)
     private String status;
 
     public QuestStatus() {

@@ -1,31 +1,21 @@
 package com.schotzgoblin.database;
 
 import com.schotzgoblin.main.QuestStatus;
-import jakarta.persistence.*;
 
 import java.util.Map;
 import java.util.Set;
 
-@Entity
-@Table(name = "quest")
-public class Quest {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Quest implements Identifiable{
     private int id;
 
-    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "description")
     private String description;
 
-    @Column(name = "time_limit")
     private int timeLimit;
 
-    @Column(name = "objective")
     private String objective;
 
-    @OneToMany(mappedBy = "quest")
     private Set<QuestReward> questRewards;
 
     public Quest() {

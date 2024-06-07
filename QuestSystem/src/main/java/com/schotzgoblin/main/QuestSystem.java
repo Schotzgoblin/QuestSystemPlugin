@@ -5,6 +5,7 @@ import com.google.common.io.ByteStreams;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.event.ClickEvent;
 import org.bukkit.Bukkit;
+import org.bukkit.command.CommandExecutor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -13,6 +14,8 @@ import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.plugin.messaging.PluginMessageListener;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Arrays;
 
 public class QuestSystem extends JavaPlugin implements Listener, PluginMessageListener {
     final String bungeeCordChannelName = "BungeeCord";
@@ -34,17 +37,30 @@ public class QuestSystem extends JavaPlugin implements Listener, PluginMessageLi
 
         databaseHandler = new DatabaseHandler();
         questManager = new QuestManager(this, databaseHandler);
-
-        getCommand("quest").setExecutor(new QuestCommand(questManager));
+        addListener(new InitLobby(this));
+        registerCommand("quest",new QuestCommand(questManager));
+    }
+    private void addListener(Listener listener) {
+        Bukkit.getPluginManager().registerEvents(listener, this);
     }
 
+    private void registerCommand(String commandName, CommandExecutor executor) {
+        var commandKit = this.getCommand(commandName);
+        if (commandKit != null) {
+            commandKit.setExecutor(executor);
+            if(executor instanceof Listener) {
+                addListener((Listener) executor);
+            }
+        } else {
+            getLogger().warning("Failed to register command: " + commandName);
+        }
+    }
     @Override
     public void onDisable() {
         super.onDisable();
         Bukkit.getLogger().info("Shutting down");
         Bukkit.getMessenger().unregisterOutgoingPluginChannel(this, bungeeCordChannelName);
         Bukkit.getMessenger().unregisterIncomingPluginChannel(this, bungeeCordChannelName);
-        HibernateUtil.shutdown();
     }
 
     @EventHandler

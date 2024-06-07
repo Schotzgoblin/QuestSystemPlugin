@@ -26,6 +26,15 @@ public class QuestCommand implements CommandExecutor {
             // Accept quest logic
         } else if (args[0].equalsIgnoreCase("status")) {
             // Display quest status
+        }else if (args[0].equalsIgnoreCase("get") && sender.hasPermission("quest.admin")) {
+            questManager.getQuests().forEach(quest -> {
+                sender.sendMessage(quest.getName());
+                sender.sendMessage(quest.getDescription());
+            });
+        } else if (args[0].equalsIgnoreCase("delete") && sender.hasPermission("quest.admin") && args.length == 2) {
+            questManager.deleteQuest(args[1]);
+        } else {
+            sender.sendMessage("Unknown subcommand: " + args[0]);
         }
 
         return true;
