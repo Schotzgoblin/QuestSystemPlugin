@@ -1,23 +1,13 @@
 package com.schotzgoblin.database;
 
-import jakarta.persistence.*;
-import org.hibernate.mapping.Set;
 
-@Entity
-@Table(name = "rewards")
-public class Reward {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Reward implements Identifiable{
     private int id;
 
-    @Column(name = "name", nullable = false)
     private String name;
 
-    @ManyToOne
-    @JoinColumn(name = "reward_type_id", nullable = false)
     private RewardType rewardType;
 
-    @Column(name = "amount", nullable = false)
     private int amount;
 
 

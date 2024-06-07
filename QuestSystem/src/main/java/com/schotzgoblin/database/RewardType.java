@@ -1,15 +1,8 @@
 package com.schotzgoblin.database;
-import jakarta.persistence.*;
-import org.hibernate.mapping.Set;
 
-@Entity
-@Table(name = "reward_type")
-public class RewardType {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class RewardType implements Identifiable{
     private int id;
 
-    @Column(name = "name", nullable = false)
     private String name;
 
     public RewardType() {

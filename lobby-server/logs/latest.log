@@ -1,86 +1,102 @@
-[17:35:47] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[17:35:49] [ServerMain/INFO]: Loaded 1174 recipes
-[17:35:49] [ServerMain/INFO]: Loaded 1271 advancements
-[17:35:50] [Server thread/INFO]: Starting minecraft server version 1.20.4
-[17:35:50] [Server thread/INFO]: Loading properties
-[17:35:50] [Server thread/INFO]: This server is running Paper version git-Paper-496 (MC: 1.20.4) (Implementing API version 1.20.4-R0.1-SNAPSHOT) (Git: 7ac24a1 on ver/1.20.4)
-[17:35:51] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[17:35:51] [Server thread/INFO]: Using 4 threads for Netty based IO
-[17:35:51] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
+[19:44:24] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[19:44:26] [ServerMain/INFO]: Loaded 1174 recipes
+[19:44:26] [ServerMain/INFO]: Loaded 1271 advancements
+[19:44:26] [Server thread/INFO]: Starting minecraft server version 1.20.4
+[19:44:26] [Server thread/INFO]: Loading properties
+[19:44:26] [Server thread/INFO]: This server is running Paper version git-Paper-496 (MC: 1.20.4) (Implementing API version 1.20.4-R0.1-SNAPSHOT) (Git: 7ac24a1 on ver/1.20.4)
+[19:44:27] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[19:44:27] [Server thread/INFO]: Using 4 threads for Netty based IO
+[19:44:27] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
     We recommend installing the spark profiler as a replacement: https://spark.lucko.me/
     For more information please visit: https://github.com/PaperMC/Paper/issues/8948
-[17:35:51] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 3 worker threads, and gen parallelism of 3 threads
-[17:35:52] [Server thread/INFO]: Default game type: SURVIVAL
-[17:35:52] [Server thread/INFO]: Generating keypair
-[17:35:52] [Server thread/INFO]: Starting Minecraft server on *:25566
-[17:35:52] [Server thread/INFO]: Using default channel type
-[17:35:52] [Server thread/INFO]: Paper: Using Java compression from Velocity.
-[17:35:52] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
-[17:35:52] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
-[17:35:52] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[17:35:52] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
-[17:35:52] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
-[17:35:52] [Server thread/WARN]: Whilst this makes it possible to use BungeeCord, unless access to your server is properly restricted, it also opens up the ability for hackers to connect with any username they choose.
-[17:35:52] [Server thread/WARN]: Please see http://www.spigotmc.org/wiki/firewall-guide/ for further information.
-[17:35:52] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
-[17:35:52] [Server thread/INFO]: Preparing level "world"
-[17:35:52] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[17:35:53] [Server thread/INFO]: Time elapsed: 165 ms
-[17:35:53] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[17:35:53] [Server thread/INFO]: Time elapsed: 33 ms
-[17:35:53] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[17:35:53] [Server thread/INFO]: Time elapsed: 24 ms
-[17:35:53] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
-[17:35:53] [Server thread/INFO]: Hello World
-[17:35:53] [Server thread/ERROR]: Error occurred while enabling QuestSystem v1.0.0 (Is it up to date?)
-java.lang.NoClassDefFoundError: org/hibernate/service/ServiceRegistry
-	at com.schotzgoblin.main.DatabaseHandler.getAll(DatabaseHandler.java:40) ~[QuestSystem-1.0.jar:?]
-	at com.schotzgoblin.main.QuestManager.loadQuests(QuestManager.java:24) ~[QuestSystem-1.0.jar:?]
-	at com.schotzgoblin.main.QuestManager.<init>(QuestManager.java:20) ~[QuestSystem-1.0.jar:?]
-	at com.schotzgoblin.main.QuestSystem.onEnable(QuestSystem.java:36) ~[QuestSystem-1.0.jar:?]
+[19:44:27] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 3 worker threads, and gen parallelism of 3 threads
+[19:44:28] [Server thread/INFO]: Default game type: SURVIVAL
+[19:44:28] [Server thread/INFO]: Generating keypair
+[19:44:28] [Server thread/INFO]: Starting Minecraft server on *:25566
+[19:44:28] [Server thread/INFO]: Using default channel type
+[19:44:28] [Server thread/INFO]: Paper: Using Java compression from Velocity.
+[19:44:28] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[19:44:28] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[19:44:28] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[19:44:28] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[19:44:28] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[19:44:28] [Server thread/WARN]: Whilst this makes it possible to use BungeeCord, unless access to your server is properly restricted, it also opens up the ability for hackers to connect with any username they choose.
+[19:44:28] [Server thread/WARN]: Please see http://www.spigotmc.org/wiki/firewall-guide/ for further information.
+[19:44:28] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[19:44:28] [Server thread/INFO]: Preparing level "world"
+[19:44:28] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[19:44:28] [Server thread/INFO]: Time elapsed: 173 ms
+[19:44:28] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[19:44:28] [Server thread/INFO]: Time elapsed: 28 ms
+[19:44:28] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[19:44:28] [Server thread/INFO]: Time elapsed: 23 ms
+[19:44:28] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[19:44:28] [Server thread/INFO]: Hello World
+[19:44:29] [Server thread/INFO]: Running delayed init tasks
+[19:44:29] [Server thread/INFO]: Done (2.620s)! For help, type "help"
+[19:44:29] [Server thread/INFO]: Timings Reset
+[19:44:35] [User Authenticator #0/INFO]: UUID of player Schotzgoblin is cdfb5f90-21c3-4aa8-be6f-39d8780b88f7
+[19:44:35] [Server thread/INFO]: Schotzgoblin joined the game
+[19:44:35] [Server thread/INFO]: Schotzgoblin[/127.0.0.1:57606] logged in with entity id 45 at ([world]65.52343231544734, 143.0, 48.566058814049455)
+[19:44:45] [Server thread/INFO]: Schotzgoblin issued server command: /quest get
+[19:45:09] [Server thread/INFO]: Schotzgoblin issued server command: /quest delete test
+[19:45:09] [Server thread/INFO]: [QuestSystem] [STDOUT] Saved Quest: test
+[19:45:09] [Server thread/WARN]: Nag author(s): '[Schotzgoblin]' of 'QuestSystem v1.0.0' about their usage of System.out/err.print. Please use your plugin's logger instead (JavaPlugin#getLogger).
+[19:45:18] [Server thread/INFO]: Schotzgoblin issued server command: /quest get
+[19:46:25] [Server thread/INFO]: Schotzgoblin issued server command: /quest get
+[19:46:29] [Server thread/INFO]: Schotzgoblin issued server command: /quest create
+[19:46:29] [Server thread/INFO]: [QuestSystem] [STDOUT] Quest----------------------
+[19:46:31] [Server thread/INFO]: Schotzgoblin issued server command: /quest get
+[19:49:12] [Server thread/INFO]: Schotzgoblin issued server command: /gamemode creative
+[19:49:12] [Server thread/INFO]: [Schotzgoblin: Set own game mode to Creative Mode]
+[21:12:32] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
+[21:12:32] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
+[21:12:32] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[21:12:32] [Server thread/INFO]: Using 4 threads for Netty based IO
+[21:12:32] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
+[21:12:32] [Server thread/INFO]: Shutting down
+[21:12:32] [Server thread/INFO]: Loaded 1174 recipes
+[21:12:33] [Server thread/INFO]: Loaded 1271 advancements
+[21:12:33] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[21:12:33] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[21:12:33] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[21:12:33] [Server thread/INFO]: Hello World
+[21:12:33] [Server thread/ERROR]: Error occurred while enabling QuestSystem v1.0.0 (Is it up to date?)
+java.lang.ClassCastException: class com.schotzgoblin.main.QuestCommand cannot be cast to class org.bukkit.event.Listener (com.schotzgoblin.main.QuestCommand is in unnamed module of loader 'QuestSystem-1.0.jar' @884828d; org.bukkit.event.Listener is in unnamed module of loader java.net.URLClassLoader @66cd51c3)
+	at com.schotzgoblin.main.QuestSystem.registerCommand(QuestSystem.java:49) ~[QuestSystem-1.0.jar:?]
+	at com.schotzgoblin.main.QuestSystem.onEnable(QuestSystem.java:39) ~[QuestSystem-1.0.jar:?]
 	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:287) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
 	at io.papermc.paper.plugin.manager.PaperPluginInstanceManager.enablePlugin(PaperPluginInstanceManager.java:188) ~[paper-1.20.4.jar:git-Paper-496]
 	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.enablePlugin(PaperPluginManagerImpl.java:104) ~[paper-1.20.4.jar:git-Paper-496]
 	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:507) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
 	at org.bukkit.craftbukkit.v1_20_R3.CraftServer.enablePlugin(CraftServer.java:639) ~[paper-1.20.4.jar:git-Paper-496]
 	at org.bukkit.craftbukkit.v1_20_R3.CraftServer.enablePlugins(CraftServer.java:550) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.MinecraftServer.loadWorld0(MinecraftServer.java:671) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.MinecraftServer.loadLevel(MinecraftServer.java:431) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.dedicated.DedicatedServer.initServer(DedicatedServer.java:309) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1131) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.CraftServer.reload(CraftServer.java:1114) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.Bukkit.reload(Bukkit.java:1024) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.command.defaults.ReloadCommand.execute(ReloadCommand.java:54) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.command.SimpleCommandMap.dispatch(SimpleCommandMap.java:155) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_20_R3.CraftServer.dispatchCommand(CraftServer.java:999) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.CraftServer.dispatchServerCommand(CraftServer.java:984) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.dedicated.DedicatedServer.handleConsoleInputs(DedicatedServer.java:501) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.dedicated.DedicatedServer.tickChildren(DedicatedServer.java:448) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:1525) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1226) ~[paper-1.20.4.jar:git-Paper-496]
 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319) ~[paper-1.20.4.jar:git-Paper-496]
 	at java.lang.Thread.run(Thread.java:1583) ~[?:?]
-Caused by: java.lang.ClassNotFoundException: org.hibernate.service.ServiceRegistry
-	at org.bukkit.plugin.java.PluginClassLoader.loadClass0(PluginClassLoader.java:197) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at org.bukkit.plugin.java.PluginClassLoader.loadClass(PluginClassLoader.java:164) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[?:?]
-	... 16 more
-[17:35:53] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
-[17:35:53] [Server thread/INFO]: Shutting down
-[17:35:53] [Server thread/ERROR]: Error occurred while disabling QuestSystem v1.0.0
-java.lang.NoClassDefFoundError: org/hibernate/service/ServiceRegistry
-	at com.schotzgoblin.main.QuestSystem.onDisable(QuestSystem.java:47) ~[QuestSystem-1.0.jar:?]
-	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:290) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at io.papermc.paper.plugin.manager.PaperPluginInstanceManager.disablePlugin(PaperPluginInstanceManager.java:223) ~[paper-1.20.4.jar:git-Paper-496]
-	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.disablePlugin(PaperPluginManagerImpl.java:109) ~[paper-1.20.4.jar:git-Paper-496]
-	at org.bukkit.plugin.SimplePluginManager.disablePlugin(SimplePluginManager.java:537) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at io.papermc.paper.plugin.manager.PaperPluginInstanceManager.enablePlugin(PaperPluginInstanceManager.java:192) ~[paper-1.20.4.jar:git-Paper-496]
-	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.enablePlugin(PaperPluginManagerImpl.java:104) ~[paper-1.20.4.jar:git-Paper-496]
-	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:507) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at org.bukkit.craftbukkit.v1_20_R3.CraftServer.enablePlugin(CraftServer.java:639) ~[paper-1.20.4.jar:git-Paper-496]
-	at org.bukkit.craftbukkit.v1_20_R3.CraftServer.enablePlugins(CraftServer.java:550) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.MinecraftServer.loadWorld0(MinecraftServer.java:671) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.MinecraftServer.loadLevel(MinecraftServer.java:431) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.dedicated.DedicatedServer.initServer(DedicatedServer.java:309) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1131) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319) ~[paper-1.20.4.jar:git-Paper-496]
-	at java.lang.Thread.run(Thread.java:1583) ~[?:?]
-Caused by: java.lang.ClassNotFoundException: org.hibernate.service.ServiceRegistry
-	at org.bukkit.plugin.java.PluginClassLoader.loadClass0(PluginClassLoader.java:197) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at org.bukkit.plugin.java.PluginClassLoader.loadClass(PluginClassLoader.java:164) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[?:?]
-	... 16 more
-[17:35:53] [Server thread/INFO]: Running delayed init tasks
-[17:35:53] [Server thread/INFO]: Done (3.225s)! For help, type "help"
-[17:35:53] [Server thread/INFO]: Timings Reset
-[17:35:55] [Server thread/WARN]: [EntityLookup] Entity uuid already exists: 477ca547-7f9b-4993-98d4-0271224ee159, mapped to EntityBat['Bat'/21, uuid='477ca547-7f9b-4993-98d4-0271224ee159', l='ServerLevel[world]', x=109.92, y=30.36, z=31.77, cpos=[6, 1], tl=1858, v=true], can't add EntityBat['Bat'/36, uuid='477ca547-7f9b-4993-98d4-0271224ee159', l='ServerLevel[world]', x=108.19, y=30.87, z=32.84, cpos=[6, 2], tl=1867, v=false]
+[21:12:33] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
+[21:12:33] [Server thread/INFO]: Shutting down
+[21:12:33] [Server thread/INFO]: CONSOLE: Reload complete.
+[21:12:33] [Server thread/INFO]: Timings Reset
+[21:15:53] [Server thread/INFO]: Schotzgoblin issued server command: /reload confirm
+[21:15:53] [Server thread/INFO]: Schotzgoblin: Please note that this command is not supported and may cause issues when using some plugins.
+[21:15:53] [Server thread/INFO]: Schotzgoblin: If you encounter any issues please use the /stop command to restart your server.
+[21:15:53] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[21:15:53] [Server thread/INFO]: Using 4 threads for Netty based IO
+[21:15:54] [Server thread/INFO]: Loaded 1174 recipes
+[21:15:54] [Server thread/INFO]: Loaded 1271 advancements
+[21:15:54] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[21:15:54] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[21:15:54] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[21:15:54] [Server thread/INFO]: Hello World
+[21:15:54] [Server thread/INFO]: Schotzgoblin: Reload complete.
+[21:15:54] [Server thread/INFO]: Timings Reset

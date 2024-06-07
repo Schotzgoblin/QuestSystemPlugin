@@ -1,0 +1,16 @@
+npc-location:
+  x: 65.5
+  y: 143
+  z: 57.5
+
+npc-settings:
+  type: VILLAGER
+  custom-name: Quests
+  custom-name-visible: true
+  invulnerable: true
+  ai-enabled: false
+  max-health: 1000.0
+
+npc-task:
+  interval: 1
+  range: 15
