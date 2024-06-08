@@ -177,6 +177,7 @@ public class DatabaseHandler {
                 field.setAccessible(true);
                 preparedStatement.setObject(i++, field.get(entity));
             }
+            preparedStatement.setObject(i, ((Identifiable) entity).getId());
             preparedStatement.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
@@ -194,20 +195,20 @@ public class DatabaseHandler {
         }
     }
 
-    public boolean addPlayerQuest(UUID uniqueId, String questName) {
+    public void addPlayerQuest(UUID uniqueId, String questName) {
 
         Quest quest = getQuestByName(questName);
         if (quest == null) {
-            return false;
+            return;
         }
-        if (getPlayerQuests(uniqueId, "").stream().anyMatch(playerQuest -> playerQuest.getQuest().getName().equals(questName)))
-            return false;
+        if(getPlayerQuestByQuestId(uniqueId, quest.getId()).getId()!=0){
+            return;
+        }
         PlayerQuest playerQuest = new PlayerQuest();
         playerQuest.setPlayerUuid(uniqueId.toString());
         playerQuest.setQuestId(quest.getId());
         playerQuest.setQuestStatusId(3);
         save(playerQuest);
-        return true;
     }
 
     public List<PlayerQuest> getPlayerQuests(UUID uniqueId, String type) {
@@ -218,7 +219,7 @@ public class DatabaseHandler {
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 while (resultSet.next()) {
                     var playerQuest = createPlayerQuest(resultSet);
-                    if (type.isEmpty() || playerQuest.getQuestStatus().getStatus().equals(type))
+                    if (type.isEmpty() || playerQuest.getQuestStatus().getStatus().equals(type)||type.equals("NOT_STARTED"))
                         list.add(playerQuest);
                 }
             }

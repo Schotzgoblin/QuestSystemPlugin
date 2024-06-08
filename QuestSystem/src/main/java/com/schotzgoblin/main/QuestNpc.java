@@ -9,6 +9,8 @@ import net.kyori.adventure.text.format.TextColor;
 import org.bukkit.*;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
+import org.bukkit.block.banner.Pattern;
+import org.bukkit.block.banner.PatternType;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
@@ -20,6 +22,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.BannerMeta;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
@@ -36,6 +39,7 @@ public class QuestNpc implements Listener {
     private DatabaseHandler databaseHandler;
     private Inventory inventory;
     private String type = "All Quests";
+    private int menuSlot = 2;
 
     public QuestNpc(QuestSystem plugin, DatabaseHandler databaseHandler) {
         this.plugin = plugin;
@@ -52,13 +56,18 @@ public class QuestNpc implements Listener {
 
     private void initInventory(Player player) {
         inventory = Bukkit.createInventory(null, 54, Component.text("Quests", TextColor.color(0, 170, 255))); // Bright blue color
+        ItemStack blueGlassPane = new ItemStack(Material.BLUE_STAINED_GLASS_PANE, 1); // Blue
         ItemStack whiteGlassPane = new ItemStack(Material.WHITE_STAINED_GLASS_PANE, 1); // White
         ItemStack redGlassPane = new ItemStack(Material.RED_STAINED_GLASS_PANE, 1); // Red
         ItemStack orangeGlassPane = new ItemStack(Material.ORANGE_STAINED_GLASS_PANE, 1); // Orange
         ItemStack greenGlassPane = new ItemStack(Material.GREEN_STAINED_GLASS_PANE, 1); // Green
 
+        ItemMeta blueGlassPaneMeta = blueGlassPane.getItemMeta();
+        blueGlassPaneMeta.displayName(Component.text("All Quests"));
+        blueGlassPane.setItemMeta(blueGlassPaneMeta);
+
         ItemMeta whiteGlassPaneMeta = whiteGlassPane.getItemMeta();
-        whiteGlassPaneMeta.displayName(Component.text("All Quests"));
+        whiteGlassPaneMeta.displayName(Component.text("NOT_STARTED"));
         whiteGlassPane.setItemMeta(whiteGlassPaneMeta);
 
         ItemMeta redGlassPaneMeta = redGlassPane.getItemMeta();
@@ -73,10 +82,11 @@ public class QuestNpc implements Listener {
         greenGlassPaneMeta.displayName(Component.text("COMPLETED"));
         greenGlassPane.setItemMeta(greenGlassPaneMeta);
 
-        inventory.setItem(2, whiteGlassPane);
-        inventory.setItem(3, redGlassPane);
+        inventory.setItem(2, blueGlassPane);
+        inventory.setItem(3, whiteGlassPane);
         inventory.setItem(4, orangeGlassPane);
         inventory.setItem(5, greenGlassPane);
+        inventory.setItem(6, redGlassPane);
 
         addQuestsToInventory("All Quests", player);
 
@@ -87,17 +97,22 @@ public class QuestNpc implements Listener {
         resetInventory();
         List<Quest> quests = databaseHandler.getAll(Quest.class);
         List<PlayerQuest> playerQuests = databaseHandler.getPlayerQuests(player.getUniqueId(), type);
-
         if (!type.equals("All Quests")) {
-            quests = playerQuests.stream()
-                    .map(PlayerQuest::getQuest)
-                    .toList();
+            if(type.equals("NOT_STARTED")){
+                quests = quests.stream()
+                        .filter(quest -> !playerQuests.stream().map(PlayerQuest::getQuestId).toList().contains(quest.getId())).toList();
+            }else {
+                quests = playerQuests.stream()
+                        .map(PlayerQuest::getQuest)
+                        .toList();
+            }
         }
 
+        inventory.setItem(menuSlot+9, new ItemStack(Material.NETHERITE_UPGRADE_SMITHING_TEMPLATE));
         for (int i = 0; i < quests.size(); i++) {
             Quest quest = quests.get(i);
             ItemStack itemStack = createQuestItemStack(quest, type, player);
-            inventory.setItem(i + 18, itemStack);
+            inventory.setItem(i + 27, itemStack);
         }
 
         finaliseInventory();
@@ -133,7 +148,7 @@ public class QuestNpc implements Listener {
         if (!type.equals("All Quests")) {
             return getComponentFromType(type);
         } else {
-            List<PlayerQuest> allPlayerQuests = databaseHandler.getPlayerQuests(player.getUniqueId(), "");
+            List<PlayerQuest> allPlayerQuests = databaseHandler.getPlayerQuests(player.getUniqueId(), "NOT_STARTED");
             PlayerQuest playerQuest = allPlayerQuests.stream()
                     .filter(playerQuest1 -> playerQuest1.getQuest().getId() == quest.getId())
                     .findFirst()
@@ -161,7 +176,7 @@ public class QuestNpc implements Listener {
     }
 
     private void resetInventory() {
-        for (int i = 18; i < 54; i++) {
+        for (int i = 9; i < 54; i++) {
             inventory.setItem(i, new ItemStack(Material.AIR));
         }
     }
@@ -266,7 +281,9 @@ public class QuestNpc implements Listener {
         var clickedItem = e.getCurrentItem();
         if(clickedItem==null)return;
         if(clickedItem.getType().getKey().getKey().contains("glass_pane")){
+            menuSlot = e.getSlot();
             addQuestsToInventory(((TextComponent)clickedItem.getItemMeta().displayName()).content(),player);
+            player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_BELL, 1.0f, 0.0f);
             return;
         }
 
@@ -277,20 +294,27 @@ public class QuestNpc implements Listener {
         if (displayname == null) return;
         if(moveType.content().equalsIgnoreCase("NOT STARTED"))
             acceptQuest(player,displayname,objective);
-        else
+        else if(moveType.content().equalsIgnoreCase("IN PROGRESS"))
             cancelQuest(player,displayname,objective);
+        else if(moveType.content().equalsIgnoreCase("CANCELED"))
+            reactivateQuest(player,displayname,objective);
+        addQuestsToInventory(type,player);
+    }
+
+    private void reactivateQuest(Player player, TextComponent displayname, TextComponent objective) {
+        databaseHandler.changePlayerQuestType(player.getUniqueId(),displayname.content(), "IN_PROGRESS");
+        player.sendMessage("You have reactivated the quest: " + displayname.content());
+        player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_BELL, 1.0f, 0.0f);
     }
 
     private void cancelQuest(Player player, TextComponent displayname, TextComponent objective) {
         databaseHandler.changePlayerQuestType(player.getUniqueId(),displayname.content(), "CANCELED");
-        addQuestsToInventory(type,player);
         player.sendMessage("You have canceled the quest: " + displayname.content());
         player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_BASS, 1.0f, 0.0f);
     }
 
     private void acceptQuest(Player player, TextComponent displayname, TextComponent objective) {
         databaseHandler.addPlayerQuest(player.getUniqueId(),displayname.content());
-        addQuestsToInventory(type,player);
         player.sendMessage("You have accepted the quest: " + displayname.content());
         player.sendMessage("Your objective is to: " + objective.content());
         player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_BELL, 1.0f, 0.0f);

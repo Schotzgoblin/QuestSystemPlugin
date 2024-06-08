@@ -1,13 +1,15 @@
 package com.schotzgoblin.database;
 
 
-public class PlayerQuest implements Identifiable{
+public class PlayerQuest implements Identifiable {
     private int id;
 
     private String playerUuid;
 
     private Quest quest;
     private int questId;
+    private int time;
+
 
     private QuestStatus questStatus;
     private int questStatusId;
@@ -19,6 +21,14 @@ public class PlayerQuest implements Identifiable{
         this.playerUuid = playerUuid;
         this.quest = quest;
         this.questStatus = questStatus;
+    }
+
+    public int getTime() {
+        return time;
+    }
+
+    public void setTime(int time) {
+        this.time = time;
     }
 
     public int getQuestStatusId() {

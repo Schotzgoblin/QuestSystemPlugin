@@ -1,74 +1,777 @@
-[00:28:52] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[00:28:54] [ServerMain/INFO]: Loaded 1174 recipes
-[00:28:54] [ServerMain/INFO]: Loaded 1271 advancements
-[00:28:54] [Server thread/INFO]: Starting minecraft server version 1.20.4
-[00:28:54] [Server thread/INFO]: Loading properties
-[00:28:54] [Server thread/INFO]: This server is running Paper version git-Paper-496 (MC: 1.20.4) (Implementing API version 1.20.4-R0.1-SNAPSHOT) (Git: 7ac24a1 on ver/1.20.4)
-[00:28:55] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[00:28:55] [Server thread/INFO]: Using 4 threads for Netty based IO
-[00:28:56] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
+[12:26:12] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[12:26:14] [ServerMain/INFO]: Loaded 1174 recipes
+[12:26:14] [ServerMain/INFO]: Loaded 1271 advancements
+[12:26:15] [Server thread/INFO]: Starting minecraft server version 1.20.4
+[12:26:15] [Server thread/INFO]: Loading properties
+[12:26:15] [Server thread/INFO]: This server is running Paper version git-Paper-496 (MC: 1.20.4) (Implementing API version 1.20.4-R0.1-SNAPSHOT) (Git: 7ac24a1 on ver/1.20.4)
+[12:26:16] [Server thread/INFO]: Using 4 threads for Netty based IO
+[12:26:16] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[12:26:16] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
     We recommend installing the spark profiler as a replacement: https://spark.lucko.me/
     For more information please visit: https://github.com/PaperMC/Paper/issues/8948
-[00:28:56] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 3 worker threads, and gen parallelism of 3 threads
-[00:28:56] [Server thread/INFO]: Default game type: SURVIVAL
-[00:28:56] [Server thread/INFO]: Generating keypair
-[00:28:56] [Server thread/INFO]: Starting Minecraft server on *:25566
-[00:28:56] [Server thread/INFO]: Using default channel type
-[00:28:56] [Server thread/INFO]: Paper: Using Java compression from Velocity.
-[00:28:56] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
-[00:28:56] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
-[00:28:56] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[00:28:56] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
-[00:28:56] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
-[00:28:56] [Server thread/WARN]: Whilst this makes it possible to use BungeeCord, unless access to your server is properly restricted, it also opens up the ability for hackers to connect with any username they choose.
-[00:28:56] [Server thread/WARN]: Please see http://www.spigotmc.org/wiki/firewall-guide/ for further information.
-[00:28:56] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
-[00:28:56] [Server thread/INFO]: Preparing level "world"
-[00:28:57] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[00:28:57] [Server thread/INFO]: Time elapsed: 234 ms
-[00:28:57] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[00:28:57] [Server thread/INFO]: Time elapsed: 36 ms
-[00:28:57] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[00:28:57] [Server thread/INFO]: Time elapsed: 22 ms
-[00:28:57] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
-[00:28:57] [Server thread/INFO]: Hello World
-[00:28:58] [Server thread/INFO]: Running delayed init tasks
-[00:28:58] [Server thread/INFO]: Done (3.546s)! For help, type "help"
-[00:28:58] [Server thread/INFO]: Timings Reset
-[00:29:02] [User Authenticator #0/INFO]: UUID of player Schotzgoblin is cdfb5f90-21c3-4aa8-be6f-39d8780b88f7
-[00:29:02] [Server thread/INFO]: Schotzgoblin joined the game
-[00:29:02] [Server thread/INFO]: Schotzgoblin[/127.0.0.1:60195] logged in with entity id 49 at ([world]65.95280113111588, 145.0, 55.94118461726883)
-[00:29:08] [Server thread/INFO]: 1
-[00:29:08] [Server thread/INFO]: 2
-[00:29:08] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
-[00:29:08] [Server thread/WARN]: Nag author(s): '[Schotzgoblin]' of 'QuestSystem v1.0.0' about their usage of System.out/err.print. Please use your plugin's logger instead (JavaPlugin#getLogger).
-[00:29:22] [Server thread/INFO]: 1
-[00:29:22] [Server thread/INFO]: 2
-[00:29:22] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
-[00:29:29] [Server thread/INFO]: 1
-[00:29:29] [Server thread/INFO]: 2
-[00:29:29] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
-[00:33:52] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
-[00:33:52] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
-[00:33:52] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[00:33:52] [Server thread/INFO]: Using 4 threads for Netty based IO
-[00:33:52] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
-[00:33:52] [Server thread/INFO]: Shutting down
-[00:33:53] [Server thread/INFO]: Loaded 1174 recipes
-[00:33:53] [Server thread/INFO]: Loaded 1271 advancements
-[00:33:53] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
-[00:33:53] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[00:33:53] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
-[00:33:53] [Server thread/INFO]: Hello World
-[00:33:53] [Server thread/INFO]: CONSOLE: Reload complete.
-[00:33:53] [Server thread/INFO]: Timings Reset
-[00:34:03] [Server thread/INFO]: 1
-[00:34:03] [Server thread/INFO]: 2
-[00:34:03] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
-[00:34:40] [Server thread/ERROR]: Could not pass event InventoryClickEvent to QuestSystem v1.0.0
+[12:26:16] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 3 worker threads, and gen parallelism of 3 threads
+[12:26:16] [Server thread/INFO]: Default game type: SURVIVAL
+[12:26:16] [Server thread/INFO]: Generating keypair
+[12:26:16] [Server thread/INFO]: Starting Minecraft server on *:25566
+[12:26:16] [Server thread/INFO]: Using default channel type
+[12:26:16] [Server thread/INFO]: Paper: Using Java compression from Velocity.
+[12:26:16] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[12:26:17] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[12:26:17] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[12:26:17] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[12:26:17] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[12:26:17] [Server thread/WARN]: Whilst this makes it possible to use BungeeCord, unless access to your server is properly restricted, it also opens up the ability for hackers to connect with any username they choose.
+[12:26:17] [Server thread/WARN]: Please see http://www.spigotmc.org/wiki/firewall-guide/ for further information.
+[12:26:17] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[12:26:17] [Server thread/INFO]: Preparing level "world"
+[12:26:17] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[12:26:17] [Server thread/INFO]: Time elapsed: 164 ms
+[12:26:17] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[12:26:17] [Server thread/INFO]: Time elapsed: 85 ms
+[12:26:17] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[12:26:17] [Server thread/INFO]: Time elapsed: 20 ms
+[12:26:17] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[12:26:17] [Server thread/INFO]: Hello World
+[12:26:18] [Server thread/INFO]: Running delayed init tasks
+[12:26:18] [Server thread/INFO]: Done (3.882s)! For help, type "help"
+[12:26:18] [Server thread/INFO]: Timings Reset
+[12:26:29] [User Authenticator #0/INFO]: UUID of player Schotzgoblin is cdfb5f90-21c3-4aa8-be6f-39d8780b88f7
+[12:26:29] [Server thread/INFO]: Schotzgoblin joined the game
+[12:26:29] [Server thread/INFO]: Schotzgoblin[/127.0.0.1:61521] logged in with entity id 46 at ([world]65.52521299409548, 145.0, 56.04917897151069)
+[12:26:40] [Server thread/INFO]: Schotzgoblin issued server command: /gamemode survival
+[12:26:40] [Server thread/INFO]: [Schotzgoblin: Set own game mode to Survival Mode]
+[12:30:15] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
+[12:30:15] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
+[12:30:15] [Server thread/INFO]: Using 4 threads for Netty based IO
+[12:30:15] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[12:30:15] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
+[12:30:15] [Server thread/INFO]: Shutting down
+[12:30:16] [Server thread/INFO]: Loaded 1174 recipes
+[12:30:16] [Server thread/INFO]: Loaded 1271 advancements
+[12:30:16] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[12:30:16] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[12:30:16] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[12:30:16] [Server thread/INFO]: Hello World
+[12:30:16] [Server thread/INFO]: CONSOLE: Reload complete.
+[12:30:16] [Server thread/INFO]: Timings Reset
+[12:32:51] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
+[12:32:51] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
+[12:32:51] [Server thread/INFO]: Using 4 threads for Netty based IO
+[12:32:51] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[12:32:51] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
+[12:32:51] [Server thread/INFO]: Shutting down
+[12:32:51] [Server thread/INFO]: Loaded 1174 recipes
+[12:32:51] [Server thread/INFO]: Loaded 1271 advancements
+[12:32:51] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[12:32:51] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[12:32:51] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[12:32:51] [Server thread/INFO]: Hello World
+[12:32:51] [Server thread/INFO]: CONSOLE: Reload complete.
+[12:32:51] [Server thread/INFO]: Timings Reset
+[12:32:54] [Server thread/INFO]: 4
+[12:32:55] [Server thread/INFO]: 4
+[12:32:59] [Server thread/INFO]: 4
+[12:33:06] [Server thread/INFO]: 1
+[12:36:12] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
+[12:36:12] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
+[12:36:12] [Server thread/INFO]: Using 4 threads for Netty based IO
+[12:36:12] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[12:36:12] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
+[12:36:12] [Server thread/INFO]: Shutting down
+[12:36:12] [Server thread/INFO]: Loaded 1174 recipes
+[12:36:12] [Server thread/INFO]: Loaded 1271 advancements
+[12:36:12] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[12:36:12] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[12:36:12] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[12:36:12] [Server thread/INFO]: Hello World
+[12:36:12] [Server thread/INFO]: CONSOLE: Reload complete.
+[12:36:12] [Server thread/INFO]: Timings Reset
+[12:36:18] [Server thread/INFO]: 4
+[12:36:19] [Server thread/INFO]: 4
+[12:36:24] [Server thread/INFO]: 1
+[12:36:24] [Server thread/INFO]: 4
+[12:38:05] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
+[12:38:05] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
+[12:38:05] [Server thread/INFO]: Using 4 threads for Netty based IO
+[12:38:05] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[12:38:05] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
+[12:38:05] [Server thread/INFO]: Shutting down
+[12:38:05] [Server thread/INFO]: Loaded 1174 recipes
+[12:38:05] [Server thread/INFO]: Loaded 1271 advancements
+[12:38:06] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[12:38:06] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[12:38:06] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[12:38:06] [Server thread/INFO]: Hello World
+[12:38:06] [Server thread/INFO]: CONSOLE: Reload complete.
+[12:38:06] [Server thread/INFO]: Timings Reset
+[12:38:11] [Server thread/INFO]: 4
+[12:38:11] [Server thread/INFO]: 0
+[12:38:11] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:38:11] [Server thread/WARN]: Nag author(s): '[Schotzgoblin]' of 'QuestSystem v1.0.0' about their usage of System.out/err.print. Please use your plugin's logger instead (JavaPlugin#getLogger).
+[12:38:11] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:38:11] [Server thread/INFO]: 4
+[12:38:13] [Server thread/INFO]: 4
+[12:38:13] [Server thread/INFO]: 1
+[12:38:13] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest
+[12:38:13] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:38:13] [Server thread/INFO]: 1
+[12:38:14] [Server thread/INFO]: 4
+[12:38:14] [Server thread/INFO]: 0
+[12:38:14] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:38:14] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:38:14] [Server thread/INFO]: 4
+[12:39:33] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
+[12:39:33] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
+[12:39:33] [Server thread/INFO]: Using 4 threads for Netty based IO
+[12:39:33] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[12:39:34] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
+[12:39:34] [Server thread/INFO]: Shutting down
+[12:39:34] [Server thread/INFO]: Loaded 1174 recipes
+[12:39:34] [Server thread/INFO]: Loaded 1271 advancements
+[12:39:34] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[12:39:34] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[12:39:34] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[12:39:34] [Server thread/INFO]: Hello World
+[12:39:34] [Server thread/INFO]: CONSOLE: Reload complete.
+[12:39:34] [Server thread/INFO]: Timings Reset
+[12:39:40] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:39:40] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:39:40] [Server thread/INFO]: 4
+[12:39:40] [Server thread/INFO]: 0
+[12:39:40] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:39:40] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:39:40] [Server thread/INFO]: 4
+[12:39:41] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:39:41] [Server thread/INFO]: [QuestSystem] [STDOUT] NOT_STARTED
+[12:39:41] [Server thread/INFO]: 4
+[12:39:41] [Server thread/INFO]: 0
+[12:39:41] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:39:41] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:39:41] [Server thread/INFO]: 4
+[12:39:42] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:39:42] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:39:42] [Server thread/INFO]: 4
+[12:39:42] [Server thread/INFO]: 1
+[12:39:42] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest
+[12:39:42] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:39:42] [Server thread/INFO]: 1
+[12:40:30] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
+[12:40:30] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
+[12:40:30] [Server thread/INFO]: Using 4 threads for Netty based IO
+[12:40:30] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[12:40:30] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
+[12:40:30] [Server thread/INFO]: Shutting down
+[12:40:30] [Server thread/INFO]: Loaded 1174 recipes
+[12:40:30] [Server thread/INFO]: Loaded 1271 advancements
+[12:40:31] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[12:40:31] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[12:40:31] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[12:40:31] [Server thread/INFO]: Hello World
+[12:40:31] [Server thread/INFO]: CONSOLE: Reload complete.
+[12:40:31] [Server thread/INFO]: Timings Reset
+[12:40:33] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:40:33] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:40:33] [Server thread/INFO]: 4
+[12:40:33] [Server thread/INFO]: 0
+[12:40:33] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:40:33] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:40:33] [Server thread/INFO]: 4
+[12:40:34] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:40:34] [Server thread/INFO]: [QuestSystem] [STDOUT] NOT_STARTED
+[12:40:34] [Server thread/INFO]: 4
+[12:40:34] [Server thread/INFO]: 1
+[12:40:34] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest
+[12:40:34] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:40:34] [Server thread/INFO]: 4
+[12:41:50] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
+[12:41:50] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
+[12:41:50] [Server thread/INFO]: Using 4 threads for Netty based IO
+[12:41:50] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[12:41:50] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
+[12:41:50] [Server thread/INFO]: Shutting down
+[12:41:51] [Server thread/INFO]: Loaded 1174 recipes
+[12:41:51] [Server thread/INFO]: Loaded 1271 advancements
+[12:41:51] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[12:41:51] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[12:41:51] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[12:41:51] [Server thread/INFO]: Hello World
+[12:41:51] [Server thread/INFO]: CONSOLE: Reload complete.
+[12:41:51] [Server thread/INFO]: Timings Reset
+[12:41:56] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:41:56] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:41:56] [Server thread/INFO]: 4
+[12:41:56] [Server thread/INFO]: 0
+[12:41:56] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:41:56] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:41:56] [Server thread/INFO]: 4
+[12:41:57] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:41:57] [Server thread/INFO]: [QuestSystem] [STDOUT] NOT_STARTED
+[12:41:57] [Server thread/INFO]: 4
+[12:41:57] [Server thread/INFO]: 1
+[12:41:57] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest
+[12:41:57] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:41:57] [Server thread/INFO]: 3
+[12:41:59] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:41:59] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:41:59] [Server thread/INFO]: 4
+[12:41:59] [Server thread/INFO]: 0
+[12:41:59] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:41:59] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:41:59] [Server thread/INFO]: 4
+[12:42:05] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:42:05] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:42:05] [Server thread/INFO]: 4
+[12:42:05] [Server thread/INFO]: 1
+[12:42:05] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest
+[12:42:05] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:42:05] [Server thread/INFO]: 1
+[12:42:06] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:42:06] [Server thread/INFO]: [QuestSystem] [STDOUT] NOT_STARTED
+[12:42:06] [Server thread/INFO]: 4
+[12:42:06] [Server thread/INFO]: 1
+[12:42:06] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest
+[12:42:06] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:42:06] [Server thread/INFO]: 3
+[12:42:09] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:42:09] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:42:09] [Server thread/INFO]: 4
+[12:42:09] [Server thread/INFO]: 0
+[12:42:09] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:42:09] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:42:09] [Server thread/INFO]: 4
+[12:42:11] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:42:11] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:42:11] [Server thread/INFO]: 4
+[12:42:11] [Server thread/INFO]: 1
+[12:42:11] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest
+[12:42:11] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:42:11] [Server thread/INFO]: 1
+[12:42:11] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:42:11] [Server thread/INFO]: [QuestSystem] [STDOUT] COMPLETED
+[12:42:11] [Server thread/INFO]: 4
+[12:42:11] [Server thread/INFO]: 0
+[12:42:11] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:42:11] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:42:11] [Server thread/INFO]: 0
+[12:42:12] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:42:12] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
+[12:42:12] [Server thread/INFO]: 4
+[12:42:12] [Server thread/INFO]: 0
+[12:42:12] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:42:12] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:42:12] [Server thread/INFO]: 0
+[12:42:12] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:42:12] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:42:12] [Server thread/INFO]: 4
+[12:42:12] [Server thread/INFO]: 1
+[12:42:12] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest
+[12:42:12] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:42:12] [Server thread/INFO]: 1
+[12:42:13] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:42:13] [Server thread/INFO]: [QuestSystem] [STDOUT] NOT_STARTED
+[12:42:13] [Server thread/INFO]: 4
+[12:42:13] [Server thread/INFO]: 1
+[12:42:13] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest
+[12:42:13] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:42:13] [Server thread/INFO]: 3
+[12:42:13] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:42:13] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:42:13] [Server thread/INFO]: 4
+[12:42:13] [Server thread/INFO]: 0
+[12:42:13] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:42:13] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:42:13] [Server thread/INFO]: 4
+[12:42:14] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:42:14] [Server thread/INFO]: [QuestSystem] [STDOUT] NOT_STARTED
+[12:42:14] [Server thread/INFO]: 4
+[12:42:14] [Server thread/INFO]: 1
+[12:42:14] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest
+[12:42:14] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:42:14] [Server thread/INFO]: 3
+[12:42:17] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:42:17] [Server thread/INFO]: [QuestSystem] [STDOUT] NOT_STARTED
+[12:42:17] [Server thread/INFO]: 4
+[12:42:17] [Server thread/INFO]: 1
+[12:42:17] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest
+[12:42:17] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:42:17] [Server thread/INFO]: 3
+[12:42:19] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:42:19] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:42:19] [Server thread/INFO]: 4
+[12:42:19] [Server thread/INFO]: 0
+[12:42:19] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:42:19] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:42:19] [Server thread/INFO]: 4
+[12:42:21] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:42:21] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:42:21] [Server thread/INFO]: 4
+[12:42:21] [Server thread/INFO]: 1
+[12:42:21] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest
+[12:42:21] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:42:21] [Server thread/INFO]: 1
+[12:42:25] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:42:25] [Server thread/INFO]: [QuestSystem] [STDOUT] NOT_STARTED
+[12:42:25] [Server thread/INFO]: 4
+[12:42:25] [Server thread/INFO]: 1
+[12:42:25] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest
+[12:42:25] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:42:25] [Server thread/INFO]: 3
+[12:44:12] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
+[12:44:12] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
+[12:44:12] [Server thread/INFO]: Using 4 threads for Netty based IO
+[12:44:12] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[12:44:12] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
+[12:44:12] [Server thread/INFO]: Shutting down
+[12:44:12] [Server thread/INFO]: Loaded 1174 recipes
+[12:44:12] [Server thread/INFO]: Loaded 1271 advancements
+[12:44:13] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[12:44:13] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[12:44:13] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[12:44:13] [Server thread/INFO]: Hello World
+[12:44:13] [Server thread/INFO]: CONSOLE: Reload complete.
+[12:44:13] [Server thread/INFO]: Timings Reset
+[12:44:16] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:44:16] [Server thread/WARN]: Nag author(s): '[Schotzgoblin]' of 'QuestSystem v1.0.0' about their usage of System.out/err.print. Please use your plugin's logger instead (JavaPlugin#getLogger).
+[12:44:16] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:44:16] [Server thread/INFO]: 4
+[12:44:16] [Server thread/INFO]: 0
+[12:44:16] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:44:16] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:44:16] [Server thread/INFO]: 4
+[12:44:17] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:44:17] [Server thread/INFO]: [QuestSystem] [STDOUT] NOT_STARTED
+[12:44:17] [Server thread/INFO]: 4
+[12:44:17] [Server thread/INFO]: 1
+[12:44:17] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest
+[12:44:17] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:44:17] [Server thread/INFO]: 3
+[12:44:18] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:44:18] [Server thread/INFO]: [QuestSystem] [STDOUT] NOT_STARTED
+[12:44:18] [Server thread/INFO]: 4
+[12:44:18] [Server thread/INFO]: 1
+[12:44:18] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest
+[12:44:18] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:44:18] [Server thread/INFO]: 3
+[12:44:20] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:44:20] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:44:20] [Server thread/INFO]: 4
+[12:44:20] [Server thread/INFO]: 1
+[12:44:20] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest
+[12:44:20] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:44:20] [Server thread/INFO]: 1
+[12:44:21] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:44:21] [Server thread/INFO]: [QuestSystem] [STDOUT] NOT_STARTED
+[12:44:21] [Server thread/INFO]: 4
+[12:44:21] [Server thread/INFO]: 1
+[12:44:21] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest
+[12:44:21] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:44:21] [Server thread/INFO]: 3
+[12:44:23] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:44:23] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:44:23] [Server thread/INFO]: 4
+[12:44:23] [Server thread/INFO]: 0
+[12:44:23] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:44:23] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:44:23] [Server thread/INFO]: 4
+[12:44:25] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:44:25] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:44:25] [Server thread/INFO]: 4
+[12:44:25] [Server thread/INFO]: 0
+[12:44:25] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:44:25] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:44:25] [Server thread/INFO]: 4
+[12:44:25] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:44:25] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:44:25] [Server thread/INFO]: 4
+[12:44:25] [Server thread/INFO]: 0
+[12:44:25] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:44:25] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:44:25] [Server thread/INFO]: 4
+[12:44:25] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:44:25] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:44:25] [Server thread/INFO]: 4
+[12:44:25] [Server thread/INFO]: 0
+[12:44:25] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:44:25] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:44:25] [Server thread/INFO]: 4
+[12:44:26] [Server thread/INFO]: 1
+[12:44:26] [Server thread/INFO]: 2
+[12:44:26] [Server thread/INFO]: 2
+[12:44:26] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
+[12:44:26] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:44:26] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:44:26] [Server thread/INFO]: 4
+[12:44:26] [Server thread/INFO]: 0
+[12:44:26] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:44:26] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:44:26] [Server thread/INFO]: 4
+[12:44:29] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:44:29] [Server thread/INFO]: [QuestSystem] [STDOUT] NOT_STARTED
+[12:44:29] [Server thread/INFO]: 4
+[12:44:29] [Server thread/INFO]: 1
+[12:44:29] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest
+[12:44:29] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:44:29] [Server thread/INFO]: 3
+[12:44:29] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:44:29] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:44:29] [Server thread/INFO]: 4
+[12:44:29] [Server thread/INFO]: 1
+[12:44:29] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest
+[12:44:29] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:44:29] [Server thread/INFO]: 1
+[12:45:37] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
+[12:45:37] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
+[12:45:37] [Server thread/INFO]: Using 4 threads for Netty based IO
+[12:45:37] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[12:45:38] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
+[12:45:38] [Server thread/INFO]: Shutting down
+[12:45:38] [Server thread/INFO]: Loaded 1174 recipes
+[12:45:38] [Server thread/INFO]: Loaded 1271 advancements
+[12:45:38] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[12:45:38] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[12:45:38] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[12:45:38] [Server thread/INFO]: Hello World
+[12:45:38] [Server thread/INFO]: CONSOLE: Reload complete.
+[12:45:38] [Server thread/INFO]: Timings Reset
+[12:45:41] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:45:41] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:45:41] [Server thread/INFO]: 4
+[12:45:41] [Server thread/INFO]: 0
+[12:45:41] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:45:41] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:45:41] [Server thread/INFO]: 4
+[12:45:44] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:45:44] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:45:44] [Server thread/INFO]: 4
+[12:45:44] [Server thread/INFO]: 0
+[12:45:44] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:45:44] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:45:44] [Server thread/INFO]: 4
+[12:45:45] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:45:45] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:45:45] [Server thread/INFO]: 4
+[12:45:45] [Server thread/INFO]: 2
+[12:45:45] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest
+[12:45:45] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:45:45] [Server thread/INFO]: 2
+[12:45:47] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:45:47] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:45:47] [Server thread/INFO]: 4
+[12:45:47] [Server thread/INFO]: 0
+[12:45:47] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:45:47] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:45:47] [Server thread/INFO]: 4
+[12:45:50] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:45:50] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:45:50] [Server thread/INFO]: 4
+[12:45:50] [Server thread/INFO]: 2
+[12:45:50] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest
+[12:45:50] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:45:50] [Server thread/INFO]: 2
+[12:45:51] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:45:51] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:45:51] [Server thread/INFO]: 4
+[12:45:51] [Server thread/INFO]: 0
+[12:45:51] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:45:51] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:45:51] [Server thread/INFO]: 4
+[12:45:54] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:45:54] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:45:54] [Server thread/INFO]: 4
+[12:45:54] [Server thread/INFO]: 2
+[12:45:54] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest
+[12:45:54] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:45:54] [Server thread/INFO]: 2
+[12:45:56] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:45:56] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:45:56] [Server thread/INFO]: 4
+[12:45:56] [Server thread/INFO]: 0
+[12:45:56] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:45:56] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:45:56] [Server thread/INFO]: 4
+[12:45:58] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:45:58] [Server thread/INFO]: [QuestSystem] [STDOUT] NOT_STARTED
+[12:45:58] [Server thread/INFO]: 4
+[12:45:58] [Server thread/INFO]: 2
+[12:45:58] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest
+[12:45:58] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:45:58] [Server thread/INFO]: 3
+[12:46:00] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:46:00] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:46:00] [Server thread/INFO]: 4
+[12:46:00] [Server thread/INFO]: 2
+[12:46:00] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest
+[12:46:00] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:46:00] [Server thread/INFO]: 2
+[12:46:03] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:46:03] [Server thread/INFO]: [QuestSystem] [STDOUT] COMPLETED
+[12:46:03] [Server thread/INFO]: 4
+[12:46:03] [Server thread/INFO]: 0
+[12:46:03] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:46:03] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:46:03] [Server thread/INFO]: 0
+[12:46:03] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:46:03] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
+[12:46:03] [Server thread/INFO]: 4
+[12:46:03] [Server thread/INFO]: 0
+[12:46:03] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:46:03] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:46:03] [Server thread/INFO]: 0
+[12:46:04] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:46:04] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:46:04] [Server thread/INFO]: 4
+[12:46:04] [Server thread/INFO]: 2
+[12:46:04] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest
+[12:46:04] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:46:04] [Server thread/INFO]: 2
+[12:46:05] [Server thread/INFO]: 1
+[12:46:05] [Server thread/INFO]: 2
+[12:46:05] [Server thread/INFO]: 2
+[12:46:05] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
+[12:46:05] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:46:05] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:46:05] [Server thread/INFO]: 4
+[12:46:05] [Server thread/INFO]: 2
+[12:46:05] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest
+[12:46:05] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:46:05] [Server thread/INFO]: 2
+[12:46:07] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:46:07] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
+[12:46:07] [Server thread/INFO]: 4
+[12:46:07] [Server thread/INFO]: 0
+[12:46:07] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:46:07] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:46:07] [Server thread/INFO]: 0
+[12:46:07] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:46:07] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:46:07] [Server thread/INFO]: 4
+[12:46:07] [Server thread/INFO]: 0
+[12:46:07] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:46:07] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:46:07] [Server thread/INFO]: 4
+[12:49:06] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
+[12:49:06] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
+[12:49:06] [Server thread/INFO]: Using 4 threads for Netty based IO
+[12:49:06] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[12:49:06] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
+[12:49:06] [Server thread/INFO]: Shutting down
+[12:49:06] [Server thread/INFO]: Loaded 1174 recipes
+[12:49:06] [Server thread/INFO]: Loaded 1271 advancements
+[12:49:06] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[12:49:06] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[12:49:06] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[12:49:06] [Server thread/INFO]: Hello World
+[12:49:06] [Server thread/INFO]: CONSOLE: Reload complete.
+[12:49:06] [Server thread/INFO]: Timings Reset
+[12:49:12] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:49:12] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:49:12] [Server thread/INFO]: 4
+[12:49:12] [Server thread/INFO]: 0
+[12:49:12] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:49:12] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:49:12] [Server thread/INFO]: 4
+[12:49:14] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:49:14] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:49:14] [Server thread/INFO]: 4
+[12:49:14] [Server thread/INFO]: 2
+[12:49:14] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest
+[12:49:14] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:49:14] [Server thread/INFO]: 2
+[12:49:16] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:49:16] [Server thread/WARN]: Nag author(s): '[Schotzgoblin]' of 'QuestSystem v1.0.0' about their usage of System.out/err.print. Please use your plugin's logger instead (JavaPlugin#getLogger).
+[12:49:16] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:49:16] [Server thread/INFO]: 4
+[12:49:16] [Server thread/INFO]: 0
+[12:49:16] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:49:16] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:49:16] [Server thread/INFO]: 4
+[12:49:17] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:49:17] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:49:17] [Server thread/INFO]: 4
+[12:49:17] [Server thread/INFO]: 0
+[12:49:17] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:49:17] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:49:17] [Server thread/INFO]: 4
+[12:49:18] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:49:18] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:49:18] [Server thread/INFO]: 4
+[12:49:18] [Server thread/INFO]: 2
+[12:49:18] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest
+[12:49:18] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:49:18] [Server thread/INFO]: 2
+[12:49:19] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:49:19] [Server thread/INFO]: [QuestSystem] [STDOUT] NOT_STARTED
+[12:49:19] [Server thread/INFO]: 4
+[12:49:19] [Server thread/INFO]: 2
+[12:49:19] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest
+[12:49:19] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:49:19] [Server thread/INFO]: 3
+[12:49:19] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:49:19] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:49:19] [Server thread/INFO]: 4
+[12:49:19] [Server thread/INFO]: 0
+[12:49:19] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:49:19] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:49:19] [Server thread/INFO]: 4
+[12:49:21] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:49:21] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:49:21] [Server thread/INFO]: 4
+[12:49:21] [Server thread/INFO]: 0
+[12:49:21] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:49:21] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:49:21] [Server thread/INFO]: 4
+[12:49:22] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:49:22] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:49:22] [Server thread/INFO]: 4
+[12:49:22] [Server thread/INFO]: 2
+[12:49:22] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest
+[12:49:22] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:49:22] [Server thread/INFO]: 2
+[12:49:23] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:49:23] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:49:23] [Server thread/INFO]: 4
+[12:49:23] [Server thread/INFO]: 0
+[12:49:23] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:49:23] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:49:23] [Server thread/INFO]: 4
+[12:49:24] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:49:24] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:49:24] [Server thread/INFO]: 4
+[12:49:24] [Server thread/INFO]: 0
+[12:49:24] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:49:24] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:49:24] [Server thread/INFO]: 4
+[12:49:24] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:49:24] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:49:24] [Server thread/INFO]: 4
+[12:49:24] [Server thread/INFO]: 2
+[12:49:24] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest
+[12:49:24] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:49:24] [Server thread/INFO]: 2
+[12:49:26] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:49:26] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:49:26] [Server thread/INFO]: 4
+[12:49:26] [Server thread/INFO]: 0
+[12:49:26] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:49:26] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:49:26] [Server thread/INFO]: 4
+[12:50:34] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:50:34] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:50:34] [Server thread/INFO]: 4
+[12:50:34] [Server thread/INFO]: 0
+[12:50:34] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:50:34] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:50:34] [Server thread/INFO]: 4
+[12:50:48] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:50:48] [Server thread/INFO]: [QuestSystem] [STDOUT] NOT_STARTED
+[12:50:48] [Server thread/INFO]: 4
+[12:50:48] [Server thread/INFO]: 2
+[12:50:48] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest
+[12:50:48] [Server thread/INFO]: [QuestSystem] [STDOUT] Test Quest, Test Quest, Test Quest, Test Quest
+[12:50:48] [Server thread/INFO]: 3
+[12:52:38] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
+[12:52:38] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
+[12:52:38] [Server thread/INFO]: Using 4 threads for Netty based IO
+[12:52:38] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[12:52:38] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
+[12:52:38] [Server thread/INFO]: Shutting down
+[12:52:38] [Server thread/INFO]: Loaded 1174 recipes
+[12:52:38] [Server thread/INFO]: Loaded 1271 advancements
+[12:52:38] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[12:52:38] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[12:52:38] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[12:52:38] [Server thread/INFO]: Hello World
+[12:52:38] [Server thread/INFO]: CONSOLE: Reload complete.
+[12:52:38] [Server thread/INFO]: Timings Reset
+[12:52:42] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:52:42] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:52:42] [Server thread/INFO]: 4
+[12:52:42] [Server thread/INFO]: 0
+[12:52:42] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:52:42] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:52:42] [Server thread/INFO]: 4
+[12:52:43] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:52:43] [Server thread/INFO]: [QuestSystem] [STDOUT] NOT_STARTED
+[12:52:43] [Server thread/INFO]: 4
+[12:52:43] [Server thread/INFO]: 2
+[12:52:43] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 1
+[12:52:43] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:52:43] [Server thread/INFO]: 3
+[12:53:03] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:53:03] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:53:03] [Server thread/INFO]: 4
+[12:53:03] [Server thread/INFO]: 0
+[12:53:03] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:53:03] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:53:03] [Server thread/INFO]: 4
+[12:53:05] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:53:05] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:53:05] [Server thread/INFO]: 4
+[12:53:05] [Server thread/INFO]: 0
+[12:53:05] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:53:05] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:53:05] [Server thread/INFO]: 4
+[12:53:16] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:53:16] [Server thread/INFO]: [QuestSystem] [STDOUT] NOT_STARTED
+[12:53:16] [Server thread/INFO]: 4
+[12:53:16] [Server thread/INFO]: 2
+[12:53:16] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 1
+[12:53:16] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:53:16] [Server thread/INFO]: 3
+[12:53:17] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:53:17] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:53:17] [Server thread/INFO]: 4
+[12:53:17] [Server thread/INFO]: 0
+[12:53:17] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:53:17] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:53:17] [Server thread/INFO]: 4
+[12:54:36] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:54:36] [Server thread/WARN]: Nag author(s): '[Schotzgoblin]' of 'QuestSystem v1.0.0' about their usage of System.out/err.print. Please use your plugin's logger instead (JavaPlugin#getLogger).
+[12:54:36] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:54:36] [Server thread/INFO]: 4
+[12:54:36] [Server thread/INFO]: 0
+[12:54:36] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:54:36] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:54:36] [Server thread/INFO]: 4
+[12:54:39] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:54:39] [Server thread/INFO]: [QuestSystem] [STDOUT] NOT_STARTED
+[12:54:39] [Server thread/INFO]: 4
+[12:54:39] [Server thread/INFO]: 2
+[12:54:39] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 1
+[12:54:39] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:54:39] [Server thread/INFO]: 3
+[12:54:40] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:54:40] [Server thread/INFO]: [QuestSystem] [STDOUT] NOT_STARTED
+[12:54:40] [Server thread/INFO]: 4
+[12:54:40] [Server thread/INFO]: 3
+[12:54:40] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 1, 2
+[12:54:40] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:54:40] [Server thread/INFO]: 2
+[12:54:41] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:54:41] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:54:41] [Server thread/INFO]: 4
+[12:54:41] [Server thread/INFO]: 0
+[12:54:41] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:54:41] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:54:41] [Server thread/INFO]: 4
+[12:54:44] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:54:44] [Server thread/INFO]: [QuestSystem] [STDOUT] NOT_STARTED
+[12:54:44] [Server thread/INFO]: 4
+[12:54:44] [Server thread/INFO]: 3
+[12:54:44] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 1, 2
+[12:54:44] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:54:44] [Server thread/INFO]: 2
+[12:54:48] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:54:48] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:54:48] [Server thread/INFO]: 4
+[12:54:48] [Server thread/INFO]: 3
+[12:54:48] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 1, 2
+[12:54:48] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:54:48] [Server thread/INFO]: 3
+[12:54:57] [Server thread/ERROR]: Could not pass event InventoryClickEvent to QuestSystem v1.0.0
 java.lang.NullPointerException: Cannot invoke "net.kyori.adventure.text.TextComponent.content()" because the return value of "org.bukkit.inventory.meta.ItemMeta.displayName()" is null
-	at com.schotzgoblin.main.QuestNpc.onInventoryClick(QuestNpc.java:265) ~[QuestSystem-1.0.jar:?]
-	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor10.execute(Unknown Source) ~[?:?]
+	at com.schotzgoblin.main.QuestNpc.onInventoryClick(QuestNpc.java:286) ~[QuestSystem-1.0.jar:?]
+	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor71.execute(Unknown Source) ~[?:?]
 	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
 	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:git-Paper-496]
 	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
@@ -92,71 +795,10 @@ java.lang.NullPointerException: Cannot invoke "net.kyori.adventure.text.TextComp
 	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1232) ~[paper-1.20.4.jar:git-Paper-496]
 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319) ~[paper-1.20.4.jar:git-Paper-496]
 	at java.lang.Thread.run(Thread.java:1583) ~[?:?]
-[00:34:59] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
-[00:34:59] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
-[00:34:59] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[00:34:59] [Server thread/INFO]: Using 4 threads for Netty based IO
-[00:34:59] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
-[00:34:59] [Server thread/INFO]: Shutting down
-[00:34:59] [Server thread/INFO]: Loaded 1174 recipes
-[00:34:59] [Server thread/INFO]: Loaded 1271 advancements
-[00:35:00] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
-[00:35:00] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[00:35:00] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
-[00:35:00] [Server thread/INFO]: Hello World
-[00:35:00] [Server thread/INFO]: CONSOLE: Reload complete.
-[00:35:00] [Server thread/INFO]: Timings Reset
-[00:35:05] [Server thread/INFO]: 1
-[00:35:05] [Server thread/INFO]: 2
-[00:35:05] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
-[00:35:05] [Server thread/WARN]: Nag author(s): '[Schotzgoblin]' of 'QuestSystem v1.0.0' about their usage of System.out/err.print. Please use your plugin's logger instead (JavaPlugin#getLogger).
-[00:36:53] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
-[00:36:53] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
-[00:36:53] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[00:36:53] [Server thread/INFO]: Using 4 threads for Netty based IO
-[00:36:53] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
-[00:36:53] [Server thread/INFO]: Shutting down
-[00:36:54] [Server thread/INFO]: Loaded 1174 recipes
-[00:36:54] [Server thread/INFO]: Loaded 1271 advancements
-[00:36:54] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
-[00:36:54] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[00:36:54] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
-[00:36:54] [Server thread/INFO]: Hello World
-[00:36:54] [Server thread/INFO]: CONSOLE: Reload complete.
-[00:36:54] [Server thread/INFO]: Timings Reset
-[00:37:22] [Server thread/INFO]: 1
-[00:37:22] [Server thread/INFO]: 2
-[00:37:22] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
-[00:37:27] [Server thread/INFO]: 1
-[00:37:27] [Server thread/INFO]: 2
-[00:37:27] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
-[00:37:28] [Server thread/INFO]: 1
-[00:37:28] [Server thread/INFO]: 2
-[00:37:28] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
-[00:37:28] [Server thread/INFO]: 1
-[00:37:28] [Server thread/INFO]: 2
-[00:37:28] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
-[00:37:28] [Server thread/INFO]: 1
-[00:37:28] [Server thread/INFO]: 2
-[00:37:28] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
-[00:41:27] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
-[00:41:27] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
-[00:41:27] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[00:41:27] [Server thread/INFO]: Using 4 threads for Netty based IO
-[00:41:27] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
-[00:41:27] [Server thread/INFO]: Shutting down
-[00:41:27] [Server thread/INFO]: Loaded 1174 recipes
-[00:41:27] [Server thread/INFO]: Loaded 1271 advancements
-[00:41:28] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
-[00:41:28] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[00:41:28] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
-[00:41:28] [Server thread/INFO]: Hello World
-[00:41:28] [Server thread/INFO]: CONSOLE: Reload complete.
-[00:41:28] [Server thread/INFO]: Timings Reset
-[00:41:34] [Server thread/ERROR]: Could not pass event InventoryClickEvent to QuestSystem v1.0.0
+[12:54:59] [Server thread/ERROR]: Could not pass event InventoryClickEvent to QuestSystem v1.0.0
 java.lang.NullPointerException: Cannot invoke "net.kyori.adventure.text.TextComponent.content()" because the return value of "org.bukkit.inventory.meta.ItemMeta.displayName()" is null
-	at com.schotzgoblin.main.QuestNpc.onInventoryClick(QuestNpc.java:269) ~[QuestSystem-1.0.jar:?]
-	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor28.execute(Unknown Source) ~[?:?]
+	at com.schotzgoblin.main.QuestNpc.onInventoryClick(QuestNpc.java:286) ~[QuestSystem-1.0.jar:?]
+	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor71.execute(Unknown Source) ~[?:?]
 	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
 	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:git-Paper-496]
 	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
@@ -180,22 +822,1329 @@ java.lang.NullPointerException: Cannot invoke "net.kyori.adventure.text.TextComp
 	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1232) ~[paper-1.20.4.jar:git-Paper-496]
 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319) ~[paper-1.20.4.jar:git-Paper-496]
 	at java.lang.Thread.run(Thread.java:1583) ~[?:?]
-[00:42:36] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
-[00:42:36] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
-[00:42:36] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[00:42:36] [Server thread/INFO]: Using 4 threads for Netty based IO
-[00:42:36] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
-[00:42:36] [Server thread/INFO]: Shutting down
-[00:42:36] [Server thread/INFO]: Loaded 1174 recipes
-[00:42:36] [Server thread/INFO]: Loaded 1271 advancements
-[00:42:36] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
-[00:42:36] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[00:42:36] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
-[00:42:36] [Server thread/INFO]: Hello World
-[00:42:36] [Server thread/INFO]: CONSOLE: Reload complete.
-[00:42:36] [Server thread/INFO]: Timings Reset
-[00:42:59] [Server thread/INFO]: 1
-[00:42:59] [Server thread/INFO]: 2
-[00:42:59] [Server thread/INFO]: 2
-[00:42:59] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
-[00:42:59] [Server thread/WARN]: Nag author(s): '[Schotzgoblin]' of 'QuestSystem v1.0.0' about their usage of System.out/err.print. Please use your plugin's logger instead (JavaPlugin#getLogger).
+[12:55:00] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:55:00] [Server thread/INFO]: [QuestSystem] [STDOUT] NOT_STARTED
+[12:55:00] [Server thread/INFO]: 4
+[12:55:00] [Server thread/INFO]: 2
+[12:55:00] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2
+[12:55:00] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:55:00] [Server thread/INFO]: 2
+[12:55:00] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:55:00] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:55:00] [Server thread/INFO]: 4
+[12:55:00] [Server thread/INFO]: 2
+[12:55:00] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2
+[12:55:00] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:55:00] [Server thread/INFO]: 2
+[12:55:01] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:55:01] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:55:01] [Server thread/INFO]: 4
+[12:55:01] [Server thread/INFO]: 2
+[12:55:01] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2
+[12:55:01] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:55:01] [Server thread/INFO]: 2
+[12:55:01] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:55:01] [Server thread/INFO]: [QuestSystem] [STDOUT] NOT_STARTED
+[12:55:01] [Server thread/INFO]: 4
+[12:55:01] [Server thread/INFO]: 2
+[12:55:01] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2
+[12:55:01] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:55:01] [Server thread/INFO]: 2
+[12:55:03] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:55:03] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:55:03] [Server thread/INFO]: 4
+[12:55:03] [Server thread/INFO]: 2
+[12:55:03] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2
+[12:55:03] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:55:03] [Server thread/INFO]: 2
+[12:55:12] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:55:12] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:55:12] [Server thread/INFO]: 4
+[12:55:12] [Server thread/INFO]: 2
+[12:55:12] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2
+[12:55:12] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:55:12] [Server thread/INFO]: 2
+[12:55:25] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:55:25] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:55:25] [Server thread/INFO]: 4
+[12:55:25] [Server thread/INFO]: 0
+[12:55:25] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:55:25] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:55:25] [Server thread/INFO]: 4
+[12:57:08] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
+[12:57:08] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
+[12:57:08] [Server thread/INFO]: Using 4 threads for Netty based IO
+[12:57:08] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[12:57:08] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
+[12:57:08] [Server thread/INFO]: Shutting down
+[12:57:08] [Server thread/INFO]: Loaded 1174 recipes
+[12:57:08] [Server thread/INFO]: Loaded 1271 advancements
+[12:57:08] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[12:57:08] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[12:57:08] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[12:57:08] [Server thread/INFO]: Hello World
+[12:57:08] [Server thread/INFO]: CONSOLE: Reload complete.
+[12:57:08] [Server thread/INFO]: Timings Reset
+[12:57:12] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:57:12] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:57:12] [Server thread/INFO]: 4
+[12:57:12] [Server thread/INFO]: 0
+[12:57:12] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:57:12] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:12] [Server thread/INFO]: 4
+[12:57:13] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:57:13] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
+[12:57:13] [Server thread/INFO]: 4
+[12:57:13] [Server thread/INFO]: 0
+[12:57:13] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:57:13] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:13] [Server thread/INFO]: 0
+[12:57:14] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:57:14] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:57:14] [Server thread/INFO]: 4
+[12:57:14] [Server thread/INFO]: 0
+[12:57:14] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:57:14] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:14] [Server thread/INFO]: 4
+[12:57:17] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:57:17] [Server thread/INFO]: [QuestSystem] [STDOUT] All Quests
+[12:57:17] [Server thread/INFO]: 4
+[12:57:17] [Server thread/INFO]: 0
+[12:57:17] [Server thread/INFO]: [QuestSystem] [STDOUT] 
+[12:57:17] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:17] [Server thread/INFO]: 4
+[12:57:20] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:57:20] [Server thread/INFO]: [QuestSystem] [STDOUT] NOT_STARTED
+[12:57:20] [Server thread/INFO]: 4
+[12:57:20] [Server thread/INFO]: 3
+[12:57:20] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3
+[12:57:20] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:20] [Server thread/INFO]: 1
+[12:57:21] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:57:21] [Server thread/INFO]: [QuestSystem] [STDOUT] NOT_STARTED
+[12:57:21] [Server thread/INFO]: 4
+[12:57:21] [Server thread/INFO]: 4
+[12:57:21] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:21] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:21] [Server thread/INFO]: 0
+[12:57:22] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:57:22] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:57:22] [Server thread/INFO]: 4
+[12:57:22] [Server thread/INFO]: 4
+[12:57:22] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:22] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:22] [Server thread/INFO]: 4
+[12:57:23] [Server thread/INFO]: 4
+[12:57:23] [Server thread/INFO]: 8
+[12:57:23] [Server thread/INFO]: 2
+[12:57:23] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
+[12:57:23] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:57:23] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:57:23] [Server thread/INFO]: 4
+[12:57:23] [Server thread/INFO]: 4
+[12:57:23] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:23] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:23] [Server thread/INFO]: 4
+[12:57:24] [Server thread/INFO]: 2
+[12:57:24] [Server thread/INFO]: 6
+[12:57:24] [Server thread/INFO]: 2
+[12:57:24] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
+[12:57:24] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:57:24] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:57:24] [Server thread/INFO]: 4
+[12:57:24] [Server thread/INFO]: 4
+[12:57:24] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:24] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:24] [Server thread/INFO]: 4
+[12:57:24] [Server thread/INFO]: 1
+[12:57:24] [Server thread/INFO]: 2
+[12:57:24] [Server thread/INFO]: 2
+[12:57:24] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
+[12:57:24] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:57:24] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:57:24] [Server thread/INFO]: 4
+[12:57:24] [Server thread/INFO]: 4
+[12:57:24] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:24] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:24] [Server thread/INFO]: 4
+[12:57:25] [Server thread/INFO]: 1
+[12:57:25] [Server thread/INFO]: 2
+[12:57:25] [Server thread/INFO]: 2
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:57:25] [Server thread/INFO]: 4
+[12:57:25] [Server thread/INFO]: 4
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:25] [Server thread/INFO]: 4
+[12:57:25] [Server thread/INFO]: 3
+[12:57:25] [Server thread/INFO]: 7
+[12:57:25] [Server thread/INFO]: 2
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:57:25] [Server thread/INFO]: 4
+[12:57:25] [Server thread/INFO]: 4
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:25] [Server thread/INFO]: 4
+[12:57:25] [Server thread/INFO]: 3
+[12:57:25] [Server thread/INFO]: 7
+[12:57:25] [Server thread/INFO]: 2
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:57:25] [Server thread/INFO]: 4
+[12:57:25] [Server thread/INFO]: 4
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:25] [Server thread/INFO]: 4
+[12:57:25] [Server thread/INFO]: 4
+[12:57:25] [Server thread/INFO]: 8
+[12:57:25] [Server thread/INFO]: 2
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:57:25] [Server thread/INFO]: 4
+[12:57:25] [Server thread/INFO]: 4
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:25] [Server thread/INFO]: 4
+[12:57:25] [Server thread/INFO]: 4
+[12:57:25] [Server thread/INFO]: 8
+[12:57:25] [Server thread/INFO]: 2
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:57:25] [Server thread/INFO]: 4
+[12:57:25] [Server thread/INFO]: 4
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:25] [Server thread/INFO]: 4
+[12:57:25] [Server thread/INFO]: 4
+[12:57:25] [Server thread/INFO]: 8
+[12:57:25] [Server thread/INFO]: 2
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:57:25] [Server thread/INFO]: 4
+[12:57:25] [Server thread/INFO]: 4
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:25] [Server thread/INFO]: 4
+[12:57:25] [Server thread/INFO]: 3
+[12:57:25] [Server thread/INFO]: 7
+[12:57:25] [Server thread/INFO]: 2
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:57:25] [Server thread/INFO]: 4
+[12:57:25] [Server thread/INFO]: 4
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:25] [Server thread/INFO]: 4
+[12:57:25] [Server thread/INFO]: 3
+[12:57:25] [Server thread/INFO]: 7
+[12:57:25] [Server thread/INFO]: 2
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:57:25] [Server thread/INFO]: 4
+[12:57:25] [Server thread/INFO]: 4
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:25] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:25] [Server thread/INFO]: 4
+[12:57:26] [Server thread/INFO]: 2
+[12:57:26] [Server thread/INFO]: 6
+[12:57:26] [Server thread/INFO]: 2
+[12:57:26] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
+[12:57:26] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:57:26] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:57:26] [Server thread/INFO]: 4
+[12:57:26] [Server thread/INFO]: 4
+[12:57:26] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:26] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:26] [Server thread/INFO]: 4
+[12:57:26] [Server thread/INFO]: 1
+[12:57:26] [Server thread/INFO]: 2
+[12:57:26] [Server thread/INFO]: 2
+[12:57:26] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
+[12:57:26] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:57:26] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:57:26] [Server thread/INFO]: 4
+[12:57:26] [Server thread/INFO]: 4
+[12:57:26] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:26] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:26] [Server thread/INFO]: 4
+[12:57:26] [Server thread/INFO]: 1
+[12:57:26] [Server thread/INFO]: 2
+[12:57:26] [Server thread/INFO]: 2
+[12:57:26] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
+[12:57:26] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:57:26] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:57:26] [Server thread/INFO]: 4
+[12:57:26] [Server thread/INFO]: 4
+[12:57:26] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:26] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:26] [Server thread/INFO]: 4
+[12:57:26] [Server thread/INFO]: 1
+[12:57:26] [Server thread/INFO]: 2
+[12:57:26] [Server thread/INFO]: 2
+[12:57:26] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
+[12:57:26] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:57:26] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:57:26] [Server thread/INFO]: 4
+[12:57:26] [Server thread/INFO]: 4
+[12:57:26] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:26] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:26] [Server thread/INFO]: 4
+[12:57:26] [Server thread/INFO]: 2
+[12:57:26] [Server thread/INFO]: 6
+[12:57:26] [Server thread/INFO]: 2
+[12:57:26] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
+[12:57:26] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:57:26] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:57:26] [Server thread/INFO]: 4
+[12:57:26] [Server thread/INFO]: 4
+[12:57:26] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:26] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:26] [Server thread/INFO]: 4
+[12:57:26] [Server thread/INFO]: 4
+[12:57:26] [Server thread/INFO]: 8
+[12:57:26] [Server thread/INFO]: 2
+[12:57:26] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
+[12:57:26] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:57:26] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:57:26] [Server thread/INFO]: 4
+[12:57:26] [Server thread/INFO]: 4
+[12:57:26] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:26] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:26] [Server thread/INFO]: 4
+[12:57:27] [Server thread/ERROR]: Could not pass event InventoryClickEvent to QuestSystem v1.0.0
+java.lang.NullPointerException: Cannot invoke "net.kyori.adventure.text.TextComponent.content()" because the return value of "org.bukkit.inventory.meta.ItemMeta.displayName()" is null
+	at com.schotzgoblin.main.QuestNpc.onInventoryClick(QuestNpc.java:286) ~[QuestSystem-1.0.jar:?]
+	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor77.execute(Unknown Source) ~[?:?]
+	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:git-Paper-496]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54) ~[paper-1.20.4.jar:git-Paper-496]
+	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.handleContainerClick(ServerGamePacketListenerImpl.java:3119) ~[?:?]
+	at net.minecraft.network.protocol.game.ServerboundContainerClickPacket.handle(ServerboundContainerClickPacket.java:58) ~[?:?]
+	at net.minecraft.network.protocol.game.ServerboundContainerClickPacket.handle(ServerboundContainerClickPacket.java:25) ~[?:?]
+	at net.minecraft.network.protocol.PacketUtils.lambda$ensureRunningOnSameThread$0(PacketUtils.java:54) ~[?:?]
+	at net.minecraft.server.TickTask.run(TickTask.java:18) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:149) ~[?:?]
+	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[?:?]
+	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:1465) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:123) ~[?:?]
+	at net.minecraft.server.MinecraftServer.pollTaskInternal(MinecraftServer.java:1442) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.pollTask(MinecraftServer.java:1365) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:133) ~[?:?]
+	at net.minecraft.server.MinecraftServer.waitUntilNextTick(MinecraftServer.java:1343) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1232) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319) ~[paper-1.20.4.jar:git-Paper-496]
+	at java.lang.Thread.run(Thread.java:1583) ~[?:?]
+[12:57:27] [Server thread/INFO]: 4
+[12:57:27] [Server thread/INFO]: 8
+[12:57:27] [Server thread/INFO]: 2
+[12:57:27] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
+[12:57:27] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:57:27] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:57:27] [Server thread/INFO]: 4
+[12:57:27] [Server thread/INFO]: 4
+[12:57:27] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:27] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:27] [Server thread/INFO]: 4
+[12:57:27] [Server thread/INFO]: 3
+[12:57:27] [Server thread/INFO]: 7
+[12:57:27] [Server thread/INFO]: 2
+[12:57:27] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
+[12:57:27] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:57:27] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:57:27] [Server thread/INFO]: 4
+[12:57:27] [Server thread/INFO]: 4
+[12:57:27] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:27] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:27] [Server thread/INFO]: 4
+[12:57:28] [Server thread/INFO]: 2
+[12:57:28] [Server thread/INFO]: 6
+[12:57:28] [Server thread/INFO]: 2
+[12:57:28] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
+[12:57:28] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:57:28] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:57:28] [Server thread/INFO]: 4
+[12:57:28] [Server thread/INFO]: 4
+[12:57:28] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:28] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:28] [Server thread/INFO]: 4
+[12:57:28] [Server thread/INFO]: 2
+[12:57:28] [Server thread/INFO]: 6
+[12:57:28] [Server thread/INFO]: 2
+[12:57:28] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
+[12:57:28] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:57:28] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:57:28] [Server thread/INFO]: 4
+[12:57:28] [Server thread/INFO]: 4
+[12:57:28] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:28] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:28] [Server thread/INFO]: 4
+[12:57:28] [Server thread/INFO]: 2
+[12:57:28] [Server thread/INFO]: 6
+[12:57:28] [Server thread/INFO]: 2
+[12:57:28] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
+[12:57:28] [Server thread/INFO]: [QuestSystem] [STDOUT] --------------------
+[12:57:28] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[12:57:28] [Server thread/INFO]: 4
+[12:57:28] [Server thread/INFO]: 4
+[12:57:28] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:28] [Server thread/INFO]: [QuestSystem] [STDOUT] 1, 2, 3, 4
+[12:57:28] [Server thread/INFO]: 4
+[13:23:46] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
+[13:23:46] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
+[13:23:46] [Server thread/INFO]: Using 4 threads for Netty based IO
+[13:23:46] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[13:23:46] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
+[13:23:46] [Server thread/INFO]: Shutting down
+[13:23:47] [Server thread/INFO]: Loaded 1174 recipes
+[13:23:47] [Server thread/INFO]: Loaded 1271 advancements
+[13:23:47] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[13:23:47] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[13:23:47] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[13:23:47] [Server thread/INFO]: Hello World
+[13:23:47] [Server thread/INFO]: CONSOLE: Reload complete.
+[13:23:47] [Server thread/INFO]: Timings Reset
+[13:23:52] [Server thread/INFO]: 1
+[13:23:52] [Server thread/INFO]: 2
+[13:23:52] [Server thread/INFO]: 2
+[13:23:52] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
+[13:23:52] [Server thread/WARN]: Nag author(s): '[Schotzgoblin]' of 'QuestSystem v1.0.0' about their usage of System.out/err.print. Please use your plugin's logger instead (JavaPlugin#getLogger).
+[13:23:59] [Server thread/INFO]: 1
+[13:23:59] [Server thread/INFO]: 2
+[13:23:59] [Server thread/INFO]: 2
+[13:23:59] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
+[13:26:10] [Server thread/INFO]: Schotzgoblin issued server command: /quest create
+[13:26:22] [Server thread/INFO]: 4
+[13:26:22] [Server thread/INFO]: 8
+[13:26:22] [Server thread/INFO]: 2
+[13:26:22] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
+[13:27:24] [Server thread/ERROR]: Could not pass event InventoryClickEvent to QuestSystem v1.0.0
+java.lang.NullPointerException: Cannot invoke "net.kyori.adventure.text.TextComponent.content()" because the return value of "org.bukkit.inventory.meta.ItemMeta.displayName()" is null
+	at com.schotzgoblin.main.QuestNpc.onInventoryClick(QuestNpc.java:278) ~[QuestSystem-1.0.jar:?]
+	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor83.execute(Unknown Source) ~[?:?]
+	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:git-Paper-496]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54) ~[paper-1.20.4.jar:git-Paper-496]
+	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.handleContainerClick(ServerGamePacketListenerImpl.java:3119) ~[?:?]
+	at net.minecraft.network.protocol.game.ServerboundContainerClickPacket.handle(ServerboundContainerClickPacket.java:58) ~[?:?]
+	at net.minecraft.network.protocol.game.ServerboundContainerClickPacket.handle(ServerboundContainerClickPacket.java:25) ~[?:?]
+	at net.minecraft.network.protocol.PacketUtils.lambda$ensureRunningOnSameThread$0(PacketUtils.java:54) ~[?:?]
+	at net.minecraft.server.TickTask.run(TickTask.java:18) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:149) ~[?:?]
+	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[?:?]
+	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:1465) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:123) ~[?:?]
+	at net.minecraft.server.MinecraftServer.pollTaskInternal(MinecraftServer.java:1442) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.pollTask(MinecraftServer.java:1365) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:133) ~[?:?]
+	at net.minecraft.server.MinecraftServer.waitUntilNextTick(MinecraftServer.java:1343) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1232) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319) ~[paper-1.20.4.jar:git-Paper-496]
+	at java.lang.Thread.run(Thread.java:1583) ~[?:?]
+[13:33:20] [Server thread/INFO]: Schotzgoblin issued server command: /give Schotzgoblin arrow
+[13:33:20] [Server thread/INFO]: [Schotzgoblin: Gave 1 [Arrow] to Schotzgoblin]
+[13:34:08] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
+[13:34:08] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
+[13:34:08] [Server thread/INFO]: Using 4 threads for Netty based IO
+[13:34:08] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[13:34:08] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
+[13:34:08] [Server thread/INFO]: Shutting down
+[13:34:08] [Server thread/INFO]: Loaded 1174 recipes
+[13:34:08] [Server thread/INFO]: Loaded 1271 advancements
+[13:34:08] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[13:34:08] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[13:34:08] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[13:34:08] [Server thread/INFO]: Hello World
+[13:34:08] [Server thread/INFO]: CONSOLE: Reload complete.
+[13:34:08] [Server thread/INFO]: Timings Reset
+[13:36:21] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
+[13:36:21] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
+[13:36:21] [Server thread/INFO]: Using 4 threads for Netty based IO
+[13:36:21] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[13:36:21] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
+[13:36:21] [Server thread/INFO]: Shutting down
+[13:36:21] [Server thread/INFO]: Loaded 1174 recipes
+[13:36:21] [Server thread/INFO]: Loaded 1271 advancements
+[13:36:21] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[13:36:21] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[13:36:21] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[13:36:21] [Server thread/INFO]: Hello World
+[13:36:21] [Server thread/INFO]: CONSOLE: Reload complete.
+[13:36:21] [Server thread/INFO]: Timings Reset
+[13:39:32] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
+[13:39:32] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
+[13:39:32] [Server thread/INFO]: Using 4 threads for Netty based IO
+[13:39:32] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[13:39:32] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
+[13:39:32] [Server thread/INFO]: Shutting down
+[13:39:32] [Server thread/INFO]: Loaded 1174 recipes
+[13:39:32] [Server thread/INFO]: Loaded 1271 advancements
+[13:39:32] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[13:39:32] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[13:39:32] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[13:39:32] [Server thread/INFO]: Hello World
+[13:39:32] [Server thread/INFO]: CONSOLE: Reload complete.
+[13:39:32] [Server thread/INFO]: Timings Reset
+[13:42:06] [Server thread/ERROR]: Could not pass event InventoryClickEvent to QuestSystem v1.0.0
+java.lang.NullPointerException: Cannot invoke "net.kyori.adventure.text.TextComponent.content()" because the return value of "org.bukkit.inventory.meta.ItemMeta.displayName()" is null
+	at com.schotzgoblin.main.QuestNpc.onInventoryClick(QuestNpc.java:285) ~[QuestSystem-1.0.jar:?]
+	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor101.execute(Unknown Source) ~[?:?]
+	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:git-Paper-496]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54) ~[paper-1.20.4.jar:git-Paper-496]
+	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.handleContainerClick(ServerGamePacketListenerImpl.java:3119) ~[?:?]
+	at net.minecraft.network.protocol.game.ServerboundContainerClickPacket.handle(ServerboundContainerClickPacket.java:58) ~[?:?]
+	at net.minecraft.network.protocol.game.ServerboundContainerClickPacket.handle(ServerboundContainerClickPacket.java:25) ~[?:?]
+	at net.minecraft.network.protocol.PacketUtils.lambda$ensureRunningOnSameThread$0(PacketUtils.java:54) ~[?:?]
+	at net.minecraft.server.TickTask.run(TickTask.java:18) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:149) ~[?:?]
+	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[?:?]
+	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:1465) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:123) ~[?:?]
+	at net.minecraft.server.MinecraftServer.pollTaskInternal(MinecraftServer.java:1442) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.pollTask(MinecraftServer.java:1365) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:133) ~[?:?]
+	at net.minecraft.server.MinecraftServer.waitUntilNextTick(MinecraftServer.java:1343) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1232) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319) ~[paper-1.20.4.jar:git-Paper-496]
+	at java.lang.Thread.run(Thread.java:1583) ~[?:?]
+[13:48:31] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
+[13:48:31] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
+[13:48:31] [Server thread/INFO]: Using 4 threads for Netty based IO
+[13:48:31] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[13:48:31] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
+[13:48:31] [Server thread/INFO]: Shutting down
+[13:48:31] [Server thread/INFO]: Loaded 1174 recipes
+[13:48:32] [Server thread/INFO]: Loaded 1271 advancements
+[13:48:32] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[13:48:32] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[13:48:32] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[13:48:32] [Server thread/INFO]: Hello World
+[13:48:32] [Server thread/INFO]: CONSOLE: Reload complete.
+[13:48:32] [Server thread/INFO]: Timings Reset
+[13:48:38] [Server thread/INFO]: 4
+[13:48:38] [Server thread/INFO]: 8
+[13:48:38] [Server thread/INFO]: -1
+[13:48:38] [Server thread/INFO]: [QuestSystem] [STDOUT] IN PROGRESS
+[13:48:38] [Server thread/WARN]: Nag author(s): '[Schotzgoblin]' of 'QuestSystem v1.0.0' about their usage of System.out/err.print. Please use your plugin's logger instead (JavaPlugin#getLogger).
+[13:48:38] [Server thread/WARN]: java.lang.NullPointerException: Cannot invoke "com.schotzgoblin.database.QuestStatus.getStatus()" because the return value of "com.schotzgoblin.database.PlayerQuest.getQuestStatus()" is null
+[13:48:38] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.DatabaseHandler.getPlayerQuests(DatabaseHandler.java:219)
+[13:48:38] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.addQuestsToInventory(QuestNpc.java:99)
+[13:48:38] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.onInventoryClick(QuestNpc.java:301)
+[13:48:38] [Server thread/WARN]: 	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor107.execute(Unknown Source)
+[13:48:38] [Server thread/WARN]: 	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77)
+[13:48:38] [Server thread/WARN]: 	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81)
+[13:48:38] [Server thread/WARN]: 	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70)
+[13:48:38] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54)
+[13:48:38] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126)
+[13:48:38] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615)
+[13:48:38] [Server thread/WARN]: 	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:3119)
+[13:48:38] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:58)
+[13:48:38] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:25)
+[13:48:38] [Server thread/WARN]: 	at net.minecraft.network.protocol.PlayerConnectionUtils.lambda$ensureRunningOnSameThread$0(PlayerConnectionUtils.java:54)
+[13:48:38] [Server thread/WARN]: 	at net.minecraft.server.TickTask.run(TickTask.java:18)
+[13:48:38] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.d(IAsyncTaskHandler.java:149)
+[13:48:38] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandlerReentrant.d(IAsyncTaskHandlerReentrant.java:24)
+[13:48:38] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.b(MinecraftServer.java:1465)
+[13:48:38] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194)
+[13:48:38] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.x(IAsyncTaskHandler.java:123)
+[13:48:38] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.bl(MinecraftServer.java:1442)
+[13:48:38] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1365)
+[13:48:38] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.c(IAsyncTaskHandler.java:133)
+[13:48:38] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w_(MinecraftServer.java:1343)
+[13:48:38] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w(MinecraftServer.java:1232)
+[13:48:38] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319)
+[13:48:38] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1583)
+[13:48:39] [Server thread/WARN]: java.lang.NullPointerException: Cannot invoke "com.schotzgoblin.database.QuestStatus.getStatus()" because the return value of "com.schotzgoblin.database.PlayerQuest.getQuestStatus()" is null
+[13:48:39] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.DatabaseHandler.getPlayerQuests(DatabaseHandler.java:219)
+[13:48:39] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.addQuestsToInventory(QuestNpc.java:99)
+[13:48:39] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.onInventoryClick(QuestNpc.java:285)
+[13:48:39] [Server thread/WARN]: 	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor107.execute(Unknown Source)
+[13:48:39] [Server thread/WARN]: 	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77)
+[13:48:39] [Server thread/WARN]: 	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81)
+[13:48:39] [Server thread/WARN]: 	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70)
+[13:48:39] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54)
+[13:48:39] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126)
+[13:48:39] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615)
+[13:48:39] [Server thread/WARN]: 	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:3119)
+[13:48:39] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:58)
+[13:48:39] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:25)
+[13:48:39] [Server thread/WARN]: 	at net.minecraft.network.protocol.PlayerConnectionUtils.lambda$ensureRunningOnSameThread$0(PlayerConnectionUtils.java:54)
+[13:48:39] [Server thread/WARN]: 	at net.minecraft.server.TickTask.run(TickTask.java:18)
+[13:48:39] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.d(IAsyncTaskHandler.java:149)
+[13:48:39] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandlerReentrant.d(IAsyncTaskHandlerReentrant.java:24)
+[13:48:39] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.b(MinecraftServer.java:1465)
+[13:48:39] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194)
+[13:48:39] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.x(IAsyncTaskHandler.java:123)
+[13:48:39] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.bl(MinecraftServer.java:1442)
+[13:48:39] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1365)
+[13:48:39] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.c(IAsyncTaskHandler.java:133)
+[13:48:39] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w_(MinecraftServer.java:1343)
+[13:48:39] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w(MinecraftServer.java:1232)
+[13:48:39] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319)
+[13:48:39] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1583)
+[13:48:44] [Server thread/WARN]: java.lang.NullPointerException: Cannot invoke "com.schotzgoblin.database.QuestStatus.getStatus()" because the return value of "com.schotzgoblin.database.PlayerQuest.getQuestStatus()" is null
+[13:48:44] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.DatabaseHandler.getPlayerQuests(DatabaseHandler.java:219)
+[13:48:44] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.addQuestsToInventory(QuestNpc.java:99)
+[13:48:44] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.onInventoryClick(QuestNpc.java:285)
+[13:48:44] [Server thread/WARN]: 	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor107.execute(Unknown Source)
+[13:48:44] [Server thread/WARN]: 	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77)
+[13:48:44] [Server thread/WARN]: 	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81)
+[13:48:44] [Server thread/WARN]: 	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70)
+[13:48:44] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54)
+[13:48:44] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126)
+[13:48:44] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:3119)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:58)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:25)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.network.protocol.PlayerConnectionUtils.lambda$ensureRunningOnSameThread$0(PlayerConnectionUtils.java:54)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.TickTask.run(TickTask.java:18)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.d(IAsyncTaskHandler.java:149)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandlerReentrant.d(IAsyncTaskHandlerReentrant.java:24)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.b(MinecraftServer.java:1465)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.x(IAsyncTaskHandler.java:123)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.bl(MinecraftServer.java:1442)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1365)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.c(IAsyncTaskHandler.java:133)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w_(MinecraftServer.java:1343)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w(MinecraftServer.java:1232)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319)
+[13:48:44] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1583)
+[13:48:44] [Server thread/WARN]: java.lang.NullPointerException: Cannot invoke "com.schotzgoblin.database.QuestStatus.getStatus()" because the return value of "com.schotzgoblin.database.PlayerQuest.getQuestStatus()" is null
+[13:48:44] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.DatabaseHandler.getPlayerQuests(DatabaseHandler.java:219)
+[13:48:44] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.getQuestStatusComponent(QuestNpc.java:151)
+[13:48:44] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.createQuestItemStack(QuestNpc.java:128)
+[13:48:44] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.addQuestsToInventory(QuestNpc.java:114)
+[13:48:44] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.onInventoryClick(QuestNpc.java:285)
+[13:48:44] [Server thread/WARN]: 	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor107.execute(Unknown Source)
+[13:48:44] [Server thread/WARN]: 	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77)
+[13:48:44] [Server thread/WARN]: 	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81)
+[13:48:44] [Server thread/WARN]: 	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70)
+[13:48:44] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54)
+[13:48:44] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126)
+[13:48:44] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:3119)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:58)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:25)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.network.protocol.PlayerConnectionUtils.lambda$ensureRunningOnSameThread$0(PlayerConnectionUtils.java:54)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.TickTask.run(TickTask.java:18)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.d(IAsyncTaskHandler.java:149)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandlerReentrant.d(IAsyncTaskHandlerReentrant.java:24)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.b(MinecraftServer.java:1465)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.x(IAsyncTaskHandler.java:123)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.bl(MinecraftServer.java:1442)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1365)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.c(IAsyncTaskHandler.java:133)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w_(MinecraftServer.java:1343)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w(MinecraftServer.java:1232)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319)
+[13:48:44] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1583)
+[13:48:44] [Server thread/WARN]: java.lang.NullPointerException: Cannot invoke "com.schotzgoblin.database.QuestStatus.getStatus()" because the return value of "com.schotzgoblin.database.PlayerQuest.getQuestStatus()" is null
+[13:48:44] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.DatabaseHandler.getPlayerQuests(DatabaseHandler.java:219)
+[13:48:44] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.getQuestStatusComponent(QuestNpc.java:151)
+[13:48:44] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.createQuestItemStack(QuestNpc.java:128)
+[13:48:44] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.addQuestsToInventory(QuestNpc.java:114)
+[13:48:44] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.onInventoryClick(QuestNpc.java:285)
+[13:48:44] [Server thread/WARN]: 	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor107.execute(Unknown Source)
+[13:48:44] [Server thread/WARN]: 	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77)
+[13:48:44] [Server thread/WARN]: 	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81)
+[13:48:44] [Server thread/WARN]: 	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70)
+[13:48:44] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54)
+[13:48:44] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126)
+[13:48:44] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:3119)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:58)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:25)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.network.protocol.PlayerConnectionUtils.lambda$ensureRunningOnSameThread$0(PlayerConnectionUtils.java:54)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.TickTask.run(TickTask.java:18)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.d(IAsyncTaskHandler.java:149)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandlerReentrant.d(IAsyncTaskHandlerReentrant.java:24)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.b(MinecraftServer.java:1465)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.x(IAsyncTaskHandler.java:123)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.bl(MinecraftServer.java:1442)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1365)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.c(IAsyncTaskHandler.java:133)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w_(MinecraftServer.java:1343)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w(MinecraftServer.java:1232)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319)
+[13:48:44] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1583)
+[13:48:44] [Server thread/WARN]: java.lang.NullPointerException: Cannot invoke "com.schotzgoblin.database.QuestStatus.getStatus()" because the return value of "com.schotzgoblin.database.PlayerQuest.getQuestStatus()" is null
+[13:48:44] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.DatabaseHandler.getPlayerQuests(DatabaseHandler.java:219)
+[13:48:44] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.getQuestStatusComponent(QuestNpc.java:151)
+[13:48:44] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.createQuestItemStack(QuestNpc.java:128)
+[13:48:44] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.addQuestsToInventory(QuestNpc.java:114)
+[13:48:44] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.onInventoryClick(QuestNpc.java:285)
+[13:48:44] [Server thread/WARN]: 	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor107.execute(Unknown Source)
+[13:48:44] [Server thread/WARN]: 	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77)
+[13:48:44] [Server thread/WARN]: 	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81)
+[13:48:44] [Server thread/WARN]: 	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70)
+[13:48:44] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54)
+[13:48:44] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126)
+[13:48:44] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:3119)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:58)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:25)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.network.protocol.PlayerConnectionUtils.lambda$ensureRunningOnSameThread$0(PlayerConnectionUtils.java:54)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.TickTask.run(TickTask.java:18)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.d(IAsyncTaskHandler.java:149)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandlerReentrant.d(IAsyncTaskHandlerReentrant.java:24)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.b(MinecraftServer.java:1465)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.x(IAsyncTaskHandler.java:123)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.bl(MinecraftServer.java:1442)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1365)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.c(IAsyncTaskHandler.java:133)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w_(MinecraftServer.java:1343)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w(MinecraftServer.java:1232)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319)
+[13:48:44] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1583)
+[13:48:44] [Server thread/WARN]: java.lang.NullPointerException: Cannot invoke "com.schotzgoblin.database.QuestStatus.getStatus()" because the return value of "com.schotzgoblin.database.PlayerQuest.getQuestStatus()" is null
+[13:48:44] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.DatabaseHandler.getPlayerQuests(DatabaseHandler.java:219)
+[13:48:44] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.getQuestStatusComponent(QuestNpc.java:151)
+[13:48:44] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.createQuestItemStack(QuestNpc.java:128)
+[13:48:44] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.addQuestsToInventory(QuestNpc.java:114)
+[13:48:44] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.onInventoryClick(QuestNpc.java:285)
+[13:48:44] [Server thread/WARN]: 	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor107.execute(Unknown Source)
+[13:48:44] [Server thread/WARN]: 	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77)
+[13:48:44] [Server thread/WARN]: 	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81)
+[13:48:44] [Server thread/WARN]: 	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70)
+[13:48:44] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54)
+[13:48:44] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126)
+[13:48:44] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:3119)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:58)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:25)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.network.protocol.PlayerConnectionUtils.lambda$ensureRunningOnSameThread$0(PlayerConnectionUtils.java:54)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.TickTask.run(TickTask.java:18)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.d(IAsyncTaskHandler.java:149)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandlerReentrant.d(IAsyncTaskHandlerReentrant.java:24)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.b(MinecraftServer.java:1465)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.x(IAsyncTaskHandler.java:123)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.bl(MinecraftServer.java:1442)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1365)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.c(IAsyncTaskHandler.java:133)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w_(MinecraftServer.java:1343)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w(MinecraftServer.java:1232)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319)
+[13:48:44] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1583)
+[13:48:44] [Server thread/WARN]: java.lang.NullPointerException: Cannot invoke "com.schotzgoblin.database.QuestStatus.getStatus()" because the return value of "com.schotzgoblin.database.PlayerQuest.getQuestStatus()" is null
+[13:48:44] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.DatabaseHandler.getPlayerQuests(DatabaseHandler.java:219)
+[13:48:44] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.getQuestStatusComponent(QuestNpc.java:151)
+[13:48:44] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.createQuestItemStack(QuestNpc.java:128)
+[13:48:44] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.addQuestsToInventory(QuestNpc.java:114)
+[13:48:44] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.onInventoryClick(QuestNpc.java:285)
+[13:48:44] [Server thread/WARN]: 	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor107.execute(Unknown Source)
+[13:48:44] [Server thread/WARN]: 	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77)
+[13:48:44] [Server thread/WARN]: 	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81)
+[13:48:44] [Server thread/WARN]: 	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70)
+[13:48:44] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54)
+[13:48:44] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126)
+[13:48:44] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:3119)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:58)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:25)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.network.protocol.PlayerConnectionUtils.lambda$ensureRunningOnSameThread$0(PlayerConnectionUtils.java:54)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.TickTask.run(TickTask.java:18)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.d(IAsyncTaskHandler.java:149)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandlerReentrant.d(IAsyncTaskHandlerReentrant.java:24)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.b(MinecraftServer.java:1465)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.x(IAsyncTaskHandler.java:123)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.bl(MinecraftServer.java:1442)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1365)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.c(IAsyncTaskHandler.java:133)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w_(MinecraftServer.java:1343)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w(MinecraftServer.java:1232)
+[13:48:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319)
+[13:48:44] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1583)
+[13:48:45] [Server thread/INFO]: 1
+[13:48:45] [Server thread/INFO]: 2
+[13:48:45] [Server thread/INFO]: -1
+[13:48:45] [Server thread/INFO]: [QuestSystem] [STDOUT] IN PROGRESS
+[13:48:45] [Server thread/WARN]: java.lang.NullPointerException: Cannot invoke "com.schotzgoblin.database.QuestStatus.getStatus()" because the return value of "com.schotzgoblin.database.PlayerQuest.getQuestStatus()" is null
+[13:48:45] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.DatabaseHandler.getPlayerQuests(DatabaseHandler.java:219)
+[13:48:45] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.addQuestsToInventory(QuestNpc.java:99)
+[13:48:45] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.onInventoryClick(QuestNpc.java:301)
+[13:48:45] [Server thread/WARN]: 	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor107.execute(Unknown Source)
+[13:48:45] [Server thread/WARN]: 	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77)
+[13:48:45] [Server thread/WARN]: 	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81)
+[13:48:45] [Server thread/WARN]: 	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70)
+[13:48:45] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54)
+[13:48:45] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126)
+[13:48:45] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:3119)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:58)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:25)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.network.protocol.PlayerConnectionUtils.lambda$ensureRunningOnSameThread$0(PlayerConnectionUtils.java:54)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.TickTask.run(TickTask.java:18)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.d(IAsyncTaskHandler.java:149)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandlerReentrant.d(IAsyncTaskHandlerReentrant.java:24)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.b(MinecraftServer.java:1465)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.x(IAsyncTaskHandler.java:123)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.bl(MinecraftServer.java:1442)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1365)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.c(IAsyncTaskHandler.java:133)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w_(MinecraftServer.java:1343)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w(MinecraftServer.java:1232)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319)
+[13:48:45] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1583)
+[13:48:45] [Server thread/WARN]: java.lang.NullPointerException: Cannot invoke "com.schotzgoblin.database.QuestStatus.getStatus()" because the return value of "com.schotzgoblin.database.PlayerQuest.getQuestStatus()" is null
+[13:48:45] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.DatabaseHandler.getPlayerQuests(DatabaseHandler.java:219)
+[13:48:45] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.getQuestStatusComponent(QuestNpc.java:151)
+[13:48:45] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.createQuestItemStack(QuestNpc.java:128)
+[13:48:45] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.addQuestsToInventory(QuestNpc.java:114)
+[13:48:45] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.onInventoryClick(QuestNpc.java:301)
+[13:48:45] [Server thread/WARN]: 	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor107.execute(Unknown Source)
+[13:48:45] [Server thread/WARN]: 	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77)
+[13:48:45] [Server thread/WARN]: 	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81)
+[13:48:45] [Server thread/WARN]: 	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70)
+[13:48:45] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54)
+[13:48:45] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126)
+[13:48:45] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:3119)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:58)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:25)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.network.protocol.PlayerConnectionUtils.lambda$ensureRunningOnSameThread$0(PlayerConnectionUtils.java:54)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.TickTask.run(TickTask.java:18)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.d(IAsyncTaskHandler.java:149)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandlerReentrant.d(IAsyncTaskHandlerReentrant.java:24)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.b(MinecraftServer.java:1465)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.x(IAsyncTaskHandler.java:123)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.bl(MinecraftServer.java:1442)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1365)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.c(IAsyncTaskHandler.java:133)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w_(MinecraftServer.java:1343)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w(MinecraftServer.java:1232)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319)
+[13:48:45] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1583)
+[13:48:45] [Server thread/WARN]: java.lang.NullPointerException: Cannot invoke "com.schotzgoblin.database.QuestStatus.getStatus()" because the return value of "com.schotzgoblin.database.PlayerQuest.getQuestStatus()" is null
+[13:48:45] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.DatabaseHandler.getPlayerQuests(DatabaseHandler.java:219)
+[13:48:45] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.getQuestStatusComponent(QuestNpc.java:151)
+[13:48:45] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.createQuestItemStack(QuestNpc.java:128)
+[13:48:45] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.addQuestsToInventory(QuestNpc.java:114)
+[13:48:45] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.onInventoryClick(QuestNpc.java:301)
+[13:48:45] [Server thread/WARN]: 	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor107.execute(Unknown Source)
+[13:48:45] [Server thread/WARN]: 	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77)
+[13:48:45] [Server thread/WARN]: 	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81)
+[13:48:45] [Server thread/WARN]: 	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70)
+[13:48:45] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54)
+[13:48:45] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126)
+[13:48:45] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:3119)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:58)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:25)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.network.protocol.PlayerConnectionUtils.lambda$ensureRunningOnSameThread$0(PlayerConnectionUtils.java:54)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.TickTask.run(TickTask.java:18)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.d(IAsyncTaskHandler.java:149)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandlerReentrant.d(IAsyncTaskHandlerReentrant.java:24)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.b(MinecraftServer.java:1465)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.x(IAsyncTaskHandler.java:123)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.bl(MinecraftServer.java:1442)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1365)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.c(IAsyncTaskHandler.java:133)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w_(MinecraftServer.java:1343)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w(MinecraftServer.java:1232)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319)
+[13:48:45] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1583)
+[13:48:45] [Server thread/WARN]: java.lang.NullPointerException: Cannot invoke "com.schotzgoblin.database.QuestStatus.getStatus()" because the return value of "com.schotzgoblin.database.PlayerQuest.getQuestStatus()" is null
+[13:48:45] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.DatabaseHandler.getPlayerQuests(DatabaseHandler.java:219)
+[13:48:45] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.getQuestStatusComponent(QuestNpc.java:151)
+[13:48:45] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.createQuestItemStack(QuestNpc.java:128)
+[13:48:45] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.addQuestsToInventory(QuestNpc.java:114)
+[13:48:45] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.onInventoryClick(QuestNpc.java:301)
+[13:48:45] [Server thread/WARN]: 	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor107.execute(Unknown Source)
+[13:48:45] [Server thread/WARN]: 	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77)
+[13:48:45] [Server thread/WARN]: 	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81)
+[13:48:45] [Server thread/WARN]: 	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70)
+[13:48:45] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54)
+[13:48:45] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126)
+[13:48:45] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:3119)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:58)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:25)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.network.protocol.PlayerConnectionUtils.lambda$ensureRunningOnSameThread$0(PlayerConnectionUtils.java:54)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.TickTask.run(TickTask.java:18)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.d(IAsyncTaskHandler.java:149)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandlerReentrant.d(IAsyncTaskHandlerReentrant.java:24)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.b(MinecraftServer.java:1465)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.x(IAsyncTaskHandler.java:123)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.bl(MinecraftServer.java:1442)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1365)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.c(IAsyncTaskHandler.java:133)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w_(MinecraftServer.java:1343)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w(MinecraftServer.java:1232)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319)
+[13:48:45] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1583)
+[13:48:45] [Server thread/WARN]: java.lang.NullPointerException: Cannot invoke "com.schotzgoblin.database.QuestStatus.getStatus()" because the return value of "com.schotzgoblin.database.PlayerQuest.getQuestStatus()" is null
+[13:48:45] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.DatabaseHandler.getPlayerQuests(DatabaseHandler.java:219)
+[13:48:45] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.getQuestStatusComponent(QuestNpc.java:151)
+[13:48:45] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.createQuestItemStack(QuestNpc.java:128)
+[13:48:45] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.addQuestsToInventory(QuestNpc.java:114)
+[13:48:45] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.onInventoryClick(QuestNpc.java:301)
+[13:48:45] [Server thread/WARN]: 	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor107.execute(Unknown Source)
+[13:48:45] [Server thread/WARN]: 	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77)
+[13:48:45] [Server thread/WARN]: 	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81)
+[13:48:45] [Server thread/WARN]: 	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70)
+[13:48:45] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54)
+[13:48:45] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126)
+[13:48:45] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:3119)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:58)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:25)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.network.protocol.PlayerConnectionUtils.lambda$ensureRunningOnSameThread$0(PlayerConnectionUtils.java:54)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.TickTask.run(TickTask.java:18)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.d(IAsyncTaskHandler.java:149)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandlerReentrant.d(IAsyncTaskHandlerReentrant.java:24)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.b(MinecraftServer.java:1465)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.x(IAsyncTaskHandler.java:123)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.bl(MinecraftServer.java:1442)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1365)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.c(IAsyncTaskHandler.java:133)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w_(MinecraftServer.java:1343)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w(MinecraftServer.java:1232)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319)
+[13:48:45] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1583)
+[13:48:45] [Server thread/WARN]: java.lang.NullPointerException: Cannot invoke "com.schotzgoblin.database.QuestStatus.getStatus()" because the return value of "com.schotzgoblin.database.PlayerQuest.getQuestStatus()" is null
+[13:48:45] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.DatabaseHandler.getPlayerQuests(DatabaseHandler.java:219)
+[13:48:45] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.getQuestStatusComponent(QuestNpc.java:151)
+[13:48:45] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.createQuestItemStack(QuestNpc.java:128)
+[13:48:45] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.addQuestsToInventory(QuestNpc.java:114)
+[13:48:45] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.onInventoryClick(QuestNpc.java:301)
+[13:48:45] [Server thread/WARN]: 	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor107.execute(Unknown Source)
+[13:48:45] [Server thread/WARN]: 	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77)
+[13:48:45] [Server thread/WARN]: 	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81)
+[13:48:45] [Server thread/WARN]: 	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70)
+[13:48:45] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54)
+[13:48:45] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126)
+[13:48:45] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:3119)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:58)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:25)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.network.protocol.PlayerConnectionUtils.lambda$ensureRunningOnSameThread$0(PlayerConnectionUtils.java:54)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.TickTask.run(TickTask.java:18)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.d(IAsyncTaskHandler.java:149)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandlerReentrant.d(IAsyncTaskHandlerReentrant.java:24)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.b(MinecraftServer.java:1465)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.x(IAsyncTaskHandler.java:123)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.bl(MinecraftServer.java:1442)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1365)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.c(IAsyncTaskHandler.java:133)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w_(MinecraftServer.java:1343)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w(MinecraftServer.java:1232)
+[13:48:45] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319)
+[13:48:45] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1583)
+[13:48:48] [Server thread/WARN]: java.lang.NullPointerException: Cannot invoke "com.schotzgoblin.database.QuestStatus.getStatus()" because the return value of "com.schotzgoblin.database.PlayerQuest.getQuestStatus()" is null
+[13:48:48] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.DatabaseHandler.getPlayerQuests(DatabaseHandler.java:219)
+[13:48:48] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.addQuestsToInventory(QuestNpc.java:99)
+[13:48:48] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.onInventoryClick(QuestNpc.java:301)
+[13:48:48] [Server thread/WARN]: 	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor107.execute(Unknown Source)
+[13:48:48] [Server thread/WARN]: 	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77)
+[13:48:48] [Server thread/WARN]: 	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81)
+[13:48:48] [Server thread/WARN]: 	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70)
+[13:48:48] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54)
+[13:48:48] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126)
+[13:48:48] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:3119)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:58)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:25)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.network.protocol.PlayerConnectionUtils.lambda$ensureRunningOnSameThread$0(PlayerConnectionUtils.java:54)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.TickTask.run(TickTask.java:18)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.d(IAsyncTaskHandler.java:149)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandlerReentrant.d(IAsyncTaskHandlerReentrant.java:24)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.b(MinecraftServer.java:1465)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.x(IAsyncTaskHandler.java:123)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.bl(MinecraftServer.java:1442)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1365)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.c(IAsyncTaskHandler.java:133)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w_(MinecraftServer.java:1343)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w(MinecraftServer.java:1232)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319)
+[13:48:48] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1583)
+[13:48:48] [Server thread/WARN]: java.lang.NullPointerException: Cannot invoke "com.schotzgoblin.database.QuestStatus.getStatus()" because the return value of "com.schotzgoblin.database.PlayerQuest.getQuestStatus()" is null
+[13:48:48] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.DatabaseHandler.getPlayerQuests(DatabaseHandler.java:219)
+[13:48:48] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.getQuestStatusComponent(QuestNpc.java:151)
+[13:48:48] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.createQuestItemStack(QuestNpc.java:128)
+[13:48:48] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.addQuestsToInventory(QuestNpc.java:114)
+[13:48:48] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.onInventoryClick(QuestNpc.java:301)
+[13:48:48] [Server thread/WARN]: 	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor107.execute(Unknown Source)
+[13:48:48] [Server thread/WARN]: 	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77)
+[13:48:48] [Server thread/WARN]: 	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81)
+[13:48:48] [Server thread/WARN]: 	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70)
+[13:48:48] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54)
+[13:48:48] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126)
+[13:48:48] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:3119)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:58)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:25)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.network.protocol.PlayerConnectionUtils.lambda$ensureRunningOnSameThread$0(PlayerConnectionUtils.java:54)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.TickTask.run(TickTask.java:18)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.d(IAsyncTaskHandler.java:149)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandlerReentrant.d(IAsyncTaskHandlerReentrant.java:24)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.b(MinecraftServer.java:1465)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.x(IAsyncTaskHandler.java:123)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.bl(MinecraftServer.java:1442)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1365)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.c(IAsyncTaskHandler.java:133)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w_(MinecraftServer.java:1343)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w(MinecraftServer.java:1232)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319)
+[13:48:48] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1583)
+[13:48:48] [Server thread/WARN]: java.lang.NullPointerException: Cannot invoke "com.schotzgoblin.database.QuestStatus.getStatus()" because the return value of "com.schotzgoblin.database.PlayerQuest.getQuestStatus()" is null
+[13:48:48] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.DatabaseHandler.getPlayerQuests(DatabaseHandler.java:219)
+[13:48:48] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.getQuestStatusComponent(QuestNpc.java:151)
+[13:48:48] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.createQuestItemStack(QuestNpc.java:128)
+[13:48:48] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.addQuestsToInventory(QuestNpc.java:114)
+[13:48:48] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.onInventoryClick(QuestNpc.java:301)
+[13:48:48] [Server thread/WARN]: 	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor107.execute(Unknown Source)
+[13:48:48] [Server thread/WARN]: 	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77)
+[13:48:48] [Server thread/WARN]: 	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81)
+[13:48:48] [Server thread/WARN]: 	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70)
+[13:48:48] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54)
+[13:48:48] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126)
+[13:48:48] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:3119)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:58)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:25)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.network.protocol.PlayerConnectionUtils.lambda$ensureRunningOnSameThread$0(PlayerConnectionUtils.java:54)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.TickTask.run(TickTask.java:18)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.d(IAsyncTaskHandler.java:149)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandlerReentrant.d(IAsyncTaskHandlerReentrant.java:24)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.b(MinecraftServer.java:1465)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.x(IAsyncTaskHandler.java:123)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.bl(MinecraftServer.java:1442)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1365)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.c(IAsyncTaskHandler.java:133)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w_(MinecraftServer.java:1343)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w(MinecraftServer.java:1232)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319)
+[13:48:48] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1583)
+[13:48:48] [Server thread/WARN]: java.lang.NullPointerException: Cannot invoke "com.schotzgoblin.database.QuestStatus.getStatus()" because the return value of "com.schotzgoblin.database.PlayerQuest.getQuestStatus()" is null
+[13:48:48] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.DatabaseHandler.getPlayerQuests(DatabaseHandler.java:219)
+[13:48:48] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.getQuestStatusComponent(QuestNpc.java:151)
+[13:48:48] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.createQuestItemStack(QuestNpc.java:128)
+[13:48:48] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.addQuestsToInventory(QuestNpc.java:114)
+[13:48:48] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.onInventoryClick(QuestNpc.java:301)
+[13:48:48] [Server thread/WARN]: 	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor107.execute(Unknown Source)
+[13:48:48] [Server thread/WARN]: 	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77)
+[13:48:48] [Server thread/WARN]: 	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81)
+[13:48:48] [Server thread/WARN]: 	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70)
+[13:48:48] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54)
+[13:48:48] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126)
+[13:48:48] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:3119)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:58)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:25)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.network.protocol.PlayerConnectionUtils.lambda$ensureRunningOnSameThread$0(PlayerConnectionUtils.java:54)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.TickTask.run(TickTask.java:18)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.d(IAsyncTaskHandler.java:149)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandlerReentrant.d(IAsyncTaskHandlerReentrant.java:24)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.b(MinecraftServer.java:1465)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.x(IAsyncTaskHandler.java:123)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.bl(MinecraftServer.java:1442)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1365)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.c(IAsyncTaskHandler.java:133)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w_(MinecraftServer.java:1343)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w(MinecraftServer.java:1232)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319)
+[13:48:48] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1583)
+[13:48:48] [Server thread/WARN]: java.lang.NullPointerException: Cannot invoke "com.schotzgoblin.database.QuestStatus.getStatus()" because the return value of "com.schotzgoblin.database.PlayerQuest.getQuestStatus()" is null
+[13:48:48] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.DatabaseHandler.getPlayerQuests(DatabaseHandler.java:219)
+[13:48:48] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.getQuestStatusComponent(QuestNpc.java:151)
+[13:48:48] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.createQuestItemStack(QuestNpc.java:128)
+[13:48:48] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.addQuestsToInventory(QuestNpc.java:114)
+[13:48:48] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.onInventoryClick(QuestNpc.java:301)
+[13:48:48] [Server thread/WARN]: 	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor107.execute(Unknown Source)
+[13:48:48] [Server thread/WARN]: 	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77)
+[13:48:48] [Server thread/WARN]: 	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81)
+[13:48:48] [Server thread/WARN]: 	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70)
+[13:48:48] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54)
+[13:48:48] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126)
+[13:48:48] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:3119)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:58)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:25)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.network.protocol.PlayerConnectionUtils.lambda$ensureRunningOnSameThread$0(PlayerConnectionUtils.java:54)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.TickTask.run(TickTask.java:18)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.d(IAsyncTaskHandler.java:149)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandlerReentrant.d(IAsyncTaskHandlerReentrant.java:24)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.b(MinecraftServer.java:1465)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.x(IAsyncTaskHandler.java:123)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.bl(MinecraftServer.java:1442)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1365)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.c(IAsyncTaskHandler.java:133)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w_(MinecraftServer.java:1343)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w(MinecraftServer.java:1232)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319)
+[13:48:48] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1583)
+[13:48:48] [Server thread/WARN]: java.lang.NullPointerException: Cannot invoke "com.schotzgoblin.database.QuestStatus.getStatus()" because the return value of "com.schotzgoblin.database.PlayerQuest.getQuestStatus()" is null
+[13:48:48] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.DatabaseHandler.getPlayerQuests(DatabaseHandler.java:219)
+[13:48:48] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.getQuestStatusComponent(QuestNpc.java:151)
+[13:48:48] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.createQuestItemStack(QuestNpc.java:128)
+[13:48:48] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.addQuestsToInventory(QuestNpc.java:114)
+[13:48:48] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.onInventoryClick(QuestNpc.java:301)
+[13:48:48] [Server thread/WARN]: 	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor107.execute(Unknown Source)
+[13:48:48] [Server thread/WARN]: 	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77)
+[13:48:48] [Server thread/WARN]: 	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81)
+[13:48:48] [Server thread/WARN]: 	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70)
+[13:48:48] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54)
+[13:48:48] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126)
+[13:48:48] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:3119)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:58)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:25)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.network.protocol.PlayerConnectionUtils.lambda$ensureRunningOnSameThread$0(PlayerConnectionUtils.java:54)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.TickTask.run(TickTask.java:18)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.d(IAsyncTaskHandler.java:149)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandlerReentrant.d(IAsyncTaskHandlerReentrant.java:24)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.b(MinecraftServer.java:1465)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.x(IAsyncTaskHandler.java:123)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.bl(MinecraftServer.java:1442)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1365)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.c(IAsyncTaskHandler.java:133)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w_(MinecraftServer.java:1343)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w(MinecraftServer.java:1232)
+[13:48:48] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319)
+[13:48:48] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1583)
+[13:48:51] [Server thread/WARN]: java.lang.NullPointerException: Cannot invoke "com.schotzgoblin.database.QuestStatus.getStatus()" because the return value of "com.schotzgoblin.database.PlayerQuest.getQuestStatus()" is null
+[13:48:51] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.DatabaseHandler.getPlayerQuests(DatabaseHandler.java:219)
+[13:48:51] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.addQuestsToInventory(QuestNpc.java:99)
+[13:48:51] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.onInventoryClick(QuestNpc.java:285)
+[13:48:51] [Server thread/WARN]: 	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor107.execute(Unknown Source)
+[13:48:51] [Server thread/WARN]: 	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77)
+[13:48:51] [Server thread/WARN]: 	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81)
+[13:48:51] [Server thread/WARN]: 	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70)
+[13:48:51] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54)
+[13:48:51] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126)
+[13:48:51] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615)
+[13:48:51] [Server thread/WARN]: 	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:3119)
+[13:48:51] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:58)
+[13:48:51] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:25)
+[13:48:51] [Server thread/WARN]: 	at net.minecraft.network.protocol.PlayerConnectionUtils.lambda$ensureRunningOnSameThread$0(PlayerConnectionUtils.java:54)
+[13:48:51] [Server thread/WARN]: 	at net.minecraft.server.TickTask.run(TickTask.java:18)
+[13:48:51] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.d(IAsyncTaskHandler.java:149)
+[13:48:51] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandlerReentrant.d(IAsyncTaskHandlerReentrant.java:24)
+[13:48:51] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.b(MinecraftServer.java:1465)
+[13:48:51] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194)
+[13:48:51] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.x(IAsyncTaskHandler.java:123)
+[13:48:51] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.bl(MinecraftServer.java:1442)
+[13:48:51] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1365)
+[13:48:51] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.c(IAsyncTaskHandler.java:133)
+[13:48:51] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w_(MinecraftServer.java:1343)
+[13:48:51] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w(MinecraftServer.java:1232)
+[13:48:51] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319)
+[13:48:51] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1583)
+[13:48:52] [Server thread/WARN]: java.lang.NullPointerException: Cannot invoke "com.schotzgoblin.database.QuestStatus.getStatus()" because the return value of "com.schotzgoblin.database.PlayerQuest.getQuestStatus()" is null
+[13:48:52] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.DatabaseHandler.getPlayerQuests(DatabaseHandler.java:219)
+[13:48:52] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.addQuestsToInventory(QuestNpc.java:99)
+[13:48:52] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.onInventoryClick(QuestNpc.java:285)
+[13:48:52] [Server thread/WARN]: 	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor107.execute(Unknown Source)
+[13:48:52] [Server thread/WARN]: 	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77)
+[13:48:52] [Server thread/WARN]: 	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81)
+[13:48:52] [Server thread/WARN]: 	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70)
+[13:48:52] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54)
+[13:48:52] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126)
+[13:48:52] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615)
+[13:48:52] [Server thread/WARN]: 	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:3119)
+[13:48:52] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:58)
+[13:48:52] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:25)
+[13:48:52] [Server thread/WARN]: 	at net.minecraft.network.protocol.PlayerConnectionUtils.lambda$ensureRunningOnSameThread$0(PlayerConnectionUtils.java:54)
+[13:48:52] [Server thread/WARN]: 	at net.minecraft.server.TickTask.run(TickTask.java:18)
+[13:48:52] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.d(IAsyncTaskHandler.java:149)
+[13:48:52] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandlerReentrant.d(IAsyncTaskHandlerReentrant.java:24)
+[13:48:52] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.b(MinecraftServer.java:1465)
+[13:48:52] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194)
+[13:48:52] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.x(IAsyncTaskHandler.java:123)
+[13:48:52] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.bl(MinecraftServer.java:1442)
+[13:48:52] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1365)
+[13:48:52] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.c(IAsyncTaskHandler.java:133)
+[13:48:52] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w_(MinecraftServer.java:1343)
+[13:48:52] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w(MinecraftServer.java:1232)
+[13:48:52] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319)
+[13:48:52] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1583)
+[13:48:53] [Server thread/WARN]: java.lang.NullPointerException: Cannot invoke "com.schotzgoblin.database.QuestStatus.getStatus()" because the return value of "com.schotzgoblin.database.PlayerQuest.getQuestStatus()" is null
+[13:48:53] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.DatabaseHandler.getPlayerQuests(DatabaseHandler.java:219)
+[13:48:53] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.addQuestsToInventory(QuestNpc.java:99)
+[13:48:53] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.onInventoryClick(QuestNpc.java:285)
+[13:48:53] [Server thread/WARN]: 	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor107.execute(Unknown Source)
+[13:48:53] [Server thread/WARN]: 	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77)
+[13:48:53] [Server thread/WARN]: 	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81)
+[13:48:53] [Server thread/WARN]: 	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70)
+[13:48:53] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54)
+[13:48:53] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126)
+[13:48:53] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615)
+[13:48:53] [Server thread/WARN]: 	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:3119)
+[13:48:53] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:58)
+[13:48:53] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:25)
+[13:48:53] [Server thread/WARN]: 	at net.minecraft.network.protocol.PlayerConnectionUtils.lambda$ensureRunningOnSameThread$0(PlayerConnectionUtils.java:54)
+[13:48:53] [Server thread/WARN]: 	at net.minecraft.server.TickTask.run(TickTask.java:18)
+[13:48:53] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.d(IAsyncTaskHandler.java:149)
+[13:48:53] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandlerReentrant.d(IAsyncTaskHandlerReentrant.java:24)
+[13:48:53] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.b(MinecraftServer.java:1465)
+[13:48:53] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194)
+[13:48:53] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.x(IAsyncTaskHandler.java:123)
+[13:48:53] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.bl(MinecraftServer.java:1442)
+[13:48:53] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1365)
+[13:48:53] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.c(IAsyncTaskHandler.java:133)
+[13:48:53] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w_(MinecraftServer.java:1343)
+[13:48:53] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w(MinecraftServer.java:1232)
+[13:48:53] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319)
+[13:48:53] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1583)
+[13:48:54] [Server thread/WARN]: java.lang.NullPointerException: Cannot invoke "com.schotzgoblin.database.QuestStatus.getStatus()" because the return value of "com.schotzgoblin.database.PlayerQuest.getQuestStatus()" is null
+[13:48:54] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.DatabaseHandler.getPlayerQuests(DatabaseHandler.java:219)
+[13:48:54] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.addQuestsToInventory(QuestNpc.java:99)
+[13:48:54] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.onInventoryClick(QuestNpc.java:301)
+[13:48:54] [Server thread/WARN]: 	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor107.execute(Unknown Source)
+[13:48:54] [Server thread/WARN]: 	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77)
+[13:48:54] [Server thread/WARN]: 	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81)
+[13:48:54] [Server thread/WARN]: 	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70)
+[13:48:54] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54)
+[13:48:54] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126)
+[13:48:54] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615)
+[13:48:54] [Server thread/WARN]: 	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:3119)
+[13:48:54] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:58)
+[13:48:54] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:25)
+[13:48:54] [Server thread/WARN]: 	at net.minecraft.network.protocol.PlayerConnectionUtils.lambda$ensureRunningOnSameThread$0(PlayerConnectionUtils.java:54)
+[13:48:54] [Server thread/WARN]: 	at net.minecraft.server.TickTask.run(TickTask.java:18)
+[13:48:54] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.d(IAsyncTaskHandler.java:149)
+[13:48:54] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandlerReentrant.d(IAsyncTaskHandlerReentrant.java:24)
+[13:48:54] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.b(MinecraftServer.java:1465)
+[13:48:54] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194)
+[13:48:54] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.x(IAsyncTaskHandler.java:123)
+[13:48:54] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.bl(MinecraftServer.java:1442)
+[13:48:54] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1365)
+[13:48:54] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.bu(IAsyncTaskHandler.java:112)
+[13:48:54] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.a(MinecraftServer.java:1557)
+[13:48:54] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w(MinecraftServer.java:1226)
+[13:48:54] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319)
+[13:48:54] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1583)
+[13:48:54] [Server thread/WARN]: java.lang.NullPointerException: Cannot invoke "com.schotzgoblin.database.QuestStatus.getStatus()" because the return value of "com.schotzgoblin.database.PlayerQuest.getQuestStatus()" is null
+[13:48:54] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.DatabaseHandler.getPlayerQuests(DatabaseHandler.java:219)
+[13:48:54] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.addQuestsToInventory(QuestNpc.java:99)
+[13:48:54] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.onInventoryClick(QuestNpc.java:301)
+[13:48:54] [Server thread/WARN]: 	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor107.execute(Unknown Source)
+[13:48:54] [Server thread/WARN]: 	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77)
+[13:48:54] [Server thread/WARN]: 	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81)
+[13:48:54] [Server thread/WARN]: 	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70)
+[13:48:54] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54)
+[13:48:54] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126)
+[13:48:54] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615)
+[13:48:54] [Server thread/WARN]: 	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:3119)
+[13:48:54] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:58)
+[13:48:54] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:25)
+[13:48:54] [Server thread/WARN]: 	at net.minecraft.network.protocol.PlayerConnectionUtils.lambda$ensureRunningOnSameThread$0(PlayerConnectionUtils.java:54)
+[13:48:54] [Server thread/WARN]: 	at net.minecraft.server.TickTask.run(TickTask.java:18)
+[13:48:54] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.d(IAsyncTaskHandler.java:149)
+[13:48:54] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandlerReentrant.d(IAsyncTaskHandlerReentrant.java:24)
+[13:48:54] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.b(MinecraftServer.java:1465)
+[13:48:54] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194)
+[13:48:54] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.x(IAsyncTaskHandler.java:123)
+[13:48:54] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.bl(MinecraftServer.java:1442)
+[13:48:54] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1365)
+[13:48:54] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.c(IAsyncTaskHandler.java:133)
+[13:48:54] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w_(MinecraftServer.java:1343)
+[13:48:54] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w(MinecraftServer.java:1232)
+[13:48:54] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319)
+[13:48:54] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1583)
+[13:48:55] [Server thread/WARN]: java.lang.NullPointerException: Cannot invoke "com.schotzgoblin.database.QuestStatus.getStatus()" because the return value of "com.schotzgoblin.database.PlayerQuest.getQuestStatus()" is null
+[13:48:55] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.DatabaseHandler.getPlayerQuests(DatabaseHandler.java:219)
+[13:48:55] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.addQuestsToInventory(QuestNpc.java:99)
+[13:48:55] [Server thread/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestNpc.onInventoryClick(QuestNpc.java:301)
+[13:48:55] [Server thread/WARN]: 	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor107.execute(Unknown Source)
+[13:48:55] [Server thread/WARN]: 	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77)
+[13:48:55] [Server thread/WARN]: 	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81)
+[13:48:55] [Server thread/WARN]: 	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70)
+[13:48:55] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54)
+[13:48:55] [Server thread/WARN]: 	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126)
+[13:48:55] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615)
+[13:48:55] [Server thread/WARN]: 	at net.minecraft.server.network.PlayerConnection.a(PlayerConnection.java:3119)
+[13:48:55] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:58)
+[13:48:55] [Server thread/WARN]: 	at net.minecraft.network.protocol.game.PacketPlayInWindowClick.a(PacketPlayInWindowClick.java:25)
+[13:48:55] [Server thread/WARN]: 	at net.minecraft.network.protocol.PlayerConnectionUtils.lambda$ensureRunningOnSameThread$0(PlayerConnectionUtils.java:54)
+[13:48:55] [Server thread/WARN]: 	at net.minecraft.server.TickTask.run(TickTask.java:18)
+[13:48:55] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.d(IAsyncTaskHandler.java:149)
+[13:48:55] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandlerReentrant.d(IAsyncTaskHandlerReentrant.java:24)
+[13:48:55] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.b(MinecraftServer.java:1465)
+[13:48:55] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194)
+[13:48:55] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.x(IAsyncTaskHandler.java:123)
+[13:48:55] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.bl(MinecraftServer.java:1442)
+[13:48:55] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1365)
+[13:48:55] [Server thread/WARN]: 	at net.minecraft.util.thread.IAsyncTaskHandler.c(IAsyncTaskHandler.java:133)
+[13:48:55] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w_(MinecraftServer.java:1343)
+[13:48:55] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w(MinecraftServer.java:1232)
+[13:48:55] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319)
+[13:48:55] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1583)
+[13:52:49] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
+[13:52:49] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
+[13:52:49] [Server thread/INFO]: Using 4 threads for Netty based IO
+[13:52:49] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[13:52:49] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
+[13:52:49] [Server thread/INFO]: Shutting down
+[13:52:49] [Server thread/INFO]: Loaded 1174 recipes
+[13:52:49] [Server thread/INFO]: Loaded 1271 advancements
+[13:52:49] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[13:52:49] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[13:52:49] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[13:52:49] [Server thread/INFO]: Hello World
+[13:52:49] [Server thread/INFO]: CONSOLE: Reload complete.
+[13:52:49] [Server thread/INFO]: Timings Reset
+[13:53:12] [Server thread/INFO]: 1
+[13:53:12] [Server thread/INFO]: 2
+[13:53:12] [Server thread/INFO]: 2
+[13:53:12] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
+[13:53:14] [Server thread/INFO]: 1
+[13:53:14] [Server thread/INFO]: 2
+[13:53:14] [Server thread/INFO]: 3
+[13:53:14] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[13:53:15] [Server thread/INFO]: 2
+[13:53:15] [Server thread/INFO]: 6
+[13:53:15] [Server thread/INFO]: 2
+[13:53:15] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
+[13:53:16] [Server thread/INFO]: 2
+[13:53:16] [Server thread/INFO]: 6
+[13:53:16] [Server thread/INFO]: 3
+[13:53:16] [Server thread/INFO]: [QuestSystem] [STDOUT] IN_PROGRESS
+[13:53:19] [Server thread/INFO]: 4
+[13:53:19] [Server thread/INFO]: 8
+[13:53:19] [Server thread/INFO]: 2
+[13:53:19] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
+[13:53:23] [Server thread/INFO]: 1
+[13:53:23] [Server thread/INFO]: 2
+[13:53:23] [Server thread/INFO]: 2
+[13:53:23] [Server thread/INFO]: [QuestSystem] [STDOUT] CANCELED
