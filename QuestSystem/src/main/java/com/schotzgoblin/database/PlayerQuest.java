@@ -1,6 +1,8 @@
 package com.schotzgoblin.database;
 
 
+import java.util.Objects;
+
 public class PlayerQuest implements Identifiable {
     private int id;
 
@@ -9,6 +11,7 @@ public class PlayerQuest implements Identifiable {
     private Quest quest;
     private int questId;
     private int time;
+    private int progress;
 
 
     private QuestStatus questStatus;
@@ -29,6 +32,14 @@ public class PlayerQuest implements Identifiable {
 
     public void setTime(int time) {
         this.time = time;
+    }
+
+    public int getProgress() {
+        return progress;
+    }
+
+    public void setProgress(int progress) {
+        this.progress = progress;
     }
 
     public int getQuestStatusId() {
@@ -87,5 +98,18 @@ public class PlayerQuest implements Identifiable {
                 ", quest=" + questId +
                 ", questStatus=" + questStatusId +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PlayerQuest that = (PlayerQuest) o;
+        return id == that.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

@@ -1,29 +1,20 @@
 package com.schotzgoblin.main;
 
-import com.schotzgoblin.database.PlayerQuest;
-import com.schotzgoblin.database.Quest;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
-import net.kyori.adventure.text.format.Style;
-import net.kyori.adventure.text.format.TextColor;
 import org.bukkit.*;
 import org.bukkit.attribute.Attribute;
-import org.bukkit.attribute.AttributeModifier;
-import org.bukkit.block.banner.Pattern;
-import org.bukkit.block.banner.PatternType;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.BannerMeta;
-import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
 
@@ -33,16 +24,15 @@ public class QuestNpc implements Listener {
 
     private QuestSystem plugin;
     private BukkitTask task;
+    private QuestManager questManager;
     private Location npcLocation;
     private Villager npc;
     private FileConfiguration config;
     private DatabaseHandler databaseHandler;
-    private Inventory inventory;
-    private String type = "All Quests";
-    private int menuSlot = 2;
 
-    public QuestNpc(QuestSystem plugin, DatabaseHandler databaseHandler) {
+    public QuestNpc(QuestSystem plugin, QuestManager questManager, DatabaseHandler databaseHandler) {
         this.plugin = plugin;
+        this.questManager = questManager;
         this.databaseHandler = databaseHandler;
         config = plugin.getConfig();
         World world = Bukkit.getWorld("world");
@@ -54,132 +44,6 @@ public class QuestNpc implements Listener {
         spawnNPC(npcLocation);
     }
 
-    private void initInventory(Player player) {
-        inventory = Bukkit.createInventory(null, 54, Component.text("Quests", TextColor.color(0, 170, 255))); // Bright blue color
-        ItemStack blueGlassPane = new ItemStack(Material.BLUE_STAINED_GLASS_PANE, 1); // Blue
-        ItemStack whiteGlassPane = new ItemStack(Material.WHITE_STAINED_GLASS_PANE, 1); // White
-        ItemStack redGlassPane = new ItemStack(Material.RED_STAINED_GLASS_PANE, 1); // Red
-        ItemStack orangeGlassPane = new ItemStack(Material.ORANGE_STAINED_GLASS_PANE, 1); // Orange
-        ItemStack greenGlassPane = new ItemStack(Material.GREEN_STAINED_GLASS_PANE, 1); // Green
-
-        ItemMeta blueGlassPaneMeta = blueGlassPane.getItemMeta();
-        blueGlassPaneMeta.displayName(Component.text("All Quests"));
-        blueGlassPane.setItemMeta(blueGlassPaneMeta);
-
-        ItemMeta whiteGlassPaneMeta = whiteGlassPane.getItemMeta();
-        whiteGlassPaneMeta.displayName(Component.text("NOT_STARTED"));
-        whiteGlassPane.setItemMeta(whiteGlassPaneMeta);
-
-        ItemMeta redGlassPaneMeta = redGlassPane.getItemMeta();
-        redGlassPaneMeta.displayName(Component.text("CANCELED"));
-        redGlassPane.setItemMeta(redGlassPaneMeta);
-
-        ItemMeta orangeGlassPaneMeta = orangeGlassPane.getItemMeta();
-        orangeGlassPaneMeta.displayName(Component.text("IN_PROGRESS"));
-        orangeGlassPane.setItemMeta(orangeGlassPaneMeta);
-
-        ItemMeta greenGlassPaneMeta = greenGlassPane.getItemMeta();
-        greenGlassPaneMeta.displayName(Component.text("COMPLETED"));
-        greenGlassPane.setItemMeta(greenGlassPaneMeta);
-
-        inventory.setItem(2, blueGlassPane);
-        inventory.setItem(3, whiteGlassPane);
-        inventory.setItem(4, orangeGlassPane);
-        inventory.setItem(5, greenGlassPane);
-        inventory.setItem(6, redGlassPane);
-
-        addQuestsToInventory("All Quests", player);
-
-    }
-
-    private void addQuestsToInventory(String type, Player player) {
-        this.type = type;
-        resetInventory();
-        List<Quest> quests = databaseHandler.getAll(Quest.class);
-        List<PlayerQuest> playerQuests = databaseHandler.getPlayerQuests(player.getUniqueId(), type);
-        if (!type.equals("All Quests")) {
-            if(type.equals("NOT_STARTED")){
-                quests = quests.stream()
-                        .filter(quest -> !playerQuests.stream().map(PlayerQuest::getQuestId).toList().contains(quest.getId())).toList();
-            }else {
-                quests = playerQuests.stream()
-                        .map(PlayerQuest::getQuest)
-                        .toList();
-            }
-        }
-
-        inventory.setItem(menuSlot+9, new ItemStack(Material.NETHERITE_UPGRADE_SMITHING_TEMPLATE));
-        for (int i = 0; i < quests.size(); i++) {
-            Quest quest = quests.get(i);
-            ItemStack itemStack = createQuestItemStack(quest, type, player);
-            inventory.setItem(i + 27, itemStack);
-        }
-
-        finaliseInventory();
-    }
-
-    private ItemStack createQuestItemStack(Quest quest, String type, Player player) {
-        ItemStack itemStack = new ItemStack(Material.PAPER);
-        ItemMeta itemMeta = itemStack.getItemMeta();
-
-        itemMeta.displayName(Component.text(quest.getName()));
-
-        List<Component> lore = new ArrayList<>();
-        var component = getQuestStatusComponent(type, quest, player);
-        lore.add(component);
-        lore.add(Component.text(quest.getDescription(), TextColor.color(128, 128, 128)));
-        lore.add(Component.text("Objective: " + quest.getObjective(), TextColor.color(0, 128, 128)));
-        if(((TextComponent)component).content().equals("Not Started"))
-            lore.add(Component.text("Click to accept", TextColor.color(0, 255, 0)));
-        else if(((TextComponent)component).content().equals("In Progress"))
-            lore.add(Component.text("Click to cancel", TextColor.color(255, 0, 0)));
-        else if(((TextComponent)component).content().equals("Completed"))
-            lore.add(Component.text("Quest Completed", TextColor.color(0, 255, 0)));
-        else if(((TextComponent)component).content().equals("Canceled"))
-            lore.add(Component.text("Click to try again", TextColor.color(0, 0, 255)));
-
-        itemMeta.lore(lore);
-        itemStack.setItemMeta(itemMeta);
-
-        return itemStack;
-    }
-
-    private Component getQuestStatusComponent(String type, Quest quest, Player player) {
-        if (!type.equals("All Quests")) {
-            return getComponentFromType(type);
-        } else {
-            List<PlayerQuest> allPlayerQuests = databaseHandler.getPlayerQuests(player.getUniqueId(), "NOT_STARTED");
-            PlayerQuest playerQuest = allPlayerQuests.stream()
-                    .filter(playerQuest1 -> playerQuest1.getQuest().getId() == quest.getId())
-                    .findFirst()
-                    .orElse(null);
-            if(playerQuest == null) return getComponentFromType("NOT_STARTED");
-            return getComponentFromType(playerQuest.getQuestStatus().getStatus());
-        }
-    }
-
-    private TextComponent getComponentFromType(String type) {
-        return switch (type) {
-            case "CANCELED" -> Component.text("Canceled", TextColor.color(255, 0, 0)); // Red
-            case "IN_PROGRESS" -> Component.text("In Progress", TextColor.color(255, 165, 0)); // Orange
-            case "COMPLETED" -> Component.text("Completed", TextColor.color(0, 255, 0)); // Green
-            default -> Component.text("Not Started", TextColor.color(255, 255, 255)); // White
-        };
-    }
-
-    private void finaliseInventory() {
-        for (int i = 0; i < 54; i++) {
-            if (inventory.getItem(i) == null) {
-                inventory.setItem(i, new ItemStack(Material.GRAY_STAINED_GLASS_PANE));
-            }
-        }
-    }
-
-    private void resetInventory() {
-        for (int i = 9; i < 54; i++) {
-            inventory.setItem(i, new ItemStack(Material.AIR));
-        }
-    }
 
     public void deleteEntities(Location location, double radius) {
         World world = location.getWorld();
@@ -268,55 +132,54 @@ public class QuestNpc implements Listener {
             return;
         }
         var player = event.getPlayer();
-        initInventory(player);
+        questManager.initInventory(player);
+        Inventory inventory = questManager.inventories.get(player.getUniqueId()).getInventory();
         player.openInventory(inventory);
+        questManager.inventories.get(player.getUniqueId()).setInventory(inventory);
+
     }
+
     @EventHandler
     public void onInventoryClick(InventoryClickEvent e) {
-        if (!Objects.equals(e.getClickedInventory(), inventory)) return;
+        var player = (Player) e.getWhoClicked();
+        var inv = new InventoryMapping();
+        if (questManager.inventories.containsKey(player.getUniqueId())) {
+            inv = questManager.inventories.get(player.getUniqueId());
+        }
+        if (!Objects.equals(e.getClickedInventory(), inv.getInventory())) return;
 
         e.setCancelled(true);
 
-        var player = (Player) e.getWhoClicked();
-        var clickedItem = e.getCurrentItem();
-        if(clickedItem==null)return;
-        if(clickedItem.getType().getKey().getKey().contains("glass_pane")){
-            menuSlot = e.getSlot();
-            addQuestsToInventory(((TextComponent)clickedItem.getItemMeta().displayName()).content(),player);
-            player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_BELL, 1.0f, 0.0f);
-            return;
+        try {
+            var clickedItem = e.getCurrentItem();
+            if (clickedItem == null) return;
+            if (clickedItem.getType().getKey().getKey().contains("glass_pane")) {
+                if (e.getSlot() < 9) inv.setMenuSlot(e.getSlot());
+                var content = ((TextComponent) Objects.requireNonNull(clickedItem.getItemMeta().displayName())).content();
+                questManager.addQuestsToInventory(content, player, inv.getInventory());
+                player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_BELL, 1.0f, 0.0f);
+                return;
+            }
+            var displayname = (TextComponent) clickedItem.getItemMeta().displayName();
+            var objective = (TextComponent) Objects.requireNonNull(clickedItem.getItemMeta().lore()).get(2);
+            var moveType = (TextComponent) Objects.requireNonNull(clickedItem.getItemMeta().lore()).get(0);
+
+            if (displayname == null) return;
+            if (moveType.content().equalsIgnoreCase("NOT STARTED"))
+                questManager.acceptQuest(player, displayname, objective);
+            else if (moveType.content().equalsIgnoreCase("IN PROGRESS"))
+                questManager.cancelQuest(player, displayname);
+            else if (moveType.content().equalsIgnoreCase("CANCELED"))
+                questManager.reactivateQuest(player, displayname);
+            questManager.addQuestsToInventory(inv.getType(), player, inv.getInventory());
+        } catch (Exception ignored) {
+            // Exception ignored, because it is not necessary to handle it (Only happens if player spam accepts quests)
         }
-
-        var displayname = (TextComponent)clickedItem.getItemMeta().displayName();
-        var objective = (TextComponent) Objects.requireNonNull(clickedItem.getItemMeta().lore()).get(2);
-        var moveType = (TextComponent) Objects.requireNonNull(clickedItem.getItemMeta().lore()).get(0);
-
-        if (displayname == null) return;
-        if(moveType.content().equalsIgnoreCase("NOT STARTED"))
-            acceptQuest(player,displayname,objective);
-        else if(moveType.content().equalsIgnoreCase("IN PROGRESS"))
-            cancelQuest(player,displayname,objective);
-        else if(moveType.content().equalsIgnoreCase("CANCELED"))
-            reactivateQuest(player,displayname,objective);
-        addQuestsToInventory(type,player);
     }
 
-    private void reactivateQuest(Player player, TextComponent displayname, TextComponent objective) {
-        databaseHandler.changePlayerQuestType(player.getUniqueId(),displayname.content(), "IN_PROGRESS");
-        player.sendMessage("You have reactivated the quest: " + displayname.content());
-        player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_BELL, 1.0f, 0.0f);
-    }
-
-    private void cancelQuest(Player player, TextComponent displayname, TextComponent objective) {
-        databaseHandler.changePlayerQuestType(player.getUniqueId(),displayname.content(), "CANCELED");
-        player.sendMessage("You have canceled the quest: " + displayname.content());
-        player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_BASS, 1.0f, 0.0f);
-    }
-
-    private void acceptQuest(Player player, TextComponent displayname, TextComponent objective) {
-        databaseHandler.addPlayerQuest(player.getUniqueId(),displayname.content());
-        player.sendMessage("You have accepted the quest: " + displayname.content());
-        player.sendMessage("Your objective is to: " + objective.content());
-        player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_BELL, 1.0f, 0.0f);
+    @EventHandler
+    public void onInventoryClose(InventoryCloseEvent e) {
+        var player = (Player) e.getPlayer();
+        questManager.inventories.remove(player.getUniqueId());
     }
 }

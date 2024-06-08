@@ -5,6 +5,8 @@ import com.google.common.io.ByteStreams;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.event.ClickEvent;
 import org.bukkit.Bukkit;
+import org.bukkit.GameMode;
+import org.bukkit.Location;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -37,7 +39,8 @@ public class QuestSystem extends JavaPlugin implements Listener, PluginMessageLi
 
         databaseHandler = new DatabaseHandler();
         questManager = new QuestManager(this, databaseHandler);
-        addListener(new QuestNpc(this, databaseHandler));
+        addListener(questManager);
+        addListener(new QuestNpc(this,questManager,databaseHandler));
         registerCommand("quest",new QuestCommand(questManager));
     }
     private void addListener(Listener listener) {
@@ -66,15 +69,8 @@ public class QuestSystem extends JavaPlugin implements Listener, PluginMessageLi
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         var player = event.getPlayer();
-        player.sendMessage(Component.text("Hello, " + event.getPlayer().getName() + "!"));
-        player.sendMessage(Component.text("Click here to join other lobby world!").clickEvent(ClickEvent.callback(audience -> {
-            sendPlayerToServer(player, "lobby2");
-        })));
-    }
-
-    @EventHandler
-    public void onPlayerMove(PlayerMoveEvent event) {
-//        event.setCancelled(true);
+        player.setGameMode(GameMode.ADVENTURE);
+        player.teleport(new Location(player.getWorld(),65.5,142,44.5));
     }
 
     @Override

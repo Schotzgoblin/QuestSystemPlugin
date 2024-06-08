@@ -4,6 +4,8 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
+import java.util.Arrays;
+
 public class QuestCommand implements CommandExecutor {
 
     private final QuestManager questManager;
@@ -21,7 +23,7 @@ public class QuestCommand implements CommandExecutor {
 
         // Handle subcommands (create, accept, complete, etc.)
         if (args[0].equalsIgnoreCase("create") && sender.hasPermission("quest.admin")) {
-            questManager.createQuest("Test Quest", "This is a test quest", null, "Kill 10 zombies", 10);
+            questManager.createQuest("Test Quest", "This is a test quest",  "Kill 10 zombies", 10);
         } else if (args[0].equalsIgnoreCase("accept")) {
             // Accept quest logic
         } else if (args[0].equalsIgnoreCase("status")) {
@@ -32,7 +34,7 @@ public class QuestCommand implements CommandExecutor {
                 sender.sendMessage(quest.getDescription());
             });
         } else if (args[0].equalsIgnoreCase("delete") && sender.hasPermission("quest.admin") && args.length == 2) {
-            questManager.deleteQuest(args[1]);
+            questManager.deleteQuest(String.join(" ", Arrays.copyOfRange(args, 1, args.length)));
         } else {
             sender.sendMessage("Unknown subcommand: " + args[0]);
         }

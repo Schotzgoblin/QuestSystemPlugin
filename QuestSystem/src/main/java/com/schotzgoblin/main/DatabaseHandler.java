@@ -144,6 +144,9 @@ public class DatabaseHandler {
                     Quest quest = new Quest();
                     quest.setId(Integer.parseInt(resultSet.getString("id")));
                     quest.setName(resultSet.getString("name"));
+                    quest.setDescription(resultSet.getString("description"));
+                    quest.setTimeLimit(Integer.parseInt(resultSet.getString("time_limit")));
+                    quest.setObjective(resultSet.getString("objective"));
                     return quest;
                 }
             }
@@ -162,7 +165,7 @@ public class DatabaseHandler {
                     || Arrays.asList(field.getType().getInterfaces()).contains(Collection.class)
                     || field.getName().equals("id")) {
                 continue;
-            }else{
+            } else {
                 fields.add(field);
             }
             String snakeCaseName = camelToSnake(field.getName());
@@ -201,7 +204,7 @@ public class DatabaseHandler {
         if (quest == null) {
             return;
         }
-        if(getPlayerQuestByQuestId(uniqueId, quest.getId()).getId()!=0){
+        if (getPlayerQuestByQuestId(uniqueId, quest.getId()).getId() != 0) {
             return;
         }
         PlayerQuest playerQuest = new PlayerQuest();
@@ -219,7 +222,7 @@ public class DatabaseHandler {
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 while (resultSet.next()) {
                     var playerQuest = createPlayerQuest(resultSet);
-                    if (type.isEmpty() || playerQuest.getQuestStatus().getStatus().equals(type)||type.equals("NOT_STARTED"))
+                    if (type.isEmpty() || playerQuest.getQuestStatus().getStatus().equals(type) || type.equals("NOT_STARTED"))
                         list.add(playerQuest);
                 }
             }
@@ -250,6 +253,8 @@ public class DatabaseHandler {
         playerQuest.setId(resultSet.getInt("id"));
         playerQuest.setPlayerUuid(resultSet.getString("player_uuid"));
         playerQuest.setQuestId(resultSet.getInt("quest_id"));
+        playerQuest.setTime(resultSet.getInt("time"));
+        playerQuest.setProgress(resultSet.getInt("progress"));
         playerQuest.setQuest(getFromId(Quest.class, playerQuest.getQuestId()));
         playerQuest.setQuestStatusId(resultSet.getInt("quest_status_id"));
         playerQuest.setQuestStatus(getFromId(QuestStatus.class, playerQuest.getQuestStatusId()));
@@ -259,11 +264,12 @@ public class DatabaseHandler {
     public void changePlayerQuestType(UUID uniqueId, String questName, String type) {
         var quest = getQuestByName(questName);
         var playerQuest = getPlayerQuestByQuestId(uniqueId, quest.getId());
+        if (type.equals(("IN_PROGRESS"))) {
+            playerQuest.setTime(0);
+            playerQuest.setProgress(0);
+        }
+
         playerQuest.setQuestStatusId(getQuestStatusByName(type));
-        System.out.println(quest.getId());
-        System.out.println(playerQuest.getId());
-        System.out.println(playerQuest.getQuestStatusId());
-        System.out.println(type);
         update(playerQuest);
     }
 
