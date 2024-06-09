@@ -2,11 +2,12 @@ package com.schotzgoblin.main;
 
 import com.schotzgoblin.database.PlayerQuest;
 import com.schotzgoblin.database.Quest;
-import com.schotzgoblin.database.Reward;
+import net.kyori.adventure.bossbar.BossBar;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.format.TextColor;
 import org.bukkit.Bukkit;
+import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
@@ -27,6 +28,7 @@ public class QuestManager implements Listener {
     private final QuestSystem plugin;
     private final DatabaseHandler databaseHandler;
     public Map<UUID, InventoryMapping> inventories = new HashMap<>();
+    public Map<UUID, List<BossBar>> bossBars = new HashMap<>();
     private List<Quest> quests;
     private final Map<PlayerQuest, BukkitRunnable> runnables = new HashMap<>();
 
@@ -39,13 +41,6 @@ public class QuestManager implements Listener {
 
     private void loadQuests() {
         this.quests = databaseHandler.getAll(Quest.class);
-    }
-
-    public void createQuest(String name, String description, String objective, int timeLimit) {
-        Quest quest = new Quest(name, description, timeLimit, objective);
-        databaseHandler.save(quest);
-        reloadAllInventorys();
-        loadQuests();
     }
 
     public void deleteQuest(String name) {
@@ -114,7 +109,7 @@ public class QuestManager implements Listener {
         }
         inventoryMapping.setType(type);
         resetInventory(inventory);
-        List<Quest> quests = databaseHandler.getAll(Quest.class);
+        List<Quest> quests = databaseHandler.getAllQuests();
         List<PlayerQuest> playerQuests = databaseHandler.getPlayerQuests(player.getUniqueId(), type);
         if (!type.equals("All Quests")) {
             if(type.equals("NOT_STARTED")){
@@ -148,7 +143,8 @@ public class QuestManager implements Listener {
         var component = getQuestStatusComponent(type, quest, player);
         lore.add(component);
         lore.add(Component.text(quest.getDescription(), TextColor.color(128, 128, 128)));
-        lore.add(Component.text("Objective: " + quest.getObjective(), TextColor.color(0, 128, 128)));
+        lore.add(Component.text("Objective: " + quest.getObjective().getObjective(), TextColor.color(0, 128, 128)));
+        lore.add(Component.text("Time limit: " + Utils.getTimeStringFromSecs(quest.getTimeLimit()), TextColor.color(128, 79, 0)));
         if(((TextComponent)component).content().equals("Not Started")) {
             lore.add(Component.text("Click to accept", TextColor.color(0, 255, 0)));
         } else if(((TextComponent)component).content().equals("In Progress")) {
@@ -158,7 +154,7 @@ public class QuestManager implements Listener {
         } else if(((TextComponent)component).content().equals("Completed")) {
             lore.add(Component.text("Quest Completed", TextColor.color(0, 255, 0)));
         } else if(((TextComponent)component).content().equals("Canceled")) {
-            lore.add(Component.text("Click to try again", TextColor.color(0, 0, 255)));
+            lore.add(Component.text("Click to try again", TextColor.color(255, 0, 68)));
         }
 
         itemMeta.lore(lore);
@@ -206,17 +202,18 @@ public class QuestManager implements Listener {
         };
     }
 
-    public void reactivateQuest(Player player, TextComponent displayname) {
-        int questId = databaseHandler.getQuestByName(displayname.content()).getId();
+    public void reactivateQuest(Player player, TextComponent displayname, String objective) {
+        var quest = databaseHandler.getQuestByName(displayname.content());
         databaseHandler.changePlayerQuestType(player.getUniqueId(), displayname.content(), "IN_PROGRESS");
         player.sendMessage("You have reactivated the quest: " + displayname.content());
         player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_PLING, 1.0f, 0.0f);
-        var playerQuest = databaseHandler.getPlayerQuestByQuestId(player.getUniqueId(), questId);
+        createAndShowBossBar(player,displayname.content(), 0.0f);
+        var playerQuest = databaseHandler.getPlayerQuestByQuestId(player.getUniqueId(), quest.getId());
         if (runnables.containsKey(playerQuest)) {
             runnables.get(playerQuest).cancel();
             runnables.remove(playerQuest);
         }
-        BukkitRunnable task = new QuestTimerTask(player, displayname.content(), questId);
+        BukkitRunnable task = new QuestTimerTask(player, displayname.content(), quest.getId());
         runnables.put(playerQuest, task);
         task.runTaskTimer(plugin, 0L, 20L);
     }
@@ -233,16 +230,61 @@ public class QuestManager implements Listener {
         player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_BASS, 1.0f, 0.0f);
     }
 
-    public void acceptQuest(Player player, TextComponent displayName, TextComponent objective) {
-        int questId = databaseHandler.getQuestByName(displayName.content()).getId();
-        databaseHandler.addPlayerQuest(player.getUniqueId(), displayName.content());
-        player.sendMessage("You have accepted the quest: " + displayName.content());
-        player.sendMessage("Your objective is to: " + objective.content());
-        player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_PLING, 1.0f, 0.0f);
+    public void acceptQuest(Player player, TextComponent displayname, String objective) {
+        var quest = databaseHandler.getQuestByName(displayname.content());
 
-        BukkitRunnable task = new QuestTimerTask(player, displayName.content(), questId);
-        runnables.put(databaseHandler.getPlayerQuestByQuestId(player.getUniqueId(), questId), task);
+        databaseHandler.addPlayerQuest(player.getUniqueId(), displayname.content());
+        player.sendMessage("You have accepted the quest: " + displayname.content());
+        player.sendMessage("Your objective is to: " + objective);
+        player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_PLING, 1.0f, 0.0f);
+        createAndShowBossBar(player, displayname.content(), 0.0f);
+        BukkitRunnable task = new QuestTimerTask(player, displayname.content(), quest.getId());
+        runnables.put(databaseHandler.getPlayerQuestByQuestId(player.getUniqueId(), quest.getId()), task);
         task.runTaskTimer(plugin, 0L, 20L);
+    }
+
+    public void createAndShowBossBar(Player player, String title, float progress) {
+        var bossbar = BossBar.bossBar(Component.text(title), progress, BossBar.Color.BLUE, BossBar.Overlay.PROGRESS);
+        if(bossBars.containsKey(player.getUniqueId())) {
+            bossBars.get(player.getUniqueId()).add(bossbar);
+        } else
+            bossBars.put(player.getUniqueId(), new ArrayList<>(List.of(bossbar)));
+        player.showBossBar(bossbar);
+    }
+
+    private BossBar getBossBarFromTitle(Player player, String title) {
+       return bossBars.get(player.getUniqueId()).stream().filter(bossBar -> ((TextComponent)bossBar.name()).content().equals(title)).findFirst().get();
+    }
+
+    public void updateBossBar(Player player, String title, float progress) {
+        var bossbar = getBossBarFromTitle(player, title);
+        bossbar.progress(progress);
+        if(progress == 1.0f) {
+            bossbar.color(BossBar.Color.GREEN);
+            completeQuest(player, title);
+        }
+    }
+
+    private void completeQuest(Player player, String title) {
+        var playerQuest = databaseHandler.getPlayerQuestByQuestId(player.getUniqueId(), databaseHandler.getQuestByName(title).getId());
+        databaseHandler.changePlayerQuestType(player.getUniqueId(),title,"COMPLETED");
+        player.sendMessage("You have completed the quest: " + title);
+        Utils.sendAlertToPlayer("Quest Completed", "You have completed the quest: " + title, 1000, 4000, 1000, Color.fromRGB(0,255,0), player);
+        player.playSound(player.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);
+        runnables.get(playerQuest).cancel();
+        runnables.remove(playerQuest);
+        synchronized (player) { // Add a synchronized block
+            Bukkit.getScheduler().runTaskLater(plugin, () -> {
+                hideBossBar(player, title);
+            }, 100);
+        }
+        //TODO give rewards
+    }
+
+    public void hideBossBar(Player player, String title) {
+        var bossBar = getBossBarFromTitle(player, title);
+        player.hideBossBar(bossBar);
+        bossBars.get(player.getUniqueId()).remove(bossBar);
     }
 
     private class QuestTimerTask extends BukkitRunnable {
@@ -268,11 +310,13 @@ public class QuestManager implements Listener {
                 databaseHandler.update(playerQuest);
                 var quest = databaseHandler.getQuestByName(questName);
                 if (playerQuest.getTime() >= quest.getTimeLimit()) {
-                    databaseHandler.changePlayerQuestType(player.getUniqueId(), questName, "CANCELED");
+                    Utils.sendAlertToPlayer("Quest Failed", "You did not complete the quest: " + questName + " in the given time limit of " + getTimeStringFromSecs(quest.getTimeLimit()), 1000, 4000, 1000, Color.fromRGB(255,0,0), player);
                     player.sendMessage("You did not complete the quest: " + questName + " in the given time limit of " + getTimeStringFromSecs(quest.getTimeLimit()));
                     player.playSound(player.getLocation(), Sound.BLOCK_END_PORTAL_SPAWN, 1.0f, 0.0f);
                     cancel();
                     runnables.remove(playerQuest);
+                    hideBossBar(player, questName);
+                    databaseHandler.changePlayerQuestType(player.getUniqueId(), questName, "CANCELED");
                 }
             }else{
                 cancel();

@@ -1,9 +1,6 @@
 package com.schotzgoblin.main;
 
-import com.schotzgoblin.database.Identifiable;
-import com.schotzgoblin.database.PlayerQuest;
-import com.schotzgoblin.database.Quest;
-import com.schotzgoblin.database.QuestStatus;
+import com.schotzgoblin.database.*;
 
 import java.lang.reflect.Field;
 import java.sql.*;
@@ -146,8 +143,33 @@ public class DatabaseHandler {
                     quest.setName(resultSet.getString("name"));
                     quest.setDescription(resultSet.getString("description"));
                     quest.setTimeLimit(Integer.parseInt(resultSet.getString("time_limit")));
-                    quest.setObjective(resultSet.getString("objective"));
+                    var objective = getObjective(resultSet.getInt("objective_id"));
+                    if (objective != null) {
+                        quest.setObjectiveId(objective.getId());
+                        quest.setObjective(objective);
+                    }
                     return quest;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    private Objective getObjective(int id) {
+        String query = "SELECT * FROM Objective WHERE id =?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setInt(1, id);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    Objective obj = new Objective();
+                    obj.setId(Integer.parseInt(resultSet.getString("id")));
+                    obj.setObjective(resultSet.getString("objective"));
+                    obj.setType(resultSet.getString("type"));
+                    obj.setValue(resultSet.getString("value"));
+                    obj.setCount(Integer.parseInt(resultSet.getString("count")));
+                    return obj;
                 }
             }
         } catch (Exception e) {
@@ -211,6 +233,8 @@ public class DatabaseHandler {
         playerQuest.setPlayerUuid(uniqueId.toString());
         playerQuest.setQuestId(quest.getId());
         playerQuest.setQuestStatusId(3);
+        playerQuest.setTime(0);
+        playerQuest.setProgress("0");
         save(playerQuest);
     }
 
@@ -254,11 +278,36 @@ public class DatabaseHandler {
         playerQuest.setPlayerUuid(resultSet.getString("player_uuid"));
         playerQuest.setQuestId(resultSet.getInt("quest_id"));
         playerQuest.setTime(resultSet.getInt("time"));
-        playerQuest.setProgress(resultSet.getInt("progress"));
-        playerQuest.setQuest(getFromId(Quest.class, playerQuest.getQuestId()));
+        playerQuest.setProgress(resultSet.getString("progress"));
+        playerQuest.setQuest(getQuestFromId(playerQuest.getQuestId()));
         playerQuest.setQuestStatusId(resultSet.getInt("quest_status_id"));
         playerQuest.setQuestStatus(getFromId(QuestStatus.class, playerQuest.getQuestStatusId()));
         return playerQuest;
+    }
+
+    private Quest getQuestFromId(int questId) {
+        String query = "SELECT * FROM Quest WHERE id =?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setInt(1, questId);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    Quest quest = new Quest();
+                    quest.setId(Integer.parseInt(resultSet.getString("id")));
+                    quest.setName(resultSet.getString("name"));
+                    quest.setDescription(resultSet.getString("description"));
+                    quest.setTimeLimit(Integer.parseInt(resultSet.getString("time_limit")));
+                    var objective = getObjective(resultSet.getInt("objective_id"));
+                    if (objective != null) {
+                        quest.setObjectiveId(objective.getId());
+                        quest.setObjective(objective);
+                    }
+                    return quest;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public void changePlayerQuestType(UUID uniqueId, String questName, String type) {
@@ -266,7 +315,7 @@ public class DatabaseHandler {
         var playerQuest = getPlayerQuestByQuestId(uniqueId, quest.getId());
         if (type.equals(("IN_PROGRESS"))) {
             playerQuest.setTime(0);
-            playerQuest.setProgress(0);
+            playerQuest.setProgress("0");
         }
 
         playerQuest.setQuestStatusId(getQuestStatusByName(type));
@@ -286,5 +335,30 @@ public class DatabaseHandler {
             e.printStackTrace();
         }
         return -1;
+    }
+
+    public List<Quest> getAllQuests() {
+        String query = "SELECT * FROM Quest";
+        List<Quest> list = new ArrayList<>();
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                while (resultSet.next()) {
+                    Quest quest = new Quest();
+                    quest.setId(Integer.parseInt(resultSet.getString("id")));
+                    quest.setName(resultSet.getString("name"));
+                    quest.setDescription(resultSet.getString("description"));
+                    quest.setTimeLimit(Integer.parseInt(resultSet.getString("time_limit")));
+                    var objective = getObjective(resultSet.getInt("objective_id"));
+                    if (objective != null) {
+                        quest.setObjectiveId(objective.getId());
+                        quest.setObjective(objective);
+                    }
+                    list.add(quest);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
     }
 }

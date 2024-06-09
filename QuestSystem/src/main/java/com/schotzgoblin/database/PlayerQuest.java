@@ -11,7 +11,7 @@ public class PlayerQuest implements Identifiable {
     private Quest quest;
     private int questId;
     private int time;
-    private int progress;
+    private String progress;
 
 
     private QuestStatus questStatus;
@@ -34,11 +34,11 @@ public class PlayerQuest implements Identifiable {
         this.time = time;
     }
 
-    public int getProgress() {
+    public String getProgress() {
         return progress;
     }
 
-    public void setProgress(int progress) {
+    public void setProgress(String progress) {
         this.progress = progress;
     }
 

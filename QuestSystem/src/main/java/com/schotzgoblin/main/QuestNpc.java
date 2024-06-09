@@ -166,11 +166,11 @@ public class QuestNpc implements Listener {
 
             if (displayname == null) return;
             if (moveType.content().equalsIgnoreCase("NOT STARTED"))
-                questManager.acceptQuest(player, displayname, objective);
+                questManager.acceptQuest(player, displayname, objective.content().replace("Objective: ", ""));
             else if (moveType.content().equalsIgnoreCase("IN PROGRESS"))
                 questManager.cancelQuest(player, displayname);
             else if (moveType.content().equalsIgnoreCase("CANCELED"))
-                questManager.reactivateQuest(player, displayname);
+                questManager.reactivateQuest(player, displayname, objective.content().replace("Objective: ", ""));
             questManager.addQuestsToInventory(inv.getType(), player, inv.getInventory());
         } catch (Exception ignored) {
             // Exception ignored, because it is not necessary to handle it (Only happens if player spam accepts quests)

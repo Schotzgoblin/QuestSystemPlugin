@@ -40,6 +40,7 @@ public class QuestSystem extends JavaPlugin implements Listener, PluginMessageLi
         databaseHandler = new DatabaseHandler();
         questManager = new QuestManager(this, databaseHandler);
         addListener(questManager);
+        addListener(new TrackPlayerQuestProgress(this, questManager, databaseHandler));
         addListener(new QuestNpc(this,questManager,databaseHandler));
         registerCommand("quest",new QuestCommand(questManager));
     }

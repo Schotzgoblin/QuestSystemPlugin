@@ -11,17 +11,26 @@ public class Quest implements Identifiable{
 
     private int timeLimit;
 
-    private String objective;
+    private int objectiveId;
+    private Objective objective;
 
     private Set<QuestReward> questRewards;
 
     public Quest() {
     }
 
-    public Quest(String name, String description, int timeLimit, String objective) {
+    public Quest(String name, String description, int timeLimit, int objectiveId) {
         this.name = name;
         this.description = description;
         this.timeLimit = timeLimit;
+        this.objectiveId = objectiveId;
+    }
+
+    public Objective getObjective() {
+        return objective;
+    }
+
+    public void setObjective(Objective objective) {
         this.objective = objective;
     }
 
@@ -31,6 +40,14 @@ public class Quest implements Identifiable{
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getObjectiveId() {
+        return objectiveId;
+    }
+
+    public void setObjectiveId(int objectiveId) {
+        this.objectiveId = objectiveId;
     }
 
     public String getName() {
@@ -55,14 +72,6 @@ public class Quest implements Identifiable{
 
     public void setTimeLimit(int timeLimit) {
         this.timeLimit = timeLimit;
-    }
-
-    public String getObjective() {
-        return objective;
-    }
-
-    public void setObjective(String objective) {
-        this.objective = objective;
     }
 
     public Set<QuestReward> getQuestRewards() {
