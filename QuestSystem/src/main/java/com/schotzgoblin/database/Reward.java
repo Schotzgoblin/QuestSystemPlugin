@@ -10,6 +10,7 @@ public class Reward implements Identifiable {
     private int rewardTypeId;
 
     private int amount;
+    private String value;
 
 
     public Reward() {
@@ -23,6 +24,14 @@ public class Reward implements Identifiable {
 
     public int getRewardTypeId() {
         return rewardTypeId;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
     }
 
     public void setRewardTypeId(int rewardTypeId) {

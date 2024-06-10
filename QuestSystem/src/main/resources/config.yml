@@ -14,3 +14,23 @@ npc-settings:
 npc-task:
   interval: 1
   range: 15
+
+quest-manager:
+  quest-reactivated: "You have reactivated the quest: "
+  quest-canceled: "You have canceled the quest: "
+  quest-accepted: "You have accepted the quest: "
+  quest-completed: "You have completed the quest: "
+  quest-failed: "You did not complete the quest: "
+  quest-objective: "Your objective is to: "
+  quest-rewards: "You have received "
+  quest-time-limit: " in the given time limit of "
+  quest-click-not-started: "Click to accept"
+  quest-click-in-progress: "Click to cancel"
+  quest-click-completed: "Quest Completed"
+  quest-click-canceled: "Click to try again"
+
+command:
+  no-player: "Only players can use this command"
+
+quest-system:
+  welcome-message: "Welcome back! You have active quests, click here to see them"

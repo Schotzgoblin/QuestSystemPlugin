@@ -14,7 +14,6 @@ import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.EquipmentSlot;
-import org.bukkit.inventory.Inventory;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
 
@@ -22,13 +21,13 @@ import java.util.*;
 
 public class QuestNpc implements Listener {
 
-    private QuestSystem plugin;
+    private final QuestSystem plugin;
     private BukkitTask task;
-    private QuestManager questManager;
-    private Location npcLocation;
+    private final QuestManager questManager;
+    private final Location npcLocation;
     private Villager npc;
-    private FileConfiguration config;
-    private DatabaseHandler databaseHandler;
+    private final FileConfiguration config;
+    private final DatabaseHandler databaseHandler;
 
     public QuestNpc(QuestSystem plugin, QuestManager questManager, DatabaseHandler databaseHandler) {
         this.plugin = plugin;
@@ -132,10 +131,7 @@ public class QuestNpc implements Listener {
             return;
         }
         var player = event.getPlayer();
-        questManager.initInventory(player);
-        Inventory inventory = questManager.inventories.get(player.getUniqueId()).getInventory();
-        player.openInventory(inventory);
-        questManager.inventories.get(player.getUniqueId()).setInventory(inventory);
+        questManager.setupInventory(player, "All Quests");
 
     }
 
@@ -161,16 +157,15 @@ public class QuestNpc implements Listener {
                 return;
             }
             var displayname = (TextComponent) clickedItem.getItemMeta().displayName();
-            var objective = (TextComponent) Objects.requireNonNull(clickedItem.getItemMeta().lore()).get(2);
-            var moveType = (TextComponent) Objects.requireNonNull(clickedItem.getItemMeta().lore()).get(0);
-
             if (displayname == null) return;
-            if (moveType.content().equalsIgnoreCase("NOT STARTED"))
-                questManager.acceptQuest(player, displayname, objective.content().replace("Objective: ", ""));
-            else if (moveType.content().equalsIgnoreCase("IN PROGRESS"))
+            var quest = databaseHandler.getQuestByNameAsync(displayname.content());
+            var playerQuest = databaseHandler.getPlayerQuestByQuestIdAsync(player.getUniqueId(), quest.join().getId()).join();
+            if (playerQuest.getId() == 0)
+                questManager.acceptQuest(player, displayname, quest.join().getObjective().getObjective());
+            else if (playerQuest.getQuestStatus().getStatus().equalsIgnoreCase("IN_PROGRESS"))
                 questManager.cancelQuest(player, displayname);
-            else if (moveType.content().equalsIgnoreCase("CANCELED"))
-                questManager.reactivateQuest(player, displayname, objective.content().replace("Objective: ", ""));
+            else if (playerQuest.getQuestStatus().getStatus().equalsIgnoreCase("CANCELED"))
+                questManager.reactivateQuest(player, displayname);
             questManager.addQuestsToInventory(inv.getType(), player, inv.getInventory());
         } catch (Exception ignored) {
             // Exception ignored, because it is not necessary to handle it (Only happens if player spam accepts quests)
@@ -180,6 +175,7 @@ public class QuestNpc implements Listener {
     @EventHandler
     public void onInventoryClose(InventoryCloseEvent e) {
         var player = (Player) e.getPlayer();
-        questManager.inventories.remove(player.getUniqueId());
+        if(questManager.inventories.containsKey(player.getUniqueId())&&e.getInventory().equals(questManager.inventories.get(player.getUniqueId()).getInventory()))
+            questManager.inventories.remove(player.getUniqueId());
     }
 }

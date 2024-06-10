@@ -11,6 +11,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -42,7 +43,8 @@ public class QuestSystem extends JavaPlugin implements Listener, PluginMessageLi
         addListener(questManager);
         addListener(new TrackPlayerQuestProgress(this, questManager, databaseHandler));
         addListener(new QuestNpc(this,questManager,databaseHandler));
-        registerCommand("quest",new QuestCommand(questManager));
+        registerCommand("quests",new QuestCommand(questManager));
+        registerCommand("quest",new AdminQuestCommand(questManager,databaseHandler));
     }
     private void addListener(Listener listener) {
         Bukkit.getPluginManager().registerEvents(listener, this);
@@ -71,7 +73,14 @@ public class QuestSystem extends JavaPlugin implements Listener, PluginMessageLi
     public void onPlayerJoin(PlayerJoinEvent event) {
         var player = event.getPlayer();
         player.setGameMode(GameMode.ADVENTURE);
-        player.teleport(new Location(player.getWorld(),65.5,142,44.5));
+//        player.teleport(new Location(player.getWorld(),65.5,142,44.5));
+    }
+
+    @EventHandler
+    public void onEntityDamageEvent(EntityDamageEvent event) {
+        if(event.getEntity()instanceof Player player){
+            event.setCancelled(true);
+        }
     }
 
     @Override

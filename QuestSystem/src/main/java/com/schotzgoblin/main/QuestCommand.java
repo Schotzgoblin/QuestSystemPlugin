@@ -3,41 +3,37 @@ package com.schotzgoblin.main;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class QuestCommand implements CommandExecutor {
 
     private final QuestManager questManager;
+    private final FileConfiguration config;
 
     public QuestCommand(QuestManager questManager) {
         this.questManager = questManager;
+        config = questManager.plugin.getConfig();
     }
 
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
+        if(!(sender instanceof Player player)) {
+            sender.sendMessage(Objects.requireNonNull(config.getString("command.no-player")));
+            return true;
+        }
         if (args.length == 0) {
-            sender.sendMessage("Usage: /quest <subcommand>");
+            questManager.setupInventory(player, "All Quests");
             return true;
         }
 
         // Handle subcommands (create, accept, complete, etc.)
-        if (args[0].equalsIgnoreCase("create") && sender.hasPermission("quest.admin")) {
-            // Create quest logic
-        } else if (args[0].equalsIgnoreCase("accept")) {
-            // Accept quest logic
-        } else if (args[0].equalsIgnoreCase("status")) {
-            // Display quest status
-        }else if (args[0].equalsIgnoreCase("get") && sender.hasPermission("quest.admin")) {
-            questManager.getQuests().forEach(quest -> {
-                sender.sendMessage(quest.getName());
-                sender.sendMessage(quest.getDescription());
-            });
-        } else if (args[0].equalsIgnoreCase("delete") && sender.hasPermission("quest.admin") && args.length == 2) {
-            questManager.deleteQuest(String.join(" ", Arrays.copyOfRange(args, 1, args.length)));
-        } else {
-            sender.sendMessage("Unknown subcommand: " + args[0]);
-        }
+
 
         return true;
     }

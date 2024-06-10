@@ -6,10 +6,13 @@ author: Schotzgoblin
 website: https://papermc.io
 api-version: '1.20'
 commands:
+  quests:
+    description: Main command for the quest system
+    usage: /<command>
+    aliases: [ q ]
   quest:
     description: Main command for the quest system
-    usage: /<command> [subcommand]
-    aliases: [q]
+    usage: /<command> <subcommand>
 permissions:
   quest.admin:
     description: Permission to manage quests

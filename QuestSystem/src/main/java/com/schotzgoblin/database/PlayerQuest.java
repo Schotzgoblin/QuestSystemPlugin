@@ -12,6 +12,7 @@ public class PlayerQuest implements Identifiable {
     private int questId;
     private int time;
     private String progress;
+    private String startLocation;
 
 
     private QuestStatus questStatus;
@@ -32,6 +33,14 @@ public class PlayerQuest implements Identifiable {
 
     public void setTime(int time) {
         this.time = time;
+    }
+
+    public String getStartLocation() {
+        return startLocation;
+    }
+
+    public void setStartLocation(String startLocation) {
+        this.startLocation = startLocation;
     }
 
     public String getProgress() {
@@ -111,5 +120,9 @@ public class PlayerQuest implements Identifiable {
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+
+    public void incrementTime() {
+        this.setTime(this.getTime()+1);
     }
 }
