@@ -158,10 +158,10 @@ public class QuestNpc implements Listener {
             }
             var displayname = (TextComponent) clickedItem.getItemMeta().displayName();
             if (displayname == null) return;
-            var quest = databaseHandler.getQuestByNameAsync(displayname.content());
-            var playerQuest = databaseHandler.getPlayerQuestByQuestIdAsync(player.getUniqueId(), quest.join().getId()).join();
+            var quest = databaseHandler.getQuestByName(displayname.content());
+            var playerQuest = databaseHandler.getPlayerQuestByQuestId(player.getUniqueId(), quest.getId());
             if (playerQuest.getId() == 0)
-                questManager.acceptQuest(player, displayname, quest.join().getObjective().getObjective());
+                questManager.acceptQuest(player, displayname, quest.getObjective().getObjective());
             else if (playerQuest.getQuestStatus().getStatus().equalsIgnoreCase("IN_PROGRESS"))
                 questManager.cancelQuest(player, displayname);
             else if (playerQuest.getQuestStatus().getStatus().equalsIgnoreCase("CANCELED"))

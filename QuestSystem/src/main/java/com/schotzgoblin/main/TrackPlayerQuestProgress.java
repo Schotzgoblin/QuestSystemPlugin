@@ -34,7 +34,7 @@ public class TrackPlayerQuestProgress implements Listener {
     @EventHandler
     public void onPlayerJoinEvent(PlayerJoinEvent event) {
         var player = event.getPlayer();
-        var playerQuests = databaseHandler.getPlayerQuestsAsync(player.getUniqueId(), "IN_PROGRESS").join();
+        var playerQuests = databaseHandler.getPlayerQuests(player.getUniqueId(), "IN_PROGRESS");
         if (!playerQuests.isEmpty()) {
             Bukkit.getScheduler().runTaskLater(questSystem, () -> {
                 player.sendMessage(Component.text(Objects.requireNonNull(config.getString("quest-system.welcome-message"))).clickEvent(ClickEvent.callback(audience -> {
@@ -61,11 +61,11 @@ public class TrackPlayerQuestProgress implements Listener {
     }
 
     private void updatePlayerQuests(Player player) {
-        var playerQuests = databaseHandler.getPlayerQuestsAsync(player.getUniqueId(), "IN_PROGRESS").join();
+        var playerQuests = databaseHandler.getPlayerQuests(player.getUniqueId(), "IN_PROGRESS");
         playerQuests.forEach(playerQuest -> {
             if (playerQuest.getQuest().getObjective().getType().equalsIgnoreCase("MOVE")) {
                 playerQuest.setProgress(Utils.convertLocationToString(player.getLocation()));
-                databaseHandler.updateAsync(playerQuest);
+                databaseHandler.update(playerQuest);
             }
         });
     }
@@ -77,12 +77,12 @@ public class TrackPlayerQuestProgress implements Listener {
         if (player == null) {
             return;
         }
-        var playerQuests = databaseHandler.getPlayerQuestsAsync(player.getUniqueId(), "IN_PROGRESS").join();
+        var playerQuests = databaseHandler.getPlayerQuests(player.getUniqueId(), "IN_PROGRESS");
         playerQuests.forEach(playerQuest -> {
             var quest = playerQuest.getQuest();
             if (quest.getObjective().getType().equalsIgnoreCase("KILL") && quest.getObjective().getValue().equalsIgnoreCase(entity.getType().name())) {
                 playerQuest.setProgress((Float.parseFloat(playerQuest.getProgress()) + 1f) + "");
-                databaseHandler.updateAsync(playerQuest);
+                databaseHandler.update(playerQuest);
                 questManager.updateBossBar(player, playerQuest, Utils.calculateProgress(playerQuest));
             }
         });
@@ -91,7 +91,7 @@ public class TrackPlayerQuestProgress implements Listener {
     @EventHandler
     public void onPlayerMoveEvent(PlayerMoveEvent event) {
         var player = event.getPlayer();
-        var playerQuests = databaseHandler.getPlayerQuestsAsync(player.getUniqueId(), "IN_PROGRESS").join();
+        var playerQuests = databaseHandler.getPlayerQuests(player.getUniqueId(), "IN_PROGRESS");
         playerQuests.forEach(playerQuest -> {
             var quest = playerQuest.getQuest();
             if (quest.getObjective().getType().equalsIgnoreCase("MOVE")) {
@@ -109,12 +109,12 @@ public class TrackPlayerQuestProgress implements Listener {
         if (!player.getType().equals(EntityType.PLAYER)) {
             return;
         }
-        var playerQuests = databaseHandler.getPlayerQuestsAsync(player.getUniqueId(), "IN_PROGRESS").join();
+        var playerQuests = databaseHandler.getPlayerQuests(player.getUniqueId(), "IN_PROGRESS");
         playerQuests.forEach(playerQuest -> {
             var quest = playerQuest.getQuest();
             if (quest.getObjective().getType().equalsIgnoreCase("PICKUP") && quest.getObjective().getValue().equalsIgnoreCase(entity.getName())) {
                 playerQuest.setProgress((Float.parseFloat(playerQuest.getProgress()) + entity.getItemStack().getAmount()) + "");
-                databaseHandler.updateAsync(playerQuest);
+                databaseHandler.update(playerQuest);
                 questManager.updateBossBar((Player) player, playerQuest, Utils.calculateProgress(playerQuest));
             }
         });

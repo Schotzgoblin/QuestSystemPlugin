@@ -7,7 +7,6 @@ import java.lang.reflect.Field;
 import java.sql.*;
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.Executors;
 
 public class DatabaseHandler {
     private final Connection connection;
@@ -50,9 +49,7 @@ public class DatabaseHandler {
         }
         return snakeCase.toString();
     }
-    public void saveAsync(Object entity) {
-        CompletableFuture.runAsync(() -> save(entity), Executors.newCachedThreadPool());
-    }
+
     public void save(Object entity) {
         String tableName = camelToSnake(entity.getClass().getSimpleName());
         StringBuilder columns = new StringBuilder();
@@ -84,165 +81,153 @@ public class DatabaseHandler {
         }
     }
 
-    public <T> CompletableFuture<T> getFromIdAsync(Class<T> clazz, int id) {
-        return CompletableFuture.supplyAsync(() -> {
-            String tableName = camelToSnake(clazz.getSimpleName());
-            String query = "SELECT * FROM " + tableName + " WHERE id =?";
-            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-                preparedStatement.setInt(1, id);
-                try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                    if (resultSet.next()) {
-                        T entity = clazz.getDeclaredConstructor().newInstance();
-                        ResultSetMetaData metaData = resultSet.getMetaData();
-                        int columnCount = metaData.getColumnCount();
-                        for (int i = 1; i <= columnCount; i++) {
-                            String columnName = metaData.getColumnName(i);
-                            String camelCaseName = snakeToCamel(columnName);
-                            Field field = clazz.getDeclaredField(camelCaseName);
-                            field.setAccessible(true);
-                            field.set(entity, resultSet.getObject(columnName));
-                        }
-                        return entity;
-                    }
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            return null;
-        });
-    }
-
-    public <T> CompletableFuture<List<T>> getAllAsync(Class<T> clazz) {
-        return CompletableFuture.supplyAsync(() -> {
-            String tableName = camelToSnake(clazz.getSimpleName());
-            String query = "SELECT * FROM " + tableName;
-            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-                try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                    List<T> list = new ArrayList<>();
+    public <T> T getFromId(Class<T> clazz, int id) {
+        String tableName = camelToSnake(clazz.getSimpleName());
+        String query = "SELECT * FROM " + tableName + " WHERE id =?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setInt(1, id);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    T entity = clazz.getDeclaredConstructor().newInstance();
                     ResultSetMetaData metaData = resultSet.getMetaData();
                     int columnCount = metaData.getColumnCount();
-                    while (resultSet.next()) {
-                        T entity = clazz.getDeclaredConstructor().newInstance();
-                        for (int i = 1; i <= columnCount; i++) {
-                            String columnName = metaData.getColumnName(i);
-                            String camelCaseName = snakeToCamel(columnName);
-                            Field field = clazz.getDeclaredField(camelCaseName);
-                            field.setAccessible(true);
-                            field.set(entity, resultSet.getObject(columnName));
-                        }
-                        list.add(entity);
+                    for (int i = 1; i <= columnCount; i++) {
+                        String columnName = metaData.getColumnName(i);
+                        String camelCaseName = snakeToCamel(columnName);
+                        Field field = clazz.getDeclaredField(camelCaseName);
+                        field.setAccessible(true);
+                        field.set(entity, resultSet.getObject(columnName));
                     }
-                    return list;
+                    return entity;
                 }
-            } catch (Exception e) {
-                e.printStackTrace();
-                return null;
             }
-        });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
-    public CompletableFuture<Quest> getQuestByNameAsync(String name) {
+    public <T> List<T> getAll(Class<T> clazz) {
+        String tableName = camelToSnake(clazz.getSimpleName());
+        String query = "SELECT * FROM " + tableName;
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                List<T> list = new ArrayList<>();
+                ResultSetMetaData metaData = resultSet.getMetaData();
+                int columnCount = metaData.getColumnCount();
+                while (resultSet.next()) {
+                    T entity = clazz.getDeclaredConstructor().newInstance();
+                    for (int i = 1; i <= columnCount; i++) {
+                        String columnName = metaData.getColumnName(i);
+                        String camelCaseName = snakeToCamel(columnName);
+                        Field field = clazz.getDeclaredField(camelCaseName);
+                        field.setAccessible(true);
+                        field.set(entity, resultSet.getObject(columnName));
+                    }
+                    list.add(entity);
+                }
+                return list;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public Quest getQuestByName(String name) {
         String query = "SELECT * FROM Quest WHERE name = ?";
-        return CompletableFuture.supplyAsync(() -> {
-            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-                preparedStatement.setString(1, name);
-                try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                    if (resultSet.next()) {
-                        Quest quest = new Quest();
-                        quest.setId(Integer.parseInt(resultSet.getString("id")));
-                        quest.setName(resultSet.getString("name"));
-                        quest.setDescription(resultSet.getString("description"));
-                        quest.setTimeLimit(Integer.parseInt(resultSet.getString("time_limit")));
-                        var objective = getObjectiveAsync(resultSet.getInt("objective_id")).join();
-                        if (objective != null) {
-                            quest.setObjectiveId(objective.getId());
-                            quest.setObjective(objective);
-                        }
-                        return quest;
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setString(1, name);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    Quest quest = new Quest();
+                    quest.setId(Integer.parseInt(resultSet.getString("id")));
+                    quest.setName(resultSet.getString("name"));
+                    quest.setDescription(resultSet.getString("description"));
+                    quest.setTimeLimit(Integer.parseInt(resultSet.getString("time_limit")));
+                    var objective = getObjective(resultSet.getInt("objective_id"));
+                    if (objective != null) {
+                        quest.setObjectiveId(objective.getId());
+                        quest.setObjective(objective);
                     }
+                    return quest;
                 }
-            } catch (Exception e) {
-                e.printStackTrace();
             }
-            return null;
-        });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
-    private CompletableFuture<Objective> getObjectiveAsync(int id) {
-        return CompletableFuture.supplyAsync(() -> {
-            String query = "SELECT * FROM Objective WHERE id =?";
-            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-                preparedStatement.setInt(1, id);
-                try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                    if (resultSet.next()) {
-                        Objective obj = new Objective();
-                        obj.setId(Integer.parseInt(resultSet.getString("id")));
-                        obj.setObjective(resultSet.getString("objective"));
-                        obj.setType(resultSet.getString("type"));
-                        obj.setValue(resultSet.getString("value"));
-                        obj.setCount(Integer.parseInt(resultSet.getString("count")));
-                        return obj;
-                    }
+    private Objective getObjective(int id) {
+        String query = "SELECT * FROM Objective WHERE id =?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setInt(1, id);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    Objective obj = new Objective();
+                    obj.setId(Integer.parseInt(resultSet.getString("id")));
+                    obj.setObjective(resultSet.getString("objective"));
+                    obj.setType(resultSet.getString("type"));
+                    obj.setValue(resultSet.getString("value"));
+                    obj.setCount(Integer.parseInt(resultSet.getString("count")));
+                    return obj;
                 }
-            } catch (Exception e) {
-                throw new RuntimeException(e);
             }
-            return null;
-        });
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return null;
     }
 
-    public void updateAsync(Object entity) {
-        CompletableFuture.runAsync(() -> {
-            String tableName = camelToSnake(entity.getClass().getSimpleName());
-            String columns = "";
-            List<Field> fields = new ArrayList<>();
-            for (Field field : entity.getClass().getDeclaredFields()) {
-                if (Arrays.asList(field.getType().getInterfaces()).contains(Identifiable.class)
-                        || Arrays.asList(field.getType().getInterfaces()).contains(Collection.class)
-                        || field.getName().equals("id")) {
-                    continue;
-                } else {
-                    fields.add(field);
-                }
-                String snakeCaseName = camelToSnake(field.getName());
-                columns += snakeCaseName + " =?, ";
+    public void update(Object entity) {
+        String tableName = camelToSnake(entity.getClass().getSimpleName());
+        String columns = "";
+        List<Field> fields = new ArrayList<>();
+        for (Field field : entity.getClass().getDeclaredFields()) {
+            if (Arrays.asList(field.getType().getInterfaces()).contains(Identifiable.class)
+                    || Arrays.asList(field.getType().getInterfaces()).contains(Collection.class)
+                    || field.getName().equals("id")) {
+                continue;
+            } else {
+                fields.add(field);
             }
-            columns = columns.substring(0, columns.length() - 2);
+            String snakeCaseName = camelToSnake(field.getName());
+            columns += snakeCaseName + " =?, ";
+        }
+        columns = columns.substring(0, columns.length() - 2);
 
-            String query = "UPDATE " + tableName + " SET " + columns + " WHERE id =?";
-            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-                int i = 1;
-                for (Field field : fields) {
-                    field.setAccessible(true);
-                    preparedStatement.setObject(i++, field.get(entity));
-                }
-                preparedStatement.setObject(i, ((Identifiable) entity).getId());
-                preparedStatement.executeUpdate();
-            } catch (Exception e) {
-                e.printStackTrace();
+        String query = "UPDATE " + tableName + " SET " + columns + " WHERE id =?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            int i = 1;
+            for (Field field : fields) {
+                field.setAccessible(true);
+                preparedStatement.setObject(i++, field.get(entity));
             }
-        });
+            preparedStatement.setObject(i, ((Identifiable) entity).getId());
+            preparedStatement.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    public CompletableFuture<Void> deleteAsync(Object entity) {
+    public void delete(Object entity) {
         String tableName = entity.getClass().getSimpleName();
         String query = "DELETE FROM " + tableName + " WHERE id=?";
-        return CompletableFuture.runAsync(() -> {
-            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-                preparedStatement.setInt(1, ((Identifiable) entity).getId());
-                preparedStatement.executeUpdate();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setInt(1, ((Identifiable) entity).getId());
+            preparedStatement.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void addPlayerQuest(UUID uniqueId, String questName, Location location) {
-        Quest quest = getQuestByNameAsync(questName).join();
+        Quest quest = getQuestByName(questName);
         if (quest == null) {
             return;
         }
-        if (getPlayerQuestByQuestIdAsync(uniqueId, quest.getId()).join().getId() != 0) {
+        if (getPlayerQuestByQuestId(uniqueId, quest.getId()).getId() != 0) {
             return;
         }
         PlayerQuest playerQuest = new PlayerQuest();
@@ -252,45 +237,41 @@ public class DatabaseHandler {
         playerQuest.setTime(0);
         playerQuest.setProgress("0");
         playerQuest.setStartLocation(Utils.convertLocationToString(location));
-        saveAsync(playerQuest);
+        save(playerQuest);
     }
 
-    public CompletableFuture<List<PlayerQuest>> getPlayerQuestsAsync(UUID uniqueId, String type) {
-        return CompletableFuture.supplyAsync(() -> {
-            List<PlayerQuest> list = new ArrayList<>();
-            String query = "SELECT * FROM player_quest WHERE player_uuid =?";
-            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-                preparedStatement.setString(1, uniqueId.toString());
-                try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                    while (resultSet.next()) {
-                        var playerQuest = createPlayerQuest(resultSet);
-                        if (type.isEmpty() || playerQuest.getQuestStatus().getStatus().equals(type) || type.equals("NOT_STARTED"))
-                            list.add(playerQuest);
-                    }
+    public List<PlayerQuest> getPlayerQuests(UUID uniqueId, String type) {
+        List<PlayerQuest> list = new ArrayList<>();
+        String query = "SELECT * FROM player_quest WHERE player_uuid =?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setString(1, uniqueId.toString());
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                while (resultSet.next()) {
+                    var playerQuest = createPlayerQuest(resultSet);
+                    if (type.isEmpty() || playerQuest.getQuestStatus().getStatus().equals(type) || type.equals("NOT_STARTED"))
+                        list.add(playerQuest);
                 }
-            } catch (Exception e) {
-                e.printStackTrace();
             }
-            return list;
-        });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
     }
 
-    public CompletableFuture<PlayerQuest> getPlayerQuestByQuestIdAsync(UUID uniqueId, int questId) {
+    public PlayerQuest getPlayerQuestByQuestId(UUID uniqueId, int questId) {
         String query = "SELECT * FROM player_quest WHERE player_uuid =? AND quest_id =?";
-        return CompletableFuture.supplyAsync(() -> {
-            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-                preparedStatement.setString(1, uniqueId.toString());
-                preparedStatement.setInt(2, questId);
-                try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                    if (resultSet.next()) {
-                        return createPlayerQuest(resultSet);
-                    }
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setString(1, uniqueId.toString());
+            preparedStatement.setInt(2, questId);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    return createPlayerQuest(resultSet);
                 }
-            } catch (Exception e) {
-                e.printStackTrace();
             }
-            return new PlayerQuest();
-        });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new PlayerQuest();
     }
 
     private PlayerQuest createPlayerQuest(ResultSet resultSet) throws SQLException {
@@ -301,141 +282,120 @@ public class DatabaseHandler {
         playerQuest.setTime(resultSet.getInt("time"));
         playerQuest.setProgress(resultSet.getString("progress"));
         playerQuest.setStartLocation(resultSet.getString("start_location"));
-        playerQuest.setQuest(getQuestFromIdAsync(playerQuest.getQuestId()).join());
+        playerQuest.setQuest(getQuestFromId(playerQuest.getQuestId()));
         playerQuest.setQuestStatusId(resultSet.getInt("quest_status_id"));
-        playerQuest.setQuestStatus(getFromIdAsync(QuestStatus.class, playerQuest.getQuestStatusId()).join());
+        playerQuest.setQuestStatus(getFromId(QuestStatus.class, playerQuest.getQuestStatusId()));
         return playerQuest;
     }
 
-    private CompletableFuture<Quest> getQuestFromIdAsync(int questId) {
+    private Quest getQuestFromId(int questId) {
         String query = "SELECT * FROM Quest WHERE id =?";
-        return CompletableFuture.supplyAsync(() -> {
-            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-                preparedStatement.setInt(1, questId);
-                try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                    if (resultSet.next()) {
-                        Quest quest = new Quest();
-                        quest.setId(Integer.parseInt(resultSet.getString("id")));
-                        quest.setName(resultSet.getString("name"));
-                        quest.setDescription(resultSet.getString("description"));
-                        quest.setTimeLimit(Integer.parseInt(resultSet.getString("time_limit")));
-                        return getObjectiveAsync(resultSet.getInt("objective_id"))
-                                .thenApply(objective -> {
-                                    if (objective != null) {
-                                        quest.setObjectiveId(objective.getId());
-                                        quest.setObjective(objective);
-                                    }
-                                    return quest;
-                                }).join();
-                    }
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setInt(1, questId);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    Quest quest = new Quest();
+                    quest.setId(Integer.parseInt(resultSet.getString("id")));
+                    quest.setName(resultSet.getString("name"));
+                    quest.setDescription(resultSet.getString("description"));
+                    quest.setTimeLimit(Integer.parseInt(resultSet.getString("time_limit")));
+                    quest.setObjective(getObjective(resultSet.getInt("objective_id")));
+                    quest.setObjectiveId(resultSet.getInt("objective_id"));
+                    return quest;
                 }
-            } catch (Exception e) {
-                e.printStackTrace();
             }
-            return null;
-        });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public void changePlayerQuestType(UUID uniqueId, String questName, String type, Location location) {
-        var quest = getQuestByNameAsync(questName).join();
-        var playerQuest = getPlayerQuestByQuestIdAsync(uniqueId, quest.getId()).join();
+        var quest = getQuestByName(questName);
+        var playerQuest = getPlayerQuestByQuestId(uniqueId, quest.getId());
         if (type.equals(("IN_PROGRESS"))) {
             playerQuest.setTime(0);
             playerQuest.setProgress("0");
             playerQuest.setStartLocation(Utils.convertLocationToString(location));
         }
 
-        playerQuest.setQuestStatusId(getQuestStatusByNameAsync(type).join());
-        updateAsync(playerQuest);
+        playerQuest.setQuestStatusId(getQuestStatusByName(type));
+        update(playerQuest);
     }
 
-    private CompletableFuture<Integer> getQuestStatusByNameAsync(String type) {
+    private int getQuestStatusByName(String type) {
         String query = "SELECT * FROM quest_status WHERE status =?";
-        return CompletableFuture.supplyAsync(() -> {
-            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-                preparedStatement.setString(1, type);
-                try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                    if (resultSet.next()) {
-                        return resultSet.getInt("id");
-                    }
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setString(1, type);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    return resultSet.getInt("id");
                 }
-            } catch (Exception e) {
-                e.printStackTrace();
             }
-            return -1;
-        });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return -1;
     }
 
-    public CompletableFuture<List<Quest>> getAllQuestsAsync() {
+    public List<Quest> getAllQuests() {
         String query = "SELECT * FROM Quest";
         List<Quest> list = new ArrayList<>();
-
-        return CompletableFuture.supplyAsync(() -> {
-            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-                try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                    while (resultSet.next()) {
-                        Quest quest = new Quest();
-                        quest.setId(Integer.parseInt(resultSet.getString("id")));
-                        quest.setName(resultSet.getString("name"));
-                        quest.setDescription(resultSet.getString("description"));
-                        quest.setTimeLimit(Integer.parseInt(resultSet.getString("time_limit")));
-                        CompletableFuture<Objective> objectiveFuture = getObjectiveAsync(resultSet.getInt("objective_id"));
-                        objectiveFuture.thenAccept(objective -> {
-                            if (objective != null) {
-                                quest.setObjectiveId(objective.getId());
-                                quest.setObjective(objective);
-                            }
-                            list.add(quest);
-                        }).join();
-                    }
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                while (resultSet.next()) {
+                    Quest quest = new Quest();
+                    quest.setId(Integer.parseInt(resultSet.getString("id")));
+                    quest.setName(resultSet.getString("name"));
+                    quest.setDescription(resultSet.getString("description"));
+                    quest.setTimeLimit(Integer.parseInt(resultSet.getString("time_limit")));
+                    quest.setObjective(getObjective(resultSet.getInt("objective_id")));
+                    quest.setObjectiveId(resultSet.getInt("objective_id"));
+                    list.add(quest);
                 }
-            } catch (Exception e) {
-                e.printStackTrace();
             }
-            return list;
-        });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
     }
 
-    public CompletableFuture<List<Reward>> getQuestRewardsAsync(Quest quest) {
-        return CompletableFuture.supplyAsync(() -> {
-            List<Reward> rewards = new ArrayList<>();
-            String query = "SELECT * FROM quest_reward WHERE quest_id = ?";
-            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-                preparedStatement.setInt(1, quest.getId());
-                try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                    while (resultSet.next()) {
-                        var id = resultSet.getInt("reward_id");
-                        getRewardFromResultSetAsync(rewards, id);
-                    }
+    public List<Reward> getQuestRewards(Quest quest) {
+        List<Reward> rewards = new ArrayList<>();
+        String query = "SELECT * FROM quest_reward WHERE quest_id = ?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setInt(1, quest.getId());
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                while (resultSet.next()) {
+                    var id = resultSet.getInt("reward_id");
+                    getRewardFromResultSet(rewards, id);
                 }
-            } catch (Exception e) {
-                e.printStackTrace();
             }
-            return rewards;
-        });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return rewards;
     }
 
-    private void getRewardFromResultSetAsync(List<Reward> rewards, int id) {
+    private void getRewardFromResultSet(List<Reward> rewards, int id) {
         String query = "SELECT * FROM reward WHERE id =?";
-        CompletableFuture.runAsync(() -> {
-            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-                preparedStatement.setInt(1, id);
-                try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                    if (resultSet.next()) {
-                        Reward reward = new Reward();
-                        reward.setId(resultSet.getInt("id"));
-                        reward.setName(resultSet.getString("name"));
-                        reward.setRewardTypeId(resultSet.getInt("reward_type_id"));
-                        reward.setAmount(resultSet.getInt("amount"));
-                        reward.setValue(resultSet.getString("value"));
-                        reward.setRewardType(getFromIdAsync(RewardType.class, reward.getRewardTypeId()).join());
-                        rewards.add(reward);
-                    }
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setInt(1, id);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    Reward reward = new Reward();
+                    reward.setId(resultSet.getInt("id"));
+                    reward.setName(resultSet.getString("name"));
+                    reward.setRewardTypeId(resultSet.getInt("reward_type_id"));
+                    reward.setAmount(resultSet.getInt("amount"));
+                    reward.setValue(resultSet.getString("value"));
+                    reward.setRewardType(getFromId(RewardType.class, reward.getRewardTypeId()));
+                    rewards.add(reward);
                 }
-            } catch (Exception e) {
-                e.printStackTrace();
             }
-        });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }

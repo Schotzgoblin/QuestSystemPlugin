@@ -5883,3 +5883,46 @@ java.lang.UnsupportedClassVersionError: com/jastermaster/template/PluginTemplate
 00:11:21 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected
 00:11:21 [INFORMATION] Netty is not using direct IO buffers.
 
+18:00:06 [INFORMATION] Using standard Java JCE cipher.
+18:00:06 [INFORMATION] Using standard Java compressor.
+18:00:06 [INFORMATION] Enabled BungeeCord version git:BungeeCord-Bootstrap:1.20-R0.3-SNAPSHOT:18eae8a:1842
+18:00:06 [INFORMATION] Discovered module: ModuleSpec(name=cmd_alert, file=modules\cmd_alert.jar, provider=JenkinsModuleSource())
+
+18:00:06 [INFORMATION] Discovered module: ModuleSpec(name=cmd_find, file=modules\cmd_find.jar, provider=JenkinsModuleSource())
+
+18:00:06 [INFORMATION] Discovered module: ModuleSpec(name=cmd_list, file=modules\cmd_list.jar, provider=JenkinsModuleSource())
+
+18:00:06 [INFORMATION] Discovered module: ModuleSpec(name=cmd_send, file=modules\cmd_send.jar, provider=JenkinsModuleSource())
+
+18:00:06 [INFORMATION] Discovered module: ModuleSpec(name=cmd_server, file=modules\cmd_server.jar, provider=JenkinsModuleSource())
+
+18:00:06 [INFORMATION] Discovered module: ModuleSpec(name=reconnect_yaml, file=modules\reconnect_yaml.jar, provider=JenkinsModuleSource())
+
+18:00:06 [INFORMATION] Loaded plugin reconnect_yaml version git:reconnect_yaml:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+18:00:06 [INFORMATION] Loaded plugin cmd_find version git:cmd_find:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+18:00:06 [INFORMATION] Loaded plugin cmd_server version git:cmd_server:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+18:00:06 [INFORMATION] Loaded plugin cmd_alert version git:cmd_alert:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+18:00:06 [INFORMATION] Loaded plugin cmd_send version git:cmd_send:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+18:00:06 [INFORMATION] Loaded plugin cmd_list version git:cmd_list:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+18:00:06 [WARNUNG] Forced host server pvp is not defined
+18:00:06 [INFORMATION] Enabled plugin reconnect_yaml version git:reconnect_yaml:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+18:00:06 [INFORMATION] Enabled plugin cmd_find version git:cmd_find:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+18:00:06 [INFORMATION] Enabled plugin cmd_server version git:cmd_server:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+18:00:06 [INFORMATION] Enabled plugin cmd_alert version git:cmd_alert:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+18:00:06 [INFORMATION] Enabled plugin cmd_send version git:cmd_send:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+18:00:06 [INFORMATION] Enabled plugin cmd_list version git:cmd_list:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+18:00:06 [INFORMATION] Listening on /0.0.0.0:25565
+18:00:38 [INFORMATION] [/127.0.0.1:49735] <-> InitialHandler has pinged
+18:00:38 [INFORMATION] [/127.0.0.1:49746] <-> InitialHandler has pinged
+18:00:38 [INFORMATION] [/127.0.0.1:49751] <-> InitialHandler has connected
+18:00:40 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected
+18:00:40 [INFORMATION] Netty is not using direct IO buffers.
+
+18:02:23 [INFORMATION] [Schotzgoblin] -> UpstreamBridge has disconnected
+18:02:23 [INFORMATION] [Schotzgoblin] <-> DownstreamBridge <-> [lobby] has disconnected
+18:02:23 [INFORMATION] [/127.0.0.1:49877] <-> InitialHandler has pinged
+18:02:23 [INFORMATION] [/127.0.0.1:49892] <-> InitialHandler has pinged
+18:02:24 [INFORMATION] [Schotzgoblin,/127.0.0.1:49895] <-> InitialHandler has connected
+18:02:25 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected
+19:46:29 [INFORMATION] [Schotzgoblin] -> UpstreamBridge has disconnected
+19:46:29 [INFORMATION] [Schotzgoblin] <-> DownstreamBridge <-> [lobby] has disconnected

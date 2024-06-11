@@ -79,8 +79,8 @@ public class QuestManager implements Listener {
         }
         inventoryMapping.setType(type);
         resetInventory(inventory);
-        List<Quest> quests = databaseHandler.getAllQuestsAsync().join();
-        List<PlayerQuest> playerQuests = databaseHandler.getPlayerQuestsAsync(player.getUniqueId(), type).join();
+        List<Quest> quests = databaseHandler.getAllQuests();
+        List<PlayerQuest> playerQuests = databaseHandler.getPlayerQuests(player.getUniqueId(), type);
         if (!type.equals("All Quests")) {
             if(type.equals("NOT_STARTED")){
                 quests = quests.stream()
@@ -122,9 +122,8 @@ public class QuestManager implements Listener {
 
         List<Component> lore = new ArrayList<>();
         var component = getQuestStatusComponent(type, quest, player);
-        var rewards = databaseHandler.getQuestRewardsAsync(quest).join();
-        player.sendMessage("Rewards: " + rewards.size());
-        var playerQuest = databaseHandler.getPlayerQuestByQuestIdAsync(player.getUniqueId(), quest.getId()).join();
+        var rewards = databaseHandler.getQuestRewards(quest);
+        var playerQuest = databaseHandler.getPlayerQuestByQuestId(player.getUniqueId(), quest.getId());
 
         if(((TextComponent)component).content().equals("Not Started")) {
             lore.add(Component.text(Objects.requireNonNull(config.getString("quest-manager.quest-click-not-started"))));
@@ -184,7 +183,7 @@ public class QuestManager implements Listener {
         if (!type.equals("All Quests")) {
             return getComponentFromType(type);
         } else {
-            List<PlayerQuest> allPlayerQuests = databaseHandler.getPlayerQuestsAsync(player.getUniqueId(), "NOT_STARTED").join();
+            List<PlayerQuest> allPlayerQuests = databaseHandler.getPlayerQuests(player.getUniqueId(), "NOT_STARTED");
             PlayerQuest playerQuest = allPlayerQuests.stream()
                     .filter(playerQuest1 -> playerQuest1.getQuest().getId() == quest.getId())
                     .findFirst()
@@ -204,12 +203,12 @@ public class QuestManager implements Listener {
     }
 
     public void reactivateQuest(Player player, TextComponent displayname) {
-        var quest = databaseHandler.getQuestByNameAsync(displayname.content()).join();
+        var quest = databaseHandler.getQuestByName(displayname.content());
         databaseHandler.changePlayerQuestType(player.getUniqueId(), displayname.content(), "IN_PROGRESS", player.getLocation());
         player.sendMessage(config.getString("quest-manager.quest-reactivated") + displayname.content());
         player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_PLING, 1.0f, 0.0f);
         createAndShowBossBar(player,displayname.content(), 0.0f);
-        var playerQuest = databaseHandler.getPlayerQuestByQuestIdAsync(player.getUniqueId(), quest.getId()).join();
+        var playerQuest = databaseHandler.getPlayerQuestByQuestId(player.getUniqueId(), quest.getId());
         if (runnables.containsKey(playerQuest)) {
             runnables.get(playerQuest).cancel();
             runnables.remove(playerQuest);
@@ -221,8 +220,8 @@ public class QuestManager implements Listener {
 
     public void cancelQuest(Player player, TextComponent displayname) {
         databaseHandler.changePlayerQuestType(player.getUniqueId(), displayname.content(), "CANCELED",player.getLocation());
-        int questId = databaseHandler.getQuestByNameAsync(displayname.content()).join().getId();
-        var playerQuest = databaseHandler.getPlayerQuestByQuestIdAsync(player.getUniqueId(), questId).join();
+        int questId = databaseHandler.getQuestByName(displayname.content()).getId();
+        var playerQuest = databaseHandler.getPlayerQuestByQuestId(player.getUniqueId(), questId);
         if (runnables.containsKey(playerQuest)) {
             runnables.get(playerQuest).cancel();
             runnables.remove(playerQuest);
@@ -233,7 +232,7 @@ public class QuestManager implements Listener {
     }
 
     public void acceptQuest(Player player, TextComponent displayname, String objective) {
-        var quest = databaseHandler.getQuestByNameAsync(displayname.content()).join();
+        var quest = databaseHandler.getQuestByName(displayname.content());
 
         databaseHandler.addPlayerQuest(player.getUniqueId(), displayname.content(),player.getLocation());
         player.sendMessage(config.getString("quest-manager.quest-accepted") + displayname.content());
@@ -241,7 +240,7 @@ public class QuestManager implements Listener {
         player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_PLING, 1.0f, 0.0f);
         createAndShowBossBar(player, displayname.content(), 0.0f);
         BukkitRunnable task = new QuestTimerTask(player, displayname.content(), quest.getId());
-        runnables.put(databaseHandler.getPlayerQuestByQuestIdAsync(player.getUniqueId(), quest.getId()).join(), task);
+        runnables.put(databaseHandler.getPlayerQuestByQuestId(player.getUniqueId(), quest.getId()), task);
         task.runTaskTimer(plugin, 0L, 20L);
     }
 
@@ -264,14 +263,14 @@ public class QuestManager implements Listener {
         bossbar.progress(progress);
         if(progress == 1.0f) {
             bossbar.color(BossBar.Color.GREEN);
-            databaseHandler.updateAsync(playerQuest);
+            databaseHandler.update(playerQuest);
             completeQuest(player, title);
         }
     }
 
     private void completeQuest(Player player, String title) {
-        var questId = databaseHandler.getQuestByNameAsync(title).join().getId();
-        var playerQuest = databaseHandler.getPlayerQuestByQuestIdAsync(player.getUniqueId(),questId).join();
+        var questId = databaseHandler.getQuestByName(title).getId();
+        var playerQuest = databaseHandler.getPlayerQuestByQuestId(player.getUniqueId(),questId);
         databaseHandler.changePlayerQuestType(player.getUniqueId(),title,"COMPLETED",player.getLocation());
         player.sendMessage(config.getString("quest-manager.quest-completed") + title);
         Utils.sendAlertToPlayer("Quest Completed", config.getString("quest-manager.quest-completed") + title, 1000, 4000, 1000, Color.fromRGB(0,255,0), player);
@@ -288,7 +287,7 @@ public class QuestManager implements Listener {
 
     private void giveRewards(Player player, PlayerQuest playerQuest) {
         var quest = playerQuest.getQuest();
-        var rewards = databaseHandler.getQuestRewardsAsync(quest).join();
+        var rewards = databaseHandler.getQuestRewards(quest);
         for (Reward reward : rewards) {
             var rewardSplit = reward.getRewardType().getName();
             switch (rewardSplit) {
@@ -317,7 +316,7 @@ public class QuestManager implements Listener {
 
     @EventHandler
     public void onPlayerJoinEvent(PlayerJoinEvent e) {
-        var playerQuests = databaseHandler.getPlayerQuestsAsync(e.getPlayer().getUniqueId(), "IN_PROGRESS").join();
+        var playerQuests = databaseHandler.getPlayerQuests(e.getPlayer().getUniqueId(), "IN_PROGRESS");
         if(playerQuests.isEmpty()){
             initInventory(e.getPlayer(),"All Quests");
         }else{
@@ -332,7 +331,7 @@ public class QuestManager implements Listener {
 
     @EventHandler
     public void onPlayerQuitEvent(PlayerQuitEvent e) {
-        var playerQuests = databaseHandler.getPlayerQuestsAsync(e.getPlayer().getUniqueId(), "IN_PROGRESS").join();
+        var playerQuests = databaseHandler.getPlayerQuests(e.getPlayer().getUniqueId(), "IN_PROGRESS");
         for (PlayerQuest playerQuest : playerQuests) {
             runnables.get(playerQuest).cancel();
             runnables.remove(playerQuest);
@@ -351,15 +350,15 @@ public class QuestManager implements Listener {
 
         @Override
         public void run() {
-            var playerQuest = databaseHandler.getPlayerQuestByQuestIdAsync(player.getUniqueId(), questId).join();
+            var playerQuest = databaseHandler.getPlayerQuestByQuestId(player.getUniqueId(), questId);
             var inv = new InventoryMapping();
             if(inventories.containsKey(player.getUniqueId())){
                 inv = inventories.get(player.getUniqueId());
             }
             if (playerQuest.getQuestStatus().getStatus().equals("IN_PROGRESS")) {
                 playerQuest.setTime(playerQuest.getTime() + 1);
-                databaseHandler.updateAsync(playerQuest);
-                var quest = databaseHandler.getQuestByNameAsync(questName).join();
+                databaseHandler.update(playerQuest);
+                var quest = databaseHandler.getQuestByName(questName);
                 if (playerQuest.getTime() >= quest.getTimeLimit()) {
                     Utils.sendAlertToPlayer("Quest Failed", config.getString("quest-manager.quest-failed") + questName + config.getString("quest-manager.quest-time-limit") + getTimeStringFromSecs(quest.getTimeLimit()), 1000, 4000, 1000, Color.fromRGB(255,0,0), player);
                     player.sendMessage(config.getString("quest-manager.quest-failed") + questName + config.getString("quest-manager.quest-time-limit") + getTimeStringFromSecs(quest.getTimeLimit()));
