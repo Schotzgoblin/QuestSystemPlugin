@@ -15,8 +15,8 @@ public class QuestCommand implements CommandExecutor {
     private final QuestManager questManager;
     private final FileConfiguration config;
 
-    public QuestCommand(QuestManager questManager) {
-        this.questManager = questManager;
+    public QuestCommand() {
+        this.questManager = QuestManager.getInstance();
         config = questManager.plugin.getConfig();
     }
 

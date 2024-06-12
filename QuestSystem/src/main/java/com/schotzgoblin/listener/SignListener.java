@@ -27,12 +27,12 @@ import java.util.Random;
 
 
 public class SignListener implements Listener {
-    private QuestSystem plugin;
-    private DatabaseHandler databaseHandler;
+    private final QuestSystem plugin;
+    private final DatabaseHandler databaseHandler;
 
-    public SignListener(QuestSystem plugin, DatabaseHandler databaseHandler) {
-        this.plugin = plugin;
-        this.databaseHandler = databaseHandler;
+    public SignListener() {
+        this.plugin = QuestSystem.getInstance();
+        this.databaseHandler = DatabaseHandler.getInstance();
         this.updateNearbySignsOfOnlinePlayersDelayed();
     }
 
@@ -42,6 +42,7 @@ public class SignListener implements Listener {
         int updateDelay = getPlayerJoinSignUpdateDelay();
         updateNearbySignsDelayed(player, updateDelay);
     }
+
     @EventHandler(
             ignoreCancelled = true
     )
@@ -52,7 +53,7 @@ public class SignListener implements Listener {
                 Material blockType = block.getType();// 38
                 if (SignUtils.isSign(blockType)) {// 39
                     Player player = event.getPlayer();// 40
-                    Sign sign = (Sign)block.getState();// 41
+                    Sign sign = (Sign) block.getState();// 41
                     sendSignUpdate(player, sign);// 42
                 }
             }
@@ -63,11 +64,14 @@ public class SignListener implements Listener {
     public void sendSignUpdate(Player player, Sign sign) {
         Preconditions.checkNotNull(player, "player is null");
         Preconditions.checkNotNull(sign, "sign is null");
-        var playerQuests = databaseHandler.getPlayerQuests(player.getUniqueId(), "IN_PROGRESS");
-        var side = sign.getSide(Side.FRONT);
-        var firstLine = side.line(0);
-        changeSign(side, (TextComponent) firstLine, playerQuests);
-        player.sendSignChange(sign.getLocation(), sign.getSide(Side.FRONT).lines(), SignUtils.getSignTextColor(sign), sign.getSide(Side.FRONT).isGlowingText());
+        var playerQuestsFuture = databaseHandler.getPlayerQuestsAsync(player.getUniqueId(), "IN_PROGRESS");
+        playerQuestsFuture.thenAccept(playerQuests -> {
+            var side = sign.getSide(Side.FRONT);
+            var firstLine = side.line(0);
+            changeSign(side, (TextComponent) firstLine, playerQuests);
+            player.sendSignChange(sign.getLocation(), sign.getSide(Side.FRONT).lines(), SignUtils.getSignTextColor(sign), sign.getSide(Side.FRONT).isGlowingText());
+        });
+
     }
 
     private void changeSign(SignSide side, TextComponent firstLine, List<PlayerQuest> playerQuests) {
@@ -92,7 +96,7 @@ public class SignListener implements Listener {
         if (delayTicks > 0) {
             Bukkit.getScheduler().runTaskTimer(plugin, () -> {
                 for (Player player : Bukkit.getOnlinePlayers()) {
-                    this.updateNearbySigns(player);
+//                    this.updateNearbySigns(player);
                 }
             }, delayTicks, 20);
         }
@@ -117,7 +121,7 @@ public class SignListener implements Listener {
                 if (player.isOnline()) {
                     this.updateNearbySigns(player);
                 }
-            }, delayTicks,20);
+            }, delayTicks, 20);
         }
     }
 }

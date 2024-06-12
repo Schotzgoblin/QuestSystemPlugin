@@ -18,9 +18,9 @@ public class AdminQuestCommand implements CommandExecutor, Listener {
     private final DatabaseHandler databaseHandler;
     private final Inventory questCreationUI;
 
-    public AdminQuestCommand(QuestManager questManager, DatabaseHandler databaseHandler) {
-        this.questManager = questManager;
-        this.databaseHandler = databaseHandler;
+    public AdminQuestCommand() {
+        this.questManager = QuestManager.getInstance();
+        this.databaseHandler = DatabaseHandler.getInstance();
         this.questCreationUI = Bukkit.createInventory(null, 27, Component.text("Quest Creation"));
     }
 

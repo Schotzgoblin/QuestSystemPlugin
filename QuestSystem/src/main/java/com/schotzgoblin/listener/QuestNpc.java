@@ -1,5 +1,8 @@
 package com.schotzgoblin.listener;
 
+import com.schotzgoblin.config.ConfigHandler;
+import com.schotzgoblin.database.PlayerQuest;
+import com.schotzgoblin.database.Quest;
 import com.schotzgoblin.main.DatabaseHandler;
 import com.schotzgoblin.main.InventoryMapping;
 import com.schotzgoblin.main.QuestManager;
@@ -18,33 +21,59 @@ import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.EquipmentSlot;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
 
 import java.util.*;
+import java.util.concurrent.CompletableFuture;
 
 public class QuestNpc implements Listener {
 
     private final QuestSystem plugin;
     private BukkitTask task;
     private final QuestManager questManager;
-    private final Location npcLocation;
+    private Location npcLocation;
     private Villager npc;
-    private final FileConfiguration config;
     private final DatabaseHandler databaseHandler;
+    private final ConfigHandler configHandler = ConfigHandler.getInstance();
 
-    public QuestNpc(QuestSystem plugin, QuestManager questManager, DatabaseHandler databaseHandler) {
-        this.plugin = plugin;
-        this.questManager = questManager;
-        this.databaseHandler = databaseHandler;
-        config = plugin.getConfig();
-        World world = Bukkit.getWorld("world");
-        double x = config.getDouble("npc-location.x");
-        double y = config.getDouble("npc-location.y");
-        double z = config.getDouble("npc-location.z");
-        npcLocation = new Location(world, x, y, z);
-        deleteEntities(npcLocation, 4);
-        spawnNPC(npcLocation);
+    public QuestNpc() {
+        this.plugin = QuestSystem.getInstance();
+        this.questManager = QuestManager.getInstance();
+        this.databaseHandler = DatabaseHandler.getInstance();
+
+        // Fetch NPC location asynchronously
+        fetchNPCLocationAsync().thenAccept(location -> {
+            this.npcLocation = location;
+            Bukkit.getScheduler().runTask(plugin, () -> {
+                deleteEntities(npcLocation, 4);
+                spawnNPC(npcLocation);
+            });
+        }).exceptionally(ex -> {
+            ex.printStackTrace();
+            return null;
+        });
+    }
+
+    private CompletableFuture<Location> fetchNPCLocationAsync() {
+
+        CompletableFuture<Double> xFuture = configHandler.getDoubleAsync("npc-location.x");
+        CompletableFuture<Double> yFuture = configHandler.getDoubleAsync("npc-location.y");
+        CompletableFuture<Double> zFuture = configHandler.getDoubleAsync("npc-location.z");
+
+        return CompletableFuture.allOf(xFuture, yFuture, zFuture).thenApply(v -> {
+            try {
+                double x = xFuture.get();
+                double y = yFuture.get();
+                double z = zFuture.get();
+                World world = Bukkit.getWorld("world");
+                return new Location(world, x, y, z);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 
 
@@ -62,23 +91,72 @@ public class QuestNpc implements Listener {
 
     public void spawnNPC(Location location) {
         if (npc != null) npc.remove();
-        EntityType entityType = EntityType.valueOf(config.getString("npc-settings.type"));
-        npc = (Villager) npcLocation.getWorld().spawnEntity(npcLocation, entityType);
 
-        npc.customName(Component.text(Objects.requireNonNull(config.getString("npc-settings.custom-name"))));
-        npc.setCustomNameVisible(config.getBoolean("npc-settings.custom-name-visible"));
-        npc.setInvulnerable(config.getBoolean("npc-settings.invulnerable"));
-        npc.setAI(config.getBoolean("npc-settings.ai-enabled"));
-        double maxHealth = config.getDouble("npc-settings.max-health");
-        Objects.requireNonNull(npc.getAttribute(Attribute.GENERIC_MAX_HEALTH)).setBaseValue(maxHealth);
-        npc.setHealth(maxHealth);
-        ArmorStand armorStand = location.getWorld().spawn(location, ArmorStand.class);
-        armorStand.setInvisible(true);
-        armorStand.setGravity(false);
-        armorStand.addPassenger(npc);
-        int interval = config.getInt("npc-task.interval");
-        int range = config.getInt("npc-task.range");
+        fetchConfigValuesAsync().thenAccept(configValues -> {
+            try {
+                Bukkit.getScheduler().runTask(plugin, () -> {
+                    EntityType entityType = EntityType.valueOf(configValues.entityType);
+                    npc = (Villager) npcLocation.getWorld().spawnEntity(npcLocation, entityType);
 
+                    npc.customName(Component.text(Objects.requireNonNull(configValues.customName)));
+                    npc.setCustomNameVisible(configValues.customNameVisible);
+                    npc.setInvulnerable(configValues.invulnerable);
+                    npc.setAI(configValues.aiEnabled);
+                    double maxHealth = configValues.maxHealth;
+                    Objects.requireNonNull(npc.getAttribute(Attribute.GENERIC_MAX_HEALTH)).setBaseValue(maxHealth);
+                    npc.setHealth(maxHealth);
+
+                    ArmorStand armorStand = location.getWorld().spawn(location, ArmorStand.class);
+                    armorStand.setInvisible(true);
+                    armorStand.setGravity(false);
+                    armorStand.addPassenger(npc);
+                });
+                startNPCTask(configValues.interval, configValues.range);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    private CompletableFuture<ConfigValues> fetchConfigValuesAsync() {
+
+        CompletableFuture<String> entityTypeFuture = configHandler.getStringAsync("npc-settings.type");
+        CompletableFuture<String> customNameFuture = configHandler.getStringAsync("npc-settings.custom-name");
+        CompletableFuture<Boolean> customNameVisibleFuture = configHandler.getBooleanAsync("npc-settings.custom-name-visible");
+        CompletableFuture<Boolean> invulnerableFuture = configHandler.getBooleanAsync("npc-settings.invulnerable");
+        CompletableFuture<Boolean> aiEnabledFuture = configHandler.getBooleanAsync("npc-settings.ai-enabled");
+        CompletableFuture<Double> maxHealthFuture = configHandler.getDoubleAsync("npc-settings.max-health");
+        CompletableFuture<Integer> intervalFuture = configHandler.getIntAsync("npc-task.interval");
+        CompletableFuture<Integer> rangeFuture = configHandler.getIntAsync("npc-task.range");
+
+        return CompletableFuture.allOf(
+                entityTypeFuture,
+                customNameFuture,
+                customNameVisibleFuture,
+                invulnerableFuture,
+                aiEnabledFuture,
+                maxHealthFuture,
+                intervalFuture,
+                rangeFuture
+        ).thenApply(v -> {
+            try {
+                return new ConfigValues(
+                        entityTypeFuture.get(),
+                        customNameFuture.get(),
+                        customNameVisibleFuture.get(),
+                        invulnerableFuture.get(),
+                        aiEnabledFuture.get(),
+                        maxHealthFuture.get(),
+                        intervalFuture.get(),
+                        rangeFuture.get()
+                );
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        });
+    }
+
+    private void startNPCTask(int interval, int range) {
         task = new BukkitRunnable() {
             @Override
             public void run() {
@@ -97,6 +175,29 @@ public class QuestNpc implements Listener {
                 }
             }
         }.runTaskTimer(plugin, 0L, interval);
+    }
+
+    private static class ConfigValues {
+        String entityType;
+        String customName;
+        boolean customNameVisible;
+        boolean invulnerable;
+        boolean aiEnabled;
+        double maxHealth;
+        int interval;
+        int range;
+
+        ConfigValues(String entityType, String customName, boolean customNameVisible, boolean invulnerable,
+                     boolean aiEnabled, double maxHealth, int interval, int range) {
+            this.entityType = entityType;
+            this.customName = customName;
+            this.customNameVisible = customNameVisible;
+            this.invulnerable = invulnerable;
+            this.aiEnabled = aiEnabled;
+            this.maxHealth = maxHealth;
+            this.interval = interval;
+            this.range = range;
+        }
     }
 
     public static void lookAtNearestPlayer(Entity npc, Player nearestPlayer) {
@@ -135,51 +236,87 @@ public class QuestNpc implements Listener {
             return;
         }
         var player = event.getPlayer();
+        player.sendMessage("Opening Quest Menu");
         questManager.setupInventory(player, "All Quests");
-
     }
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent e) {
-        var player = (Player) e.getWhoClicked();
-        var inv = new InventoryMapping();
-        if (questManager.inventories.containsKey(player.getUniqueId())) {
-            inv = questManager.inventories.get(player.getUniqueId());
+        Player player = (Player) e.getWhoClicked();
+        UUID playerId = player.getUniqueId();
+        InventoryMapping inv = questManager.inventories.getOrDefault(playerId, new InventoryMapping());
+
+        if (!Objects.equals(e.getClickedInventory(), inv.getInventory())) {
+            return;
         }
-        if (!Objects.equals(e.getClickedInventory(), inv.getInventory())) return;
 
         e.setCancelled(true);
 
         try {
-            var clickedItem = e.getCurrentItem();
-            if (clickedItem == null) return;
-            if (clickedItem.getType().getKey().getKey().contains("glass_pane")) {
-                if (e.getSlot() < 9) inv.setMenuSlot(e.getSlot());
-                var content = ((TextComponent) Objects.requireNonNull(clickedItem.getItemMeta().displayName())).content();
-                questManager.addQuestsToInventory(content, player, inv.getInventory());
-                player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_BELL, 1.0f, 0.0f);
+            ItemStack clickedItem = e.getCurrentItem();
+            if (clickedItem == null) {
                 return;
             }
-            var displayname = (TextComponent) clickedItem.getItemMeta().displayName();
-            if (displayname == null) return;
-            var quest = databaseHandler.getQuestByName(displayname.content());
-            var playerQuest = databaseHandler.getPlayerQuestByQuestId(player.getUniqueId(), quest.getId());
-            if (playerQuest.getId() == 0)
-                questManager.acceptQuest(player, displayname, quest.getObjective().getObjective());
-            else if (playerQuest.getQuestStatus().getStatus().equalsIgnoreCase("IN_PROGRESS"))
-                questManager.cancelQuest(player, displayname);
-            else if (playerQuest.getQuestStatus().getStatus().equalsIgnoreCase("CANCELED"))
-                questManager.reactivateQuest(player, displayname);
-            questManager.addQuestsToInventory(inv.getType(), player, inv.getInventory());
+
+            ItemMeta itemMeta = clickedItem.getItemMeta();
+            if (itemMeta == null || !(itemMeta.displayName() instanceof TextComponent displayName)) {
+                return;
+            }
+
+            if (clickedItem.getType().getKey().getKey().contains("glass_pane")) {
+                handleGlassPaneClick(e.getSlot(), player, inv, displayName.content());
+            } else {
+                handleQuestItemClick(player, displayName, inv);
+            }
+
         } catch (Exception ignored) {
             // Exception ignored, because it is not necessary to handle it (Only happens if player spam accepts quests)
         }
     }
 
+    private void handleGlassPaneClick(int slot, Player player, InventoryMapping inv, String displayName) {
+        if (slot < 9) {
+            inv.setMenuSlot(slot);
+        }
+
+        questManager.addQuestsToInventory(displayName, player, inv.getInventory());
+        player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_BELL, 1.0f, 0.0f);
+    }
+
+    private void handleQuestItemClick(Player player, TextComponent displayName, InventoryMapping inv) {
+        var questFuture = databaseHandler.getQuestByNameAsync(displayName.content());
+        questFuture.thenAccept(quest -> {
+            var playerQuestFuture = databaseHandler.getPlayerQuestByQuestIdAsync(player.getUniqueId(), quest.getId());
+            CompletableFuture.allOf(playerQuestFuture).thenAccept(x -> {
+                try {
+                    var playerQuest = playerQuestFuture.get();
+                    if (playerQuest.getId() == 0) {
+                        questManager.acceptQuest(player, displayName, quest.getObjective().getObjective());
+                    } else {
+                        switch (playerQuest.getQuestStatus().getStatus().toUpperCase()) {
+                            case "IN_PROGRESS":
+                                questManager.cancelQuest(player, displayName);
+                                break;
+                            case "CANCELED":
+                                questManager.reactivateQuest(player, displayName);
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    questManager.addQuestsToInventory(inv.getType(), player, inv.getInventory());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            });
+        });
+    }
+
+
     @EventHandler
     public void onInventoryClose(InventoryCloseEvent e) {
         var player = (Player) e.getPlayer();
-        if(questManager.inventories.containsKey(player.getUniqueId())&&e.getInventory().equals(questManager.inventories.get(player.getUniqueId()).getInventory()))
+        if (questManager.inventories.containsKey(player.getUniqueId()) && e.getInventory().equals(questManager.inventories.get(player.getUniqueId()).getInventory()))
             questManager.inventories.remove(player.getUniqueId());
     }
 }

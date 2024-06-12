@@ -21,8 +21,10 @@ import org.jetbrains.annotations.NotNull;
 
 public class QuestSystem extends JavaPlugin implements Listener, PluginMessageListener {
     final String bungeeCordChannelName = "BungeeCord";
-    private QuestManager questManager;
-    private DatabaseHandler databaseHandler;
+
+    public static QuestSystem getInstance() {
+        return getPlugin(QuestSystem.class);
+    }
 
     @Override
     public void onLoad() {
@@ -36,15 +38,12 @@ public class QuestSystem extends JavaPlugin implements Listener, PluginMessageLi
         Bukkit.getPluginManager().registerEvents(this, this);
         Bukkit.getMessenger().registerOutgoingPluginChannel(this, bungeeCordChannelName);
         Bukkit.getMessenger().registerIncomingPluginChannel(this, bungeeCordChannelName, this);
-
-        databaseHandler = new DatabaseHandler();
-        questManager = new QuestManager(this, databaseHandler);
-        addListener(questManager);
-        addListener(new TrackPlayerQuestProgress(this, questManager, databaseHandler));
-        addListener(new QuestNpc(this,questManager,databaseHandler));
-        addListener(new SignListener(this,databaseHandler));
-        registerCommand("quests",new QuestCommand(questManager));
-        registerCommand("quest",new AdminQuestCommand(questManager,databaseHandler));
+        addListener(QuestManager.getInstance());
+        addListener(new TrackPlayerQuestProgress());
+        addListener(new QuestNpc());
+        addListener(new SignListener());
+        registerCommand("quests",new QuestCommand());
+        registerCommand("quest",new AdminQuestCommand());
     }
     private void addListener(Listener listener) {
         Bukkit.getPluginManager().registerEvents(listener, this);
