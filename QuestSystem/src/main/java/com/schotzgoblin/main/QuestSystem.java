@@ -2,23 +2,22 @@ package com.schotzgoblin.main;
 
 import com.google.common.io.ByteArrayDataOutput;
 import com.google.common.io.ByteStreams;
-import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.event.ClickEvent;
+import com.schotzgoblin.commands.AdminQuestCommand;
+import com.schotzgoblin.commands.QuestCommand;
+import com.schotzgoblin.listener.QuestNpc;
+import com.schotzgoblin.listener.SignListener;
+import com.schotzgoblin.listener.TrackPlayerQuestProgress;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
-import org.bukkit.Location;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.plugin.messaging.PluginMessageListener;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.Arrays;
 
 public class QuestSystem extends JavaPlugin implements Listener, PluginMessageListener {
     final String bungeeCordChannelName = "BungeeCord";
@@ -43,6 +42,7 @@ public class QuestSystem extends JavaPlugin implements Listener, PluginMessageLi
         addListener(questManager);
         addListener(new TrackPlayerQuestProgress(this, questManager, databaseHandler));
         addListener(new QuestNpc(this,questManager,databaseHandler));
+        addListener(new SignListener(this,databaseHandler));
         registerCommand("quests",new QuestCommand(questManager));
         registerCommand("quest",new AdminQuestCommand(questManager,databaseHandler));
     }

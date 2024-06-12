@@ -1,12 +1,12 @@
 package com.schotzgoblin.main;
 
 import com.schotzgoblin.database.*;
+import com.schotzgoblin.utils.Utils;
 import org.bukkit.Location;
 
 import java.lang.reflect.Field;
 import java.sql.*;
 import java.util.*;
-import java.util.concurrent.CompletableFuture;
 
 public class DatabaseHandler {
     private final Connection connection;

@@ -3,6 +3,8 @@ package com.schotzgoblin.main;
 import com.schotzgoblin.database.PlayerQuest;
 import com.schotzgoblin.database.Quest;
 import com.schotzgoblin.database.Reward;
+import com.schotzgoblin.utils.MessageUtils;
+import com.schotzgoblin.utils.Utils;
 import net.kyori.adventure.bossbar.BossBar;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
@@ -24,7 +26,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.*;
 
-import static com.schotzgoblin.main.Utils.getTimeStringFromSecs;
+import static com.schotzgoblin.utils.Utils.getTimeStringFromSecs;
 
 public class QuestManager implements Listener {
     public final QuestSystem plugin;
@@ -273,7 +275,7 @@ public class QuestManager implements Listener {
         var playerQuest = databaseHandler.getPlayerQuestByQuestId(player.getUniqueId(),questId);
         databaseHandler.changePlayerQuestType(player.getUniqueId(),title,"COMPLETED",player.getLocation());
         player.sendMessage(config.getString("quest-manager.quest-completed") + title);
-        Utils.sendAlertToPlayer("Quest Completed", config.getString("quest-manager.quest-completed") + title, 1000, 4000, 1000, Color.fromRGB(0,255,0), player);
+        MessageUtils.sendAlertToPlayer("Quest Completed", config.getString("quest-manager.quest-completed") + title, 1000, 4000, 1000, Color.fromRGB(0,255,0), player);
         player.playSound(player.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);
         runnables.get(playerQuest).cancel();
         runnables.remove(playerQuest);
@@ -360,7 +362,7 @@ public class QuestManager implements Listener {
                 databaseHandler.update(playerQuest);
                 var quest = databaseHandler.getQuestByName(questName);
                 if (playerQuest.getTime() >= quest.getTimeLimit()) {
-                    Utils.sendAlertToPlayer("Quest Failed", config.getString("quest-manager.quest-failed") + questName + config.getString("quest-manager.quest-time-limit") + getTimeStringFromSecs(quest.getTimeLimit()), 1000, 4000, 1000, Color.fromRGB(255,0,0), player);
+                    MessageUtils.sendAlertToPlayer("Quest Failed", config.getString("quest-manager.quest-failed") + questName + config.getString("quest-manager.quest-time-limit") + getTimeStringFromSecs(quest.getTimeLimit()), 1000, 4000, 1000, Color.fromRGB(255,0,0), player);
                     player.sendMessage(config.getString("quest-manager.quest-failed") + questName + config.getString("quest-manager.quest-time-limit") + getTimeStringFromSecs(quest.getTimeLimit()));
                     player.playSound(player.getLocation(), Sound.BLOCK_END_PORTAL_SPAWN, 1.0f, 0.0f);
                     cancel();

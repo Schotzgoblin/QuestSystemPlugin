@@ -1,37 +1,65 @@
-[18:00:16] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[18:00:18] [ServerMain/INFO]: Loaded 1174 recipes
-[18:00:18] [ServerMain/INFO]: Loaded 1271 advancements
-[18:00:18] [Server thread/INFO]: Starting minecraft server version 1.20.4
-[18:00:18] [Server thread/INFO]: Loading properties
-[18:00:18] [Server thread/INFO]: This server is running Paper version git-Paper-496 (MC: 1.20.4) (Implementing API version 1.20.4-R0.1-SNAPSHOT) (Git: 7ac24a1 on ver/1.20.4)
-[18:00:20] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[18:00:20] [Server thread/INFO]: Using 4 threads for Netty based IO
-[18:00:20] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
+[16:07:24] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[16:07:27] [ServerMain/INFO]: Loaded 1174 recipes
+[16:07:27] [ServerMain/INFO]: Loaded 1271 advancements
+[16:07:28] [Server thread/INFO]: Starting minecraft server version 1.20.4
+[16:07:28] [Server thread/INFO]: Loading properties
+[16:07:28] [Server thread/INFO]: This server is running Paper version git-Paper-496 (MC: 1.20.4) (Implementing API version 1.20.4-R0.1-SNAPSHOT) (Git: 7ac24a1 on ver/1.20.4)
+[16:07:29] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[16:07:29] [Server thread/INFO]: Using 4 threads for Netty based IO
+[16:07:29] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
     We recommend installing the spark profiler as a replacement: https://spark.lucko.me/
     For more information please visit: https://github.com/PaperMC/Paper/issues/8948
-[18:00:20] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 3 worker threads, and gen parallelism of 3 threads
-[18:00:20] [Server thread/INFO]: Default game type: SURVIVAL
-[18:00:20] [Server thread/INFO]: Generating keypair
-[18:00:20] [Server thread/INFO]: Starting Minecraft server on *:25567
-[18:00:21] [Server thread/INFO]: Using default channel type
-[18:00:21] [Server thread/INFO]: Paper: Using Java compression from Velocity.
-[18:00:21] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
-[18:00:21] [Server thread/INFO]: [PluginTemplate] Loading server plugin PluginTemplate v1.0.0
-[18:00:21] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[18:00:21] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
-[18:00:21] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
-[18:00:21] [Server thread/WARN]: Whilst this makes it possible to use BungeeCord, unless access to your server is properly restricted, it also opens up the ability for hackers to connect with any username they choose.
-[18:00:21] [Server thread/WARN]: Please see http://www.spigotmc.org/wiki/firewall-guide/ for further information.
-[18:00:21] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
-[18:00:21] [Server thread/INFO]: Preparing level "world"
-[18:00:22] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[18:00:22] [Server thread/INFO]: Time elapsed: 135 ms
-[18:00:22] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[18:00:22] [Server thread/INFO]: Time elapsed: 32 ms
-[18:00:22] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[18:00:22] [Server thread/INFO]: Time elapsed: 28 ms
-[18:00:22] [Server thread/INFO]: [PluginTemplate] Enabling PluginTemplate v1.0.0
-[18:00:22] [Server thread/INFO]: Hello World
-[18:00:22] [Server thread/INFO]: Running delayed init tasks
-[18:00:22] [Server thread/INFO]: Done (3.901s)! For help, type "help"
-[18:00:22] [Server thread/INFO]: Timings Reset
+[16:07:29] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 3 worker threads, and gen parallelism of 3 threads
+[16:07:30] [Server thread/INFO]: Default game type: SURVIVAL
+[16:07:30] [Server thread/INFO]: Generating keypair
+[16:07:31] [Server thread/INFO]: Starting Minecraft server on *:25567
+[16:07:31] [Server thread/INFO]: Using default channel type
+[16:07:31] [Server thread/INFO]: Paper: Using Java compression from Velocity.
+[16:07:31] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[16:07:31] [Server thread/INFO]: [PluginTemplate] Loading server plugin PluginTemplate v1.0.0
+[16:07:31] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[16:07:31] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[16:07:31] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[16:07:31] [Server thread/WARN]: Whilst this makes it possible to use BungeeCord, unless access to your server is properly restricted, it also opens up the ability for hackers to connect with any username they choose.
+[16:07:31] [Server thread/WARN]: Please see http://www.spigotmc.org/wiki/firewall-guide/ for further information.
+[16:07:31] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[16:07:31] [Server thread/INFO]: Preparing level "world"
+[16:07:32] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[16:07:32] [Server thread/INFO]: Time elapsed: 161 ms
+[16:07:32] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[16:07:32] [Server thread/INFO]: Time elapsed: 37 ms
+[16:07:32] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[16:07:32] [Server thread/INFO]: Time elapsed: 26 ms
+[16:07:32] [Server thread/INFO]: [PluginTemplate] Enabling PluginTemplate v1.0.0
+[16:07:32] [Server thread/INFO]: Hello World
+[16:07:33] [Server thread/INFO]: Running delayed init tasks
+[16:07:33] [Server thread/INFO]: Done (5.388s)! For help, type "help"
+[16:07:33] [Server thread/INFO]: Timings Reset
+[16:14:14] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
+[16:14:14] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
+[16:14:14] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[16:14:14] [Server thread/INFO]: Using 4 threads for Netty based IO
+[16:14:14] [Server thread/INFO]: [PluginTemplate] Disabling PluginTemplate v1.0.0
+[16:14:14] [Server thread/INFO]: Shutting down
+[16:14:15] [Server thread/INFO]: Loaded 1174 recipes
+[16:14:15] [Server thread/INFO]: Loaded 1271 advancements
+[16:14:15] [Server thread/INFO]: [PluginTemplate] Loading server plugin PluginTemplate v1.0.0
+[16:14:15] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[16:14:15] [Server thread/INFO]: [PluginTemplate] Enabling PluginTemplate v1.0.0
+[16:14:15] [Server thread/INFO]: Hello World
+[16:14:15] [Server thread/INFO]: CONSOLE: Reload complete.
+[16:14:15] [Server thread/INFO]: Timings Reset
+[17:57:50] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
+[17:57:50] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
+[17:57:50] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[17:57:50] [Server thread/INFO]: Using 4 threads for Netty based IO
+[17:57:50] [Server thread/INFO]: [PluginTemplate] Disabling PluginTemplate v1.0.0
+[17:57:50] [Server thread/INFO]: Shutting down
+[17:57:51] [Server thread/INFO]: Loaded 1174 recipes
+[17:57:51] [Server thread/INFO]: Loaded 1271 advancements
+[17:57:52] [Server thread/INFO]: [PluginTemplate] Loading server plugin PluginTemplate v1.0.0
+[17:57:52] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[17:57:52] [Server thread/INFO]: [PluginTemplate] Enabling PluginTemplate v1.0.0
+[17:57:52] [Server thread/INFO]: Hello World
+[17:57:52] [Server thread/INFO]: CONSOLE: Reload complete.
+[17:57:52] [Server thread/INFO]: Timings Reset
