@@ -1,5 +1,5 @@
 database:
-  url:
+  url: "jdbc:sqlite:C:\\Users\\Max\\Documents\\GitHub\\QuestSystemPlugin\\database\\QuestSystemDB.sqlite"
 
 npc-location:
   x: 65.5
@@ -19,7 +19,7 @@ npc-task:
   range: 15
 
 quest-manager:
-  quest-main-colour: "#000000"
+  quest-main-colour: "#FF0000"
   quest-reactivated: "You have reactivated the quest: "
   quest-canceled: "You have canceled the quest: "
   quest-accepted: "You have accepted the quest: "

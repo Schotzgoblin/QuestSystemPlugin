@@ -38,6 +38,7 @@ public class Utils {
             case "PICKUP":
                 return Math.clamp(Float.parseFloat(playerQuest.getProgress()) / objective.getCount(),0,1);
             case "MOVE":
+                if(playerQuest.getProgress().equals("0"))return 0;
                 var startLocation = convertStringToLocation(playerQuest.getStartLocation());
                 var location = convertStringToLocation(playerQuest.getProgress());
                 var endLocation = convertStringToLocation(objective.getValue());

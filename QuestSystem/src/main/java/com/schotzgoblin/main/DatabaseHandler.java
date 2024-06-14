@@ -1,5 +1,6 @@
 package com.schotzgoblin.main;
 
+import com.schotzgoblin.config.ConfigHandler;
 import com.schotzgoblin.database.*;
 import com.schotzgoblin.utils.Utils;
 import org.bukkit.Location;
@@ -17,7 +18,7 @@ public class DatabaseHandler {
 
     public DatabaseHandler() {
         try {
-            connection = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\Max\\Documents\\GitHub\\QuestSystemPlugin\\database\\QuestSystemDB.sqlite", "", "");
+            connection = DriverManager.getConnection(ConfigHandler.getInstance().getStringAsync("database.url").join(), "", "");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -413,7 +414,7 @@ public class DatabaseHandler {
                 try (ResultSet resultSet = preparedStatement.executeQuery()) {
                     while (resultSet.next()) {
                         var id = resultSet.getInt("reward_id");
-                        getRewardFromResultSetAsync(rewards, id);
+                        getRewardFromResultSetAsync(rewards, id).join();
                     }
                 }
             } catch (Exception e) {
@@ -423,9 +424,9 @@ public class DatabaseHandler {
         });
     }
 
-    private void getRewardFromResultSetAsync(List<Reward> rewards, int id) {
+    private CompletableFuture<Void> getRewardFromResultSetAsync(List<Reward> rewards, int id) {
         String query = "SELECT * FROM reward WHERE id =?";
-        CompletableFuture.runAsync(() -> {
+        return CompletableFuture.runAsync(() -> {
             try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
                 preparedStatement.setInt(1, id);
                 try (ResultSet resultSet = preparedStatement.executeQuery()) {

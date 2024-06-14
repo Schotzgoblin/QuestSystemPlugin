@@ -10,5 +10,11 @@
     "name": "Schotzgoblin",
     "level": 4,
     "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "ff3152ab-db05-40cc-aba3-7d3344bb65c4",
+    "name": "Schotzgoblin2",
+    "level": 4,
+    "bypassesPlayerLimit": false
   }
 ]

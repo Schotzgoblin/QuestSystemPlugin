@@ -3,7 +3,7 @@ package com.schotzgoblin.database;
 
 import java.util.Objects;
 
-public class PlayerQuest implements Identifiable {
+public class PlayerQuest implements Identifiable, Cloneable {
     private int id;
 
     private String playerUuid;
@@ -124,5 +124,10 @@ public class PlayerQuest implements Identifiable {
 
     public void incrementTime() {
         this.setTime(this.getTime()+1);
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }

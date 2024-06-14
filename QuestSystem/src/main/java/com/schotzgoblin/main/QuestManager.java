@@ -5,6 +5,7 @@ import com.schotzgoblin.database.PlayerQuest;
 import com.schotzgoblin.database.Quest;
 import com.schotzgoblin.database.Reward;
 import com.schotzgoblin.utils.MessageUtils;
+import com.schotzgoblin.utils.SignUtils;
 import com.schotzgoblin.utils.Utils;
 import net.kyori.adventure.bossbar.BossBar;
 import net.kyori.adventure.text.Component;
@@ -26,6 +27,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 
 import static com.schotzgoblin.utils.Utils.getTimeStringFromSecs;
 
@@ -33,7 +35,7 @@ public class QuestManager implements Listener {
     public final QuestSystem plugin;
     private static QuestManager instance;
     private final DatabaseHandler databaseHandler;
-    public Map<UUID, InventoryMapping> inventories = new HashMap<>();
+    public Map<UUID, InventoryMapping> inventories = Collections.synchronizedMap(new HashMap<>());
     public Map<UUID, List<BossBar>> bossBars = Collections.synchronizedMap(new HashMap<>());
     private final Map<PlayerQuest, BukkitRunnable> runnables = Collections.synchronizedMap(new HashMap<>());
     private final ConfigHandler configHandler = ConfigHandler.getInstance();
@@ -65,9 +67,10 @@ public class QuestManager implements Listener {
         inventory.setItem(6, redGlassPane);
         var addQuestsToInventoryFuture = addQuestsToInventory(type, player, inventory);
         return addQuestsToInventoryFuture.thenCompose(inventoryMapping -> {
-            if (!inventories.containsKey(player.getUniqueId()))
-                inventories.put(player.getUniqueId(), inventoryMapping);
-
+            Bukkit.getScheduler().runTask(plugin, () -> {
+                if (!inventories.containsKey(player.getUniqueId()))
+                    inventories.put(player.getUniqueId(), inventoryMapping);
+            });
             return CompletableFuture.completedFuture(null);
         });
     }
@@ -111,18 +114,21 @@ public class QuestManager implements Listener {
                 }
             }
             var quests = questsConfig;
+            Bukkit.getScheduler().runTask(plugin, () -> {
+                inventory.setItem(inventoryMapping.getMenuSlot() + 9, new ItemStack(Material.NETHERITE_UPGRADE_SMITHING_TEMPLATE));
+                for (int i = 0; i < quests.size(); i++) {
+                    Quest quest = quests.get(i);
+                    var itemStack = createQuestItemStackAsync(quest, type, player).join();
+                    inventory.setItem(i + 27, itemStack);
 
-            inventory.setItem(inventoryMapping.getMenuSlot() + 9, new ItemStack(Material.NETHERITE_UPGRADE_SMITHING_TEMPLATE));
-            for (int i = 0; i < quests.size(); i++) {
-                Quest quest = quests.get(i);
-                var index = i;
-                var itemStackFuture = createQuestItemStackAsync(quest, type, player);
-                itemStackFuture.thenAccept(itemStack -> {
-                    inventory.setItem(index + 27, itemStack);
-                });
-            }
-            finaliseInventory(inventory);
+
+                }
+                finaliseInventory(inventory);
+            });
             return CompletableFuture.completedFuture(inventoryMapping);
+        }).exceptionally(ex -> {
+            ex.printStackTrace();
+            return null;
         });
     }
 
@@ -137,18 +143,16 @@ public class QuestManager implements Listener {
     }
 
     private CompletableFuture<ItemStack> createQuestItemStackAsync(Quest quest, String type, Player player) {
-
-
         List<Component> lore = new ArrayList<>();
 
         CompletableFuture<TextComponent> questStatusFuture = getQuestStatusComponentAsync(type, quest, player);
-        CompletableFuture<List<Reward>> rewardsFuture = databaseHandler.getQuestRewardsAsync(quest);
         CompletableFuture<PlayerQuest> playerQuestFuture = databaseHandler.getPlayerQuestByQuestIdAsync(player.getUniqueId(), quest.getId());
+        CompletableFuture<List<Reward>> rewardsFuture = databaseHandler.getQuestRewardsAsync(quest);
         CompletableFuture<String> notStartedMsgFuture = configHandler.getStringAsync("quest-manager.quest-click-not-started");
         CompletableFuture<String> inProgressMsgFuture = configHandler.getStringAsync("quest-manager.quest-click-in-progress");
         CompletableFuture<String> completedMsgFuture = configHandler.getStringAsync("quest-manager.quest-click-completed");
         CompletableFuture<String> canceledMsgFuture = configHandler.getStringAsync("quest-manager.quest-click-canceled");
-        CompletableFuture<String> mainQuestColourHexString = configHandler.getStringAsync("quest-manager.quest-click-canceled");
+        CompletableFuture<String> mainQuestColourHexString = configHandler.getStringAsync("quest-manager.quest-main-colour");
 
         return CompletableFuture.allOf(questStatusFuture, rewardsFuture, playerQuestFuture, notStartedMsgFuture,
                 inProgressMsgFuture,
@@ -156,20 +160,20 @@ public class QuestManager implements Listener {
                 canceledMsgFuture, mainQuestColourHexString).thenCompose(v -> {
             try {
                 ItemStack itemStack = new ItemStack(Material.PAPER);
-                var questStatusComponent = questStatusFuture.get().content();
-                var rewards = rewardsFuture.get();
+                var questStatusComponent = questStatusFuture.get();
                 var playerQuest = playerQuestFuture.get();
+                var rewards = rewardsFuture.get();
 
                 String notStartedMsg = notStartedMsgFuture.get();
                 String inProgressMsg = inProgressMsgFuture.get();
                 String completedMsg = completedMsgFuture.get();
                 String canceledMsg = canceledMsgFuture.get();
-
-                var mainQuestColor = TextColor.fromCSSHexString(mainQuestColourHexString.get());
+                String mainQuestColorHexString = mainQuestColourHexString.get();
+                var mainQuestColor = TextColor.fromCSSHexString(mainQuestColorHexString);
                 ItemMeta itemMeta = itemStack.getItemMeta();
                 itemMeta.displayName(Component.text(quest.getName(), mainQuestColor));
 
-                String statusMsg = switch (questStatusComponent) {
+                String statusMsg = switch (questStatusComponent.content()) {
                     case "Not Started" -> notStartedMsg;
                     case "In Progress" -> inProgressMsg;
                     case "Completed" -> completedMsg;
@@ -179,7 +183,7 @@ public class QuestManager implements Listener {
                 lore.add(Component.text(statusMsg));
                 lore.add(Component.text(""));
                 lore.add(Component.text("Status:", mainQuestColor));
-                lore.add(Component.text(questStatusComponent));
+                lore.add(questStatusComponent);
                 lore.add(Component.text(""));
                 lore.add(Component.text("Description:", mainQuestColor));
                 lore.add(Component.text(quest.getDescription()));
@@ -189,7 +193,7 @@ public class QuestManager implements Listener {
                 lore.add(Component.text(""));
                 lore.add(Component.text("Time limit:", mainQuestColor));
                 lore.add(Component.text(Utils.getTimeStringFromSecs(quest.getTimeLimit())));
-                if (questStatusComponent.equals("In Progress")) {
+                if (questStatusComponent.content().equals("In Progress")) {
                     lore.add(Component.text(""));
                     lore.add(Component.text("Time left:", mainQuestColor));
                     lore.add(Component.text(Utils.getTimeStringFromSecs(quest.getTimeLimit() - playerQuest.getTime())));
@@ -206,6 +210,9 @@ public class QuestManager implements Listener {
                 e.printStackTrace();
             }
             return CompletableFuture.completedFuture(new ItemStack(Material.AIR));
+        }).exceptionally(ex -> {
+            ex.printStackTrace();
+            return null;
         });
     }
 
@@ -255,14 +262,14 @@ public class QuestManager implements Listener {
         };
     }
 
-    public void reactivateQuest(Player player, TextComponent displayname) {
+    public CompletableFuture<Void> reactivateQuest(Player player, TextComponent displayname) {
         var questFuture = databaseHandler.getQuestByNameAsync(displayname.content());
-        questFuture.thenAccept(quest -> {
+        return questFuture.thenCompose(quest -> {
             var playerQuestFuture = databaseHandler.getPlayerQuestByQuestIdAsync(player.getUniqueId(), quest.getId());
-            CompletableFuture<String> reactivationMessageFuture = configHandler.getStringAsync("quest-manager.quest-click-canceled");
+            CompletableFuture<String> reactivationMessageFuture = configHandler.getStringAsync("quest-manager.quest-reactivated");
             var changePlayerQuestFuture =
                     databaseHandler.changePlayerQuestType(player.getUniqueId(), displayname.content(), "IN_PROGRESS", player.getLocation());
-            CompletableFuture.allOf(playerQuestFuture, reactivationMessageFuture, changePlayerQuestFuture).thenAccept(x -> {
+            return CompletableFuture.allOf(playerQuestFuture, reactivationMessageFuture, changePlayerQuestFuture).thenAccept(x -> {
                 try {
                     var playerQuest = playerQuestFuture.get();
                     var reactivationMessage = reactivationMessageFuture.get();
@@ -282,15 +289,22 @@ public class QuestManager implements Listener {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+                SignUtils.updateNearbySigns(player);
+            }).exceptionally(ex -> {
+                ex.printStackTrace();
+                return null;
             });
+        }).exceptionally(ex -> {
+            ex.printStackTrace();
+            return null;
         });
 
 
     }
 
-    public void cancelQuest(Player player, TextComponent displayname) {
+    public CompletableFuture<Void> cancelQuest(Player player, TextComponent displayname) {
         var questFuture = databaseHandler.getQuestByNameAsync(displayname.content());
-        questFuture.thenAccept(quest -> {
+        return questFuture.thenAccept(quest -> {
             var playerQuestFuture = databaseHandler.getPlayerQuestByQuestIdAsync(player.getUniqueId(), quest.getId());
             CompletableFuture<String> cancellationMessageFuture = configHandler.getStringAsync("quest-manager.quest-click-canceled");
             var changePlayerQuestFuture =
@@ -311,7 +325,14 @@ public class QuestManager implements Listener {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+            }).exceptionally(ex -> {
+                ex.printStackTrace();
+                return null;
             });
+            SignUtils.updateNearbySigns(player);
+        }).exceptionally(ex -> {
+            ex.printStackTrace();
+            return null;
         });
     }
 
@@ -343,11 +364,18 @@ public class QuestManager implements Listener {
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
+                }).exceptionally(ex -> {
+                    ex.printStackTrace();
+                    return null;
                 });
             } catch (Exception e) {
                 e.printStackTrace();
             }
+        }).exceptionally(ex -> {
+            ex.printStackTrace();
+            return null;
         });
+        SignUtils.updateNearbySigns(player);
     }
 
     public void createAndShowBossBar(Player player, String title, float progress) {
@@ -360,6 +388,7 @@ public class QuestManager implements Listener {
     }
 
     private BossBar getBossBarFromTitle(Player player, String title) {
+        if (!bossBars.containsKey(player.getUniqueId())) return null;
         return bossBars.get(player.getUniqueId()).stream().filter(bossBar -> ((TextComponent) bossBar.name()).content().equals(title)).findFirst().orElse(null);
     }
 
@@ -385,27 +414,34 @@ public class QuestManager implements Listener {
                 try {
                     var playerQuest = playerQuestFuture.get();
                     var completedMessage = completedMessageFuture.get();
+                    databaseHandler.changePlayerQuestType(player.getUniqueId(), title, "COMPLETED", player.getLocation());
                     Bukkit.getScheduler().runTask(plugin, () -> {
-                        databaseHandler.changePlayerQuestType(player.getUniqueId(), title, "COMPLETED", player.getLocation());
                         player.sendMessage(completedMessage + title);
                         MessageUtils.sendAlertToPlayer("Quest Completed", completedMessage + title, 1000, 4000, 1000, Color.fromRGB(0, 255, 0), player);
                         player.playSound(player.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);
-                        if(runnables.containsKey(playerQuest)) {
+                        if (runnables.containsKey(playerQuest)) {
                             runnables.get(playerQuest).cancel();
                             runnables.remove(playerQuest);
                         }
-                        synchronized (player) {
+                        synchronized (playerQuest){
                             giveRewards(player, playerQuest);
-                            Bukkit.getScheduler().runTaskLater(plugin, () -> {
-                                hideBossBar(player, title);
-                            }, 100);
                         }
+                        Bukkit.getScheduler().runTaskLater(plugin, () -> {
+                            hideBossBar(player, title);
+                        }, 100);
                     });
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+            }).exceptionally(ex -> {
+                ex.printStackTrace();
+                return null;
             });
+        }).exceptionally(ex -> {
+            ex.printStackTrace();
+            return null;
         });
+        SignUtils.updateNearbySigns(player);
     }
 
     private void giveRewards(Player player, PlayerQuest playerQuest) {
@@ -432,12 +468,16 @@ public class QuestManager implements Listener {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+        }).exceptionally(ex -> {
+            ex.printStackTrace();
+            return null;
         });
 
     }
 
     public void hideBossBar(Player player, String title) {
         var bossBar = getBossBarFromTitle(player, title);
+        if (bossBar == null) return;
         player.hideBossBar(bossBar);
         bossBars.get(player.getUniqueId()).remove(bossBar);
     }
@@ -450,6 +490,9 @@ public class QuestManager implements Listener {
                 inventories.get(player.getUniqueId()).setInventory(inventory);
             });
 
+        }).exceptionally(ex -> {
+            ex.printStackTrace();
+            return null;
         });
     }
 
@@ -467,6 +510,9 @@ public class QuestManager implements Listener {
                 runnables.put(playerQuest, task);
                 task.runTaskTimer(plugin, 0L, 20L);
             }
+        }).exceptionally(ex -> {
+            ex.printStackTrace();
+            return null;
         });
     }
 
@@ -475,9 +521,14 @@ public class QuestManager implements Listener {
         var playerQuestsFuture = databaseHandler.getPlayerQuestsAsync(e.getPlayer().getUniqueId(), "IN_PROGRESS");
         playerQuestsFuture.thenAccept(playerQuests -> {
             for (PlayerQuest playerQuest : playerQuests) {
-                runnables.get(playerQuest).cancel();
-                runnables.remove(playerQuest);
+                if(runnables.containsKey(playerQuest)){
+                    runnables.get(playerQuest).cancel();
+                    runnables.remove(playerQuest);
+                }
             }
+        }).exceptionally(ex -> {
+            ex.printStackTrace();
+            return null;
         });
     }
 
@@ -497,6 +548,18 @@ public class QuestManager implements Listener {
             var playerQuestFuture = databaseHandler.getPlayerQuestByQuestIdAsync(player.getUniqueId(), questId);
             var failedMessageFuture = configHandler.getStringAsync("quest-manager.quest-failed");
             var timeLimitMessageFuture = configHandler.getStringAsync("quest-manager.quest-time-limit");
+            playerQuestFuture.thenAccept(playerQuest -> {
+                try {
+                    var copy = (PlayerQuest) playerQuest.clone();
+                    if (copy.getQuestStatus().getStatus().equals("IN_PROGRESS")) {
+                        copy.setTime(playerQuest.getTime() + 1);
+                        databaseHandler.updateAsync(copy);
+                    }
+                } catch (CloneNotSupportedException e) {
+                    throw new RuntimeException(e);
+                }
+
+            });
             CompletableFuture.allOf(playerQuestFuture, failedMessageFuture, timeLimitMessageFuture).thenAccept(v -> {
                 try {
                     var playerQuest = playerQuestFuture.get();
@@ -508,10 +571,8 @@ public class QuestManager implements Listener {
                     }
                     var inv = invConfig;
                     if (playerQuest.getQuestStatus().getStatus().equals("IN_PROGRESS")) {
-                        playerQuest.setTime(playerQuest.getTime() + 1);
-                        var updateFuture = databaseHandler.updateAsync(playerQuest);
                         var questFuture = databaseHandler.getQuestByNameAsync(questName);
-                        CompletableFuture.allOf(updateFuture, questFuture).thenAccept(x -> {
+                        questFuture.thenAccept(x -> {
                             try {
                                 var quest = questFuture.get();
                                 if (playerQuest.getTime() >= quest.getTimeLimit()) {
@@ -524,9 +585,6 @@ public class QuestManager implements Listener {
                                         hideBossBar(player, questName);
                                     });
                                     databaseHandler.changePlayerQuestType(player.getUniqueId(), questName, "CANCELED", player.getLocation());
-                                } else {
-                                    cancel();
-                                    runnables.remove(playerQuest);
                                 }
                                 if (inv.getInventory() != null)
                                     addQuestsToInventory(inv.getType(), player, inv.getInventory());
@@ -538,6 +596,9 @@ public class QuestManager implements Listener {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+            }).exceptionally(ex -> {
+                ex.printStackTrace();
+                return null;
             });
 
         }

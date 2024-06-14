@@ -73,6 +73,9 @@ public class QuestNpc implements Listener {
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
+        }).exceptionally(ex -> {
+            ex.printStackTrace();
+            return null;
         });
     }
 
@@ -115,6 +118,9 @@ public class QuestNpc implements Listener {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+        }).exceptionally(ex -> {
+            ex.printStackTrace();
+            return null;
         });
     }
 
@@ -153,6 +159,9 @@ public class QuestNpc implements Listener {
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
+        }).exceptionally(ex -> {
+            ex.printStackTrace();
+            return null;
         });
     }
 
@@ -236,7 +245,6 @@ public class QuestNpc implements Listener {
             return;
         }
         var player = event.getPlayer();
-        player.sendMessage("Opening Quest Menu");
         questManager.setupInventory(player, "All Quests");
     }
 
@@ -292,13 +300,14 @@ public class QuestNpc implements Listener {
                     var playerQuest = playerQuestFuture.get();
                     if (playerQuest.getId() == 0) {
                         questManager.acceptQuest(player, displayName, quest.getObjective().getObjective());
+
                     } else {
                         switch (playerQuest.getQuestStatus().getStatus().toUpperCase()) {
                             case "IN_PROGRESS":
-                                questManager.cancelQuest(player, displayName);
+                                questManager.cancelQuest(player, displayName).join();
                                 break;
                             case "CANCELED":
-                                questManager.reactivateQuest(player, displayName);
+                                questManager.reactivateQuest(player, displayName).join();
                                 break;
                             default:
                                 break;
@@ -308,7 +317,13 @@ public class QuestNpc implements Listener {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+            }).exceptionally(ex -> {
+                ex.printStackTrace();
+                return null;
             });
+        }).exceptionally(ex -> {
+            ex.printStackTrace();
+            return null;
         });
     }
 

@@ -6147,3 +6147,429 @@ java.lang.UnsupportedClassVersionError: com/jastermaster/template/PluginTemplate
 00:59:32 [INFORMATION] [/127.0.0.1:63506] <-> InitialHandler has pinged
 00:59:33 [INFORMATION] [Schotzgoblin,/127.0.0.1:63510] <-> InitialHandler has connected
 00:59:34 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected
+17:11:25 [INFORMATION] Using standard Java JCE cipher.
+17:11:25 [INFORMATION] Using standard Java compressor.
+17:11:25 [INFORMATION] Enabled BungeeCord version git:BungeeCord-Bootstrap:1.20-R0.3-SNAPSHOT:18eae8a:1842
+17:11:25 [INFORMATION] Discovered module: ModuleSpec(name=cmd_alert, file=modules\cmd_alert.jar, provider=JenkinsModuleSource())
+
+17:11:25 [INFORMATION] Discovered module: ModuleSpec(name=cmd_find, file=modules\cmd_find.jar, provider=JenkinsModuleSource())
+
+17:11:25 [INFORMATION] Discovered module: ModuleSpec(name=cmd_list, file=modules\cmd_list.jar, provider=JenkinsModuleSource())
+
+17:11:25 [INFORMATION] Discovered module: ModuleSpec(name=cmd_send, file=modules\cmd_send.jar, provider=JenkinsModuleSource())
+
+17:11:25 [INFORMATION] Discovered module: ModuleSpec(name=cmd_server, file=modules\cmd_server.jar, provider=JenkinsModuleSource())
+
+17:11:25 [INFORMATION] Discovered module: ModuleSpec(name=reconnect_yaml, file=modules\reconnect_yaml.jar, provider=JenkinsModuleSource())
+
+17:11:25 [INFORMATION] Loaded plugin reconnect_yaml version git:reconnect_yaml:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+17:11:25 [INFORMATION] Loaded plugin cmd_find version git:cmd_find:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+17:11:25 [INFORMATION] Loaded plugin cmd_server version git:cmd_server:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+17:11:25 [INFORMATION] Loaded plugin cmd_alert version git:cmd_alert:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+17:11:25 [INFORMATION] Loaded plugin cmd_send version git:cmd_send:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+17:11:25 [INFORMATION] Loaded plugin cmd_list version git:cmd_list:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+17:11:25 [WARNUNG] Forced host server pvp is not defined
+17:11:25 [INFORMATION] Enabled plugin reconnect_yaml version git:reconnect_yaml:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+17:11:25 [INFORMATION] Enabled plugin cmd_find version git:cmd_find:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+17:11:25 [INFORMATION] Enabled plugin cmd_server version git:cmd_server:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+17:11:25 [INFORMATION] Enabled plugin cmd_alert version git:cmd_alert:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+17:11:25 [INFORMATION] Enabled plugin cmd_send version git:cmd_send:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+17:11:25 [INFORMATION] Enabled plugin cmd_list version git:cmd_list:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+17:11:25 [INFORMATION] Listening on /0.0.0.0:25565
+17:11:47 [INFORMATION] [/127.0.0.1:60709] <-> InitialHandler has pinged
+17:11:52 [INFORMATION] [/127.0.0.1:60729] <-> InitialHandler has connected
+17:11:52 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected
+17:11:53 [INFORMATION] Netty is not using direct IO buffers.
+
+17:16:43 [INFORMATION] [Schotzgoblin] -> UpstreamBridge has disconnected
+17:16:43 [INFORMATION] [Schotzgoblin] <-> DownstreamBridge <-> [lobby] has disconnected
+17:16:43 [INFORMATION] [/127.0.0.1:49286] <-> InitialHandler has pinged
+17:16:43 [INFORMATION] [/127.0.0.1:49303] <-> InitialHandler has pinged
+17:16:44 [INFORMATION] [Schotzgoblin,/127.0.0.1:49307] <-> InitialHandler has connected
+17:16:45 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected
+17:19:11 [INFORMATION] [Schotzgoblin] -> UpstreamBridge has disconnected
+17:19:11 [INFORMATION] [Schotzgoblin] <-> DownstreamBridge <-> [lobby] has disconnected
+17:19:11 [INFORMATION] [/127.0.0.1:49490] <-> InitialHandler has pinged
+17:19:12 [INFORMATION] [/127.0.0.1:49505] <-> InitialHandler has pinged
+17:19:12 [INFORMATION] [Schotzgoblin,/127.0.0.1:49508] <-> InitialHandler has connected
+17:19:13 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected
+17:20:40 [INFORMATION] [Schotzgoblin] -> UpstreamBridge has disconnected
+17:20:40 [INFORMATION] [Schotzgoblin] <-> DownstreamBridge <-> [lobby] has disconnected
+17:20:40 [INFORMATION] [/127.0.0.1:49623] <-> InitialHandler has pinged
+17:20:40 [INFORMATION] [/127.0.0.1:49635] <-> InitialHandler has pinged
+17:20:41 [INFORMATION] [Schotzgoblin,/127.0.0.1:49638] <-> InitialHandler has connected
+17:20:42 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected
+17:26:55 [INFORMATION] [Schotzgoblin] -> UpstreamBridge has disconnected
+17:26:55 [INFORMATION] [Schotzgoblin] <-> DownstreamBridge <-> [lobby] has disconnected
+17:26:55 [INFORMATION] [/127.0.0.1:62353] <-> InitialHandler has pinged
+17:26:55 [INFORMATION] [/127.0.0.1:62366] <-> InitialHandler has pinged
+17:26:56 [INFORMATION] [Schotzgoblin,/127.0.0.1:62371] <-> InitialHandler has connected
+17:26:57 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected
+17:37:01 [INFORMATION] [Schotzgoblin] -> UpstreamBridge has disconnected
+17:37:01 [INFORMATION] [Schotzgoblin] <-> DownstreamBridge <-> [lobby] has disconnected
+17:37:01 [INFORMATION] [/127.0.0.1:49516] <-> InitialHandler has pinged
+17:37:02 [INFORMATION] [/127.0.0.1:49528] <-> InitialHandler has pinged
+17:37:02 [INFORMATION] [Schotzgoblin,/127.0.0.1:49532] <-> InitialHandler has connected
+17:37:03 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected
+17:39:43 [INFORMATION] [Schotzgoblin] -> UpstreamBridge has disconnected
+17:39:43 [INFORMATION] [Schotzgoblin] <-> DownstreamBridge <-> [lobby] has disconnected
+17:39:43 [INFORMATION] [/127.0.0.1:49727] <-> InitialHandler has pinged
+17:39:43 [INFORMATION] [/127.0.0.1:49743] <-> InitialHandler has pinged
+17:39:44 [INFORMATION] [Schotzgoblin,/127.0.0.1:49746] <-> InitialHandler has connected
+17:39:45 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected
+17:58:51 [INFORMATION] [Schotzgoblin] -> UpstreamBridge has disconnected
+17:58:51 [INFORMATION] [Schotzgoblin] <-> DownstreamBridge <-> [lobby] has disconnected
+17:58:51 [INFORMATION] [/127.0.0.1:55365] <-> InitialHandler has pinged
+17:58:51 [INFORMATION] [/127.0.0.1:55375] <-> InitialHandler has pinged
+17:58:52 [INFORMATION] [Schotzgoblin,/127.0.0.1:55377] <-> InitialHandler has connected
+17:58:53 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected
+18:03:46 [INFORMATION] [Schotzgoblin] -> UpstreamBridge has disconnected
+18:03:46 [INFORMATION] [Schotzgoblin] <-> DownstreamBridge <-> [lobby] has disconnected
+18:03:46 [INFORMATION] [/127.0.0.1:51326] <-> InitialHandler has pinged
+18:03:46 [INFORMATION] [/127.0.0.1:51338] <-> InitialHandler has pinged
+18:03:47 [INFORMATION] [Schotzgoblin,/127.0.0.1:51340] <-> InitialHandler has connected
+18:03:47 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected
+18:04:49 [INFORMATION] Using standard Java JCE cipher.
+18:04:49 [INFORMATION] Using standard Java compressor.
+18:04:49 [INFORMATION] Enabled BungeeCord version git:BungeeCord-Bootstrap:1.20-R0.3-SNAPSHOT:18eae8a:1842
+18:04:49 [INFORMATION] Discovered module: ModuleSpec(name=cmd_alert, file=modules\cmd_alert.jar, provider=JenkinsModuleSource())
+
+18:04:49 [INFORMATION] Discovered module: ModuleSpec(name=cmd_find, file=modules\cmd_find.jar, provider=JenkinsModuleSource())
+
+18:04:49 [INFORMATION] Discovered module: ModuleSpec(name=cmd_list, file=modules\cmd_list.jar, provider=JenkinsModuleSource())
+
+18:04:49 [INFORMATION] Discovered module: ModuleSpec(name=cmd_send, file=modules\cmd_send.jar, provider=JenkinsModuleSource())
+
+18:04:49 [INFORMATION] Discovered module: ModuleSpec(name=cmd_server, file=modules\cmd_server.jar, provider=JenkinsModuleSource())
+
+18:04:49 [INFORMATION] Discovered module: ModuleSpec(name=reconnect_yaml, file=modules\reconnect_yaml.jar, provider=JenkinsModuleSource())
+
+18:04:49 [INFORMATION] Loaded plugin reconnect_yaml version git:reconnect_yaml:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+18:04:49 [INFORMATION] Loaded plugin cmd_find version git:cmd_find:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+18:04:49 [INFORMATION] Loaded plugin cmd_server version git:cmd_server:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+18:04:49 [INFORMATION] Loaded plugin cmd_alert version git:cmd_alert:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+18:04:49 [INFORMATION] Loaded plugin cmd_send version git:cmd_send:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+18:04:49 [INFORMATION] Loaded plugin cmd_list version git:cmd_list:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+18:04:49 [WARNUNG] Forced host server pvp is not defined
+18:04:49 [INFORMATION] Enabled plugin reconnect_yaml version git:reconnect_yaml:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+18:04:49 [INFORMATION] Enabled plugin cmd_find version git:cmd_find:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+18:04:49 [INFORMATION] Enabled plugin cmd_server version git:cmd_server:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+18:04:49 [INFORMATION] Enabled plugin cmd_alert version git:cmd_alert:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+18:04:49 [INFORMATION] Enabled plugin cmd_send version git:cmd_send:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+18:04:49 [INFORMATION] Enabled plugin cmd_list version git:cmd_list:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+18:04:49 [INFORMATION] Listening on /0.0.0.0:25565
+18:05:11 [INFORMATION] [/127.0.0.1:51454] <-> InitialHandler has pinged
+18:05:12 [INFORMATION] [/127.0.0.1:51467] <-> InitialHandler has connected
+18:05:12 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected
+18:05:13 [INFORMATION] Netty is not using direct IO buffers.
+
+18:22:25 [INFORMATION] [Schotzgoblin] -> UpstreamBridge has disconnected
+18:22:25 [INFORMATION] [Schotzgoblin] <-> DownstreamBridge <-> [lobby] has disconnected
+18:22:25 [INFORMATION] [/127.0.0.1:51373] <-> InitialHandler has pinged
+18:22:25 [INFORMATION] [/127.0.0.1:51385] <-> InitialHandler has pinged
+18:22:26 [INFORMATION] [Schotzgoblin,/127.0.0.1:51389] <-> InitialHandler has connected
+18:22:28 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected
+18:27:50 [INFORMATION] [Schotzgoblin] -> UpstreamBridge has disconnected
+18:27:50 [INFORMATION] [Schotzgoblin] <-> DownstreamBridge <-> [lobby] has disconnected
+18:27:51 [INFORMATION] [/127.0.0.1:62542] <-> InitialHandler has pinged
+18:27:51 [INFORMATION] [/127.0.0.1:62556] <-> InitialHandler has pinged
+18:27:51 [INFORMATION] [Schotzgoblin,/127.0.0.1:62559] <-> InitialHandler has connected
+18:27:54 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected
+19:35:23 [INFORMATION] [Schotzgoblin] -> UpstreamBridge has disconnected
+19:35:23 [INFORMATION] [Schotzgoblin] <-> DownstreamBridge <-> [lobby] has disconnected
+19:35:23 [INFORMATION] [/127.0.0.1:61358] <-> InitialHandler has pinged
+19:35:23 [INFORMATION] [/127.0.0.1:61372] <-> InitialHandler has pinged
+19:35:24 [INFORMATION] [Schotzgoblin,/127.0.0.1:61375] <-> InitialHandler has connected
+19:35:26 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected
+19:36:40 [WARNUNG] [Schotzgoblin] <-> DownstreamBridge <-> [lobby] - SocketException: Connection reset
+19:36:40 [INFORMATION] [Schotzgoblin] disconnected with: §f§fSocketException : Connection reset @ sun.nio.ch.SocketChannelImpl:401
+19:36:40 [INFORMATION] [Schotzgoblin] -> UpstreamBridge has disconnected
+19:36:40 [INFORMATION] [Schotzgoblin] <-> DownstreamBridge <-> [lobby] has disconnected
+19:37:00 [INFORMATION] [/127.0.0.1:61481] <-> InitialHandler has pinged
+19:37:00 [INFORMATION] [/127.0.0.1:61493] <-> InitialHandler has pinged
+19:37:01 [INFORMATION] [Schotzgoblin,/127.0.0.1:61494] <-> InitialHandler has connected
+19:37:02 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected
+19:41:45 [WARNUNG] [Schotzgoblin] <-> DownstreamBridge <-> [lobby] - SocketException: Connection reset
+19:41:45 [INFORMATION] [Schotzgoblin] disconnected with: §f§fSocketException : Connection reset @ sun.nio.ch.SocketChannelImpl:401
+19:41:45 [INFORMATION] [Schotzgoblin] -> UpstreamBridge has disconnected
+19:41:45 [INFORMATION] [Schotzgoblin] <-> DownstreamBridge <-> [lobby] has disconnected
+19:42:30 [INFORMATION] [/127.0.0.1:54106] <-> InitialHandler has pinged
+19:42:30 [INFORMATION] [/127.0.0.1:54121] <-> InitialHandler has pinged
+19:42:31 [INFORMATION] [Schotzgoblin,/127.0.0.1:54125] <-> InitialHandler has connected
+19:42:33 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected
+19:43:38 [WARNUNG] [Schotzgoblin] <-> DownstreamBridge <-> [lobby] - SocketException: Connection reset
+19:43:38 [INFORMATION] [Schotzgoblin] disconnected with: §f§fSocketException : Connection reset @ sun.nio.ch.SocketChannelImpl:401
+19:43:38 [INFORMATION] [Schotzgoblin] -> UpstreamBridge has disconnected
+19:43:38 [INFORMATION] [Schotzgoblin] <-> DownstreamBridge <-> [lobby] has disconnected
+19:44:20 [INFORMATION] [/127.0.0.1:50673] <-> InitialHandler has pinged
+19:44:20 [INFORMATION] [/127.0.0.1:50687] <-> InitialHandler has pinged
+19:44:28 [INFORMATION] [/127.0.0.1:50702] <-> InitialHandler has pinged
+19:44:30 [INFORMATION] [/127.0.0.1:50718] <-> InitialHandler has pinged
+19:44:32 [INFORMATION] [Schotzgoblin,/127.0.0.1:50730] <-> InitialHandler has connected
+19:44:34 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected
+19:47:56 [WARNUNG] [Schotzgoblin] <-> DownstreamBridge <-> [lobby] - SocketException: Connection reset
+19:47:56 [INFORMATION] [Schotzgoblin] disconnected with: §f§fSocketException : Connection reset @ sun.nio.ch.SocketChannelImpl:401
+19:47:56 [INFORMATION] [Schotzgoblin] -> UpstreamBridge has disconnected
+19:47:56 [INFORMATION] [Schotzgoblin] <-> DownstreamBridge <-> [lobby] has disconnected
+19:48:25 [INFORMATION] [/127.0.0.1:52262] <-> InitialHandler has pinged
+19:48:25 [INFORMATION] [/127.0.0.1:52277] <-> InitialHandler has pinged
+19:48:27 [INFORMATION] [Schotzgoblin,/127.0.0.1:52286] <-> InitialHandler has connected
+19:48:27 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected
+19:49:12 [WARNUNG] [Schotzgoblin] <-> DownstreamBridge <-> [lobby] - SocketException: Connection reset
+19:49:12 [INFORMATION] [Schotzgoblin] disconnected with: §f§fSocketException : Connection reset @ sun.nio.ch.SocketChannelImpl:401
+19:49:12 [INFORMATION] [Schotzgoblin] -> UpstreamBridge has disconnected
+19:49:12 [INFORMATION] [Schotzgoblin] <-> DownstreamBridge <-> [lobby] has disconnected
+19:49:29 [INFORMATION] [/127.0.0.1:52366] <-> InitialHandler has pinged
+19:49:29 [INFORMATION] [/127.0.0.1:52375] <-> InitialHandler has pinged
+19:49:31 [INFORMATION] [Schotzgoblin,/127.0.0.1:52379] <-> InitialHandler has connected
+19:49:32 [INFORMATION] [Schotzgoblin] disconnected with: §f§cCould not connect to a default or fallback server. Incorrectly configured address/port/firewall? io.netty.channel.AbstractChannel$AnnotatedConnectException
+19:49:32 [INFORMATION] [Schotzgoblin] -> UpstreamBridge has disconnected
+19:49:34 [INFORMATION] [Schotzgoblin,/127.0.0.1:52384] <-> InitialHandler has connected
+19:49:35 [INFORMATION] [Schotzgoblin] disconnected with: §f§cCould not connect to a default or fallback server. Incorrectly configured address/port/firewall? io.netty.channel.AbstractChannel$AnnotatedConnectException
+19:49:35 [INFORMATION] [Schotzgoblin] -> UpstreamBridge has disconnected
+19:49:36 [INFORMATION] [/127.0.0.1:52397] <-> InitialHandler has pinged
+19:49:37 [INFORMATION] [Schotzgoblin,/127.0.0.1:52407] <-> InitialHandler has connected
+19:49:39 [INFORMATION] [Schotzgoblin] disconnected with: §f§cCould not connect to a default or fallback server. Incorrectly configured address/port/firewall? io.netty.channel.AbstractChannel$AnnotatedConnectException
+19:49:39 [INFORMATION] [Schotzgoblin] -> UpstreamBridge has disconnected
+19:49:45 [INFORMATION] [/127.0.0.1:52433] <-> InitialHandler has pinged
+19:49:45 [INFORMATION] [/127.0.0.1:52445] <-> InitialHandler has pinged
+19:49:47 [INFORMATION] [Schotzgoblin,/127.0.0.1:52452] <-> InitialHandler has connected
+19:49:47 [INFORMATION] [Schotzgoblin] disconnected with: §f§cCould not connect to a default or fallback server. Incorrectly configured address/port/firewall? io.netty.channel.AbstractChannel$AnnotatedConnectException
+19:49:47 [INFORMATION] [Schotzgoblin] -> UpstreamBridge has disconnected
+19:49:49 [INFORMATION] [Schotzgoblin,/127.0.0.1:52460] <-> InitialHandler has connected
+19:49:51 [INFORMATION] [Schotzgoblin] disconnected with: §f§cCould not connect to a default or fallback server. Incorrectly configured address/port/firewall? io.netty.channel.AbstractChannel$AnnotatedConnectException
+19:49:51 [INFORMATION] [Schotzgoblin] -> UpstreamBridge has disconnected
+19:49:52 [INFORMATION] [/127.0.0.1:52471] <-> InitialHandler has pinged
+19:49:52 [INFORMATION] [Schotzgoblin,/127.0.0.1:52482] <-> InitialHandler has connected
+19:49:54 [INFORMATION] [Schotzgoblin] disconnected with: §f§cCould not connect to a default or fallback server. Incorrectly configured address/port/firewall? io.netty.channel.AbstractChannel$AnnotatedConnectException
+19:49:54 [INFORMATION] [Schotzgoblin] -> UpstreamBridge has disconnected
+19:49:55 [INFORMATION] [/127.0.0.1:52492] <-> InitialHandler has pinged
+19:49:56 [INFORMATION] [Schotzgoblin,/127.0.0.1:52505] <-> InitialHandler has connected
+19:50:02 [INFORMATION] [Schotzgoblin,/127.0.0.1:52517] <-> InitialHandler has connected
+19:50:03 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected
+22:31:49 [INFORMATION] [Schotzgoblin] -> UpstreamBridge has disconnected
+22:31:49 [INFORMATION] [Schotzgoblin] <-> DownstreamBridge <-> [lobby] has disconnected
+22:31:49 [INFORMATION] [/127.0.0.1:52378] <-> InitialHandler has pinged
+22:31:49 [INFORMATION] [/127.0.0.1:52390] <-> InitialHandler has pinged
+22:31:50 [INFORMATION] [Schotzgoblin,/127.0.0.1:52393] <-> InitialHandler has connected
+22:31:53 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected
+22:33:38 [INFORMATION] [Schotzgoblin] -> UpstreamBridge has disconnected
+22:33:38 [INFORMATION] [Schotzgoblin] <-> DownstreamBridge <-> [lobby] has disconnected
+22:33:38 [INFORMATION] [/127.0.0.1:60734] <-> InitialHandler has pinged
+22:33:38 [INFORMATION] [/127.0.0.1:60749] <-> InitialHandler has pinged
+22:33:39 [INFORMATION] [Schotzgoblin,/127.0.0.1:60752] <-> InitialHandler has connected
+22:33:40 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected
+22:41:47 [INFORMATION] [/127.0.0.1:55090] <-> InitialHandler has pinged
+22:41:51 [INFORMATION] [/127.0.0.1:55109] <-> InitialHandler has connected
+22:41:52 [INFORMATION] [Schotzgoblin2] <-> ServerConnector [lobby] has connected
+22:41:56 [WARNUNG] [Schotzgoblin] -> UpstreamBridge - SocketException: Connection reset
+22:41:56 [INFORMATION] [Schotzgoblin] disconnected with: §f§fSocketException : Connection reset @ sun.nio.ch.SocketChannelImpl:401
+22:41:56 [INFORMATION] [Schotzgoblin] <-> DownstreamBridge <-> [lobby] has disconnected
+22:41:56 [INFORMATION] [Schotzgoblin] -> UpstreamBridge has disconnected
+22:43:30 [INFORMATION] [/127.0.0.1:55370] <-> InitialHandler has pinged
+22:43:34 [INFORMATION] [Schotzgoblin,/127.0.0.1:55391] <-> InitialHandler has connected
+22:43:35 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected
+22:50:38 [INFORMATION] [Schotzgoblin] -> UpstreamBridge has disconnected
+22:50:38 [INFORMATION] [Schotzgoblin] <-> DownstreamBridge <-> [lobby] has disconnected
+22:50:38 [INFORMATION] [/127.0.0.1:55791] <-> InitialHandler has pinged
+22:50:39 [INFORMATION] [/127.0.0.1:55812] <-> InitialHandler has pinged
+22:50:40 [INFORMATION] [Schotzgoblin,/127.0.0.1:55818] <-> InitialHandler has connected
+22:50:41 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected
+22:51:34 [INFORMATION] [Schotzgoblin] -> UpstreamBridge has disconnected
+22:51:34 [INFORMATION] [Schotzgoblin] <-> DownstreamBridge <-> [lobby] has disconnected
+22:51:34 [INFORMATION] [/127.0.0.1:55880] <-> InitialHandler has pinged
+22:51:34 [INFORMATION] [/127.0.0.1:55894] <-> InitialHandler has pinged
+22:51:35 [INFORMATION] [Schotzgoblin,/127.0.0.1:55899] <-> InitialHandler has connected
+22:51:36 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected
+22:51:48 [INFORMATION] [Schotzgoblin] -> UpstreamBridge has disconnected
+22:51:48 [INFORMATION] [Schotzgoblin] <-> DownstreamBridge <-> [lobby] has disconnected
+22:51:48 [INFORMATION] [/127.0.0.1:55927] <-> InitialHandler has pinged
+22:51:48 [INFORMATION] [/127.0.0.1:55940] <-> InitialHandler has pinged
+22:55:17 [INFORMATION] [/127.0.0.1:56183] <-> InitialHandler has pinged
+22:55:21 [INFORMATION] [/127.0.0.1:56210] <-> InitialHandler has connected
+22:55:22 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected
+22:56:21 [INFORMATION] Using standard Java JCE cipher.
+22:56:21 [INFORMATION] Using standard Java compressor.
+22:56:21 [INFORMATION] Enabled BungeeCord version git:BungeeCord-Bootstrap:1.20-R0.3-SNAPSHOT:18eae8a:1842
+22:56:21 [INFORMATION] Discovered module: ModuleSpec(name=cmd_alert, file=modules\cmd_alert.jar, provider=JenkinsModuleSource())
+
+22:56:21 [INFORMATION] Discovered module: ModuleSpec(name=cmd_find, file=modules\cmd_find.jar, provider=JenkinsModuleSource())
+
+22:56:21 [INFORMATION] Discovered module: ModuleSpec(name=cmd_list, file=modules\cmd_list.jar, provider=JenkinsModuleSource())
+
+22:56:21 [INFORMATION] Discovered module: ModuleSpec(name=cmd_send, file=modules\cmd_send.jar, provider=JenkinsModuleSource())
+
+22:56:21 [INFORMATION] Discovered module: ModuleSpec(name=cmd_server, file=modules\cmd_server.jar, provider=JenkinsModuleSource())
+
+22:56:21 [INFORMATION] Discovered module: ModuleSpec(name=reconnect_yaml, file=modules\reconnect_yaml.jar, provider=JenkinsModuleSource())
+
+22:56:21 [INFORMATION] Loaded plugin reconnect_yaml version git:reconnect_yaml:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+22:56:21 [INFORMATION] Loaded plugin cmd_find version git:cmd_find:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+22:56:21 [INFORMATION] Loaded plugin cmd_server version git:cmd_server:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+22:56:21 [INFORMATION] Loaded plugin cmd_alert version git:cmd_alert:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+22:56:21 [INFORMATION] Loaded plugin cmd_send version git:cmd_send:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+22:56:21 [INFORMATION] Loaded plugin cmd_list version git:cmd_list:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+22:56:21 [WARNUNG] Forced host server pvp is not defined
+22:56:21 [INFORMATION] Enabled plugin reconnect_yaml version git:reconnect_yaml:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+22:56:21 [INFORMATION] Enabled plugin cmd_find version git:cmd_find:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+22:56:21 [INFORMATION] Enabled plugin cmd_server version git:cmd_server:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+22:56:21 [INFORMATION] Enabled plugin cmd_alert version git:cmd_alert:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+22:56:21 [INFORMATION] Enabled plugin cmd_send version git:cmd_send:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+22:56:21 [INFORMATION] Enabled plugin cmd_list version git:cmd_list:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+22:56:21 [INFORMATION] Listening on /0.0.0.0:25565
+22:56:46 [INFORMATION] [/127.0.0.1:56307] <-> InitialHandler has pinged
+22:56:46 [INFORMATION] [/127.0.0.1:56321] <-> InitialHandler has pinged
+22:56:47 [INFORMATION] [/127.0.0.1:56329] <-> InitialHandler has pinged
+22:56:47 [INFORMATION] [/127.0.0.1:56343] <-> InitialHandler has pinged
+22:56:48 [INFORMATION] [/127.0.0.1:56354] <-> InitialHandler has connected
+22:56:49 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected
+22:56:49 [INFORMATION] [Schotzgoblin2,/127.0.0.1:56360] <-> InitialHandler has connected
+22:56:50 [INFORMATION] Netty is not using direct IO buffers.
+
+22:56:50 [INFORMATION] [Schotzgoblin2] <-> ServerConnector [lobby] has connected
+23:14:20 [INFORMATION] [Schotzgoblin] -> UpstreamBridge has disconnected
+23:14:20 [INFORMATION] [Schotzgoblin] <-> DownstreamBridge <-> [lobby] has disconnected
+23:14:20 [INFORMATION] [/127.0.0.1:57166] <-> InitialHandler has pinged
+23:14:20 [INFORMATION] [/127.0.0.1:57177] <-> InitialHandler has connected
+23:14:21 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected
+23:22:33 [INFORMATION] [Schotzgoblin2] -> UpstreamBridge has disconnected
+23:22:33 [INFORMATION] [Schotzgoblin2] <-> DownstreamBridge <-> [lobby] has disconnected
+23:22:33 [INFORMATION] [/127.0.0.1:57739] <-> InitialHandler has pinged
+23:22:33 [INFORMATION] [/127.0.0.1:57752] <-> InitialHandler has pinged
+23:22:34 [INFORMATION] [Schotzgoblin2,/127.0.0.1:57757] <-> InitialHandler has connected
+23:22:35 [INFORMATION] [Schotzgoblin2] <-> ServerConnector [lobby] has connected
+00:04:27 [INFORMATION] Using standard Java JCE cipher.
+00:04:27 [INFORMATION] Using standard Java compressor.
+00:04:27 [INFORMATION] Enabled BungeeCord version git:BungeeCord-Bootstrap:1.20-R0.3-SNAPSHOT:18eae8a:1842
+00:04:27 [INFORMATION] Discovered module: ModuleSpec(name=cmd_alert, file=modules\cmd_alert.jar, provider=JenkinsModuleSource())
+
+00:04:27 [INFORMATION] Discovered module: ModuleSpec(name=cmd_find, file=modules\cmd_find.jar, provider=JenkinsModuleSource())
+
+00:04:27 [INFORMATION] Discovered module: ModuleSpec(name=cmd_list, file=modules\cmd_list.jar, provider=JenkinsModuleSource())
+
+00:04:27 [INFORMATION] Discovered module: ModuleSpec(name=cmd_send, file=modules\cmd_send.jar, provider=JenkinsModuleSource())
+
+00:04:27 [INFORMATION] Discovered module: ModuleSpec(name=cmd_server, file=modules\cmd_server.jar, provider=JenkinsModuleSource())
+
+00:04:27 [INFORMATION] Discovered module: ModuleSpec(name=reconnect_yaml, file=modules\reconnect_yaml.jar, provider=JenkinsModuleSource())
+
+00:04:27 [INFORMATION] Loaded plugin reconnect_yaml version git:reconnect_yaml:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+00:04:27 [INFORMATION] Loaded plugin cmd_find version git:cmd_find:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+00:04:27 [INFORMATION] Loaded plugin cmd_server version git:cmd_server:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+00:04:27 [INFORMATION] Loaded plugin cmd_alert version git:cmd_alert:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+00:04:27 [INFORMATION] Loaded plugin cmd_send version git:cmd_send:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+00:04:27 [INFORMATION] Loaded plugin cmd_list version git:cmd_list:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+00:04:27 [WARNUNG] Forced host server pvp is not defined
+00:04:27 [INFORMATION] Enabled plugin reconnect_yaml version git:reconnect_yaml:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+00:04:27 [INFORMATION] Enabled plugin cmd_find version git:cmd_find:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+00:04:27 [INFORMATION] Enabled plugin cmd_server version git:cmd_server:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+00:04:27 [INFORMATION] Enabled plugin cmd_alert version git:cmd_alert:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+00:04:27 [INFORMATION] Enabled plugin cmd_send version git:cmd_send:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+00:04:27 [INFORMATION] Enabled plugin cmd_list version git:cmd_list:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+00:04:27 [INFORMATION] Listening on /0.0.0.0:25565
+00:04:29 [INFORMATION] [/127.0.0.1:56338] <-> InitialHandler has connected
+00:04:29 [INFORMATION] [/127.0.0.1:56343] <-> InitialHandler has connected
+00:04:30 [INFORMATION] [Schotzgoblin2] disconnected with: §f§cCould not connect to a default or fallback server. Incorrectly configured address/port/firewall? io.netty.channel.AbstractChannel$AnnotatedConnectException
+00:04:30 [INFORMATION] [Schotzgoblin] disconnected with: §f§cCould not connect to a default or fallback server. Incorrectly configured address/port/firewall? io.netty.channel.AbstractChannel$AnnotatedConnectException
+00:04:30 [INFORMATION] [Schotzgoblin2] -> UpstreamBridge has disconnected
+00:04:30 [INFORMATION] [Schotzgoblin] -> UpstreamBridge has disconnected
+00:04:31 [INFORMATION] [/127.0.0.1:56357] <-> InitialHandler has pinged
+00:04:32 [INFORMATION] [/127.0.0.1:56371] <-> InitialHandler has pinged
+00:04:34 [INFORMATION] [/127.0.0.1:56390] <-> InitialHandler has pinged
+00:04:35 [INFORMATION] [/127.0.0.1:56404] <-> InitialHandler has pinged
+00:04:44 [INFORMATION] [/127.0.0.1:56428] <-> InitialHandler has pinged
+00:04:45 [INFORMATION] [/127.0.0.1:56447] <-> InitialHandler has pinged
+00:04:50 [INFORMATION] [Schotzgoblin,/127.0.0.1:56468] <-> InitialHandler has connected
+00:04:51 [INFORMATION] [Schotzgoblin2,/127.0.0.1:56470] <-> InitialHandler has connected
+00:04:51 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected
+00:04:52 [INFORMATION] [Schotzgoblin2] <-> ServerConnector [lobby] has connected
+00:04:54 [INFORMATION] Netty is not using direct IO buffers.
+
+00:50:49 [WARNUNG] [Schotzgoblin] <-> DownstreamBridge <-> [lobby] - SocketException: Connection reset
+00:50:49 [WARNUNG] [Schotzgoblin2] <-> DownstreamBridge <-> [lobby] - SocketException: Connection reset
+00:50:49 [INFORMATION] [Schotzgoblin2] disconnected with: §f§fSocketException : Connection reset @ sun.nio.ch.SocketChannelImpl:401
+00:50:49 [INFORMATION] [Schotzgoblin] disconnected with: §f§fSocketException : Connection reset @ sun.nio.ch.SocketChannelImpl:401
+00:50:49 [INFORMATION] [Schotzgoblin] -> UpstreamBridge has disconnected
+00:50:49 [INFORMATION] [Schotzgoblin2] -> UpstreamBridge has disconnected
+00:50:49 [INFORMATION] [Schotzgoblin] <-> DownstreamBridge <-> [lobby] has disconnected
+00:50:49 [INFORMATION] [Schotzgoblin2] <-> DownstreamBridge <-> [lobby] has disconnected
+00:51:31 [INFORMATION] [/127.0.0.1:56476] <-> InitialHandler has pinged
+00:51:31 [INFORMATION] [/127.0.0.1:56493] <-> InitialHandler has pinged
+00:51:32 [INFORMATION] [Schotzgoblin,/127.0.0.1:56503] <-> InitialHandler has connected
+00:51:32 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected
+00:59:23 [INFORMATION] [Schotzgoblin] -> UpstreamBridge has disconnected
+00:59:23 [INFORMATION] [Schotzgoblin] <-> DownstreamBridge <-> [lobby] has disconnected
+00:59:23 [INFORMATION] [/127.0.0.1:61442] <-> InitialHandler has pinged
+00:59:24 [INFORMATION] [/127.0.0.1:61452] <-> InitialHandler has pinged
+00:59:24 [INFORMATION] [Schotzgoblin,/127.0.0.1:61455] <-> InitialHandler has connected
+00:59:25 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected
+01:01:04 [INFORMATION] [/127.0.0.1:61579] <-> InitialHandler has pinged
+01:01:04 [INFORMATION] [/127.0.0.1:61595] <-> InitialHandler has pinged
+01:01:07 [INFORMATION] [Schotzgoblin2,/127.0.0.1:61603] <-> InitialHandler has connected
+01:01:07 [INFORMATION] [Schotzgoblin2] <-> ServerConnector [lobby] has connected
+01:11:57 [INFORMATION] [Schotzgoblin2] -> UpstreamBridge has disconnected
+01:11:57 [INFORMATION] [Schotzgoblin2] <-> DownstreamBridge <-> [lobby] has disconnected
+01:11:57 [INFORMATION] [/127.0.0.1:54482] <-> InitialHandler has pinged
+01:11:58 [INFORMATION] [/127.0.0.1:54496] <-> InitialHandler has pinged
+01:11:58 [INFORMATION] [Schotzgoblin2,/127.0.0.1:54500] <-> InitialHandler has connected
+01:11:59 [INFORMATION] [Schotzgoblin2] <-> ServerConnector [lobby] has connected
+01:26:09 [INFORMATION] Using standard Java JCE cipher.
+01:26:09 [INFORMATION] Using standard Java compressor.
+01:26:09 [INFORMATION] Enabled BungeeCord version git:BungeeCord-Bootstrap:1.20-R0.3-SNAPSHOT:18eae8a:1842
+01:26:09 [INFORMATION] Discovered module: ModuleSpec(name=cmd_alert, file=modules\cmd_alert.jar, provider=JenkinsModuleSource())
+
+01:26:09 [INFORMATION] Discovered module: ModuleSpec(name=cmd_find, file=modules\cmd_find.jar, provider=JenkinsModuleSource())
+
+01:26:09 [INFORMATION] Discovered module: ModuleSpec(name=cmd_list, file=modules\cmd_list.jar, provider=JenkinsModuleSource())
+
+01:26:09 [INFORMATION] Discovered module: ModuleSpec(name=cmd_send, file=modules\cmd_send.jar, provider=JenkinsModuleSource())
+
+01:26:09 [INFORMATION] Discovered module: ModuleSpec(name=cmd_server, file=modules\cmd_server.jar, provider=JenkinsModuleSource())
+
+01:26:09 [INFORMATION] Discovered module: ModuleSpec(name=reconnect_yaml, file=modules\reconnect_yaml.jar, provider=JenkinsModuleSource())
+
+01:26:09 [INFORMATION] Loaded plugin reconnect_yaml version git:reconnect_yaml:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+01:26:09 [INFORMATION] Loaded plugin cmd_find version git:cmd_find:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+01:26:09 [INFORMATION] Loaded plugin cmd_server version git:cmd_server:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+01:26:09 [INFORMATION] Loaded plugin cmd_alert version git:cmd_alert:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+01:26:09 [INFORMATION] Loaded plugin cmd_send version git:cmd_send:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+01:26:09 [INFORMATION] Loaded plugin cmd_list version git:cmd_list:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+01:26:09 [WARNUNG] Forced host server pvp is not defined
+01:26:09 [INFORMATION] Enabled plugin reconnect_yaml version git:reconnect_yaml:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+01:26:09 [INFORMATION] Enabled plugin cmd_find version git:cmd_find:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+01:26:09 [INFORMATION] Enabled plugin cmd_server version git:cmd_server:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+01:26:09 [INFORMATION] Enabled plugin cmd_alert version git:cmd_alert:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+01:26:09 [INFORMATION] Enabled plugin cmd_send version git:cmd_send:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+01:26:09 [INFORMATION] Enabled plugin cmd_list version git:cmd_list:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+01:26:09 [INFORMATION] Listening on /0.0.0.0:25565
+01:26:20 [INFORMATION] [/127.0.0.1:64997] <-> InitialHandler has pinged
+01:26:35 [INFORMATION] [/127.0.0.1:65041] <-> InitialHandler has pinged
+01:26:35 [INFORMATION] [/127.0.0.1:65056] <-> InitialHandler has pinged
+01:26:48 [INFORMATION] [/127.0.0.1:65081] <-> InitialHandler has pinged
+01:26:48 [INFORMATION] [/127.0.0.1:65092] <-> InitialHandler has pinged
+01:26:49 [INFORMATION] [/127.0.0.1:65093] <-> InitialHandler has connected
+01:26:50 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected
+01:26:50 [INFORMATION] Netty is not using direct IO buffers.
+
+01:26:55 [INFORMATION] [/127.0.0.1:65116] <-> InitialHandler has pinged
+01:26:56 [INFORMATION] [/127.0.0.1:65133] <-> InitialHandler has pinged
+01:26:56 [INFORMATION] [Schotzgoblin2,/127.0.0.1:65138] <-> InitialHandler has connected
+01:26:57 [INFORMATION] [Schotzgoblin2] <-> ServerConnector [lobby] has connected
+01:51:29 [INFORMATION] [Schotzgoblin] -> UpstreamBridge has disconnected
+01:51:29 [INFORMATION] [Schotzgoblin] <-> DownstreamBridge <-> [lobby] has disconnected
+01:51:29 [INFORMATION] [/127.0.0.1:50762] <-> InitialHandler has pinged
+01:51:30 [INFORMATION] [/127.0.0.1:50775] <-> InitialHandler has pinged
+01:51:30 [INFORMATION] [Schotzgoblin,/127.0.0.1:50780] <-> InitialHandler has connected
+01:51:32 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected
+01:58:42 [INFORMATION] [Schotzgoblin2] -> UpstreamBridge has disconnected
+01:58:42 [INFORMATION] [Schotzgoblin2] <-> DownstreamBridge <-> [lobby] has disconnected
+01:58:42 [INFORMATION] [/127.0.0.1:59725] <-> InitialHandler has pinged
+01:58:43 [INFORMATION] [/127.0.0.1:59743] <-> InitialHandler has pinged
+01:58:43 [INFORMATION] [Schotzgoblin2,/127.0.0.1:59749] <-> InitialHandler has connected
+01:58:44 [INFORMATION] [Schotzgoblin2] <-> ServerConnector [lobby] has connected
+02:01:57 [INFORMATION] [Schotzgoblin] -> UpstreamBridge has disconnected
+02:01:57 [INFORMATION] [Schotzgoblin] <-> DownstreamBridge <-> [lobby] has disconnected
+02:01:57 [INFORMATION] [/127.0.0.1:59946] <-> InitialHandler has pinged
+02:01:57 [INFORMATION] [/127.0.0.1:59958] <-> InitialHandler has pinged
+02:01:58 [INFORMATION] [Schotzgoblin,/127.0.0.1:59962] <-> InitialHandler has connected
+02:01:58 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected

@@ -4,6 +4,7 @@ import com.google.common.io.ByteArrayDataOutput;
 import com.google.common.io.ByteStreams;
 import com.schotzgoblin.commands.AdminQuestCommand;
 import com.schotzgoblin.commands.QuestCommand;
+import com.schotzgoblin.listener.ParticalListener;
 import com.schotzgoblin.listener.QuestNpc;
 import com.schotzgoblin.listener.SignListener;
 import com.schotzgoblin.listener.TrackPlayerQuestProgress;
@@ -42,6 +43,7 @@ public class QuestSystem extends JavaPlugin implements Listener, PluginMessageLi
         addListener(new TrackPlayerQuestProgress());
         addListener(new QuestNpc());
         addListener(new SignListener());
+        addListener(new ParticalListener());
         registerCommand("quests",new QuestCommand());
         registerCommand("quest",new AdminQuestCommand());
     }
