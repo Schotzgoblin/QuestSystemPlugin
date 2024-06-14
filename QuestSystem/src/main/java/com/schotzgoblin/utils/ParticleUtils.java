@@ -9,19 +9,19 @@ import org.bukkit.util.Vector;
 
 public class ParticleUtils {
     private static final DatabaseHandler databaseHandler = DatabaseHandler.getInstance();
+
     public static void createParticle(Player player) {
-        var playerQuestsFuture = databaseHandler.getPlayerQuestsAsync(player.getUniqueId(), "IN_PROGRESS");
-        playerQuestsFuture.thenAccept(playerQuests -> {
-            if (!playerQuests.isEmpty()) {
-                playerQuests.forEach(playerQuest -> {
-                    if(playerQuest.getQuest().getObjective().getType().equals("MOVE")){
-                        var location = Utils.convertStringToLocation(playerQuest.getQuest().getObjective().getValue());
-                        spawnParticle(player, location);
-                        spawnDirectionParticle(player, location);
-                    }
-                });
-            }
-        });
+        var playerQuests = PlayerMoveUtils.playerQuestConfig.get(player.getUniqueId());
+        if(playerQuests==null) return;
+        if (!playerQuests.isEmpty()) {
+            playerQuests.forEach(playerQuest -> {
+                if (playerQuest.getQuest().getObjective().getType().equals("MOVE")) {
+                    var location = Utils.convertStringToLocation(playerQuest.getQuest().getObjective().getValue());
+                    spawnParticle(player, location);
+                    spawnDirectionParticle(player, location);
+                }
+            });
+        }
     }
 
     private static void spawnDirectionParticle(Player player, Location location) {
@@ -39,9 +39,9 @@ public class ParticleUtils {
 
     private static void spawnParticle(Player player, Location location) {
         for (int i = 0; i < 10; i++) {
-            location.add(0,i,0);
+            location.add(0, i, 0);
             player.spawnParticle(Particle.FLAME, location, 15, 0.1, 0.5, 0.1, 0.02);
-            location.subtract(0,i,0);
+            location.subtract(0, i, 0);
         }
     }
 }

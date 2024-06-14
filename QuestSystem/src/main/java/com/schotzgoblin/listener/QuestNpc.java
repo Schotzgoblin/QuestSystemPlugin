@@ -1,17 +1,14 @@
 package com.schotzgoblin.listener;
 
 import com.schotzgoblin.config.ConfigHandler;
-import com.schotzgoblin.database.PlayerQuest;
-import com.schotzgoblin.database.Quest;
 import com.schotzgoblin.main.DatabaseHandler;
-import com.schotzgoblin.main.InventoryMapping;
+import com.schotzgoblin.dtos.InventoryMapping;
 import com.schotzgoblin.main.QuestManager;
 import com.schotzgoblin.main.QuestSystem;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
 import org.bukkit.*;
 import org.bukkit.attribute.Attribute;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -47,10 +44,8 @@ public class QuestNpc implements Listener {
         // Fetch NPC location asynchronously
         fetchNPCLocationAsync().thenAccept(location -> {
             this.npcLocation = location;
-            Bukkit.getScheduler().runTask(plugin, () -> {
-                deleteEntities(npcLocation, 4);
-                spawnNPC(npcLocation);
-            });
+            deleteEntities(npcLocation, 4);
+            spawnNPC(npcLocation);
         }).exceptionally(ex -> {
             ex.printStackTrace();
             return null;
