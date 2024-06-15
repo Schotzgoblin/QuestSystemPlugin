@@ -1,6 +1,7 @@
 package com.schotzgoblin.listener;
 
 import com.google.common.base.Preconditions;
+import com.schotzgoblin.config.ConfigHandler;
 import com.schotzgoblin.database.PlayerQuest;
 import com.schotzgoblin.main.DatabaseHandler;
 import com.schotzgoblin.main.QuestSystem;
@@ -30,11 +31,10 @@ import static com.schotzgoblin.utils.SignUtils.*;
 
 public class SignListener implements Listener {
     private final QuestSystem plugin;
-    private final DatabaseHandler databaseHandler;
+    private final ConfigHandler config = ConfigHandler.getInstance();
 
     public SignListener() {
         this.plugin = QuestSystem.getInstance();
-        this.databaseHandler = DatabaseHandler.getInstance();
         this.updateNearbySignsOfOnlinePlayersDelayed();
     }
 
@@ -55,7 +55,8 @@ public class SignListener implements Listener {
                 if (SignUtils.isSign(blockType)) {// 39
                     Player player = event.getPlayer();// 40
                     Sign sign = (Sign) block.getState();// 41
-                    if(((TextComponent)sign.getSide(Side.FRONT).line(0)).content().contains("quests"))return;
+                    var signTitle = config.getStringAsync("sign-messages.quests-title").join();
+                    if(((TextComponent)sign.getSide(Side.FRONT).line(0)).content().contains(signTitle))return;
                     if(playerSignChange.containsKey(player.getUniqueId())) {
                         playerSignChange.put(player.getUniqueId(), playerSignChange.get(player.getUniqueId()) + 1);
                     } else {

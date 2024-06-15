@@ -1,25 +1,8 @@
 package com.schotzgoblin.utils;
 
-import com.google.common.base.Preconditions;
 import com.schotzgoblin.database.PlayerQuest;
-import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.TextComponent;
-import net.kyori.adventure.text.format.TextColor;
-import net.kyori.adventure.title.Title;
+import com.schotzgoblin.enums.ObjectiveType;
 import org.bukkit.*;
-import org.bukkit.block.BlockState;
-import org.bukkit.block.HangingSign;
-import org.bukkit.block.Sign;
-import org.bukkit.block.TileState;
-import org.bukkit.block.data.type.WallHangingSign;
-import org.bukkit.block.data.type.WallSign;
-import org.bukkit.block.sign.Side;
-import org.bukkit.entity.Player;
-
-import java.time.Duration;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
 
 public class Utils {
     public static String getTimeStringFromSecs(int time) {
@@ -33,11 +16,11 @@ public class Utils {
 
     public static float calculateProgress(PlayerQuest playerQuest) {
         var objective = playerQuest.getQuest().getObjective();
-        switch (objective.getType()) {
-            case "KILL":
-            case "PICKUP":
+        switch (ObjectiveType.valueOf(objective.getType())) {
+            case ObjectiveType.KILL:
+            case ObjectiveType.PICKUP:
                 return Math.clamp(Float.parseFloat(playerQuest.getProgress()) / objective.getCount(),0,1);
-            case "MOVE":
+            case ObjectiveType.MOVE:
                 if(playerQuest.getProgress().equals("0"))return 0;
                 var startLocation = convertStringToLocation(playerQuest.getStartLocation());
                 var location = convertStringToLocation(playerQuest.getProgress());

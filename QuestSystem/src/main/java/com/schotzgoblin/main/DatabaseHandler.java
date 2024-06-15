@@ -273,7 +273,7 @@ public class DatabaseHandler {
                 try (ResultSet resultSet = preparedStatement.executeQuery()) {
                     while (resultSet.next()) {
                         var playerQuest = createPlayerQuest(resultSet);
-                        if (type.isEmpty() || playerQuest.getQuestStatus().getStatus().equals(type) || type.equals("NOT_STARTED"))
+                        if (type.isEmpty() || playerQuest.getQuestStatus().getStatus().equals(type) || type.equals(com.schotzgoblin.enums.QuestStatus.NOT_STARTED.name()))
                             list.add(playerQuest);
                     }
                 }
@@ -348,7 +348,7 @@ public class DatabaseHandler {
     public CompletableFuture<Void> changePlayerQuestType(UUID uniqueId, String questName, String type, Location location) {
         var quest = getQuestByNameAsync(questName).join();
         var playerQuest = getPlayerQuestByQuestIdAsync(uniqueId, quest.getId()).join();
-        if (type.equals(("IN_PROGRESS"))) {
+        if (type.equals((com.schotzgoblin.enums.QuestStatus.IN_PROGRESS.name()))) {
             playerQuest.setTime(0);
             playerQuest.setProgress("0");
             playerQuest.setStartLocation(Utils.convertLocationToString(location));

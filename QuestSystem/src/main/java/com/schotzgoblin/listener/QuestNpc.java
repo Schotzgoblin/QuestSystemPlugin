@@ -1,6 +1,7 @@
 package com.schotzgoblin.listener;
 
 import com.schotzgoblin.config.ConfigHandler;
+import com.schotzgoblin.enums.QuestStatus;
 import com.schotzgoblin.main.DatabaseHandler;
 import com.schotzgoblin.dtos.InventoryMapping;
 import com.schotzgoblin.main.QuestManager;
@@ -240,7 +241,8 @@ public class QuestNpc implements Listener {
             return;
         }
         var player = event.getPlayer();
-        questManager.setupInventory(player, "All Quests");
+        var allQuests = configHandler.getStringAsync("quest-manager.quest.all").join();
+        questManager.setupInventory(player, allQuests);
     }
 
     @EventHandler
@@ -297,11 +299,13 @@ public class QuestNpc implements Listener {
                         questManager.acceptQuest(player, displayName, quest.getObjective().getObjective());
 
                     } else {
-                        switch (playerQuest.getQuestStatus().getStatus().toUpperCase()) {
-                            case "IN_PROGRESS":
+                        String statusString = playerQuest.getQuestStatus().getStatus().toUpperCase();
+                        QuestStatus questStatus = QuestStatus.fromString(statusString);
+                        switch (questStatus) {
+                            case IN_PROGRESS:
                                 questManager.cancelQuest(player, displayName).join();
                                 break;
-                            case "CANCELED":
+                            case CANCELED:
                                 questManager.reactivateQuest(player, displayName).join();
                                 break;
                             default:

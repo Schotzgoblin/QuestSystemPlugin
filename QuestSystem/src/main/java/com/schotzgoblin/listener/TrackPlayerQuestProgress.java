@@ -1,7 +1,10 @@
 package com.schotzgoblin.listener;
 
+import com.schotzgoblin.config.ConfigHandler;
 import com.schotzgoblin.database.PlayerQuest;
 import com.schotzgoblin.dtos.PlayerQuestCoolDown;
+import com.schotzgoblin.enums.ObjectiveType;
+import com.schotzgoblin.enums.QuestStatus;
 import com.schotzgoblin.main.DatabaseHandler;
 import com.schotzgoblin.main.QuestManager;
 import com.schotzgoblin.main.QuestSystem;
@@ -9,6 +12,7 @@ import com.schotzgoblin.utils.PlayerMoveUtils;
 import com.schotzgoblin.utils.Utils;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.event.ClickEvent;
+import net.kyori.adventure.text.format.TextColor;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.EntityType;
@@ -31,25 +35,29 @@ public class TrackPlayerQuestProgress implements Listener {
     private final QuestSystem questSystem;
     private final QuestManager questManager;
     private final DatabaseHandler databaseHandler;
-    private final FileConfiguration config;
+    private final ConfigHandler config;
     private static final Map<UUID, List<PlayerQuestCoolDown>> bossBarUpdateTimestamps = new HashMap<>();
 
     public TrackPlayerQuestProgress() {
         this.questSystem = QuestSystem.getInstance();
         this.questManager = QuestManager.getInstance();
         this.databaseHandler = DatabaseHandler.getInstance();
-        config = questSystem.getConfig();
+        config = ConfigHandler.getInstance();
     }
 
     @EventHandler
     public void onPlayerJoinEvent(PlayerJoinEvent event) {
         var player = event.getPlayer();
-        var playerQuestsFuture = databaseHandler.getPlayerQuestsAsync(player.getUniqueId(), "IN_PROGRESS");
+        var playerQuestsFuture = databaseHandler.getPlayerQuestsAsync(player.getUniqueId(), QuestStatus.IN_PROGRESS.name());
+        var welcomeMessage = config.getStringAsync("quest-system.welcome.message").join();
+        var welcomeMessageColour = config.getStringAsync("quest-system.welcome.colour").join();
         playerQuestsFuture.thenAccept(playerQuests -> {
             if (!playerQuests.isEmpty()) {
                 Bukkit.getScheduler().runTaskLater(questSystem, () -> {
-                    player.sendMessage(Component.text(Objects.requireNonNull(config.getString("quest-system.welcome-message"))).clickEvent(ClickEvent.callback(audience -> {
-                        questManager.setupInventory(player, "IN_PROGRESS");
+                    player.sendMessage(Component.text(
+                            Objects.requireNonNull(welcomeMessage), TextColor.fromHexString(welcomeMessageColour))
+                            .clickEvent(ClickEvent.callback(audience -> {
+                        questManager.setupInventory(player, QuestStatus.IN_PROGRESS.name());
                     })));
                 }, 20L);
             }
@@ -74,10 +82,10 @@ public class TrackPlayerQuestProgress implements Listener {
     }
 
     private void updatePlayerQuests(Player player) {
-        var playerQuestsFuture = databaseHandler.getPlayerQuestsAsync(player.getUniqueId(), "IN_PROGRESS");
+        var playerQuestsFuture = databaseHandler.getPlayerQuestsAsync(player.getUniqueId(), QuestStatus.IN_PROGRESS.name());
         playerQuestsFuture.thenAccept(playerQuests -> {
             playerQuests.forEach(playerQuest -> {
-                if (playerQuest.getQuest().getObjective().getType().equalsIgnoreCase("MOVE")) {
+                if (playerQuest.getQuest().getObjective().getType().equalsIgnoreCase(ObjectiveType.MOVE.name())) {
                     playerQuest.setProgress(Utils.convertLocationToString(player.getLocation()));
                     databaseHandler.updateAsync(playerQuest);
                 }
@@ -92,11 +100,11 @@ public class TrackPlayerQuestProgress implements Listener {
         if (player == null) {
             return;
         }
-        var playerQuestsFuture = databaseHandler.getPlayerQuestsAsync(player.getUniqueId(), "IN_PROGRESS");
+        var playerQuestsFuture = databaseHandler.getPlayerQuestsAsync(player.getUniqueId(), QuestStatus.IN_PROGRESS.name());
         playerQuestsFuture.thenAccept(playerQuests -> {
             playerQuests.forEach(playerQuest -> {
                 var quest = playerQuest.getQuest();
-                if (quest.getObjective().getType().equalsIgnoreCase("KILL") && quest.getObjective().getValue().equalsIgnoreCase(entity.getType().name())) {
+                if (quest.getObjective().getType().equalsIgnoreCase(ObjectiveType.KILL.name()) && quest.getObjective().getValue().equalsIgnoreCase(entity.getType().name())) {
                     playerQuest.setProgress((Float.parseFloat(playerQuest.getProgress()) + 1f) + "");
                     updatePlayerQuestsFromMemory(player, playerQuest);
                     databaseHandler.updateAsync(playerQuest).thenAccept(x ->
@@ -127,11 +135,11 @@ public class TrackPlayerQuestProgress implements Listener {
         if(playerQuests==null) return;
 
         long currentTime = System.currentTimeMillis();
-        long cooldownTime = 100;
+        long cooldownTime = 200;
 
         playerQuests.forEach(playerQuest -> {
             var quest = playerQuest.getQuest();
-            if (quest.getObjective().getType().equalsIgnoreCase("MOVE")) {
+            if (quest.getObjective().getType().equalsIgnoreCase(ObjectiveType.MOVE.name())) {
                 var playerLocation = player.getLocation();
                 playerQuest.setProgress(Utils.convertLocationToString(playerLocation));
                 var playerQuestCoolDowns = bossBarUpdateTimestamps.computeIfAbsent(player.getUniqueId(), k -> new ArrayList<>());
@@ -162,11 +170,11 @@ public class TrackPlayerQuestProgress implements Listener {
         if (!player.getType().equals(EntityType.PLAYER)) {
             return;
         }
-        var playerQuestsFuture = databaseHandler.getPlayerQuestsAsync(player.getUniqueId(), "IN_PROGRESS");
+        var playerQuestsFuture = databaseHandler.getPlayerQuestsAsync(player.getUniqueId(), QuestStatus.IN_PROGRESS.name());
         playerQuestsFuture.thenAccept(playerQuests -> {
             playerQuests.forEach(playerQuest -> {
                 var quest = playerQuest.getQuest();
-                if (quest.getObjective().getType().equalsIgnoreCase("PICKUP") && quest.getObjective().getValue().equalsIgnoreCase(entity.getName())) {
+                if (quest.getObjective().getType().equalsIgnoreCase(ObjectiveType.PICKUP.name()) && quest.getObjective().getValue().equalsIgnoreCase(entity.getName())) {
                     playerQuest.setProgress((Float.parseFloat(playerQuest.getProgress()) + entity.getItemStack().getAmount()) + "");
                     updatePlayerQuestsFromMemory((Player) player, playerQuest);
                     databaseHandler.updateAsync(playerQuest).thenAccept(x ->

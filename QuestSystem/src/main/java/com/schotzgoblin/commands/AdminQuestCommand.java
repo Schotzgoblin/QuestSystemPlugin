@@ -1,5 +1,6 @@
 package com.schotzgoblin.commands;
 
+import com.schotzgoblin.config.ConfigHandler;
 import com.schotzgoblin.main.DatabaseHandler;
 import com.schotzgoblin.main.QuestManager;
 import net.kyori.adventure.text.Component;
@@ -12,11 +13,14 @@ import org.bukkit.event.Listener;
 import org.bukkit.inventory.Inventory;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Objects;
+
 public class AdminQuestCommand implements CommandExecutor, Listener {
 
     private final QuestManager questManager;
     private final DatabaseHandler databaseHandler;
     private final Inventory questCreationUI;
+    private final ConfigHandler config = ConfigHandler.getInstance();
 
     public AdminQuestCommand() {
         this.questManager = QuestManager.getInstance();
@@ -27,7 +31,7 @@ public class AdminQuestCommand implements CommandExecutor, Listener {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
         if(!(sender instanceof Player player)) {
-            sender.sendMessage("Only players can use this command");
+            sender.sendMessage(Objects.requireNonNull(config.getStringAsync("command.no-player").join()));
             return true;
         }
         if (args[0].equalsIgnoreCase("create") && sender.hasPermission("quest.admin")) {

@@ -18,23 +18,166 @@ npc-task:
   interval: 1
   range: 15
 
+
+particle-settings:
+  direction:
+    particle: "PORTAL"
+    spacing: 0.5
+    distance: 8
+    count: 10
+    offset-x: 0
+    offset-y: 0
+    offset-z: 0
+    extra: 0.1
+  spawn:
+    particle: "FLAME"
+    iterations: 10
+    count: 15
+    offset-x: 0.1
+    offset-y: 0.5
+    offset-z: 0.1
+    extra: 0.02
+
+quest-inv:
+  title: "Quests"
+  colour: "#FF0000"
+
 quest-manager:
-  quest-main-colour: "#FF0000"
-  quest-reactivated: "You have reactivated the quest: "
-  quest-canceled: "You have canceled the quest: "
-  quest-accepted: "You have accepted the quest: "
-  quest-completed: "You have completed the quest: "
-  quest-failed: "You did not complete the quest: "
-  quest-objective: "Your objective is to: "
-  quest-rewards: "You have received "
-  quest-time-limit: " in the given time limit of "
-  quest-click-not-started: "Click to accept"
-  quest-click-in-progress: "Click to cancel"
-  quest-click-completed: "Quest Completed"
-  quest-click-canceled: "Click to try again"
+  quest:
+    main-colour: "#FF0000"
+    reactivated:
+      message: "You have reactivated the quest: "
+      colour: "#FFA500"
+      sound:
+        name: "BLOCK_NOTE_BLOCK_PLING"
+        volume: 1
+        pitch: 1
+    canceled:
+      message: "You have canceled the quest: "
+      colour: "#FF0000"
+      sound:
+        name: "BLOCK_NOTE_BLOCK_BASS"
+        volume: 1
+        pitch: 1
+    accepted:
+      message: "You have accepted the quest: "
+      colour: "#FFA500"
+      sound:
+        name: "BLOCK_NOTE_BLOCK_PLING"
+        volume: 1
+        pitch: 1
+    completed:
+      message: "You have completed the quest: "
+      colour: "#00FF00"
+      sound:
+        name: "ENTITY_PLAYER_LEVELUP"
+        volume: 1
+        pitch: 1
+      alert:
+        message: "Quest Completed"
+        colour: 0x008000
+        fade-in: 1000
+        stay: 3000
+        fade-out: 1000
+
+    failed:
+      message: "You did not complete the quest: "
+      colour: "#FF0000"
+      sound:
+        name: "BLOCK_END_PORTAL_SPAWN"
+        volume: 1
+        pitch: 1
+      alert:
+        message: "Quest Failed"
+        colour: 0xFF0000
+        fade-in: 1000
+        stay: 3000
+        fade-out: 1000
+    objective: "Your objective is to: "
+    rewards:
+      message: "You have received "
+      colour: "#00FF00"
+    time-limit: " in the given time limit of "
+    click-not-started: "Click to accept"
+    click-in-progress: "Click to cancel"
+    click-completed: "Quest Completed"
+    click-canceled: "Click to try again"
+    all: "All Quests"
+    status:
+      in-progress:
+        message: "In Progress"
+        color: "#FFA500" # Orange
+      completed:
+        message: "Completed"
+        color: "#00FF00" # Green
+      canceled:
+        message: "Canceled"
+        color: "#FF0000" # Red
+      not-started:
+        message: "Not Started"
+        color: "#00AAFF" # White
+  lore-entries:
+    empty: ""
+    status-label: "Status:"
+    description-label: "Description:"
+    objective-label: "Objective:"
+    time-limit-label: "Time limit:"
+    time-left-label: "Time left:"
+    rewards-label: "Rewards:"
+    rewards-colour: "#00FF00"
+  boss-bar:
+    init:
+      colour: "BLUE"
+      overlay: "PROGRESS"
+    complete:
+      colour: "GREEN"
+
 
 command:
   no-player: "Only players can use this command"
 
 quest-system:
-  welcome-message: "Welcome back! You have active quests, click here to see them"
+  welcome:
+    message: "Welcome back! You have active quests, click here to see them"
+    colour: "#FFA500"
+
+sign-messages:
+  quests-title: "quests"
+  quest-title: "quest"
+  quests_sign:
+    line_0:
+      text: "Quests: %size%"
+      color: "#000000" # Green
+    line_3:
+      text: ""
+      color: "#00FF00" # Green
+  quest_sign:
+    no_quests:
+      line_0:
+        text: "No quests started"
+        color: "#FF0000" # Red
+      line_1:
+        text: ""
+        color: "#FF0000" # Red
+      line_2:
+        text: ""
+        color: "#FF0000" # Red
+      line_3:
+        text: ""
+        color: "#FF0000" # Red
+    quest:
+      line_0:
+        text: "Quest: %name%"
+        color: "#0000FF" # Blue
+      line_1:
+        text: "Progress: %progress%%"
+        color: "#0000FF" # Blue
+      line_2:
+        text: "Time left: %time_left%"
+        color: "#0000FF" # Blue
+      line_3_multiple:
+        text: "Right click to change"
+        color: "#FFFF00" # Yellow
+      line_3_single:
+        text: ""
+        color: "#FFFF00" # Yellow

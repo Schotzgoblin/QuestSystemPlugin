@@ -35,7 +35,6 @@ public class QuestSystem extends JavaPlugin implements Listener, PluginMessageLi
     @Override
     public void onEnable() {
         super.onEnable();
-        Bukkit.getLogger().info("Hello World");
         Bukkit.getPluginManager().registerEvents(this, this);
         Bukkit.getMessenger().registerOutgoingPluginChannel(this, bungeeCordChannelName);
         Bukkit.getMessenger().registerIncomingPluginChannel(this, bungeeCordChannelName, this);

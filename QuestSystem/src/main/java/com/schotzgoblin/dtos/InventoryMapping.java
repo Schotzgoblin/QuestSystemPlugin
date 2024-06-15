@@ -1,13 +1,15 @@
 package com.schotzgoblin.dtos;
 
+import com.schotzgoblin.config.ConfigHandler;
 import org.bukkit.inventory.Inventory;
 
 public class InventoryMapping {
     private Inventory inventory;
-    private String type = "All Quests";
+    private String type;
     private int menuSlot = 2;
 
     public InventoryMapping() {
+        type = ConfigHandler.getInstance().getStringAsync("quest-manager.quest.all").join();
     }
 
     public InventoryMapping(Inventory inventory, String type, int menuSlot) {

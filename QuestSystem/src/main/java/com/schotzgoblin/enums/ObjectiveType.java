@@ -1,5 +1,8 @@
 package com.schotzgoblin.enums;
 
-public enum ObjectiveType {
-
+public enum ObjectiveType
+{
+    KILL,
+    PICKUP,
+    MOVE
 }
