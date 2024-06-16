@@ -80,12 +80,14 @@ public class QuestNpc implements Listener {
         World world = location.getWorld();
         if (world == null) return;
 
-        for (Entity entity : world.getEntities()) {
-            if (entity.getLocation().distance(location) <= radius
-                    && (entity.getType() == EntityType.VILLAGER || entity.getType() == EntityType.ARMOR_STAND)) {
-                entity.remove();
+        Bukkit.getScheduler().runTask(plugin, () -> {
+            for (Entity entity : world.getEntities()) {
+                if (entity.getLocation().distance(location) <= radius
+                        && (entity.getType() == EntityType.VILLAGER || entity.getType() == EntityType.ARMOR_STAND)) {
+                    entity.remove();
+                }
             }
-        }
+        });
     }
 
     public void spawnNPC(Location location) {

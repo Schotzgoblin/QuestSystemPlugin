@@ -18,6 +18,55 @@ npc-task:
   interval: 1
   range: 15
 
+inventory:
+  switch-page:
+    success:
+      sound: "BLOCK_NOTE_BLOCK_PLING"
+      volume: 1
+      pitch: 1
+    error:
+      sound: "BLOCK_NOTE_BLOCK_BASS"
+      volume: 1
+      pitch: 1
+  next-page:
+    display-name: "Next Page: %page%"
+    colour: "#FFFFFF"
+  prev-page:
+    display-name: "Previous Page: %page%"
+    colour: "#FFFFFF"
+  create-quest:
+    display-name: "Create Quest"
+    colour: "#00FF00"
+    material: BOOK
+  edit-quest:
+    name:
+      title: "Quest Name"
+      colour: "#FFCC00"
+      material: "NAME_TAG"
+    description:
+      title: "Quest Description"
+      colour: "#3399FF"
+      material: "PAPER"
+    objective:
+      title: "Quest Objective"
+      colour: "#FF6666"
+      material: "PAPER"
+    time-limit:
+      title: "Time Limit"
+      colour: "#99CC00"
+      material: "CLOCK"
+    rewards:
+      title: "Quest Rewards"
+      colour: "#FF9900"
+      material: "CHEST"
+    save:
+      title: "Save Changes"
+      colour: "#66CC99"
+      material: "GREEN_WOOL"
+    cancel:
+      title: "Cancel Edit"
+      colour: "#FF3366"
+      material: "RED_WOOL"
 
 particle-settings:
   direction:
@@ -44,6 +93,9 @@ quest-inv:
 
 quest-manager:
   quest:
+    edit:
+      title: "Right-click to edit"
+      colour: "#00AAFF"
     main-colour: "#FF0000"
     reactivated:
       message: "You have reactivated the quest: "
@@ -125,13 +177,21 @@ quest-manager:
     time-left-label: "Time left:"
     rewards-label: "Rewards:"
     rewards-colour: "#00FF00"
+    edit:
+      title: "Right-click to edit"
+      colour: "#00AAFF"
+    delete:
+      title: "Shift-click to delete"
+      colour: "#FF0000"
+      sound: "ENTITY_ITEM_BREAK"
+      volume: 1
+      pitch: 1
   boss-bar:
     init:
       colour: "BLUE"
       overlay: "PROGRESS"
     complete:
       colour: "GREEN"
-
 
 command:
   no-player: "Only players can use this command"

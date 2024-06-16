@@ -134,7 +134,7 @@ public class QuestManager implements Listener {
 
 
             }
-            finaliseInventory(inventory);
+            finaliseInventory(inventory,54);
             return CompletableFuture.completedFuture(inventoryMapping);
         }).exceptionally(ex -> {
             ex.printStackTrace();
@@ -158,7 +158,7 @@ public class QuestManager implements Listener {
         };
     }
 
-    private CompletableFuture<ItemStack> createQuestItemStackAsync(Quest quest, String type, Player player) {
+    public CompletableFuture<ItemStack> createQuestItemStackAsync(Quest quest, String type, Player player) {
         List<Component> lore = new ArrayList<>();
 
         CompletableFuture<TextComponent> questStatusFuture = getQuestStatusComponentAsync(type, quest, player);
@@ -271,9 +271,9 @@ public class QuestManager implements Listener {
         });
     }
 
-    private void finaliseInventory(Inventory inventory) {
+    public void finaliseInventory(Inventory inventory, int size) {
         if (inventory == null) return;
-        for (int i = 0; i < 54; i++) {
+        for (int i = 0; i < size; i++) {
             if (inventory.getItem(i) == null) {
                 inventory.setItem(i, new ItemStack(Material.GRAY_STAINED_GLASS_PANE));
             }

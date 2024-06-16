@@ -50,9 +50,27 @@ public class SignUtils {
         Preconditions.checkNotNull(player, "player is null");
         Preconditions.checkNotNull(sign, "sign is null");
         var playerQuests = PlayerMoveUtils.playerQuestConfig.get(player.getUniqueId());
-        if (playerQuests == null) return;
+
         var side = sign.getSide(Side.FRONT);
         var firstLine = side.line(0);
+        if (playerQuests == null){
+            var firstLineContent = ((TextComponent) firstLine).content();
+            var questsTitle = configHandler.getStringAsync("sign-messages.quests-title").join();
+            var questTitle = configHandler.getStringAsync("sign-messages.quest-title").join();
+            if(firstLineContent.toLowerCase().contains(questsTitle)) {
+                return;
+            }else if(firstLineContent.toLowerCase().contains(questTitle)) {
+                handleNoQuestsSign(side).thenAccept(x -> {
+                    Bukkit.getScheduler().runTask(plugin, () -> {
+                        player.sendSignChange(sign.getLocation(),
+                                sign.getSide(Side.FRONT).lines(), SignUtils.getSignTextColor(sign), sign.getSide(Side.FRONT).isGlowingText());
+                    });
+                });
+            }else{
+                return;
+            }
+            return;
+        }
         if (!playerSignChange.containsKey(player.getUniqueId())) {
             playerSignChange.put(player.getUniqueId(), 0);
         }

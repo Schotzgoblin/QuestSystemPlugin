@@ -1,76 +1,338 @@
-[03:36:06] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[03:36:08] [ServerMain/INFO]: Loaded 1174 recipes
-[03:36:08] [ServerMain/INFO]: Loaded 1271 advancements
-[03:36:08] [Server thread/INFO]: Starting minecraft server version 1.20.4
-[03:36:08] [Server thread/INFO]: Loading properties
-[03:36:09] [Server thread/INFO]: This server is running Paper version git-Paper-496 (MC: 1.20.4) (Implementing API version 1.20.4-R0.1-SNAPSHOT) (Git: 7ac24a1 on ver/1.20.4)
-[03:36:10] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[03:36:10] [Server thread/INFO]: Using 4 threads for Netty based IO
-[03:36:10] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
+[01:52:23] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[01:52:25] [ServerMain/INFO]: Loaded 1174 recipes
+[01:52:26] [ServerMain/INFO]: Loaded 1271 advancements
+[01:52:26] [Server thread/INFO]: Starting minecraft server version 1.20.4
+[01:52:26] [Server thread/INFO]: Loading properties
+[01:52:26] [Server thread/INFO]: This server is running Paper version git-Paper-496 (MC: 1.20.4) (Implementing API version 1.20.4-R0.1-SNAPSHOT) (Git: 7ac24a1 on ver/1.20.4)
+[01:52:27] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[01:52:27] [Server thread/INFO]: Using 4 threads for Netty based IO
+[01:52:27] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
     We recommend installing the spark profiler as a replacement: https://spark.lucko.me/
     For more information please visit: https://github.com/PaperMC/Paper/issues/8948
-[03:36:10] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 3 worker threads, and gen parallelism of 3 threads
-[03:36:10] [Server thread/INFO]: Default game type: SURVIVAL
-[03:36:10] [Server thread/INFO]: Generating keypair
-[03:36:10] [Server thread/INFO]: Starting Minecraft server on *:25566
-[03:36:10] [Server thread/INFO]: Using default channel type
-[03:36:10] [Server thread/INFO]: Paper: Using Java compression from Velocity.
-[03:36:10] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
-[03:36:10] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
-[03:36:10] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[03:36:10] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
-[03:36:10] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
-[03:36:10] [Server thread/WARN]: Whilst this makes it possible to use BungeeCord, unless access to your server is properly restricted, it also opens up the ability for hackers to connect with any username they choose.
-[03:36:10] [Server thread/WARN]: Please see http://www.spigotmc.org/wiki/firewall-guide/ for further information.
-[03:36:10] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
-[03:36:10] [Server thread/INFO]: Preparing level "world"
-[03:36:11] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[03:36:11] [Server thread/INFO]: Time elapsed: 210 ms
-[03:36:11] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[03:36:11] [Server thread/INFO]: Time elapsed: 38 ms
-[03:36:11] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[03:36:11] [Server thread/INFO]: Time elapsed: 33 ms
-[03:36:11] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
-[03:36:12] [Server thread/INFO]: Running delayed init tasks
-[03:36:12] [Server thread/INFO]: Done (3.984s)! For help, type "help"
-[03:36:12] [Server thread/INFO]: Timings Reset
-[03:36:15] [User Authenticator #0/INFO]: UUID of player Schotzgoblin is cdfb5f90-21c3-4aa8-be6f-39d8780b88f7
-[03:36:15] [Server thread/INFO]: Schotzgoblin joined the game
-[03:36:15] [Server thread/INFO]: Schotzgoblin[/127.0.0.1:55768] logged in with entity id 129 at ([world]65.53096806492769, 145.0, 54.54723756604064)
-[03:36:22] [Server thread/INFO]: Schotzgoblin issued server command: /gamemode creative
-[03:36:22] [Server thread/INFO]: [Schotzgoblin: Set own game mode to Creative Mode]
-[03:37:03] [Server thread/INFO]: Schotzgoblin issued server command: /gamemode adventure
-[03:37:03] [Server thread/INFO]: [Schotzgoblin: Set own game mode to Adventure Mode]
-[03:39:13] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
-[03:39:13] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
-[03:39:13] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[03:39:13] [Server thread/INFO]: Using 4 threads for Netty based IO
-[03:39:13] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
-[03:39:13] [Server thread/INFO]: Shutting down
-[03:39:14] [Server thread/INFO]: Loaded 1174 recipes
-[03:39:14] [Server thread/INFO]: Loaded 1271 advancements
-[03:39:14] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
-[03:39:14] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[03:39:14] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
-[03:39:15] [Server thread/INFO]: CONSOLE: Reload complete.
-[03:39:15] [Server thread/INFO]: Timings Reset
-[03:39:22] [Server thread/INFO]: Schotzgoblin issued server command: /kill
-[03:39:22] [Server thread/INFO]: [Schotzgoblin: Killed Schotzgoblin]
-[03:39:26] [Server thread/INFO]: Schotzgoblin issued server command: /kill Schotzgoblin
-[03:39:26] [Server thread/INFO]: [Schotzgoblin: Killed Schotzgoblin]
-[03:39:47] [Server thread/INFO]: Schotzgoblin issued server command: /xp set Schotzgoblin 0
-[03:39:47] [Server thread/INFO]: [Schotzgoblin: Set 0 experience points on Schotzgoblin]
-[03:39:56] [Server thread/INFO]: Schotzgoblin issued server command: /xp set Schotzgoblin 0 levels
-[03:39:56] [Server thread/INFO]: [Schotzgoblin: Set 0 experience levels on Schotzgoblin]
-[03:40:11] [Server thread/INFO]: Schotzgoblin issued server command: /q
-[03:40:16] [Server thread/INFO]: Schotzgoblin issued server command: /xp set Schotzgoblin 0 levels
-[03:40:16] [Server thread/INFO]: [Schotzgoblin: Set 0 experience levels on Schotzgoblin]
-[03:40:18] [Server thread/INFO]: Schotzgoblin issued server command: /q
-[03:40:59] [Server thread/INFO]: Schotzgoblin issued server command: /gamemode creative
-[03:40:59] [Server thread/INFO]: [Schotzgoblin: Set own game mode to Creative Mode]
-[03:41:03] [Server thread/INFO]: Schotzgoblin issued server command: /gamemode adventure
-[03:41:03] [Server thread/INFO]: [Schotzgoblin: Set own game mode to Adventure Mode]
-[03:41:06] [Server thread/INFO]: Schotzgoblin issued server command: /q
-[03:41:14] [Server thread/INFO]: Schotzgoblin issued server command: /q
-[03:41:53] [Server thread/INFO]: Schotzgoblin lost connection: Disconnected
-[03:41:53] [Server thread/INFO]: Schotzgoblin left the game
+[01:52:27] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 3 worker threads, and gen parallelism of 3 threads
+[01:52:28] [Server thread/INFO]: Default game type: SURVIVAL
+[01:52:28] [Server thread/INFO]: Generating keypair
+[01:52:28] [Server thread/INFO]: Starting Minecraft server on *:25566
+[01:52:28] [Server thread/INFO]: Using default channel type
+[01:52:28] [Server thread/INFO]: Paper: Using Java compression from Velocity.
+[01:52:28] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[01:52:28] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[01:52:28] [Server thread/INFO]: [HeadDB] Loading server plugin HeadDB v5.0.0-rc.10
+[01:52:28] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[01:52:28] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[01:52:28] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[01:52:28] [Server thread/WARN]: Whilst this makes it possible to use BungeeCord, unless access to your server is properly restricted, it also opens up the ability for hackers to connect with any username they choose.
+[01:52:28] [Server thread/WARN]: Please see http://www.spigotmc.org/wiki/firewall-guide/ for further information.
+[01:52:28] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[01:52:28] [Server thread/INFO]: Preparing level "world"
+[01:52:28] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[01:52:29] [Server thread/INFO]: Time elapsed: 224 ms
+[01:52:29] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[01:52:29] [Server thread/INFO]: Time elapsed: 103 ms
+[01:52:29] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[01:52:29] [Server thread/INFO]: Time elapsed: 20 ms
+[01:52:29] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[01:52:29] [Server thread/ERROR]: [QuestSystem] Failed to register events for class com.schotzgoblin.listener.EditQuestListener because net/wesjd/anvilgui/AnvilGUI$StateSnapshot does not exist.
+[01:52:29] [Server thread/INFO]: [HeadDB] Enabling HeadDB v5.0.0-rc.10
+[01:52:29] [Server thread/INFO]: [HeadDB] Loading HeadDB - 5.0.0-rc.10
+[01:52:29] [Server thread/INFO]: [HeadDB] Loaded 1 languages!
+[01:52:29] [Server thread/INFO]: [HeadDB] Done!
+[01:52:29] [Server thread/INFO]: Running delayed init tasks
+[01:52:30] [helper-scheduler-2/WARN]: [HeadDB] There is a new update available for HeadDB on spigot!
+[01:52:30] [helper-scheduler-2/WARN]: [HeadDB] Download: https://www.spigotmc.org/resources/84967
+[01:52:30] [Server thread/INFO]: Done (4.523s)! For help, type "help"
+[01:52:30] [Server thread/INFO]: Timings Reset
+[01:53:26] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
+[01:53:26] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
+[01:53:26] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[01:53:26] [Server thread/INFO]: Using 4 threads for Netty based IO
+[01:53:26] [Server thread/INFO]: [HeadDB] Disabling HeadDB v5.0.0-rc.10
+[01:53:26] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
+[01:53:26] [Server thread/INFO]: Shutting down
+[01:53:26] [Server thread/INFO]: Loaded 1174 recipes
+[01:53:27] [Server thread/INFO]: Loaded 1271 advancements
+[01:53:27] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[01:53:27] [Server thread/INFO]: [HeadDB] Loading server plugin HeadDB v5.0.0-rc.10
+[01:53:27] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[01:53:27] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[01:53:27] [Server thread/ERROR]: [QuestSystem] Failed to register events for class com.schotzgoblin.listener.EditQuestListener because net/wesjd/anvilgui/AnvilGUI$StateSnapshot does not exist.
+[01:53:27] [Server thread/INFO]: [HeadDB] Enabling HeadDB v5.0.0-rc.10
+[01:53:27] [Server thread/INFO]: [HeadDB] Loading HeadDB - 5.0.0-rc.10
+[01:53:27] [Server thread/INFO]: [HeadDB] Loaded 1 languages!
+[01:53:27] [Server thread/INFO]: [HeadDB] Done!
+[01:53:27] [Server thread/INFO]: CONSOLE: Reload complete.
+[01:53:27] [Server thread/INFO]: Timings Reset
+[01:53:27] [helper-scheduler-0/WARN]: [HeadDB] There is a new update available for HeadDB on spigot!
+[01:53:27] [helper-scheduler-0/WARN]: [HeadDB] Download: https://www.spigotmc.org/resources/84967
+[01:53:31] [User Authenticator #0/INFO]: UUID of player Schotzgoblin is cdfb5f90-21c3-4aa8-be6f-39d8780b88f7
+[01:53:31] [Server thread/INFO]: Schotzgoblin joined the game
+[01:53:31] [Server thread/INFO]: Schotzgoblin[/127.0.0.1:63972] logged in with entity id 130 at ([world]65.8312514074641, 145.0, 53.97441951297384)
+[01:53:34] [Server thread/INFO]: Schotzgoblin issued server command: /q m
+[01:54:33] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
+[01:54:33] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
+[01:54:33] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[01:54:33] [Server thread/INFO]: Using 4 threads for Netty based IO
+[01:54:33] [Server thread/INFO]: [HeadDB] Disabling HeadDB v5.0.0-rc.10
+[01:54:33] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
+[01:54:33] [Server thread/INFO]: Shutting down
+[01:54:33] [Server thread/INFO]: Loaded 1174 recipes
+[01:54:34] [Server thread/INFO]: Loaded 1271 advancements
+[01:54:34] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[01:54:34] [Server thread/INFO]: [HeadDB] Loading server plugin HeadDB v5.0.0-rc.10
+[01:54:34] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[01:54:34] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[01:54:34] [Server thread/ERROR]: [QuestSystem] Failed to register events for class com.schotzgoblin.listener.EditQuestListener because net/wesjd/anvilgui/AnvilGUI$StateSnapshot does not exist.
+[01:54:34] [Server thread/INFO]: [HeadDB] Enabling HeadDB v5.0.0-rc.10
+[01:54:34] [Server thread/INFO]: [HeadDB] Loading HeadDB - 5.0.0-rc.10
+[01:54:34] [Server thread/INFO]: [HeadDB] Loaded 1 languages!
+[01:54:34] [Server thread/INFO]: [HeadDB] Done!
+[01:54:34] [Server thread/INFO]: CONSOLE: Reload complete.
+[01:54:34] [Server thread/INFO]: Timings Reset
+[01:54:34] [helper-scheduler-0/WARN]: [HeadDB] There is a new update available for HeadDB on spigot!
+[01:54:34] [helper-scheduler-0/WARN]: [HeadDB] Download: https://www.spigotmc.org/resources/84967
+[01:54:38] [Server thread/INFO]: Schotzgoblin issued server command: /q m
+[01:59:31] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
+[01:59:31] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
+[01:59:31] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[01:59:31] [Server thread/INFO]: Using 4 threads for Netty based IO
+[01:59:31] [Server thread/INFO]: [HeadDB] Disabling HeadDB v5.0.0-rc.10
+[01:59:31] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
+[01:59:31] [Server thread/INFO]: Shutting down
+[01:59:31] [Server thread/INFO]: Loaded 1174 recipes
+[01:59:32] [Server thread/INFO]: Loaded 1271 advancements
+[01:59:32] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[01:59:32] [Server thread/INFO]: [HeadDB] Loading server plugin HeadDB v5.0.0-rc.10
+[01:59:32] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[01:59:32] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[01:59:32] [Server thread/ERROR]: [QuestSystem] Failed to register events for class com.schotzgoblin.listener.EditQuestListener because net/wesjd/anvilgui/AnvilGUI$StateSnapshot does not exist.
+[01:59:32] [Server thread/INFO]: [HeadDB] Enabling HeadDB v5.0.0-rc.10
+[01:59:32] [Server thread/INFO]: [HeadDB] Loading HeadDB - 5.0.0-rc.10
+[01:59:32] [Server thread/INFO]: [HeadDB] Loaded 1 languages!
+[01:59:32] [Server thread/INFO]: [HeadDB] Done!
+[01:59:32] [Server thread/INFO]: CONSOLE: Reload complete.
+[01:59:32] [Server thread/INFO]: Timings Reset
+[01:59:32] [helper-scheduler-0/WARN]: [HeadDB] There is a new update available for HeadDB on spigot!
+[01:59:32] [helper-scheduler-0/WARN]: [HeadDB] Download: https://www.spigotmc.org/resources/84967
+[01:59:36] [Server thread/INFO]: Schotzgoblin issued server command: /q m
+[02:03:38] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
+[02:03:38] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
+[02:03:38] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[02:03:38] [Server thread/INFO]: Using 4 threads for Netty based IO
+[02:03:38] [Server thread/INFO]: [HeadDB] Disabling HeadDB v5.0.0-rc.10
+[02:03:38] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
+[02:03:38] [Server thread/INFO]: Shutting down
+[02:03:38] [Server thread/INFO]: Loaded 1174 recipes
+[02:03:38] [Server thread/INFO]: Loaded 1271 advancements
+[02:03:39] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[02:03:39] [Server thread/INFO]: [HeadDB] Loading server plugin HeadDB v5.0.0-rc.10
+[02:03:39] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[02:03:39] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[02:03:39] [Server thread/ERROR]: [QuestSystem] Failed to register events for class com.schotzgoblin.listener.EditQuestListener because net/wesjd/anvilgui/AnvilGUI$StateSnapshot does not exist.
+[02:03:39] [Server thread/INFO]: [HeadDB] Enabling HeadDB v5.0.0-rc.10
+[02:03:39] [Server thread/INFO]: [HeadDB] Loading HeadDB - 5.0.0-rc.10
+[02:03:39] [Server thread/INFO]: [HeadDB] Loaded 1 languages!
+[02:03:39] [Server thread/INFO]: [HeadDB] Done!
+[02:03:39] [Server thread/INFO]: CONSOLE: Reload complete.
+[02:03:39] [Server thread/INFO]: Timings Reset
+[02:03:39] [helper-scheduler-1/WARN]: [HeadDB] There is a new update available for HeadDB on spigot!
+[02:03:39] [helper-scheduler-1/WARN]: [HeadDB] Download: https://www.spigotmc.org/resources/84967
+[02:03:48] [Server thread/INFO]: Schotzgoblin issued server command: /q m
+[02:06:19] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
+[02:06:19] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
+[02:06:19] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[02:06:19] [Server thread/INFO]: Using 4 threads for Netty based IO
+[02:06:19] [Server thread/INFO]: [HeadDB] Disabling HeadDB v5.0.0-rc.10
+[02:06:19] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
+[02:06:19] [Server thread/INFO]: Shutting down
+[02:06:19] [Server thread/INFO]: Loaded 1174 recipes
+[02:06:19] [Server thread/INFO]: Loaded 1271 advancements
+[02:06:20] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[02:06:20] [Server thread/INFO]: [HeadDB] Loading server plugin HeadDB v5.0.0-rc.10
+[02:06:20] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[02:06:20] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[02:06:20] [Server thread/ERROR]: [QuestSystem] Failed to register events for class com.schotzgoblin.listener.EditQuestListener because net/wesjd/anvilgui/AnvilGUI$StateSnapshot does not exist.
+[02:06:20] [Server thread/INFO]: [HeadDB] Enabling HeadDB v5.0.0-rc.10
+[02:06:20] [Server thread/INFO]: [HeadDB] Loading HeadDB - 5.0.0-rc.10
+[02:06:20] [Server thread/INFO]: [HeadDB] Loaded 1 languages!
+[02:06:20] [Server thread/INFO]: [HeadDB] Done!
+[02:06:20] [Server thread/INFO]: CONSOLE: Reload complete.
+[02:06:20] [Server thread/INFO]: Timings Reset
+[02:06:20] [helper-scheduler-0/WARN]: [HeadDB] There is a new update available for HeadDB on spigot!
+[02:06:20] [helper-scheduler-0/WARN]: [HeadDB] Download: https://www.spigotmc.org/resources/84967
+[02:06:23] [Server thread/INFO]: Schotzgoblin issued server command: /q m
+[02:06:24] [ForkJoinPool.commonPool-worker-7/WARN]: java.util.concurrent.CompletionException: java.lang.ArrayIndexOutOfBoundsException: Index 27 out of bounds for length 27
+[02:06:24] [ForkJoinPool.commonPool-worker-7/WARN]: 	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:315)
+[02:06:24] [ForkJoinPool.commonPool-worker-7/WARN]: 	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:320)
+[02:06:24] [ForkJoinPool.commonPool-worker-7/WARN]: 	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:722)
+[02:06:24] [ForkJoinPool.commonPool-worker-7/WARN]: 	at java.base/java.util.concurrent.CompletableFuture$Completion.exec(CompletableFuture.java:483)
+[02:06:24] [ForkJoinPool.commonPool-worker-7/WARN]: 	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+[02:06:24] [ForkJoinPool.commonPool-worker-7/WARN]: 	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
+[02:06:24] [ForkJoinPool.commonPool-worker-7/WARN]: 	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
+[02:06:24] [ForkJoinPool.commonPool-worker-7/WARN]: 	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
+[02:06:24] [ForkJoinPool.commonPool-worker-7/WARN]: 	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+[02:06:24] [ForkJoinPool.commonPool-worker-7/WARN]: Caused by: java.lang.ArrayIndexOutOfBoundsException: Index 27 out of bounds for length 27
+[02:06:24] [ForkJoinPool.commonPool-worker-7/WARN]: 	at java.base/java.util.Arrays$ArrayList.get(Arrays.java:4266)
+[02:06:24] [ForkJoinPool.commonPool-worker-7/WARN]: 	at net.minecraft.core.NonNullList.get(NonNullList.java:44)
+[02:06:24] [ForkJoinPool.commonPool-worker-7/WARN]: 	at org.bukkit.craftbukkit.v1_20_R3.inventory.CraftInventoryCustom$MinecraftInventory.a(CraftInventoryCustom.java:131)
+[02:06:24] [ForkJoinPool.commonPool-worker-7/WARN]: 	at org.bukkit.craftbukkit.v1_20_R3.inventory.CraftInventory.getItem(CraftInventory.java:52)
+[02:06:24] [ForkJoinPool.commonPool-worker-7/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.main.QuestManager.finaliseInventory(QuestManager.java:277)
+[02:06:24] [ForkJoinPool.commonPool-worker-7/WARN]: 	at QuestSystem-1.0.jar//com.schotzgoblin.commands.AdminQuestCommand.lambda$editQuestInventory$13(AdminQuestCommand.java:297)
+[02:06:24] [ForkJoinPool.commonPool-worker-7/WARN]: 	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718)
+[02:06:24] [ForkJoinPool.commonPool-worker-7/WARN]: 	... 6 more
+[02:07:35] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
+[02:07:35] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
+[02:07:35] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[02:07:35] [Server thread/INFO]: Using 4 threads for Netty based IO
+[02:07:35] [Server thread/INFO]: [HeadDB] Disabling HeadDB v5.0.0-rc.10
+[02:07:35] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
+[02:07:35] [Server thread/INFO]: Shutting down
+[02:07:35] [Server thread/INFO]: Loaded 1174 recipes
+[02:07:35] [Server thread/INFO]: Loaded 1271 advancements
+[02:07:35] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[02:07:35] [Server thread/INFO]: [HeadDB] Loading server plugin HeadDB v5.0.0-rc.10
+[02:07:35] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[02:07:35] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[02:07:36] [Server thread/ERROR]: [QuestSystem] Failed to register events for class com.schotzgoblin.listener.EditQuestListener because net/wesjd/anvilgui/AnvilGUI$StateSnapshot does not exist.
+[02:07:36] [Server thread/INFO]: [HeadDB] Enabling HeadDB v5.0.0-rc.10
+[02:07:36] [Server thread/INFO]: [HeadDB] Loading HeadDB - 5.0.0-rc.10
+[02:07:36] [Server thread/INFO]: [HeadDB] Loaded 1 languages!
+[02:07:36] [Server thread/INFO]: [HeadDB] Done!
+[02:07:36] [Server thread/INFO]: CONSOLE: Reload complete.
+[02:07:36] [Server thread/INFO]: Timings Reset
+[02:07:36] [helper-scheduler-2/WARN]: [HeadDB] There is a new update available for HeadDB on spigot!
+[02:07:36] [helper-scheduler-2/WARN]: [HeadDB] Download: https://www.spigotmc.org/resources/84967
+[02:07:38] [Server thread/INFO]: Schotzgoblin issued server command: /q m
+[02:08:49] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
+[02:08:49] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
+[02:08:49] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[02:08:49] [Server thread/INFO]: Using 4 threads for Netty based IO
+[02:08:50] [Server thread/INFO]: [HeadDB] Disabling HeadDB v5.0.0-rc.10
+[02:08:50] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
+[02:08:50] [Server thread/INFO]: Shutting down
+[02:08:50] [Server thread/INFO]: Loaded 1174 recipes
+[02:08:50] [Server thread/INFO]: Loaded 1271 advancements
+[02:08:50] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[02:08:50] [Server thread/INFO]: [HeadDB] Loading server plugin HeadDB v5.0.0-rc.10
+[02:08:50] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[02:08:50] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[02:08:50] [Server thread/ERROR]: [QuestSystem] Failed to register events for class com.schotzgoblin.listener.EditQuestListener because net/wesjd/anvilgui/AnvilGUI$StateSnapshot does not exist.
+[02:08:50] [Server thread/INFO]: [HeadDB] Enabling HeadDB v5.0.0-rc.10
+[02:08:50] [Server thread/INFO]: [HeadDB] Loading HeadDB - 5.0.0-rc.10
+[02:08:50] [Server thread/INFO]: [HeadDB] Loaded 1 languages!
+[02:08:50] [Server thread/INFO]: [HeadDB] Done!
+[02:08:51] [Server thread/INFO]: CONSOLE: Reload complete.
+[02:08:51] [Server thread/INFO]: Timings Reset
+[02:08:51] [helper-scheduler-2/WARN]: [HeadDB] There is a new update available for HeadDB on spigot!
+[02:08:51] [helper-scheduler-2/WARN]: [HeadDB] Download: https://www.spigotmc.org/resources/84967
+[02:08:55] [Server thread/INFO]: Schotzgoblin issued server command: /q m
+[02:11:20] [Server thread/WARN]: [QuestSystem] Task #2343 for QuestSystem v1.0.0 generated an exception
+java.lang.NoClassDefFoundError: com/schotzgoblin/utils/MessageUtils
+	at com.schotzgoblin.main.QuestManager.lambda$completeQuest$31(QuestManager.java:583) ~[QuestSystem-1.0.jar:?]
+	at org.bukkit.craftbukkit.v1_20_R3.scheduler.CraftTask.run(CraftTask.java:101) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.scheduler.CraftScheduler.mainThreadHeartbeat(CraftScheduler.java:482) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:1646) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.dedicated.DedicatedServer.tickChildren(DedicatedServer.java:447) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:1525) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1226) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319) ~[paper-1.20.4.jar:git-Paper-496]
+	at java.lang.Thread.run(Thread.java:1583) ~[?:?]
+Caused by: java.lang.ClassNotFoundException: com.schotzgoblin.utils.MessageUtils
+	at org.bukkit.plugin.java.PluginClassLoader.loadClass0(PluginClassLoader.java:197) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.java.PluginClassLoader.loadClass(PluginClassLoader.java:164) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[?:?]
+	... 9 more
+[02:12:22] [Server thread/INFO]: Schotzgoblin lost connection: Disconnected
+[02:12:22] [Server thread/INFO]: Schotzgoblin left the game
+[02:12:24] [User Authenticator #1/INFO]: UUID of player Schotzgoblin is cdfb5f90-21c3-4aa8-be6f-39d8780b88f7
+[02:12:24] [Server thread/INFO]: Schotzgoblin joined the game
+[02:12:24] [Server thread/INFO]: Schotzgoblin[/127.0.0.1:51016] logged in with entity id 612 at ([world]75.3566585913796, 148.0, 57.48401181546106)
+[02:12:39] [Server thread/INFO]: Schotzgoblin issued server command: /give Schotzgoblin stone 10
+[02:12:39] [Server thread/INFO]: [Schotzgoblin: Gave 10 [Stone] to Schotzgoblin]
+[02:12:56] [Server thread/WARN]: [QuestSystem] Task #2733 for QuestSystem v1.0.0 generated an exception
+java.lang.NoClassDefFoundError: com/schotzgoblin/utils/MessageUtils
+	at com.schotzgoblin.main.QuestManager.lambda$completeQuest$31(QuestManager.java:583) ~[QuestSystem-1.0.jar:?]
+	at org.bukkit.craftbukkit.v1_20_R3.scheduler.CraftTask.run(CraftTask.java:101) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.scheduler.CraftScheduler.mainThreadHeartbeat(CraftScheduler.java:482) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:1646) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.dedicated.DedicatedServer.tickChildren(DedicatedServer.java:447) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:1525) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1226) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319) ~[paper-1.20.4.jar:git-Paper-496]
+	at java.lang.Thread.run(Thread.java:1583) ~[?:?]
+Caused by: java.lang.ClassNotFoundException: com.schotzgoblin.utils.MessageUtils
+	... 9 more
+[02:14:06] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
+[02:14:06] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
+[02:14:06] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[02:14:06] [Server thread/INFO]: Using 4 threads for Netty based IO
+[02:14:06] [Server thread/INFO]: [HeadDB] Disabling HeadDB v5.0.0-rc.10
+[02:14:06] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
+[02:14:06] [Server thread/INFO]: Shutting down
+[02:14:06] [Server thread/INFO]: Loaded 1174 recipes
+[02:14:07] [Server thread/INFO]: Loaded 1271 advancements
+[02:14:07] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[02:14:07] [Server thread/INFO]: [HeadDB] Loading server plugin HeadDB v5.0.0-rc.10
+[02:14:07] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[02:14:07] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[02:14:07] [Server thread/ERROR]: [QuestSystem] Failed to register events for class com.schotzgoblin.listener.EditQuestListener because net/wesjd/anvilgui/AnvilGUI$StateSnapshot does not exist.
+[02:14:07] [Server thread/INFO]: [HeadDB] Enabling HeadDB v5.0.0-rc.10
+[02:14:07] [Server thread/INFO]: [HeadDB] Loading HeadDB - 5.0.0-rc.10
+[02:14:07] [Server thread/INFO]: [HeadDB] Loaded 1 languages!
+[02:14:07] [Server thread/INFO]: [HeadDB] Done!
+[02:14:07] [Server thread/INFO]: CONSOLE: Reload complete.
+[02:14:07] [Server thread/INFO]: Timings Reset
+[02:14:07] [helper-scheduler-2/WARN]: [HeadDB] There is a new update available for HeadDB on spigot!
+[02:14:07] [helper-scheduler-2/WARN]: [HeadDB] Download: https://www.spigotmc.org/resources/84967
+[02:14:12] [Server thread/INFO]: Schotzgoblin lost connection: Disconnected
+[02:14:12] [Server thread/INFO]: Schotzgoblin left the game
+[02:14:13] [User Authenticator #2/INFO]: UUID of player Schotzgoblin is cdfb5f90-21c3-4aa8-be6f-39d8780b88f7
+[02:14:14] [Server thread/INFO]: Schotzgoblin joined the game
+[02:14:14] [Server thread/INFO]: Schotzgoblin[/127.0.0.1:51180] logged in with entity id 684 at ([world]65.74084781728008, 144.0, 52.306163754174904)
+[02:14:33] [Server thread/INFO]: Schotzgoblin issued server command: /q m
+[02:16:10] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
+[02:16:10] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
+[02:16:10] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[02:16:10] [Server thread/INFO]: Using 4 threads for Netty based IO
+[02:16:10] [Server thread/INFO]: [HeadDB] Disabling HeadDB v5.0.0-rc.10
+[02:16:10] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
+[02:16:10] [Server thread/INFO]: Shutting down
+[02:16:10] [Server thread/INFO]: Loaded 1174 recipes
+[02:16:10] [Server thread/INFO]: Loaded 1271 advancements
+[02:16:10] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[02:16:10] [Server thread/INFO]: [HeadDB] Loading server plugin HeadDB v5.0.0-rc.10
+[02:16:10] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[02:16:10] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[02:16:10] [Server thread/ERROR]: [QuestSystem] Failed to register events for class com.schotzgoblin.listener.EditQuestListener because net/wesjd/anvilgui/AnvilGUI$StateSnapshot does not exist.
+[02:16:10] [Server thread/INFO]: [HeadDB] Enabling HeadDB v5.0.0-rc.10
+[02:16:10] [Server thread/INFO]: [HeadDB] Loading HeadDB - 5.0.0-rc.10
+[02:16:11] [Server thread/INFO]: [HeadDB] Loaded 1 languages!
+[02:16:11] [Server thread/INFO]: [HeadDB] Done!
+[02:16:11] [Server thread/INFO]: CONSOLE: Reload complete.
+[02:16:11] [Server thread/INFO]: Timings Reset
+[02:16:11] [helper-scheduler-1/WARN]: [HeadDB] There is a new update available for HeadDB on spigot!
+[02:16:11] [helper-scheduler-1/WARN]: [HeadDB] Download: https://www.spigotmc.org/resources/84967
+[02:16:14] [Server thread/INFO]: Schotzgoblin issued server command: /q m
+[02:16:25] [Server thread/INFO]: Schotzgoblin issued server command: /q m
+[02:17:48] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
+[02:17:48] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
+[02:17:48] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[02:17:48] [Server thread/INFO]: Using 4 threads for Netty based IO
+[02:17:48] [Server thread/INFO]: [HeadDB] Disabling HeadDB v5.0.0-rc.10
+[02:17:48] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
+[02:17:48] [Server thread/INFO]: Shutting down
+[02:17:48] [Server thread/INFO]: Loaded 1174 recipes
+[02:17:48] [Server thread/INFO]: Loaded 1271 advancements
+[02:17:48] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[02:17:48] [Server thread/INFO]: [HeadDB] Loading server plugin HeadDB v5.0.0-rc.10
+[02:17:48] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[02:17:48] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[02:17:48] [Server thread/ERROR]: [QuestSystem] Failed to register events for class com.schotzgoblin.listener.EditQuestListener because net/wesjd/anvilgui/AnvilGUI$StateSnapshot does not exist.
+[02:17:48] [Server thread/INFO]: [HeadDB] Enabling HeadDB v5.0.0-rc.10
+[02:17:48] [Server thread/INFO]: [HeadDB] Loading HeadDB - 5.0.0-rc.10
+[02:17:48] [Server thread/INFO]: [HeadDB] Loaded 1 languages!
+[02:17:49] [Server thread/INFO]: [HeadDB] Done!
+[02:17:49] [Server thread/INFO]: CONSOLE: Reload complete.
+[02:17:49] [Server thread/INFO]: Timings Reset
+[02:17:49] [helper-scheduler-0/WARN]: [HeadDB] There is a new update available for HeadDB on spigot!
+[02:17:49] [helper-scheduler-0/WARN]: [HeadDB] Download: https://www.spigotmc.org/resources/84967
+[02:17:51] [Server thread/INFO]: Schotzgoblin issued server command: /q m

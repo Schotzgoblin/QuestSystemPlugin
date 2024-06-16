@@ -1,9 +1,11 @@
 package com.schotzgoblin.config;
 
 import com.schotzgoblin.main.QuestSystem;
+import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
 
 import java.io.IOException;
+import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 import java.util.logging.FileHandler;
 
@@ -53,5 +55,9 @@ public class ConfigHandler extends FileHandler {
 
     public CompletableFuture<Void> saveAsync() {
         return CompletableFuture.runAsync(() -> QuestSystem.getInstance().saveConfig());
+    }
+
+    public CompletableFuture<Material> getMaterialAsync(String s) {
+        return CompletableFuture.supplyAsync(() -> Material.getMaterial(Objects.requireNonNull(config.getString(s))));
     }
 }
