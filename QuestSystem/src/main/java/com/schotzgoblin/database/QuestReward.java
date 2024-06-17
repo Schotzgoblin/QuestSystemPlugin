@@ -1,6 +1,8 @@
 package com.schotzgoblin.database;
 
 
+import java.util.Objects;
+
 public class QuestReward implements Identifiable {
     private int id;
 
@@ -56,5 +58,18 @@ public class QuestReward implements Identifiable {
 
     public void setReward(Reward reward) {
         this.reward = reward;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        QuestReward that = (QuestReward) o;
+        return id == that.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
     }
 }

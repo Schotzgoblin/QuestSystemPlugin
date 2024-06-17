@@ -38,10 +38,11 @@ public class QuestSystem extends JavaPlugin implements Listener, PluginMessageLi
         Bukkit.getMessenger().registerIncomingPluginChannel(this, bungeeCordChannelName, this);
         addListener(QuestManager.getInstance());
         addListener(new TrackPlayerQuestProgress());
+        addListener(new EditQuestListener());
+        addListener(new EditRewardsListener());
         addListener(new QuestNpc());
         addListener(new SignListener());
         addListener(new ParticalListener());
-        addListener(new EditQuestListener());
         registerCommand("quests",new QuestCommand());
         registerCommand("quests",new AdminQuestCommand());
     }

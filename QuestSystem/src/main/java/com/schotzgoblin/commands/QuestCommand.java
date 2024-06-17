@@ -8,8 +8,10 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
+import tsp.headdb.core.api.HeadAPI;
 
 import java.util.Objects;
+import java.util.UUID;
 
 public class QuestCommand implements CommandExecutor {
 
@@ -27,7 +29,6 @@ public class QuestCommand implements CommandExecutor {
             return true;
         }
         if (args.length == 0) {
-
             var allQuests = config.getStringAsync("quest-manager.quest.all").join();
             questManager.setupInventory(player, allQuests);
             return true;

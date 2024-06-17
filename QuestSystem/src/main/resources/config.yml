@@ -38,27 +38,36 @@ inventory:
     display-name: "Create Quest"
     colour: "#00FF00"
     material: BOOK
+  create-reward:
+    display-name: "Create Reward"
+    colour: "#00FF00"
+    material: CHEST
   edit-quest:
     name:
       title: "Quest Name"
       colour: "#FFCC00"
       material: "NAME_TAG"
+      change-message: "Enter the new name for the quest"
     description:
       title: "Quest Description"
       colour: "#3399FF"
       material: "PAPER"
+      change-message: "Enter the new description for the quest"
     objective:
       title: "Quest Objective"
       colour: "#FF6666"
       material: "PAPER"
+      change-message: "Select or edit a Objective"
     time-limit:
       title: "Time Limit"
       colour: "#99CC00"
       material: "CLOCK"
+      change-message: "Enter the new time limit for the quest"
     rewards:
       title: "Quest Rewards"
       colour: "#FF9900"
       material: "CHEST"
+      change-message: "Select or edit a Reward"
     save:
       title: "Save Changes"
       colour: "#66CC99"
@@ -67,6 +76,37 @@ inventory:
       title: "Cancel Edit"
       colour: "#FF3366"
       material: "RED_WOOL"
+  edit-reward: #EMERALD not allowed as Material
+    name:
+      title: "Quest Name"
+      colour: "#FFCC00"
+      material: "NAME_TAG"
+      change-message: "Enter the new name for the quest"
+    amount:
+      title: "Amount"
+      colour: "#FFCC00"
+      material: "GOLD_INGOT"
+      change-message: "Enter the new amount for the quest"
+    reward-type-id:
+      title: "Reward Type Id"
+      colour: "#FFCC00"
+      material: "PAPER"
+      change-message: "Enter the new reward type id for the quest"
+    value:
+      title: "Value"
+      colour: "#FFCC00"
+      material: "BOOK"
+      change-message: "Enter the new value for the quest"
+    save:
+      title: "Save Changes"
+      colour: "#66CC99"
+      material: "GREEN_WOOL"
+    cancel:
+      title: "Cancel Edit"
+      colour: "#FF3366"
+      material: "RED_WOOL"
+
+
 
 particle-settings:
   direction:
@@ -89,7 +129,11 @@ particle-settings:
 
 quest-inv:
   title: "Quests"
-  colour: "#FF0000"
+  colour: "#FFFFFF"
+
+reward-inv:
+  title: "Rewards"
+  colour: "#FFFFFF"
 
 quest-manager:
   quest:
@@ -168,13 +212,45 @@ quest-manager:
       not-started:
         message: "Not Started"
         color: "#00AAFF" # White
+  reward:
+    edit:
+      title: "Right-click to edit"
+      colour: "#00AAFF"
+    colour: "#00FF00"
+    lore:
+      already-assigned:
+        message: "Click to unassign reward"
+        colour: "#FF0000"
+      click-to-assign:
+        message: "Click to assign reward"
+        colour: "#00FF00"
+      click-to-edit:
+        message: "Right-click to edit"
+        colour: "#00AAFF"
+      click-to-delete:
+        message: "Shift-click to delete"
+        colour: "#FF0000"
+      name:
+        message: "Name: "
+        colour: "#FFCC00"
+      amount:
+        message: "Amount: "
+        colour: "#FFCC00"
+      rewardTypeId:
+        message: "Reward Type Id: "
+        colour: "#FFCC00"
+      value:
+        message: "Value: "
+        colour: "#FFCC00"
+
+
   lore-entries:
     empty: ""
     status-label: "Status:"
     description-label: "Description:"
     objective-label: "Objective:"
-    time-limit-label: "Time limit:"
-    time-left-label: "Time left:"
+    time-limit-label: "Time limit: "
+    time-left-label: "Time left: "
     rewards-label: "Rewards:"
     rewards-colour: "#00FF00"
     edit:

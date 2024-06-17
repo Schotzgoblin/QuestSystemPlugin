@@ -23,12 +23,14 @@ public class DatabaseHandler {
             throw new RuntimeException(e);
         }
     }
+
     public static synchronized DatabaseHandler getInstance() {
         if (instance == null) {
             instance = new DatabaseHandler();
         }
         return instance;
     }
+
     private String snakeToCamel(String snakeCase) {
         StringBuilder camelCase = new StringBuilder();
         boolean capitalizeNext = false;
@@ -59,9 +61,11 @@ public class DatabaseHandler {
         }
         return snakeCase.toString();
     }
+
     public CompletableFuture<Void> saveAsync(Object entity) {
         return CompletableFuture.runAsync(() -> save(entity), Executors.newCachedThreadPool());
     }
+
     public void save(Object entity) {
         String tableName = camelToSnake(entity.getClass().getSimpleName());
         StringBuilder columns = new StringBuilder();
@@ -235,7 +239,9 @@ public class DatabaseHandler {
 
     public CompletableFuture<Void> deleteAsync(Object entity) {
         String tableName = entity.getClass().getSimpleName();
-        String query = "DELETE FROM " + tableName + " WHERE id=?";
+        System.out.println(tableName);
+        System.out.println(camelToSnake(tableName));
+        String query = "DELETE FROM " + camelToSnake(tableName) + " WHERE id=?";
         return CompletableFuture.runAsync(() -> {
             try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
                 preparedStatement.setInt(1, ((Identifiable) entity).getId());
@@ -447,4 +453,85 @@ public class DatabaseHandler {
         });
     }
 
+    public CompletableFuture<List<Reward>> getAllRewardsAsync() {
+        String query = "SELECT * FROM reward";
+        List<Reward> list = new ArrayList<>();
+
+        return CompletableFuture.supplyAsync(() -> {
+            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    while (resultSet.next()) {
+                        Reward reward = new Reward();
+                        reward.setId(Integer.parseInt(resultSet.getString("id")));
+                        reward.setName(resultSet.getString("name"));
+                        reward.setRewardTypeId(resultSet.getInt("reward_type_id"));
+                        reward.setAmount(resultSet.getInt("amount"));
+                        reward.setValue(resultSet.getString("value"));
+                        reward.setRewardType(getFromIdAsync(RewardType.class, reward.getRewardTypeId()).join());
+                        list.add(reward);
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return list;
+        });
+    }
+
+    public CompletableFuture<Reward> getRewardByNameAsync(String content) {
+        String query = "SELECT * FROM reward WHERE name =?";
+        return CompletableFuture.supplyAsync(() -> {
+            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                preparedStatement.setString(1, content);
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    if (resultSet.next()) {
+                        Reward reward = new Reward();
+                        reward.setId(Integer.parseInt(resultSet.getString("id")));
+                        reward.setName(resultSet.getString("name"));
+                        reward.setRewardTypeId(resultSet.getInt("reward_type_id"));
+                        reward.setAmount(resultSet.getInt("amount"));
+                        reward.setValue(resultSet.getString("value"));
+                        reward.setRewardType(getFromIdAsync(RewardType.class, reward.getRewardTypeId()).join());
+                        return reward;
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+            return new Reward();
+        });
+    }
+
+    public CompletableFuture<QuestReward> getQuestRewardAsync(Quest quest, Reward reward) {
+        String query = "SELECT * FROM quest_reward WHERE quest_id =? AND reward_id =?";
+        return CompletableFuture.supplyAsync(() -> {
+            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                preparedStatement.setInt(1, quest.getId());
+                preparedStatement.setInt(2, reward.getId());
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    if (resultSet.next()) {
+                        QuestReward questReward = new QuestReward();
+                        questReward.setId(resultSet.getInt("id"));
+                        questReward.setQuestId(resultSet.getInt("quest_id"));
+                        questReward.setRewardId(resultSet.getInt("reward_id"));
+                        questReward.setQuest(quest);
+                        questReward.setReward(reward);
+                        return questReward;
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return null;
+        });
+    }
+
+    public CompletableFuture<Void> addQuestReward(Quest quest, Reward reward) {
+        QuestReward newQuestReward = new QuestReward(quest, reward);
+        newQuestReward.setQuestId(quest.getId());
+        newQuestReward.setRewardId(reward.getId());
+        return saveAsync(newQuestReward);
+    }
 }

@@ -5,6 +5,9 @@ import com.schotzgoblin.database.Quest;
 import com.schotzgoblin.main.DatabaseHandler;
 import com.schotzgoblin.main.QuestSystem;
 import com.schotzgoblin.utils.EditQuestsUtils;
+import com.schotzgoblin.utils.EditRewardsUtils;
+import com.schotzgoblin.utils.Utils;
+import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
 import net.wesjd.anvilgui.AnvilGUI;
 import org.bukkit.Bukkit;
@@ -58,7 +61,6 @@ public class EditQuestListener implements Listener {
     }
 
     private void editQuestAttributeInventory(Inventory inv, Player player, UUID playerId, TextComponent displayName, ItemStack clickedItem) {
-        var questFuture = databaseHandler.getQuestByNameAsync(displayName.content());
         CompletableFuture<String> nameMaterialFuture = configHandler.getStringAsync("inventory.edit-quest.name.material");
         CompletableFuture<String> descriptionMaterialFuture = configHandler.getStringAsync("inventory.edit-quest.description.material");
         CompletableFuture<String> objectiveMaterialFuture = configHandler.getStringAsync("inventory.edit-quest.objective.material");
@@ -68,7 +70,6 @@ public class EditQuestListener implements Listener {
         CompletableFuture<String> cancelMaterialFuture = configHandler.getStringAsync("inventory.edit-quest.cancel.material");
 
         CompletableFuture.allOf(
-                questFuture,
                 nameMaterialFuture,
                 descriptionMaterialFuture,
                 objectiveMaterialFuture,
@@ -78,8 +79,7 @@ public class EditQuestListener implements Listener {
                 cancelMaterialFuture
         ).thenAcceptAsync(v -> {
             try {
-                Quest quest = questFuture.join();
-
+                Quest quest = EditQuestsUtils.editingQuest.get(playerId);
                 String nameMaterialName = nameMaterialFuture.join();
                 String descriptionMaterialName = descriptionMaterialFuture.join();
                 String objectiveMaterialName = objectiveMaterialFuture.join();
@@ -87,7 +87,6 @@ public class EditQuestListener implements Listener {
                 String rewardsMaterialName = rewardsMaterialFuture.join();
                 String saveMaterialName = saveMaterialFuture.join();
                 String cancelMaterialName = cancelMaterialFuture.join();
-
                 if (clickedItem.getType().equals(Material.getMaterial(nameMaterialName))) {
                     editQuestName(player, inv, quest);
                 } else if (clickedItem.getType().equals(Material.getMaterial(descriptionMaterialName))) {
@@ -113,57 +112,128 @@ public class EditQuestListener implements Listener {
     }
 
     private void editQuestRewards(Player player, Inventory inv, Quest quest) {
-
-    }
-
-    private void editQuestTimeLimit(Player player, Inventory inv, Quest quest) {
-
+        EditRewardsUtils.initInventory(player, quest).thenAccept(v -> {
+            if(EditRewardsUtils.allRewardsInventory.containsKey(player.getUniqueId())) {
+                Bukkit.getScheduler().runTask(questSystem, () -> {
+                    player.closeInventory();
+                    player.openInventory(EditRewardsUtils.allRewardsInventory.get(player.getUniqueId()));
+                });
+            }
+        });
     }
 
     private void editQuestObjective(Player player, Inventory inv, Quest quest) {
 
     }
 
-    private void editQuestDescription(Player player, Inventory inv, Quest quest) {
+    private void editQuestTimeLimit(Player player, Inventory inv, Quest quest) {
+        CompletableFuture<String> timeLimitChangeMsgFuture = configHandler.getStringAsync("inventory.edit-quest.time-limit.change-message");
+        timeLimitChangeMsgFuture.thenAcceptAsync(timeLimitChangeMsg -> {
+            Bukkit.getScheduler().runTask(questSystem, () -> {
+                new AnvilGUI.Builder()
+                        .onClick((slot, stateSnapshot) -> {
+                            if (slot != AnvilGUI.Slot.OUTPUT) {
+                                return Collections.emptyList();
+                            }
+                            return Arrays.asList(
+                                    AnvilGUI.ResponseAction.close(),
+                                    AnvilGUI.ResponseAction.run(() -> quest.setTimeLimit(Utils.getSecondsFromTimeString(stateSnapshot.getText())))
+                            );
+                        })
+                        .onClose(player1 -> {
+                            EditQuestsUtils.editQuestInventory(quest, player).thenAccept(v -> {
+                                Bukkit.getScheduler().runTask(questSystem, () -> {
+                                    player.openInventory(EditQuestsUtils.editQuestInventory.get(player.getUniqueId()));
+                                });
+                            });
+                        })
+                        .text(Utils.getTimeStringFromSecs(quest.getTimeLimit()))
+                        .title(timeLimitChangeMsg)
+                        .plugin(questSystem)
+                        .open(player);
+            });
+        });
+    }
 
+    private void editQuestDescription(Player player, Inventory inv, Quest quest) {
+        CompletableFuture<String> descriptionChangeMsgFuture = configHandler.getStringAsync("inventory.edit-quest.description.change-message");
+        descriptionChangeMsgFuture.thenAcceptAsync(descriptionChangeMsg -> {
+            Bukkit.getScheduler().runTask(questSystem, () -> {
+                new AnvilGUI.Builder()
+                        .onClick((slot, stateSnapshot) -> {
+                            if (slot != AnvilGUI.Slot.OUTPUT) {
+                                return Collections.emptyList();
+                            }
+                            return Arrays.asList(
+                                    AnvilGUI.ResponseAction.close(),
+                                    AnvilGUI.ResponseAction.run(() -> quest.setDescription(stateSnapshot.getText()))
+                            );
+                        })
+                        .onClose(player1 -> {
+                            EditQuestsUtils.editQuestInventory(quest, player).thenAccept(v -> {
+                                Bukkit.getScheduler().runTask(questSystem, () -> {
+                                    player.openInventory(EditQuestsUtils.editQuestInventory.get(player.getUniqueId()));
+                                });
+                            });
+                        })
+                        .text(quest.getDescription())
+                        .title(descriptionChangeMsg)
+                        .plugin(questSystem)
+                        .open(player);
+            });
+        });
     }
 
     private void editQuestName(Player player, Inventory inv, Quest quest) {
-        new AnvilGUI.Builder()
-                .onClick((slot, stateSnapshot) -> {
-                    if (slot != AnvilGUI.Slot.OUTPUT) {
-                        return Collections.emptyList();
-                    }
-                    return Arrays.asList(
-                            AnvilGUI.ResponseAction.close(),
-                            AnvilGUI.ResponseAction.run(() -> quest.setName(stateSnapshot.getText()))
-                    );
-                })
-                .onClose(player1 -> {
-                    Bukkit.getScheduler().runTask(questSystem, () -> {
-                        player.openInventory(EditQuestsUtils.editQuestInventory.get(player.getUniqueId()));
-                    });
-                })
-                .text(quest.getName())
-                .title("Enter new Quest name")
-                .plugin(questSystem)
-                .open(player);
+        CompletableFuture<String> nameChangeMsgFuture = configHandler.getStringAsync("inventory.edit-quest.name.change-message");
+        nameChangeMsgFuture.thenAcceptAsync(nameChangeMsg -> {
+            Bukkit.getScheduler().runTask(questSystem, () -> {
+                new AnvilGUI.Builder()
+                        .onClick((slot, stateSnapshot) -> {
+                            if (slot != AnvilGUI.Slot.OUTPUT) {
+                                return Collections.emptyList();
+                            }
+                            return Arrays.asList(
+                                    AnvilGUI.ResponseAction.close(),
+                                    AnvilGUI.ResponseAction.run(() -> quest.setName(stateSnapshot.getText()))
+                            );
+                        })
+                        .onClose(player1 -> {
+                            EditQuestsUtils.editQuestInventory(quest, player).thenAccept(v -> {
+                                Bukkit.getScheduler().runTask(questSystem, () -> {
+                                    player.sendMessage(quest.getName());
+                                    player.openInventory(EditQuestsUtils.editQuestInventory.get(player.getUniqueId()));
+                                });
+                            });
+                        })
+                        .text(quest.getName())
+                        .title(nameChangeMsg)
+                        .plugin(questSystem)
+                        .open(player);
+            });
+        });
     }
 
     private void cancelEdit(Player player, Inventory inv, Quest quest) {
         EditQuestsUtils.editQuestInventory.remove(player.getUniqueId());
-        Bukkit.getScheduler().runTask(questSystem, () -> {
-            player.closeInventory();
-            player.openInventory(EditQuestsUtils.allQuestsInventory.get(player.getUniqueId()));
+        EditQuestsUtils.editingQuest.remove(player.getUniqueId());
+        EditQuestsUtils.refreshQuests().thenAccept(v -> {
+            Bukkit.getScheduler().runTask(questSystem, () -> {
+                player.closeInventory();
+                player.openInventory(EditQuestsUtils.allQuestsInventory.get(player.getUniqueId()));
+            });
         });
     }
 
     private void saveQuest(Player player, Inventory inv, Quest quest) {
         EditQuestsUtils.editQuestInventory.remove(player.getUniqueId());
+        EditQuestsUtils.editingQuest.remove(player.getUniqueId());
         databaseHandler.updateAsync(quest).thenAccept(v -> {
-            Bukkit.getScheduler().runTask(questSystem, () -> {
-                player.closeInventory();
-                player.openInventory(EditQuestsUtils.allQuestsInventory.get(player.getUniqueId()));
+            EditQuestsUtils.refreshQuests().thenAccept(v2 -> {
+                Bukkit.getScheduler().runTask(questSystem, () -> {
+                    player.closeInventory();
+                    player.openInventory(EditQuestsUtils.allQuestsInventory.get(player.getUniqueId()));
+                });
             });
         }).exceptionally(ex -> {
             ex.printStackTrace();

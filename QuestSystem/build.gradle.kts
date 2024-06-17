@@ -15,12 +15,10 @@ repositories {
     maven("https://repo.codemc.io/repository/maven-snapshots/") {
         name = "codemc-snapshots"
     }
-    maven("https://jitpack.io"){
+    maven("https://jitpack.io") {
         name = "jitpack"
     }
 }
-
-configurations {}
 
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
@@ -44,14 +42,19 @@ tasks {
         useJUnitPlatform()
     }
 
-    // Configure shadowed JAR destination
-    jar {
-        val directory = file(projectDir).parent
-        destinationDirectory.set(file("$directory\\lobby-server2\\plugins"))
+    named("build") {
+        dependsOn("shadowJar")
+        finalizedBy("copyJarToBin")
     }
 
-    jar {
-        val directory = file(projectDir).parent
-        destinationDirectory.set(file("$directory\\lobby-server\\plugins"))
+    register<Copy>("copyJarToBin") {
+        copy{
+            from("build/libs/QuestSystem-1.0-all.jar")
+            into("C:\\Users\\Max\\Documents\\GitHub\\QuestSystemPlugin\\lobby-server\\plugins")
+        }
+        copy{
+            from("build/libs/QuestSystem-1.0-all.jar")
+            into("C:\\Users\\Max\\Documents\\GitHub\\QuestSystemPlugin\\lobby-server2\\plugins")
+        }
     }
 }

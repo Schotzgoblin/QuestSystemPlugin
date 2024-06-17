@@ -13,6 +13,11 @@ public class Utils {
         return String.format("%02d:%02d:%02d", hours, minutes, secondsRemaining);
 
     }
+    public static int getSecondsFromTimeString(String timeString) {
+        String[] timeArray = timeString.split(":");
+        return Integer.parseInt(timeArray[0]) * 3600 + Integer.parseInt(timeArray[1]) * 60 + Integer.parseInt(timeArray[2]);
+    }
+
 
     public static float calculateProgress(PlayerQuest playerQuest) {
         var objective = playerQuest.getQuest().getObjective();
