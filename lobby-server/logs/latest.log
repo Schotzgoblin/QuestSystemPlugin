@@ -1,124 +1,65 @@
-[03:10:51] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[03:10:53] [ServerMain/INFO]: Loaded 1174 recipes
-[03:10:53] [ServerMain/INFO]: Loaded 1271 advancements
-[03:10:53] [Server thread/INFO]: Starting minecraft server version 1.20.4
-[03:10:53] [Server thread/INFO]: Loading properties
-[03:10:53] [Server thread/INFO]: This server is running Paper version git-Paper-496 (MC: 1.20.4) (Implementing API version 1.20.4-R0.1-SNAPSHOT) (Git: 7ac24a1 on ver/1.20.4)
-[03:10:54] [Server thread/INFO]: Using 4 threads for Netty based IO
-[03:10:54] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[03:10:55] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
+[00:17:00] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[00:17:02] [ServerMain/INFO]: Loaded 1174 recipes
+[00:17:02] [ServerMain/INFO]: Loaded 1271 advancements
+[00:17:02] [Server thread/INFO]: Starting minecraft server version 1.20.4
+[00:17:02] [Server thread/INFO]: Loading properties
+[00:17:02] [Server thread/INFO]: This server is running Paper version git-Paper-496 (MC: 1.20.4) (Implementing API version 1.20.4-R0.1-SNAPSHOT) (Git: 7ac24a1 on ver/1.20.4)
+[00:17:03] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[00:17:03] [Server thread/INFO]: Using 4 threads for Netty based IO
+[00:17:03] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
     We recommend installing the spark profiler as a replacement: https://spark.lucko.me/
     For more information please visit: https://github.com/PaperMC/Paper/issues/8948
-[03:10:55] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 3 worker threads, and gen parallelism of 3 threads
-[03:10:55] [Server thread/INFO]: Default game type: SURVIVAL
-[03:10:55] [Server thread/INFO]: Generating keypair
-[03:10:55] [Server thread/INFO]: Starting Minecraft server on *:25566
-[03:10:55] [Server thread/INFO]: Using default channel type
-[03:10:55] [Server thread/INFO]: Paper: Using Java compression from Velocity.
-[03:10:55] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
-[03:10:55] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
-[03:10:55] [Server thread/INFO]: [HeadDB] Loading server plugin HeadDB v5.0.0-rc.10
-[03:10:55] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[03:10:55] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
-[03:10:55] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
-[03:10:55] [Server thread/WARN]: Whilst this makes it possible to use BungeeCord, unless access to your server is properly restricted, it also opens up the ability for hackers to connect with any username they choose.
-[03:10:55] [Server thread/WARN]: Please see http://www.spigotmc.org/wiki/firewall-guide/ for further information.
-[03:10:55] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
-[03:10:55] [Server thread/INFO]: Preparing level "world"
-[03:10:56] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[03:10:56] [Server thread/INFO]: Time elapsed: 154 ms
-[03:10:56] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[03:10:56] [Server thread/INFO]: Time elapsed: 27 ms
-[03:10:56] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[03:10:56] [Server thread/INFO]: Time elapsed: 20 ms
-[03:10:56] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
-[03:10:56] [Server thread/INFO]: [HeadDB] Enabling HeadDB v5.0.0-rc.10
-[03:10:56] [Server thread/INFO]: [HeadDB] Loading HeadDB - 5.0.0-rc.10
-[03:10:56] [Server thread/INFO]: [HeadDB] Loaded 1 languages!
-[03:10:57] [Server thread/INFO]: [HeadDB] Done!
-[03:10:57] [Server thread/INFO]: Running delayed init tasks
-[03:10:57] [helper-scheduler-2/WARN]: [HeadDB] There is a new update available for HeadDB on spigot!
-[03:10:57] [helper-scheduler-2/WARN]: [HeadDB] Download: https://www.spigotmc.org/resources/84967
-[03:10:57] [Server thread/INFO]: Done (4.343s)! For help, type "help"
-[03:10:57] [Server thread/INFO]: Timings Reset
-[03:11:08] [User Authenticator #0/INFO]: UUID of player Schotzgoblin is cdfb5f90-21c3-4aa8-be6f-39d8780b88f7
-[03:11:08] [Server thread/INFO]: Schotzgoblin joined the game
-[03:11:08] [Server thread/INFO]: Schotzgoblin[/127.0.0.1:49466] logged in with entity id 122 at ([world]59.69999998807907, 155.0, 67.36913316299247)
-[03:11:13] [Server thread/INFO]: Schotzgoblin issued server command: /q
-[03:11:23] [Server thread/INFO]: Schotzgoblin issued server command: /q
-[03:11:23] [Server thread/INFO]: Schotzgoblin issued server command: /q
-[03:11:27] [Server thread/INFO]: Schotzgoblin issued server command: /quests
-[03:11:28] [Server thread/INFO]: Schotzgoblin issued server command: /quests
-[03:11:42] [Server thread/INFO]: Schotzgoblin issued server command: /hdb
-[03:11:42] [Server thread/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[03:11:46] [Server thread/ERROR]: Could not pass event InventoryClickEvent to HeadDB v5.0.0-rc.10
-java.lang.ExceptionInInitializerError: null
-	at tsp.headdb.core.util.anvilgui.AnvilGUI$Builder.<init>(AnvilGUI.java:385) ~[HeadDB.jar:?]
-	at tsp.headdb.core.command.CommandMain.lambda$handle$7(CommandMain.java:98) ~[HeadDB.jar:?]
-	at tsp.nexuslib.inventory.Button.onClick(Button.java:58) ~[HeadDB.jar:?]
-	at tsp.nexuslib.inventory.Page.handleClick(Page.java:40) ~[HeadDB.jar:?]
-	at tsp.nexuslib.inventory.Pane.onClick(Pane.java:60) ~[HeadDB.jar:?]
-	at tsp.nexuslib.inventory.PaneListener.onClick(PaneListener.java:24) ~[HeadDB.jar:?]
-	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor20.execute(Unknown Source) ~[?:?]
-	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:git-Paper-496]
-	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54) ~[paper-1.20.4.jar:git-Paper-496]
-	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126) ~[paper-1.20.4.jar:git-Paper-496]
-	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at net.minecraft.server.network.ServerGamePacketListenerImpl.handleContainerClick(ServerGamePacketListenerImpl.java:3119) ~[?:?]
-	at net.minecraft.network.protocol.game.ServerboundContainerClickPacket.handle(ServerboundContainerClickPacket.java:58) ~[?:?]
-	at net.minecraft.network.protocol.game.ServerboundContainerClickPacket.handle(ServerboundContainerClickPacket.java:25) ~[?:?]
-	at net.minecraft.network.protocol.PacketUtils.lambda$ensureRunningOnSameThread$0(PacketUtils.java:54) ~[?:?]
-	at net.minecraft.server.TickTask.run(TickTask.java:18) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:149) ~[?:?]
-	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[?:?]
-	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:1465) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:123) ~[?:?]
-	at net.minecraft.server.MinecraftServer.pollTaskInternal(MinecraftServer.java:1442) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.MinecraftServer.pollTask(MinecraftServer.java:1365) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:133) ~[?:?]
-	at net.minecraft.server.MinecraftServer.waitUntilNextTick(MinecraftServer.java:1343) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1232) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319) ~[paper-1.20.4.jar:git-Paper-496]
-	at java.lang.Thread.run(Thread.java:1583) ~[?:?]
-Caused by: java.lang.ClassCastException: class tsp.headdb.core.util.anvilgui.version.Wrapper1_20_R3 cannot be cast to class tsp.headdb.core.util.anvilgui.version.VersionWrapper (tsp.headdb.core.util.anvilgui.version.Wrapper1_20_R3 is in unnamed module of loader 'QuestSystem-1.0-all.jar' @5c9ee9d0; tsp.headdb.core.util.anvilgui.version.VersionWrapper is in unnamed module of loader 'HeadDB.jar' @53ce7c6f)
-	at tsp.headdb.core.util.anvilgui.version.VersionMatcher.match(VersionMatcher.java:30) ~[HeadDB.jar:?]
-	at tsp.headdb.core.util.anvilgui.AnvilGUI.<clinit>(AnvilGUI.java:43) ~[HeadDB.jar:?]
-	... 30 more
-[03:11:46] [Server thread/ERROR]: Could not pass event InventoryClickEvent to HeadDB v5.0.0-rc.10
-java.lang.NullPointerException: Profile name must not be null
-	at java.util.Objects.requireNonNull(Objects.java:259) ~[?:?]
-	at com.mojang.authlib.GameProfile.<init>(GameProfile.java:31) ~[authlib-6.0.52.jar:?]
-	at org.bukkit.craftbukkit.v1_20_R3.inventory.CraftMetaSkull.setOwningPlayer(CraftMetaSkull.java:246) ~[paper-1.20.4.jar:git-Paper-496]
-	at tsp.headdb.implementation.head.LocalHead.getItem(LocalHead.java:18) ~[HeadDB.jar:?]
-	at tsp.headdb.core.command.CommandMain.lambda$handle$9(CommandMain.java:137) ~[HeadDB.jar:?]
-	at tsp.nexuslib.inventory.Button.onClick(Button.java:58) ~[HeadDB.jar:?]
-	at tsp.nexuslib.inventory.Page.handleClick(Page.java:40) ~[HeadDB.jar:?]
-	at tsp.nexuslib.inventory.Pane.onClick(Pane.java:60) ~[HeadDB.jar:?]
-	at tsp.nexuslib.inventory.PaneListener.onClick(PaneListener.java:24) ~[HeadDB.jar:?]
-	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor20.execute(Unknown Source) ~[?:?]
-	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:git-Paper-496]
-	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54) ~[paper-1.20.4.jar:git-Paper-496]
-	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126) ~[paper-1.20.4.jar:git-Paper-496]
-	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at net.minecraft.server.network.ServerGamePacketListenerImpl.handleContainerClick(ServerGamePacketListenerImpl.java:3119) ~[?:?]
-	at net.minecraft.network.protocol.game.ServerboundContainerClickPacket.handle(ServerboundContainerClickPacket.java:58) ~[?:?]
-	at net.minecraft.network.protocol.game.ServerboundContainerClickPacket.handle(ServerboundContainerClickPacket.java:25) ~[?:?]
-	at net.minecraft.network.protocol.PacketUtils.lambda$ensureRunningOnSameThread$0(PacketUtils.java:54) ~[?:?]
-	at net.minecraft.server.TickTask.run(TickTask.java:18) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:149) ~[?:?]
-	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[?:?]
-	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:1465) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:123) ~[?:?]
-	at net.minecraft.server.MinecraftServer.pollTaskInternal(MinecraftServer.java:1442) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.MinecraftServer.pollTask(MinecraftServer.java:1365) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.util.thread.BlockableEventLoop.runAllTasks(BlockableEventLoop.java:112) ~[?:?]
-	at net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:1557) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1226) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319) ~[paper-1.20.4.jar:git-Paper-496]
-	at java.lang.Thread.run(Thread.java:1583) ~[?:?]
+[00:17:03] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 3 worker threads, and gen parallelism of 3 threads
+[00:17:04] [Server thread/INFO]: Default game type: SURVIVAL
+[00:17:04] [Server thread/INFO]: Generating keypair
+[00:17:04] [Server thread/INFO]: Starting Minecraft server on *:25566
+[00:17:04] [Server thread/INFO]: Using default channel type
+[00:17:04] [Server thread/INFO]: Paper: Using Java compression from Velocity.
+[00:17:04] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[00:17:04] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[00:17:04] [Server thread/INFO]: [HeadDB] Loading server plugin HeadDB v5.0.0-rc.10
+[00:17:04] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[00:17:04] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[00:17:04] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[00:17:04] [Server thread/WARN]: Whilst this makes it possible to use BungeeCord, unless access to your server is properly restricted, it also opens up the ability for hackers to connect with any username they choose.
+[00:17:04] [Server thread/WARN]: Please see http://www.spigotmc.org/wiki/firewall-guide/ for further information.
+[00:17:04] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[00:17:04] [Server thread/INFO]: Preparing level "world"
+[00:17:04] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[00:17:04] [Server thread/INFO]: Time elapsed: 167 ms
+[00:17:04] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[00:17:04] [Server thread/INFO]: Time elapsed: 29 ms
+[00:17:04] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[00:17:04] [Server thread/INFO]: Time elapsed: 24 ms
+[00:17:04] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[00:17:05] [Server thread/INFO]: [HeadDB] Enabling HeadDB v5.0.0-rc.10
+[00:17:05] [Server thread/INFO]: [HeadDB] Loading HeadDB - 5.0.0-rc.10
+[00:17:05] [Server thread/INFO]: [HeadDB] Loaded 1 languages!
+[00:17:05] [Server thread/INFO]: [HeadDB] Done!
+[00:17:05] [Server thread/INFO]: Running delayed init tasks
+[00:17:05] [helper-scheduler-1/WARN]: [HeadDB] There is a new update available for HeadDB on spigot!
+[00:17:05] [helper-scheduler-1/WARN]: [HeadDB] Download: https://www.spigotmc.org/resources/84967
+[00:17:06] [Server thread/INFO]: Done (3.913s)! For help, type "help"
+[00:17:06] [Server thread/INFO]: Timings Reset
+[00:17:08] [User Authenticator #0/INFO]: UUID of player Schotzgoblin is cdfb5f90-21c3-4aa8-be6f-39d8780b88f7
+[00:17:09] [Server thread/INFO]: Schotzgoblin joined the game
+[00:17:09] [Server thread/INFO]: Schotzgoblin[/127.0.0.1:60218] logged in with entity id 127 at ([world]66.06784119872393, 145.0, 54.090279505454376)
+[00:17:17] [Server thread/INFO]: Schotzgoblin issued server command: /q m
+[00:17:23] [ForkJoinPool.commonPool-worker-10/INFO]: [QuestSystem] [STDOUT] Reward
+[00:17:23] [ForkJoinPool.commonPool-worker-10/WARN]: Nag author(s): '[Schotzgoblin]' of 'QuestSystem v1.0.0' about their usage of System.out/err.print. Please use your plugin's logger instead (JavaPlugin#getLogger).
+[00:17:23] [ForkJoinPool.commonPool-worker-10/INFO]: [QuestSystem] [STDOUT] Reward
+[00:17:34] [ForkJoinPool.commonPool-worker-1/INFO]: [QuestSystem] [STDOUT] QuestReward
+[00:17:34] [ForkJoinPool.commonPool-worker-1/INFO]: [QuestSystem] [STDOUT] Quest_reward
+[00:17:36] [Server thread/INFO]: Schotzgoblin issued server command: /q m
+[00:17:56] [Server thread/INFO]: Schotzgoblin issued server command: /q m
+[00:50:56] [Server thread/INFO]: Schotzgoblin issued server command: /q m
+[00:57:16] [Server thread/INFO]: Schotzgoblin issued server command: /q m
+[00:57:45] [Server thread/INFO]: Schotzgoblin issued server command: /q m
+[00:58:19] [ForkJoinPool.commonPool-worker-2/INFO]: [QuestSystem] [STDOUT] QuestReward
+[00:58:19] [ForkJoinPool.commonPool-worker-2/WARN]: Nag author(s): '[Schotzgoblin]' of 'QuestSystem v1.0.0' about their usage of System.out/err.print. Please use your plugin's logger instead (JavaPlugin#getLogger).
+[00:58:19] [ForkJoinPool.commonPool-worker-2/INFO]: [QuestSystem] [STDOUT] Quest_reward
+[00:58:20] [ForkJoinPool.commonPool-worker-1/INFO]: [QuestSystem] [STDOUT] QuestReward
+[00:58:20] [ForkJoinPool.commonPool-worker-1/INFO]: [QuestSystem] [STDOUT] Quest_reward
+[00:58:30] [ForkJoinPool.commonPool-worker-4/INFO]: [QuestSystem] [STDOUT] Reward
+[00:58:30] [ForkJoinPool.commonPool-worker-4/INFO]: [QuestSystem] [STDOUT] Reward
+[00:58:46] [Server thread/INFO]: Schotzgoblin issued server command: /q m

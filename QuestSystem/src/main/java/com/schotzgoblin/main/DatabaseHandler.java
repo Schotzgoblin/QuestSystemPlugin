@@ -534,4 +534,28 @@ public class DatabaseHandler {
         newQuestReward.setRewardId(reward.getId());
         return saveAsync(newQuestReward);
     }
+
+    public CompletableFuture<Void> deleteAllQuestRewardsAsync(Quest quest) {
+        String query = "DELETE FROM quest_reward WHERE quest_id =?";
+        return CompletableFuture.runAsync(() -> {
+            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                preparedStatement.setInt(1, quest.getId());
+                preparedStatement.executeUpdate();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    public CompletableFuture<Void> deleteAllQuestRewardsAsync(Reward reward) {
+        String query = "DELETE FROM quest_reward WHERE reward_id =?";
+        return CompletableFuture.runAsync(() -> {
+            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                preparedStatement.setInt(1, reward.getId());
+                preparedStatement.executeUpdate();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+    }
 }

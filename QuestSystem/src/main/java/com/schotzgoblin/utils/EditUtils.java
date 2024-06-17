@@ -28,7 +28,7 @@ public class EditUtils {
     private static final ConfigHandler configHandler = ConfigHandler.getInstance();
     private static final QuestManager questManager = QuestManager.getInstance();
     public static Map<UUID, Integer> playerPage = Collections.synchronizedMap(new HashMap<>());
-    public static final int pageSize = 1;
+    public static final int pageSize = 36;
 
     public static void setItemLore(ItemStack item, List<TextComponent> loreLines) {
         ItemMeta meta = item.getItemMeta();

@@ -215,6 +215,7 @@ public class AdminQuestCommand implements CommandExecutor, Listener {
             var deletePitch = deletePitchFuture.join();
             if (quest == null) return;
             databaseHandler.deleteAsync(quest);
+            databaseHandler.deleteAllQuestRewardsAsync(quest);
             EditQuestsUtils.quests.remove(quest);
             Bukkit.getScheduler().runTask(questSystem, () -> {
                 player.playSound(player.getLocation(), Sound.valueOf(deleteSound), deleteVolume, deletePitch);

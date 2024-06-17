@@ -231,10 +231,10 @@ public class EditRewardsListener implements Listener {
             var deletePitch = deletePitchFuture.join();
             if (reward == null) return;
             databaseHandler.deleteAsync(reward);
+            databaseHandler.deleteAllQuestRewardsAsync(reward);
             EditRewardsUtils.rewards.remove(reward);
             Bukkit.getScheduler().runTask(questSystem, () -> {
                 player.playSound(player.getLocation(), Sound.valueOf(deleteSound), deleteVolume, deletePitch);
-                player.sendMessage("Quest deleted");
                 EditRewardsUtils.refreshInventory(EditRewardsUtils.rewards, EditQuestsUtils.editingQuest.get(player.getUniqueId()), inv, player);
             });
         }).exceptionally(ex -> {

@@ -25,7 +25,6 @@ import static com.schotzgoblin.utils.EditUtils.*;
 public class EditRewardsUtils {
     public static Map<UUID, Inventory> allRewardsInventory = Collections.synchronizedMap(new HashMap<>());
     public static Map<UUID, Inventory> editRewardInventory = Collections.synchronizedMap(new HashMap<>());
-    public static Map<UUID, Integer> playerPage = Collections.synchronizedMap(new HashMap<>());
     public static Map<UUID, Reward> editingReward = Collections.synchronizedMap(new HashMap<>());
     public static List<Reward> rewards = Collections.synchronizedList(new ArrayList<>());
     private static final QuestSystem questSystem = QuestSystem.getInstance();
@@ -147,7 +146,7 @@ public class EditRewardsUtils {
             EditRewardsUtils.rewards = rewards;
             String inventoryTitle = title.join();
             String inventoryColour = colour.join();
-            EditRewardsUtils.playerPage.put(player.getUniqueId(), 1);
+            EditUtils.playerPage.put(player.getUniqueId(), 1);
             var inventory = createInventory(inventoryTitle, inventoryColour, 9 * 6);
             refreshInventory(rewards,quest, inventory, player);
             return CompletableFuture.completedFuture(null);
