@@ -10,8 +10,7 @@ public class Objective implements Identifiable{
     public Objective() {
     }
 
-    public Objective(int id, String objective, String type, String value, int count) {
-        this.id = id;
+    public Objective(String objective, String type, String value, int count) {
         this.objective = objective;
         this.type = type;
         this.value = value;

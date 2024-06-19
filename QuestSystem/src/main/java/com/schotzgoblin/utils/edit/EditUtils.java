@@ -1,4 +1,4 @@
-package com.schotzgoblin.utils;
+package com.schotzgoblin.utils.edit;
 
 import com.schotzgoblin.config.ConfigHandler;
 import com.schotzgoblin.main.DatabaseHandler;
@@ -9,6 +9,7 @@ import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.format.TextColor;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -29,6 +30,67 @@ public class EditUtils {
     private static final QuestManager questManager = QuestManager.getInstance();
     public static Map<UUID, Integer> playerPage = Collections.synchronizedMap(new HashMap<>());
     public static final int pageSize = 36;
+
+
+    public static void handlePageSwitch(Player player, Inventory inv, String content) {
+        CompletableFuture<String> nextPageNameFuture = configHandler.getStringAsync("inventory.next-page.display-name");
+        CompletableFuture<String> prevPageNameFuture = configHandler.getStringAsync("inventory.prev-page.display-name");
+        var successSoundFuture = configHandler.getStringAsync("inventory.switch-page.success.sound");
+        var successVolumeFuture = configHandler.getStringAsync("inventory.switch-page.success.volume");
+        var successPitchFuture = configHandler.getStringAsync("inventory.switch-page.success.pitch");
+        var errorSoundFuture = configHandler.getStringAsync("inventory.switch-page.error.sound");
+        var errorVolumeFuture = configHandler.getStringAsync("inventory.switch-page.error.volume");
+        var errorPitchFuture = configHandler.getStringAsync("inventory.switch-page.error.pitch");
+        CompletableFuture.allOf(
+                nextPageNameFuture, prevPageNameFuture,
+                successSoundFuture, successVolumeFuture,
+                successPitchFuture, errorSoundFuture, errorVolumeFuture, errorPitchFuture
+        ).thenAccept(x -> {
+            var nextPageName = nextPageNameFuture.join();
+            var prevPageName = prevPageNameFuture.join();
+            var successSound = successSoundFuture.join();
+            var successVolume = successVolumeFuture.join();
+            var successPitch = successPitchFuture.join();
+            var errorSound = errorSoundFuture.join();
+            var errorVolume = errorVolumeFuture.join();
+            var errorPitch = errorPitchFuture.join();
+
+
+            if (content.equals(nextPageName.replace("%page%", EditUtils.getNextPage(player, EditObjectivesUtils.objectives.size())))) {
+                int currentPage = EditUtils.playerPage.get(player.getUniqueId());
+                int totalPages = EditUtils.getMaxPage(EditObjectivesUtils.objectives.size());
+                if (currentPage == totalPages) {
+                    Bukkit.getScheduler().runTask(questSystem, () -> {
+                        player.playSound(player.getLocation(), Sound.valueOf(errorSound), Float.parseFloat(errorVolume), Float.parseFloat(errorPitch));
+                    });
+                    return;
+                }
+                Bukkit.getScheduler().runTask(questSystem, () -> {
+                    player.playSound(player.getLocation(), Sound.valueOf(successSound), Float.parseFloat(successVolume), Float.parseFloat(successPitch));
+                });
+                EditUtils.playerPage.put(player.getUniqueId(), currentPage + 1);
+                EditObjectivesUtils.refreshInventory(EditObjectivesUtils.objectives, EditQuestsUtils.editingQuest.get(player.getUniqueId()), inv, player);
+            } else if (content.equals(prevPageName.replace("%page%", EditUtils.getPrevPage(player)))) {
+                int currentPage = EditUtils.playerPage.get(player.getUniqueId());
+                if (currentPage == 1) {
+                    Bukkit.getScheduler().runTask(questSystem, () -> {
+                        player.playSound(player.getLocation(), Sound.valueOf(errorSound), Float.parseFloat(errorVolume), Float.parseFloat(errorPitch));
+                    });
+                    return;
+                }
+                Bukkit.getScheduler().runTask(questSystem, () -> {
+                    player.playSound(player.getLocation(), Sound.valueOf(successSound), Float.parseFloat(successVolume), Float.parseFloat(successPitch));
+                });
+
+                EditUtils.playerPage.put(player.getUniqueId(), currentPage - 1);
+                EditObjectivesUtils.refreshInventory(EditObjectivesUtils.objectives, EditQuestsUtils.editingQuest.get(player.getUniqueId()), inv, player);
+            }
+        }).exceptionally(ex -> {
+            ex.printStackTrace();
+            return null;
+        });
+
+    }
 
     public static void setItemLore(ItemStack item, List<TextComponent> loreLines) {
         ItemMeta meta = item.getItemMeta();
@@ -57,6 +119,9 @@ public class EditUtils {
         CompletableFuture<String> nextPageNameFuture = configHandler.getStringAsync("inventory.next-page.display-name");
         CompletableFuture<String> nextPageColourFuture = configHandler.getStringAsync("inventory.next-page.colour");
 
+        CompletableFuture<String> backNameFuture = configHandler.getStringAsync("inventory.back.display-name");
+        CompletableFuture<String> backColourFuture = configHandler.getStringAsync("inventory.back.colour");
+
         CompletableFuture<String> prevPageNameFuture = configHandler.getStringAsync("inventory.prev-page.display-name");
         CompletableFuture<String> prevPageColourFuture = configHandler.getStringAsync("inventory.prev-page.colour");
 
@@ -65,6 +130,7 @@ public class EditUtils {
         CompletableFuture<String> createColourFuture = configHandler.getStringAsync("inventory.create-"+type+".colour");
 
         return CompletableFuture.allOf(
+                backColourFuture, backNameFuture,
                 nextPageNameFuture, nextPageColourFuture,
                 prevPageNameFuture, prevPageColourFuture,
                 createNameFuture, createMaterialFuture, createColourFuture
@@ -75,6 +141,14 @@ public class EditUtils {
 
                 String prevPageName = prevPageNameFuture.get();
                 var prevPageColour = TextColor.fromHexString(prevPageColourFuture.get());
+
+                String backName = backNameFuture.get();
+                var backColour = TextColor.fromHexString(backColourFuture.get());
+                var backItem = new ItemStack(Material.BARRIER);
+                ItemMeta backMeta = backItem.getItemMeta();
+                backMeta.displayName(Component.text(backName, backColour));
+                backItem.setItemMeta(backMeta);
+
 
                 String createName = createNameFuture.get();
                 Material createMaterial = createMaterialFuture.get();
@@ -98,6 +172,8 @@ public class EditUtils {
                 createQuestMeta.displayName(Component.text(createName, createColour));
                 createQuestItem.setItemMeta(createQuestMeta);
 
+                if(Objects.equals(type, "reward")||Objects.equals(type, "objective"))
+                    inventory.setItem(0, backItem);
                 inventory.setItem(1, prevPageItem);
                 inventory.setItem(4, createQuestItem);
                 inventory.setItem(7, nextPageItem);

@@ -1,5 +1,5 @@
 database:
-  url: "jdbc:sqlite:C:\\Users\\Max\\Documents\\GitHub\\QuestSystemPlugin\\database\\QuestSystemDB.sqlite"
+  url: "jdbc:sqlite:..\\database\\QuestSystemDB.sqlite"
 
 npc-location:
   x: 65.5
@@ -19,6 +19,9 @@ npc-task:
   range: 15
 
 inventory:
+  back:
+    display-name: "Back"
+    colour: "#FFFFFF"
   switch-page:
     success:
       sound: "BLOCK_NOTE_BLOCK_PLING"
@@ -37,11 +40,32 @@ inventory:
   create-quest:
     display-name: "Create Quest"
     colour: "#00FF00"
-    material: BOOK
+    material: CHEST
+    default:
+      name: "Quest Name"
+      description: "Quest Description"
+      time-limit: 10
+    error-message: "Please enter a new name for the quest"
   create-reward:
     display-name: "Create Reward"
     colour: "#00FF00"
     material: CHEST
+    default:
+      name: "Reward Name"
+      amount: 1
+      reward-type-id: 1
+      value: "ENTER A VALUE (STONE)"
+    error-message: "Please enter a new name for the reward"
+  create-objective:
+    display-name: "Create Objective"
+    colour: "#00FF00"
+    material: CHEST
+    default:
+      name: "Objective Name"
+      count: 1
+      type: "KILL"
+      value: "ENTER A VALUE (ZOMBIE)"
+    error-message: "Please enter a new objective for the objective"
   edit-quest:
     name:
       title: "Quest Name"
@@ -56,7 +80,7 @@ inventory:
     objective:
       title: "Quest Objective"
       colour: "#FF6666"
-      material: "PAPER"
+      material: "TRAPPED_CHEST"
       change-message: "Select or edit a Objective"
     time-limit:
       title: "Time Limit"
@@ -76,6 +100,9 @@ inventory:
       title: "Cancel Edit"
       colour: "#FF3366"
       material: "RED_WOOL"
+    no-objective:
+      title: "Select a Objective"
+      colour: "#FF6666"
   edit-reward: #EMERALD not allowed as Material
     name:
       title: "Quest Name"
@@ -97,6 +124,35 @@ inventory:
       colour: "#FFCC00"
       material: "BOOK"
       change-message: "Enter the new value for the quest"
+    save:
+      title: "Save Changes"
+      colour: "#66CC99"
+      material: "GREEN_WOOL"
+    cancel:
+      title: "Cancel Edit"
+      colour: "#FF3366"
+      material: "RED_WOOL"
+  edit-objective:
+    name:
+      title: "Objective Name"
+      colour: "#FFCC00"
+      material: "NAME_TAG"
+      change-message: "Enter the new name for the objective"
+    count:
+      title: "Objective Count"
+      colour: "#FFCC00"
+      material: "GOLD_INGOT"
+      change-message: "Enter the new count for the objective"
+    type:
+      title: "Objective Type"
+      colour: "#FF6666"
+      material: "PAPER"
+      change-message: "Enter the new type for the objective (KILL, PICKUP, MOVE)"
+    value:
+      title: "Objective Value"
+      colour: "#99CC00"
+      material: "CLOCK"
+      change-message: "Enter the new value for the objective"
     save:
       title: "Save Changes"
       colour: "#66CC99"
@@ -131,6 +187,10 @@ quest-inv:
   title: "Quests"
   colour: "#FFFFFF"
 
+objective-inv:
+  title: "Objectives"
+  colour: "#FFFFFF"
+
 reward-inv:
   title: "Rewards"
   colour: "#FFFFFF"
@@ -138,7 +198,7 @@ reward-inv:
 quest-manager:
   quest:
     edit:
-      title: "Right-click to edit"
+      title: "Click to edit"
       colour: "#00AAFF"
     main-colour: "#FF0000"
     reactivated:
@@ -214,7 +274,7 @@ quest-manager:
         color: "#00AAFF" # White
   reward:
     edit:
-      title: "Right-click to edit"
+      title: "Click to edit"
       colour: "#00AAFF"
     colour: "#00FF00"
     lore:
@@ -241,6 +301,37 @@ quest-manager:
         colour: "#FFCC00"
       value:
         message: "Value: "
+        colour: "#FFCC00"
+
+  objective:
+    edit:
+      title: "Click to edit"
+      colour: "#00AAFF"
+    colour: "#00FF00"
+    lore:
+      click-to-edit:
+        message: "Right-click to edit"
+        colour: "#00AAFF"
+      click-to-delete:
+        message: "Shift-click to delete"
+        colour: "#FF0000"
+      already-assigned:
+        message: "Objective already assigned"
+        colour: "#FF0000"
+      click-to-assign:
+        message: "Click to assign objective"
+        colour: "#00FF00"
+      name:
+        message: "Name: "
+        colour: "#FFCC00"
+      type:
+        message: "Type: "
+        colour: "#FFCC00"
+      value:
+        message: "Value: "
+        colour: "#FFCC00"
+      count:
+        message: "Count: "
         colour: "#FFCC00"
 
 

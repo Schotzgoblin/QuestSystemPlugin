@@ -1,47 +1,36 @@
-[23:33:28] [ServerMain/ERROR]: [DirectoryProviderSource] Error loading plugin: java.lang.IllegalArgumentException: Directory 'plugins\QuestSystem-1.0-all.jar' does not contain a paper-plugin.yml or plugin.yml! Could not determine plugin type, cannot load a plugin from it!
-java.lang.RuntimeException: java.lang.IllegalArgumentException: Directory 'plugins\QuestSystem-1.0-all.jar' does not contain a paper-plugin.yml or plugin.yml! Could not determine plugin type, cannot load a plugin from it!
-	at io.papermc.paper.plugin.provider.source.FileProviderSource.registerProviders(FileProviderSource.java:70) ~[paper-1.20.4.jar:git-Paper-496]
-	at io.papermc.paper.plugin.provider.source.DirectoryProviderSource.registerProviders(DirectoryProviderSource.java:47) ~[paper-1.20.4.jar:git-Paper-496]
-	at io.papermc.paper.plugin.provider.source.DirectoryProviderSource.registerProviders(DirectoryProviderSource.java:17) ~[paper-1.20.4.jar:git-Paper-496]
-	at io.papermc.paper.plugin.util.EntrypointUtil.registerProvidersFromSource(EntrypointUtil.java:15) ~[paper-1.20.4.jar:git-Paper-496]
-	at io.papermc.paper.plugin.PluginInitializerManager.load(PluginInitializerManager.java:101) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.Main.main(Main.java:120) ~[paper-1.20.4.jar:git-Paper-496]
-	at org.bukkit.craftbukkit.Main.main(Main.java:326) ~[paper-1.20.4.jar:git-Paper-496]
-	at io.papermc.paperclip.Paperclip.lambda$main$0(Paperclip.java:42) ~[app:?]
-	at java.lang.Thread.run(Thread.java:1583) ~[?:?]
-Caused by: java.lang.IllegalArgumentException: Directory 'plugins\QuestSystem-1.0-all.jar' does not contain a paper-plugin.yml or plugin.yml! Could not determine plugin type, cannot load a plugin from it!
-	... 9 more
-[23:33:33] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[23:33:35] [ServerMain/INFO]: Loaded 1174 recipes
-[23:33:35] [ServerMain/INFO]: Loaded 1271 advancements
-[23:33:36] [Server thread/INFO]: Starting minecraft server version 1.20.4
-[23:33:36] [Server thread/INFO]: Loading properties
-[23:33:36] [Server thread/INFO]: This server is running Paper version git-Paper-496 (MC: 1.20.4) (Implementing API version 1.20.4-R0.1-SNAPSHOT) (Git: 7ac24a1 on ver/1.20.4)
-[23:33:37] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[23:33:37] [Server thread/INFO]: Using 4 threads for Netty based IO
-[23:33:37] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
+[18:05:59] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[18:06:01] [ServerMain/INFO]: Loaded 1174 recipes
+[18:06:01] [ServerMain/INFO]: Loaded 1271 advancements
+[18:06:01] [Server thread/INFO]: Starting minecraft server version 1.20.4
+[18:06:01] [Server thread/INFO]: Loading properties
+[18:06:01] [Server thread/INFO]: This server is running Paper version git-Paper-496 (MC: 1.20.4) (Implementing API version 1.20.4-R0.1-SNAPSHOT) (Git: 7ac24a1 on ver/1.20.4)
+[18:06:02] [Server thread/INFO]: Using 4 threads for Netty based IO
+[18:06:02] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[18:06:03] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
     We recommend installing the spark profiler as a replacement: https://spark.lucko.me/
     For more information please visit: https://github.com/PaperMC/Paper/issues/8948
-[23:33:37] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 3 worker threads, and gen parallelism of 3 threads
-[23:33:38] [Server thread/INFO]: Default game type: SURVIVAL
-[23:33:38] [Server thread/INFO]: Generating keypair
-[23:33:38] [Server thread/INFO]: Starting Minecraft server on *:25567
-[23:33:38] [Server thread/INFO]: Using default channel type
-[23:33:38] [Server thread/INFO]: Paper: Using Java compression from Velocity.
-[23:33:38] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
-[23:33:38] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[23:33:38] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
-[23:33:38] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
-[23:33:38] [Server thread/WARN]: Whilst this makes it possible to use BungeeCord, unless access to your server is properly restricted, it also opens up the ability for hackers to connect with any username they choose.
-[23:33:38] [Server thread/WARN]: Please see http://www.spigotmc.org/wiki/firewall-guide/ for further information.
-[23:33:38] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
-[23:33:38] [Server thread/INFO]: Preparing level "world"
-[23:33:39] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[23:33:39] [Server thread/INFO]: Time elapsed: 172 ms
-[23:33:39] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[23:33:39] [Server thread/INFO]: Time elapsed: 26 ms
-[23:33:39] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[23:33:39] [Server thread/INFO]: Time elapsed: 21 ms
-[23:33:39] [Server thread/INFO]: Running delayed init tasks
-[23:33:39] [Server thread/INFO]: Done (3.484s)! For help, type "help"
-[23:33:39] [Server thread/INFO]: Timings Reset
+[18:06:03] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 3 worker threads, and gen parallelism of 3 threads
+[18:06:03] [Server thread/INFO]: Default game type: SURVIVAL
+[18:06:03] [Server thread/INFO]: Generating keypair
+[18:06:03] [Server thread/INFO]: Starting Minecraft server on *:25567
+[18:06:03] [Server thread/INFO]: Using default channel type
+[18:06:03] [Server thread/INFO]: Paper: Using Java compression from Velocity.
+[18:06:03] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[18:06:04] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[18:06:04] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[18:06:04] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[18:06:04] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[18:06:04] [Server thread/WARN]: Whilst this makes it possible to use BungeeCord, unless access to your server is properly restricted, it also opens up the ability for hackers to connect with any username they choose.
+[18:06:04] [Server thread/WARN]: Please see http://www.spigotmc.org/wiki/firewall-guide/ for further information.
+[18:06:04] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[18:06:04] [Server thread/INFO]: Preparing level "world"
+[18:06:05] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[18:06:05] [Server thread/INFO]: Time elapsed: 314 ms
+[18:06:05] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[18:06:05] [Server thread/INFO]: Time elapsed: 32 ms
+[18:06:05] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[18:06:05] [Server thread/INFO]: Time elapsed: 31 ms
+[18:06:05] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[18:06:07] [Server thread/INFO]: Running delayed init tasks
+[18:06:08] [Server thread/INFO]: Done (6.484s)! For help, type "help"
+[18:06:08] [Server thread/INFO]: Timings Reset

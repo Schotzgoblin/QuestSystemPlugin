@@ -20,11 +20,10 @@ public class Quest implements Identifiable{
     public Quest() {
     }
 
-    public Quest(String name, String description, int timeLimit, int objectiveId) {
+    public Quest(String name, String description, int timeLimit) {
         this.name = name;
         this.description = description;
         this.timeLimit = timeLimit;
-        this.objectiveId = objectiveId;
     }
 
     public Objective getObjective() {

@@ -558,4 +558,51 @@ public class DatabaseHandler {
             }
         });
     }
+
+    public CompletableFuture<Objective> getObjectiveByNameAsync(String content) {
+        String query = "SELECT * FROM Objective WHERE objective =?";
+        return CompletableFuture.supplyAsync(() -> {
+            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                preparedStatement.setString(1, content);
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    if (resultSet.next()) {
+                        Objective obj = new Objective();
+                        obj.setId(Integer.parseInt(resultSet.getString("id")));
+                        obj.setObjective(resultSet.getString("objective"));
+                        obj.setType(resultSet.getString("type"));
+                        obj.setValue(resultSet.getString("value"));
+                        obj.setCount(Integer.parseInt(resultSet.getString("count")));
+                        return obj;
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return null;
+        });
+    }
+
+    public CompletableFuture<List<Objective>> getAllObjectivesAsync() {
+        String query = "SELECT * FROM Objective";
+        List<Objective> list = new ArrayList<>();
+
+        return CompletableFuture.supplyAsync(() -> {
+            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    while (resultSet.next()) {
+                        Objective obj = new Objective();
+                        obj.setId(Integer.parseInt(resultSet.getString("id")));
+                        obj.setObjective(resultSet.getString("objective"));
+                        obj.setType(resultSet.getString("type"));
+                        obj.setValue(resultSet.getString("value"));
+                        obj.setCount(Integer.parseInt(resultSet.getString("count")));
+                        list.add(obj);
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return list;
+        });
+    }
 }

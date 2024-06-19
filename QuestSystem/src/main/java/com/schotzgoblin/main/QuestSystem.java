@@ -5,6 +5,9 @@ import com.google.common.io.ByteStreams;
 import com.schotzgoblin.commands.AdminQuestCommand;
 import com.schotzgoblin.commands.QuestCommand;
 import com.schotzgoblin.listener.*;
+import com.schotzgoblin.listener.edit.EditObjectivesListener;
+import com.schotzgoblin.listener.edit.EditQuestListener;
+import com.schotzgoblin.listener.edit.EditRewardsListener;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.command.CommandExecutor;
@@ -13,7 +16,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.plugin.messaging.PluginMessageListener;
 import org.jetbrains.annotations.NotNull;
@@ -40,11 +42,12 @@ public class QuestSystem extends JavaPlugin implements Listener, PluginMessageLi
         addListener(new TrackPlayerQuestProgress());
         addListener(new EditQuestListener());
         addListener(new EditRewardsListener());
+        addListener(new EditObjectivesListener());
         addListener(new QuestNpc());
         addListener(new SignListener());
         addListener(new ParticalListener());
         registerCommand("quests",new QuestCommand());
-        registerCommand("quests",new AdminQuestCommand());
+        registerCommand("quest",new AdminQuestCommand());
     }
     private void addListener(Listener listener) {
         Bukkit.getPluginManager().registerEvents(listener, this);

@@ -1,13 +1,14 @@
-package com.schotzgoblin.listener;
+package com.schotzgoblin.listener.edit;
 
 import com.schotzgoblin.config.ConfigHandler;
 import com.schotzgoblin.database.Quest;
 import com.schotzgoblin.database.Reward;
 import com.schotzgoblin.main.DatabaseHandler;
 import com.schotzgoblin.main.QuestSystem;
-import com.schotzgoblin.utils.EditQuestsUtils;
-import com.schotzgoblin.utils.EditRewardsUtils;
-import com.schotzgoblin.utils.EditUtils;
+import com.schotzgoblin.utils.edit.EditQuestsUtils;
+import com.schotzgoblin.utils.edit.EditRewardsUtils;
+import com.schotzgoblin.utils.edit.EditUtils;
+import com.schotzgoblin.utils.Utils;
 import net.kyori.adventure.text.TextComponent;
 import net.wesjd.anvilgui.AnvilGUI;
 import org.bukkit.Bukkit;
@@ -32,6 +33,7 @@ public class EditRewardsListener implements Listener {
     private final QuestSystem questSystem = QuestSystem.getInstance();
     private final DatabaseHandler databaseHandler = DatabaseHandler.getInstance();
     private final ConfigHandler configHandler = ConfigHandler.getInstance();
+    //Normally I would make all those edit classes generic, so I have to do it once, but unfortunately I don't have the time to do it now
 
     public EditRewardsListener() {
     }
@@ -54,10 +56,15 @@ public class EditRewardsListener implements Listener {
             if (itemMeta == null || !(itemMeta.displayName() instanceof TextComponent displayName)) {
                 return;
             }
+            var createRewardMaterial = configHandler.getMaterialAsync("inventory.create-reward.material").join();
             if (clickedItem.getType().equals(Material.PLAYER_HEAD)) {
-                handlePageSwitch(player, inv, displayName.content());
+                EditUtils.handlePageSwitch(player, inv, displayName.content());
             } else if (clickedItem.getType().equals(Material.EMERALD)) {
                 allRewardsInventory(e, player, playerId);
+            } else if (clickedItem.getType().equals(Material.BARRIER)) {
+                Utils.navigateToQuestsInventory(player);
+            }else if(clickedItem.getType().equals(createRewardMaterial)){
+                createReward(player);
             }
         } catch (Exception ignored) {
 
@@ -90,66 +97,36 @@ public class EditRewardsListener implements Listener {
         }
     }
 
-    public void handlePageSwitch(Player player, Inventory inv, String content) {
-        CompletableFuture<String> nextPageNameFuture = configHandler.getStringAsync("inventory.next-page.display-name");
-        CompletableFuture<String> prevPageNameFuture = configHandler.getStringAsync("inventory.prev-page.display-name");
-        var successSoundFuture = configHandler.getStringAsync("inventory.switch-page.success.sound");
-        var successVolumeFuture = configHandler.getStringAsync("inventory.switch-page.success.volume");
-        var successPitchFuture = configHandler.getStringAsync("inventory.switch-page.success.pitch");
-        var errorSoundFuture = configHandler.getStringAsync("inventory.switch-page.error.sound");
-        var errorVolumeFuture = configHandler.getStringAsync("inventory.switch-page.error.volume");
-        var errorPitchFuture = configHandler.getStringAsync("inventory.switch-page.error.pitch");
+    private void createReward(Player player) {
+        var createRewardNameDefaultValueFuture = configHandler.getStringAsync("inventory.create-reward.default.name");
+        var createRewardAmountDefaultValueFuture = configHandler.getIntAsync("inventory.create-reward.default.amount");
+        var createRewardValueDefaultValueFuture = configHandler.getStringAsync("inventory.create-reward.default.value");
+        var createRewardRewardTypeIdDefaultValueFuture = configHandler.getIntAsync("inventory.create-reward.default.rewardTypeId");
+
         CompletableFuture.allOf(
-                nextPageNameFuture, prevPageNameFuture,
-                successSoundFuture, successVolumeFuture,
-                successPitchFuture, errorSoundFuture, errorVolumeFuture, errorPitchFuture
-        ).thenAccept(x -> {
-            var nextPageName = nextPageNameFuture.join();
-            var prevPageName = prevPageNameFuture.join();
-            var successSound = successSoundFuture.join();
-            var successVolume = successVolumeFuture.join();
-            var successPitch = successPitchFuture.join();
-            var errorSound = errorSoundFuture.join();
-            var errorVolume = errorVolumeFuture.join();
-            var errorPitch = errorPitchFuture.join();
-
-
-            if (content.equals(nextPageName.replace("%page%", EditUtils.getNextPage(player, EditRewardsUtils.rewards.size())))) {
-                int currentPage = EditUtils.playerPage.get(player.getUniqueId());
-                int totalPages = EditUtils.getMaxPage(EditRewardsUtils.rewards.size());
-                if (currentPage == totalPages) {
-                    Bukkit.getScheduler().runTask(questSystem, () -> {
-                        player.playSound(player.getLocation(), Sound.valueOf(errorSound), Float.parseFloat(errorVolume), Float.parseFloat(errorPitch));
-                    });
-                    return;
-                }
+                createRewardNameDefaultValueFuture,
+                createRewardAmountDefaultValueFuture,
+                createRewardValueDefaultValueFuture,
+                createRewardRewardTypeIdDefaultValueFuture
+        ).thenAcceptAsync(v -> {
+            var createRewardNameDefaultValue = createRewardNameDefaultValueFuture.join();
+            var createRewardAmountDefaultValue = createRewardAmountDefaultValueFuture.join();
+            var createRewardValueDefaultValue = createRewardValueDefaultValueFuture.join();
+            var createRewardRewardTypeIdDefaultValue = createRewardRewardTypeIdDefaultValueFuture.join();
+            var reward = new Reward(createRewardNameDefaultValue, createRewardAmountDefaultValue,
+                    createRewardValueDefaultValue, createRewardRewardTypeIdDefaultValue);
+            EditRewardsUtils.editingReward.put(player.getUniqueId(), reward);
+            EditRewardsUtils.editRewardsInventory(reward, player).thenAccept(inv -> {
                 Bukkit.getScheduler().runTask(questSystem, () -> {
-                    player.playSound(player.getLocation(), Sound.valueOf(successSound), Float.parseFloat(successVolume), Float.parseFloat(successPitch));
+                    player.closeInventory();
+                    player.openInventory(inv);
                 });
-                EditUtils.playerPage.put(player.getUniqueId(), currentPage + 1);
-                EditRewardsUtils.refreshInventory(EditRewardsUtils.rewards, EditQuestsUtils.editingQuest.get(player.getUniqueId()), inv, player);
-            } else if (content.equals(prevPageName.replace("%page%", EditUtils.getPrevPage(player)))) {
-                int currentPage = EditUtils.playerPage.get(player.getUniqueId());
-                if (currentPage == 1) {
-                    Bukkit.getScheduler().runTask(questSystem, () -> {
-                        player.playSound(player.getLocation(), Sound.valueOf(errorSound), Float.parseFloat(errorVolume), Float.parseFloat(errorPitch));
-                    });
-                    return;
-                }
-                Bukkit.getScheduler().runTask(questSystem, () -> {
-                    player.playSound(player.getLocation(), Sound.valueOf(successSound), Float.parseFloat(successVolume), Float.parseFloat(successPitch));
-                });
-
-                EditUtils.playerPage.put(player.getUniqueId(), currentPage - 1);
-                EditRewardsUtils.refreshInventory(EditRewardsUtils.rewards, EditQuestsUtils.editingQuest.get(player.getUniqueId()), inv, player);
-            }
+            });
         }).exceptionally(ex -> {
             ex.printStackTrace();
             return null;
         });
-
     }
-
     private void allRewardsInventory(InventoryClickEvent e, Player player, UUID playerId) {
         Inventory inv = EditRewardsUtils.allRewardsInventory.get(playerId);
         if (!Objects.equals(e.getClickedInventory(), inv)) return;
@@ -279,7 +256,7 @@ public class EditRewardsListener implements Listener {
                 } else if (clickedItem.getType().equals(Material.getMaterial(valueMaterialName))) {
                     editRewardValue(player, inv, reward);
                 } else if (clickedItem.getType().equals(Material.getMaterial(saveMaterialName))) {
-                    saveQuest(player, inv, EditQuestsUtils.editingQuest.get(player.getUniqueId()), reward);
+                    saveReward(player, inv, EditQuestsUtils.editingQuest.get(player.getUniqueId()), reward);
                 } else if (clickedItem.getType().equals(Material.getMaterial(cancelMaterialName))) {
                     cancelEdit(player, inv, EditQuestsUtils.editingQuest.get(player.getUniqueId()));
                 }
@@ -419,19 +396,39 @@ public class EditRewardsListener implements Listener {
         });
     }
 
-    private void saveQuest(Player player, Inventory inv, Quest quest, Reward reward) {
+    private void saveReward(Player player, Inventory inv, Quest quest, Reward reward) {
+        var createRewardNameDefaultValue = configHandler.getStringAsync("inventory.create-reward.default.name").join();
+        var createRewardErrorDefaultValue = configHandler.getStringAsync("inventory.create-reward.error-message").join();
+        if (reward.getName().equals(createRewardNameDefaultValue)) {
+            player.sendMessage(createRewardErrorDefaultValue);
+            return;
+        }
         EditRewardsUtils.editRewardInventory.remove(player.getUniqueId());
         EditRewardsUtils.editingReward.remove(player.getUniqueId());
-        databaseHandler.updateAsync(reward).thenAccept(v -> {
-            EditRewardsUtils.refreshRewards(quest).thenAccept(v2 -> {
-                Bukkit.getScheduler().runTask(questSystem, () -> {
-                    player.closeInventory();
-                    player.openInventory(EditRewardsUtils.allRewardsInventory.get(player.getUniqueId()));
+        if(reward.getId()==0){
+            databaseHandler.saveAsync(reward).thenAccept(v -> {
+                EditRewardsUtils.refreshRewards(quest).thenAccept(v2 -> {
+                    Bukkit.getScheduler().runTask(questSystem, () -> {
+                        player.closeInventory();
+                        player.openInventory(EditRewardsUtils.allRewardsInventory.get(player.getUniqueId()));
+                    });
                 });
+            }).exceptionally(ex -> {
+                ex.printStackTrace();
+                return null;
             });
-        }).exceptionally(ex -> {
-            ex.printStackTrace();
-            return null;
-        });
+        }else {
+            databaseHandler.updateAsync(reward).thenAccept(v -> {
+                EditRewardsUtils.refreshRewards(quest).thenAccept(v2 -> {
+                    Bukkit.getScheduler().runTask(questSystem, () -> {
+                        player.closeInventory();
+                        player.openInventory(EditRewardsUtils.allRewardsInventory.get(player.getUniqueId()));
+                    });
+                });
+            }).exceptionally(ex -> {
+                ex.printStackTrace();
+                return null;
+            });
+        }
     }
 }

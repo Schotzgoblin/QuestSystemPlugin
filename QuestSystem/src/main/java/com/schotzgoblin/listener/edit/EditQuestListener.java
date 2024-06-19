@@ -1,17 +1,19 @@
-package com.schotzgoblin.listener;
+package com.schotzgoblin.listener.edit;
 
 import com.schotzgoblin.config.ConfigHandler;
 import com.schotzgoblin.database.Quest;
 import com.schotzgoblin.main.DatabaseHandler;
 import com.schotzgoblin.main.QuestSystem;
-import com.schotzgoblin.utils.EditQuestsUtils;
-import com.schotzgoblin.utils.EditRewardsUtils;
-import com.schotzgoblin.utils.Utils;
-import net.kyori.adventure.text.Component;
+import com.schotzgoblin.utils.*;
+import com.schotzgoblin.utils.edit.EditObjectivesUtils;
+import com.schotzgoblin.utils.edit.EditQuestsUtils;
+import com.schotzgoblin.utils.edit.EditRewardsUtils;
+import com.schotzgoblin.utils.edit.EditUtils;
 import net.kyori.adventure.text.TextComponent;
 import net.wesjd.anvilgui.AnvilGUI;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -31,6 +33,7 @@ public class EditQuestListener implements Listener {
     private final QuestSystem questSystem = QuestSystem.getInstance();
     private final DatabaseHandler databaseHandler = DatabaseHandler.getInstance();
     private final ConfigHandler configHandler = ConfigHandler.getInstance();
+    //Normally I would make all those edit classes generic, so I have to do it once, but unfortunately I don't have the time to do it now
 
     public EditQuestListener() {
     }
@@ -59,6 +62,138 @@ public class EditQuestListener implements Listener {
             // Exception ignored, because it is not necessary to handle it (Only happens if player spam accepts EditQuestsUtils.quests)
         }
     }
+
+    @EventHandler
+    public void onInventoryClick2(InventoryClickEvent e) {
+        Player player = (Player) e.getWhoClicked();
+        UUID playerId = player.getUniqueId();
+        if (!EditQuestsUtils.allQuestsInventory.containsKey(playerId)) return;
+        Inventory inv = EditQuestsUtils.allQuestsInventory.get(playerId);
+        if (!Objects.equals(e.getClickedInventory(), inv)) return;
+        e.setCancelled(true);
+        try {
+            ItemStack clickedItem = e.getCurrentItem();
+            if (clickedItem == null) {
+                return;
+            }
+
+            ItemMeta itemMeta = clickedItem.getItemMeta();
+            if (itemMeta == null || !(itemMeta.displayName() instanceof TextComponent displayName)) {
+                return;
+            }
+            var createQuestMaterial = configHandler.getMaterialAsync("inventory.create-quest.material").join();
+            if (clickedItem.getType().equals(Material.PLAYER_HEAD)) {
+                EditUtils.handlePageSwitch(player, inv, displayName.content());
+            } else if (clickedItem.getType().equals(Material.PAPER)) {
+                allQuestsInventory(e, player, playerId);
+            } else if (clickedItem.getType().equals(createQuestMaterial)) {
+                createQuest(player);
+            }
+
+        } catch (Exception ignored) {
+            // Exception ignored, because it is not necessary to handle it (Only happens if player spam accepts EditQuestsUtils.quests)
+        }
+    }
+
+    private void createQuest(Player player) {
+        var createQuestNameDefaultValueFuture = configHandler.getStringAsync("inventory.create-quest.default.name");
+        var createQuestTimeLimitDefaultValueFuture = configHandler.getIntAsync("inventory.create-quest.default.time-limit");
+        var createQuestDescriptionDefaultValueFuture = configHandler.getStringAsync("inventory.create-quest.default.description");
+
+        CompletableFuture.allOf(
+                createQuestNameDefaultValueFuture,
+                createQuestTimeLimitDefaultValueFuture,
+                createQuestDescriptionDefaultValueFuture
+        ).thenAcceptAsync(v -> {
+            var createQuestNameDefaultValue = createQuestNameDefaultValueFuture.join();
+            var createQuestTimeLimitDefaultValue = createQuestTimeLimitDefaultValueFuture.join();
+            var createQuestDescriptionDefaultValue = createQuestDescriptionDefaultValueFuture.join();
+            var quest = new Quest(createQuestNameDefaultValue, createQuestDescriptionDefaultValue, createQuestTimeLimitDefaultValue);
+            EditQuestsUtils.editingQuest.put(player.getUniqueId(), quest);
+            EditQuestsUtils.editQuestInventory(quest, player).thenAccept(inv -> {
+                Bukkit.getScheduler().runTask(questSystem, () -> {
+                    player.closeInventory();
+                    player.openInventory(inv);
+                });
+            });
+        }).exceptionally(ex -> {
+            ex.printStackTrace();
+            return null;
+        });
+    }
+
+    private void allQuestsInventory(InventoryClickEvent e, Player player, UUID playerId) {
+        Inventory inv = EditQuestsUtils.allQuestsInventory.get(playerId);
+        if (!Objects.equals(e.getClickedInventory(), inv)) return;
+        try {
+            ItemStack clickedItem = e.getCurrentItem();
+            if (clickedItem == null) {
+                return;
+            }
+
+            ItemMeta itemMeta = clickedItem.getItemMeta();
+            if (itemMeta == null || !(itemMeta.displayName() instanceof TextComponent displayName)) {
+                return;
+            }
+
+            if (clickedItem.getType().equals(Material.PAPER)) {
+                if (e.isShiftClick())
+                    handleQuestItemDelete(player, displayName, inv);
+                else if (e.isRightClick())
+                    handleQuestItemEdit(player, displayName);
+            }
+
+        } catch (Exception ignored) {
+            // Exception ignored, because it is not necessary to handle it (Only happens if player spam accepts EditQuestsUtils.quests)
+        }
+    }
+
+    private void handleQuestItemEdit(Player player, TextComponent displayName) {
+        var questFuture = databaseHandler.getQuestByNameAsync(displayName.content());
+
+        CompletableFuture.allOf(questFuture).thenAccept(x -> {
+            var quest = questFuture.join();
+            EditQuestsUtils.editingQuest.put(player.getUniqueId(), quest);
+            EditQuestsUtils.editQuestInventory(quest, player).thenAccept(inv -> {
+                Bukkit.getScheduler().runTask(questSystem, () -> {
+                    player.closeInventory();
+                    player.openInventory(inv);
+                });
+            });
+        }).exceptionally(ex -> {
+            ex.printStackTrace();
+            return null;
+        });
+
+    }
+
+    private void handleQuestItemDelete(Player player, TextComponent displayName, Inventory inv) {
+        var questFuture = databaseHandler.getQuestByNameAsync(displayName.content());
+        CompletableFuture<String> deleteSoundFuture = configHandler.getStringAsync("quest-manager.lore-entries.delete.sound");
+        CompletableFuture<Integer> deleteVolumeFuture = configHandler.getIntAsync("quest-manager.lore-entries.delete.volume");
+        CompletableFuture<Integer> deletePitchFuture = configHandler.getIntAsync("quest-manager.lore-entries.delete.pitch");
+        CompletableFuture.allOf(
+                questFuture, deleteSoundFuture, deleteVolumeFuture, deletePitchFuture
+        ).thenAccept(x -> {
+            var quest = questFuture.join();
+            var deleteSound = deleteSoundFuture.join();
+            var deleteVolume = deleteVolumeFuture.join();
+            var deletePitch = deletePitchFuture.join();
+            if (quest == null) return;
+            databaseHandler.deleteAsync(quest);
+            databaseHandler.deleteAllQuestRewardsAsync(quest);
+            EditQuestsUtils.quests.remove(quest);
+            Bukkit.getScheduler().runTask(questSystem, () -> {
+                player.playSound(player.getLocation(), Sound.valueOf(deleteSound), deleteVolume, deletePitch);
+                player.sendMessage("Quest deleted");
+                EditQuestsUtils.refreshInventory(EditQuestsUtils.quests, inv, player);
+            });
+        }).exceptionally(ex -> {
+            ex.printStackTrace();
+            return null;
+        });
+    }
+
 
     private void editQuestAttributeInventory(Inventory inv, Player player, UUID playerId, TextComponent displayName, ItemStack clickedItem) {
         CompletableFuture<String> nameMaterialFuture = configHandler.getStringAsync("inventory.edit-quest.name.material");
@@ -113,7 +248,7 @@ public class EditQuestListener implements Listener {
 
     private void editQuestRewards(Player player, Inventory inv, Quest quest) {
         EditRewardsUtils.initInventory(player, quest).thenAccept(v -> {
-            if(EditRewardsUtils.allRewardsInventory.containsKey(player.getUniqueId())) {
+            if (EditRewardsUtils.allRewardsInventory.containsKey(player.getUniqueId())) {
                 Bukkit.getScheduler().runTask(questSystem, () -> {
                     player.closeInventory();
                     player.openInventory(EditRewardsUtils.allRewardsInventory.get(player.getUniqueId()));
@@ -123,7 +258,14 @@ public class EditQuestListener implements Listener {
     }
 
     private void editQuestObjective(Player player, Inventory inv, Quest quest) {
-
+        EditObjectivesUtils.initInventory(player, quest).thenAccept(v -> {
+            if (EditObjectivesUtils.allObjectivesInventory.containsKey(player.getUniqueId())) {
+                Bukkit.getScheduler().runTask(questSystem, () -> {
+                    player.closeInventory();
+                    player.openInventory(EditObjectivesUtils.allObjectivesInventory.get(player.getUniqueId()));
+                });
+            }
+        });
     }
 
     private void editQuestTimeLimit(Player player, Inventory inv, Quest quest) {
@@ -226,19 +368,40 @@ public class EditQuestListener implements Listener {
     }
 
     private void saveQuest(Player player, Inventory inv, Quest quest) {
+
+        var createQuestNameDefaultValueFuture = configHandler.getStringAsync("inventory.create-quest.default.name").join();
+        var createQuestErrorDefaultValueFuture = configHandler.getStringAsync("inventory.create-quest.error-message").join();
+        if (quest.getName().equals(createQuestNameDefaultValueFuture)) {
+            player.sendMessage(createQuestErrorDefaultValueFuture);
+            return;
+        }
         EditQuestsUtils.editQuestInventory.remove(player.getUniqueId());
         EditQuestsUtils.editingQuest.remove(player.getUniqueId());
-        databaseHandler.updateAsync(quest).thenAccept(v -> {
-            EditQuestsUtils.refreshQuests().thenAccept(v2 -> {
-                Bukkit.getScheduler().runTask(questSystem, () -> {
-                    player.closeInventory();
-                    player.openInventory(EditQuestsUtils.allQuestsInventory.get(player.getUniqueId()));
+        if (quest.getId() == 0) {
+            databaseHandler.saveAsync(quest).thenAccept(v -> {
+                EditQuestsUtils.refreshQuests().thenAccept(v2 -> {
+                    Bukkit.getScheduler().runTask(questSystem, () -> {
+                        player.closeInventory();
+                        player.openInventory(EditQuestsUtils.allQuestsInventory.get(player.getUniqueId()));
+                    });
                 });
+            }).exceptionally(ex -> {
+                ex.printStackTrace();
+                return null;
             });
-        }).exceptionally(ex -> {
-            ex.printStackTrace();
-            return null;
-        });
+            return;
+        } else {
+            databaseHandler.updateAsync(quest).thenAccept(v -> {
+                EditQuestsUtils.refreshQuests().thenAccept(v2 -> {
+                    Bukkit.getScheduler().runTask(questSystem, () -> {
+                        player.closeInventory();
+                        player.openInventory(EditQuestsUtils.allQuestsInventory.get(player.getUniqueId()));
+                    });
+                });
+            }).exceptionally(ex -> {
+                ex.printStackTrace();
+                return null;
+            });
+        }
     }
-
 }

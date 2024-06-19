@@ -1,4 +1,4 @@
-package com.schotzgoblin.utils;
+package com.schotzgoblin.utils.edit;
 
 import com.schotzgoblin.config.ConfigHandler;
 import com.schotzgoblin.database.Quest;
@@ -20,7 +20,7 @@ import java.util.*;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionException;
 
-import static com.schotzgoblin.utils.EditUtils.*;
+import static com.schotzgoblin.utils.edit.EditUtils.*;
 
 public class EditRewardsUtils {
     public static Map<UUID, Inventory> allRewardsInventory = Collections.synchronizedMap(new HashMap<>());
@@ -119,7 +119,7 @@ public class EditRewardsUtils {
                 ItemStack cancelItem = createItem(cancelMaterialName, cancelTitle, cancelColour);
 
                 inv.setItem(0, nameItem);
-                inv.setItem(4, amountItem);
+                inv.setItem(8, amountItem);
                 inv.setItem(11, rewardTypeIdItem);
                 inv.setItem(15, valueItem);
                 inv.setItem(21, saveItem);

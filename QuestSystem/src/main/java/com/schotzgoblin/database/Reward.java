@@ -18,10 +18,11 @@ public class Reward implements Identifiable {
     public Reward() {
     }
 
-    public Reward(String name, RewardType rewardType, int amount) {
+    public Reward(String name, int amount, String value, int rewardTypeId) {
         this.name = name;
-        this.rewardType = rewardType;
         this.amount = amount;
+        this.value = value;
+        this.rewardTypeId = rewardTypeId;
     }
 
     public int getRewardTypeId() {

@@ -1,4 +1,4 @@
-package com.schotzgoblin.utils;
+package com.schotzgoblin.utils.edit;
 
 import com.schotzgoblin.config.ConfigHandler;
 import com.schotzgoblin.database.Quest;
@@ -6,6 +6,7 @@ import com.schotzgoblin.database.Reward;
 import com.schotzgoblin.main.DatabaseHandler;
 import com.schotzgoblin.main.QuestManager;
 import com.schotzgoblin.main.QuestSystem;
+import com.schotzgoblin.utils.Utils;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
 import org.bukkit.Bukkit;
@@ -19,7 +20,7 @@ import java.util.*;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionException;
 
-import static com.schotzgoblin.utils.EditUtils.*;
+import static com.schotzgoblin.utils.edit.EditUtils.*;
 
 public class EditQuestsUtils {
     public static Map<UUID, Inventory> allQuestsInventory = Collections.synchronizedMap(new HashMap<>());
@@ -39,11 +40,18 @@ public class EditQuestsUtils {
         questManager.finaliseInventory(inventory,54);
     }
 
+    public static CompletableFuture<Inventory> refreshEditInventory(Quest quest, Player player) {
+        return editQuestInventory(quest, player);
+    }
+
     public static CompletableFuture<Inventory> editQuestInventory(Quest quest, Player player) {
         var rewardsFuture = databaseHandler.getQuestRewardsAsync(quest);
         CompletableFuture<String> editTitleFuture = configHandler.getStringAsync("quest-manager.quest.edit.title");
         CompletableFuture<String> editColourFuture = configHandler.getStringAsync("quest-manager.quest.edit.colour");
         CompletableFuture<String> loreTimeLeftFuture = configHandler.getStringAsync("quest-manager.lore-entries.time-left-label");
+
+        CompletableFuture<String> noObjectiveTitleFuture = configHandler.getStringAsync("inventory.edit-quest.no-objective.title");
+        CompletableFuture<String> noObjectiveColourFuture = configHandler.getStringAsync("inventory.edit-quest.no-objective.colour");
 
         CompletableFuture<String> nameTitleFuture = configHandler.getStringAsync("inventory.edit-quest.name.title");
         CompletableFuture<String> nameColourFuture = configHandler.getStringAsync("inventory.edit-quest.name.colour");
@@ -74,6 +82,7 @@ public class EditQuestsUtils {
         CompletableFuture<String> cancelMaterialFuture = configHandler.getStringAsync("inventory.edit-quest.cancel.material");
 
         return CompletableFuture.allOf(
+                noObjectiveColourFuture, noObjectiveTitleFuture,
                 rewardsFuture,loreTimeLeftFuture, editTitleFuture, editColourFuture,
                 nameTitleFuture, nameColourFuture, nameMaterialFuture,
                 descriptionTitleFuture, descriptionColourFuture, descriptionMaterialFuture,
@@ -92,6 +101,9 @@ public class EditQuestsUtils {
                 String nameTitle = nameTitleFuture.join();
                 String nameColour = nameColourFuture.join();
                 String nameMaterialName = nameMaterialFuture.join();
+
+                String noObjectiveTitle = noObjectiveTitleFuture.join();
+                var noObjectiveColour = TextColor.fromHexString(noObjectiveColourFuture.join());
 
                 String descriptionTitle = descriptionTitleFuture.join();
                 String descriptionColour = descriptionColourFuture.join();
@@ -124,10 +136,14 @@ public class EditQuestsUtils {
                 setItemLore(descriptionItem, List.of(Component.text(quest.getDescription())));
 
                 ItemStack objectiveItem = createItem(objectiveMaterialName, objectiveTitle, objectiveColour);
-                setItemLore(objectiveItem,List.of(Component.text(quest.getObjective().getObjective())));
+                var objectiveText = Component.text(noObjectiveTitle, noObjectiveColour);
+                if(quest.getObjective() != null) {
+                    objectiveText = Component.text(quest.getObjective().getObjective());
+                }
+                setItemLore(objectiveItem,List.of(objectiveText));
 
                 ItemStack timeLimitItem = createItem(timeLimitMaterialName, timeLimitTitle, timeLimitColour);
-                setItemLore(timeLimitItem, List.of(Component.text(loreTimeLeft+Utils.getTimeStringFromSecs(quest.getTimeLimit()))));
+                setItemLore(timeLimitItem, List.of(Component.text(loreTimeLeft+ Utils.getTimeStringFromSecs(quest.getTimeLimit()))));
 
                 ItemStack rewardsItem = createItem(rewardsMaterialName, rewardsTitle, rewardsColour);
                 setItemLore(rewardsItem, rewards.stream().map(x->Component.text(x.getName())).toList());

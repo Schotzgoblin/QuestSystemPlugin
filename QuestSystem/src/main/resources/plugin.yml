@@ -10,13 +10,17 @@ commands:
     description: Main command for the quest system
     usage: /<command>
     aliases: [ q ]
+  quest:
+    description: Main command for the quest system
+    usage: /<command>
+    aliases: [ qa ]
     children:
       manage:
         description: Main command for managing quests
         usage: /<command>
-        aliases: [ qm ]
+        aliases: [ m ]
 permissions:
-  quests.manage.admin:
+  quest.manage.admin:
     description: Permission to manage quests
     default: op
 
