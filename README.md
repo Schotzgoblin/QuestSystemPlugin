@@ -96,6 +96,7 @@ The project has the following structure:
 - Unit tests are only written for some methods in the Utils class due to time issues.
 - If a method needs a lot of information from the config, a huge block of code is needed to get all those texts and colours.
 - The type of the objectives is not in a separate table due to time issues and overlooking at first.
+- I did not get HeadDB to run again after I used the shadow Plugin for the AnvilGUI API
 
 ## Conclusion
 I had a lot of fun developing this plugin as an application-task.
