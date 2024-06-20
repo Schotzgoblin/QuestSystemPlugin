@@ -8057,3 +8057,560 @@ java.lang.UnsupportedClassVersionError: com/jastermaster/template/PluginTemplate
 19:39:47 [INFORMATION] [/127.0.0.1:49693] <-> InitialHandler has pinged
 19:39:57 [INFORMATION] [/127.0.0.1:49717] <-> InitialHandler has pinged
 19:40:07 [INFORMATION] [/127.0.0.1:49744] <-> InitialHandler has pinged
+23:43:24 [INFORMATION] Using standard Java JCE cipher.
+23:43:24 [INFORMATION] Using standard Java compressor.
+23:43:24 [INFORMATION] Enabled BungeeCord version git:BungeeCord-Bootstrap:1.20-R0.3-SNAPSHOT:18eae8a:1842
+23:43:25 [INFORMATION] Discovered module: ModuleSpec(name=cmd_alert, file=modules\cmd_alert.jar, provider=JenkinsModuleSource())
+
+23:43:25 [INFORMATION] Discovered module: ModuleSpec(name=cmd_find, file=modules\cmd_find.jar, provider=JenkinsModuleSource())
+
+23:43:25 [INFORMATION] Discovered module: ModuleSpec(name=cmd_list, file=modules\cmd_list.jar, provider=JenkinsModuleSource())
+
+23:43:25 [INFORMATION] Discovered module: ModuleSpec(name=cmd_send, file=modules\cmd_send.jar, provider=JenkinsModuleSource())
+
+23:43:25 [INFORMATION] Discovered module: ModuleSpec(name=cmd_server, file=modules\cmd_server.jar, provider=JenkinsModuleSource())
+
+23:43:25 [INFORMATION] Discovered module: ModuleSpec(name=reconnect_yaml, file=modules\reconnect_yaml.jar, provider=JenkinsModuleSource())
+
+23:43:25 [INFORMATION] Loaded plugin reconnect_yaml version git:reconnect_yaml:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+23:43:25 [INFORMATION] Loaded plugin cmd_find version git:cmd_find:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+23:43:25 [INFORMATION] Loaded plugin cmd_server version git:cmd_server:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+23:43:25 [INFORMATION] Loaded plugin cmd_alert version git:cmd_alert:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+23:43:25 [INFORMATION] Loaded plugin cmd_send version git:cmd_send:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+23:43:25 [INFORMATION] Loaded plugin cmd_list version git:cmd_list:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+23:43:25 [WARNUNG] Forced host server pvp is not defined
+23:43:25 [INFORMATION] Enabled plugin reconnect_yaml version git:reconnect_yaml:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+23:43:25 [INFORMATION] Enabled plugin cmd_find version git:cmd_find:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+23:43:25 [INFORMATION] Enabled plugin cmd_server version git:cmd_server:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+23:43:25 [INFORMATION] Enabled plugin cmd_alert version git:cmd_alert:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+23:43:25 [INFORMATION] Enabled plugin cmd_send version git:cmd_send:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+23:43:25 [INFORMATION] Enabled plugin cmd_list version git:cmd_list:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+23:43:25 [INFORMATION] Listening on /0.0.0.0:25565
+23:43:26 [INFORMATION] [/127.0.0.1:62625] <-> InitialHandler has pinged
+23:43:32 [INFORMATION] [/127.0.0.1:62647] <-> InitialHandler has pinged
+23:43:36 [INFORMATION] [/127.0.0.1:62671] <-> InitialHandler has pinged
+23:43:42 [INFORMATION] [/127.0.0.1:62698] <-> InitialHandler has pinged
+23:43:47 [INFORMATION] [/127.0.0.1:62733] <-> InitialHandler has pinged
+23:43:52 [INFORMATION] [/127.0.0.1:62762] <-> InitialHandler has pinged
+23:43:57 [INFORMATION] [/127.0.0.1:62788] <-> InitialHandler has pinged
+23:44:02 [INFORMATION] [/127.0.0.1:62815] <-> InitialHandler has pinged
+23:44:07 [INFORMATION] [/127.0.0.1:62836] <-> InitialHandler has pinged
+23:44:12 [INFORMATION] [/127.0.0.1:62852] <-> InitialHandler has pinged
+23:44:17 [INFORMATION] [/127.0.0.1:62876] <-> InitialHandler has pinged
+23:44:22 [INFORMATION] [/127.0.0.1:62898] <-> InitialHandler has pinged
+23:44:27 [INFORMATION] [/127.0.0.1:62919] <-> InitialHandler has pinged
+23:44:33 [INFORMATION] [/127.0.0.1:62937] <-> InitialHandler has pinged
+23:44:37 [INFORMATION] [/127.0.0.1:62959] <-> InitialHandler has pinged
+23:44:43 [INFORMATION] [/127.0.0.1:62976] <-> InitialHandler has pinged
+23:44:47 [INFORMATION] [/127.0.0.1:63004] <-> InitialHandler has pinged
+23:44:53 [INFORMATION] [/127.0.0.1:63021] <-> InitialHandler has pinged
+23:44:57 [INFORMATION] [/127.0.0.1:63043] <-> InitialHandler has pinged
+23:45:03 [INFORMATION] [/127.0.0.1:63062] <-> InitialHandler has pinged
+23:45:07 [INFORMATION] [/127.0.0.1:63088] <-> InitialHandler has pinged
+23:45:13 [INFORMATION] [/127.0.0.1:63105] <-> InitialHandler has pinged
+23:45:18 [INFORMATION] [/127.0.0.1:63128] <-> InitialHandler has pinged
+23:45:23 [INFORMATION] [/127.0.0.1:63147] <-> InitialHandler has pinged
+23:45:28 [INFORMATION] [/127.0.0.1:63167] <-> InitialHandler has pinged
+23:45:33 [INFORMATION] [/127.0.0.1:63184] <-> InitialHandler has pinged
+23:45:38 [INFORMATION] [/127.0.0.1:63207] <-> InitialHandler has pinged
+23:45:43 [INFORMATION] [/127.0.0.1:63223] <-> InitialHandler has pinged
+23:45:48 [INFORMATION] [/127.0.0.1:63249] <-> InitialHandler has pinged
+23:45:53 [INFORMATION] [/127.0.0.1:63266] <-> InitialHandler has pinged
+23:45:58 [INFORMATION] [/127.0.0.1:63288] <-> InitialHandler has pinged
+23:46:03 [INFORMATION] [/127.0.0.1:63305] <-> InitialHandler has pinged
+23:46:08 [INFORMATION] [/127.0.0.1:63329] <-> InitialHandler has pinged
+23:46:48 [INFORMATION] Using standard Java JCE cipher.
+23:46:48 [INFORMATION] Using standard Java compressor.
+23:46:48 [INFORMATION] Enabled BungeeCord version git:BungeeCord-Bootstrap:1.20-R0.3-SNAPSHOT:18eae8a:1842
+23:46:49 [INFORMATION] Discovered module: ModuleSpec(name=cmd_alert, file=modules\cmd_alert.jar, provider=JenkinsModuleSource())
+
+23:46:49 [INFORMATION] Discovered module: ModuleSpec(name=cmd_find, file=modules\cmd_find.jar, provider=JenkinsModuleSource())
+
+23:46:49 [INFORMATION] Discovered module: ModuleSpec(name=cmd_list, file=modules\cmd_list.jar, provider=JenkinsModuleSource())
+
+23:46:49 [INFORMATION] Discovered module: ModuleSpec(name=cmd_send, file=modules\cmd_send.jar, provider=JenkinsModuleSource())
+
+23:46:49 [INFORMATION] Discovered module: ModuleSpec(name=cmd_server, file=modules\cmd_server.jar, provider=JenkinsModuleSource())
+
+23:46:49 [INFORMATION] Discovered module: ModuleSpec(name=reconnect_yaml, file=modules\reconnect_yaml.jar, provider=JenkinsModuleSource())
+
+23:46:49 [INFORMATION] Loaded plugin reconnect_yaml version git:reconnect_yaml:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+23:46:49 [INFORMATION] Loaded plugin cmd_find version git:cmd_find:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+23:46:49 [INFORMATION] Loaded plugin cmd_server version git:cmd_server:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+23:46:49 [INFORMATION] Loaded plugin cmd_alert version git:cmd_alert:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+23:46:49 [INFORMATION] Loaded plugin cmd_send version git:cmd_send:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+23:46:49 [INFORMATION] Loaded plugin cmd_list version git:cmd_list:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+23:46:49 [WARNUNG] Forced host server pvp is not defined
+23:46:49 [INFORMATION] Enabled plugin reconnect_yaml version git:reconnect_yaml:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+23:46:49 [INFORMATION] Enabled plugin cmd_find version git:cmd_find:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+23:46:49 [INFORMATION] Enabled plugin cmd_server version git:cmd_server:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+23:46:49 [INFORMATION] Enabled plugin cmd_alert version git:cmd_alert:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+23:46:49 [INFORMATION] Enabled plugin cmd_send version git:cmd_send:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+23:46:49 [INFORMATION] Enabled plugin cmd_list version git:cmd_list:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+23:46:49 [INFORMATION] Listening on /0.0.0.0:25565
+23:46:54 [INFORMATION] [/127.0.0.1:63518] <-> InitialHandler has pinged
+23:46:59 [INFORMATION] [/127.0.0.1:63536] <-> InitialHandler has pinged
+23:47:04 [INFORMATION] [/127.0.0.1:63560] <-> InitialHandler has pinged
+23:47:09 [INFORMATION] [/127.0.0.1:63585] <-> InitialHandler has pinged
+23:47:14 [INFORMATION] [/127.0.0.1:63608] <-> InitialHandler has pinged
+23:47:19 [INFORMATION] [/127.0.0.1:63631] <-> InitialHandler has pinged
+23:47:24 [INFORMATION] [/127.0.0.1:63650] <-> InitialHandler has pinged
+23:47:29 [INFORMATION] [/127.0.0.1:63672] <-> InitialHandler has pinged
+23:47:34 [INFORMATION] [/127.0.0.1:63687] <-> InitialHandler has pinged
+23:47:39 [INFORMATION] [/127.0.0.1:63707] <-> InitialHandler has connected
+23:47:40 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected
+23:47:40 [INFORMATION] Netty is not using direct IO buffers.
+
+23:47:44 [INFORMATION] [/127.0.0.1:63724] <-> InitialHandler has pinged
+23:47:54 [INFORMATION] [/127.0.0.1:63750] <-> InitialHandler has pinged
+23:48:05 [INFORMATION] [/127.0.0.1:63776] <-> InitialHandler has pinged
+23:48:15 [INFORMATION] [/127.0.0.1:63802] <-> InitialHandler has pinged
+23:48:25 [INFORMATION] [/127.0.0.1:63831] <-> InitialHandler has pinged
+23:48:35 [INFORMATION] [/127.0.0.1:63850] <-> InitialHandler has pinged
+23:48:45 [INFORMATION] [/127.0.0.1:63889] <-> InitialHandler has pinged
+23:48:55 [INFORMATION] [/127.0.0.1:63914] <-> InitialHandler has pinged
+23:49:05 [INFORMATION] [/127.0.0.1:63940] <-> InitialHandler has pinged
+23:49:15 [INFORMATION] [/127.0.0.1:63962] <-> InitialHandler has pinged
+23:49:25 [INFORMATION] [/127.0.0.1:63985] <-> InitialHandler has pinged
+23:49:35 [INFORMATION] [/127.0.0.1:64010] <-> InitialHandler has pinged
+23:49:45 [INFORMATION] [/127.0.0.1:64036] <-> InitialHandler has pinged
+23:49:56 [INFORMATION] [/127.0.0.1:64067] <-> InitialHandler has pinged
+23:50:06 [INFORMATION] [/127.0.0.1:64093] <-> InitialHandler has pinged
+23:50:16 [INFORMATION] [/127.0.0.1:64115] <-> InitialHandler has pinged
+23:50:26 [INFORMATION] [/127.0.0.1:64139] <-> InitialHandler has pinged
+23:50:36 [INFORMATION] [/127.0.0.1:64175] <-> InitialHandler has pinged
+23:50:46 [INFORMATION] [/127.0.0.1:64201] <-> InitialHandler has pinged
+23:50:56 [INFORMATION] [/127.0.0.1:64226] <-> InitialHandler has pinged
+23:51:07 [INFORMATION] [/127.0.0.1:64247] <-> InitialHandler has pinged
+23:51:17 [INFORMATION] [/127.0.0.1:64277] <-> InitialHandler has pinged
+23:51:27 [INFORMATION] [/127.0.0.1:64302] <-> InitialHandler has pinged
+23:51:37 [INFORMATION] [/127.0.0.1:64332] <-> InitialHandler has pinged
+23:51:47 [INFORMATION] [/127.0.0.1:64356] <-> InitialHandler has pinged
+23:51:57 [INFORMATION] [/127.0.0.1:64390] <-> InitialHandler has pinged
+23:52:07 [INFORMATION] [/127.0.0.1:64428] <-> InitialHandler has pinged
+23:52:18 [INFORMATION] [/127.0.0.1:64453] <-> InitialHandler has pinged
+23:52:28 [INFORMATION] [/127.0.0.1:64489] <-> InitialHandler has pinged
+23:52:38 [INFORMATION] [/127.0.0.1:64624] <-> InitialHandler has pinged
+23:52:48 [INFORMATION] [/127.0.0.1:64649] <-> InitialHandler has pinged
+23:52:58 [INFORMATION] [/127.0.0.1:64673] <-> InitialHandler has pinged
+23:53:08 [INFORMATION] [/127.0.0.1:64694] <-> InitialHandler has pinged
+23:53:18 [INFORMATION] [/127.0.0.1:64726] <-> InitialHandler has pinged
+23:53:28 [INFORMATION] [/127.0.0.1:64749] <-> InitialHandler has pinged
+23:53:38 [INFORMATION] [/127.0.0.1:64783] <-> InitialHandler has pinged
+23:53:48 [INFORMATION] [/127.0.0.1:64811] <-> InitialHandler has pinged
+23:53:59 [INFORMATION] [/127.0.0.1:64840] <-> InitialHandler has pinged
+23:54:09 [INFORMATION] [/127.0.0.1:64865] <-> InitialHandler has pinged
+23:54:19 [INFORMATION] [/127.0.0.1:64888] <-> InitialHandler has pinged
+23:54:29 [INFORMATION] [/127.0.0.1:64909] <-> InitialHandler has pinged
+23:54:39 [INFORMATION] [/127.0.0.1:64937] <-> InitialHandler has pinged
+23:54:49 [INFORMATION] [/127.0.0.1:64968] <-> InitialHandler has pinged
+23:54:59 [INFORMATION] [/127.0.0.1:64991] <-> InitialHandler has pinged
+23:55:10 [INFORMATION] [/127.0.0.1:65019] <-> InitialHandler has pinged
+23:55:20 [INFORMATION] [/127.0.0.1:65040] <-> InitialHandler has pinged
+23:55:30 [INFORMATION] [/127.0.0.1:65069] <-> InitialHandler has pinged
+23:55:40 [INFORMATION] [/127.0.0.1:65131] <-> InitialHandler has pinged
+23:55:50 [INFORMATION] [/127.0.0.1:65169] <-> InitialHandler has pinged
+23:56:00 [INFORMATION] [/127.0.0.1:65197] <-> InitialHandler has pinged
+23:56:11 [INFORMATION] [/127.0.0.1:65223] <-> InitialHandler has pinged
+23:56:21 [INFORMATION] [/127.0.0.1:65248] <-> InitialHandler has pinged
+23:56:31 [INFORMATION] [/127.0.0.1:65271] <-> InitialHandler has pinged
+23:56:41 [INFORMATION] [/127.0.0.1:65294] <-> InitialHandler has pinged
+23:56:51 [INFORMATION] [/127.0.0.1:65333] <-> InitialHandler has pinged
+23:57:01 [INFORMATION] [/127.0.0.1:65361] <-> InitialHandler has pinged
+23:57:11 [INFORMATION] [/127.0.0.1:65390] <-> InitialHandler has pinged
+23:57:21 [INFORMATION] [/127.0.0.1:65417] <-> InitialHandler has pinged
+23:57:32 [INFORMATION] [/127.0.0.1:65443] <-> InitialHandler has pinged
+23:57:42 [INFORMATION] [/127.0.0.1:65467] <-> InitialHandler has pinged
+23:57:52 [INFORMATION] [/127.0.0.1:65494] <-> InitialHandler has pinged
+23:58:02 [INFORMATION] [/127.0.0.1:65522] <-> InitialHandler has pinged
+23:58:12 [INFORMATION] [/127.0.0.1:49168] <-> InitialHandler has pinged
+23:58:22 [INFORMATION] [/127.0.0.1:49189] <-> InitialHandler has pinged
+23:58:32 [INFORMATION] [/127.0.0.1:49221] <-> InitialHandler has pinged
+23:58:42 [INFORMATION] [/127.0.0.1:49249] <-> InitialHandler has pinged
+23:58:52 [INFORMATION] [/127.0.0.1:49284] <-> InitialHandler has pinged
+23:59:03 [INFORMATION] [/127.0.0.1:49311] <-> InitialHandler has pinged
+23:59:13 [INFORMATION] [/127.0.0.1:49334] <-> InitialHandler has pinged
+23:59:23 [INFORMATION] [/127.0.0.1:49361] <-> InitialHandler has pinged
+23:59:33 [INFORMATION] [/127.0.0.1:49388] <-> InitialHandler has pinged
+23:59:43 [INFORMATION] [/127.0.0.1:49414] <-> InitialHandler has pinged
+23:59:53 [INFORMATION] [/127.0.0.1:49445] <-> InitialHandler has pinged
+00:00:03 [INFORMATION] [/127.0.0.1:49467] <-> InitialHandler has pinged
+00:00:13 [INFORMATION] [/127.0.0.1:49496] <-> InitialHandler has pinged
+00:00:23 [INFORMATION] [/127.0.0.1:49522] <-> InitialHandler has pinged
+00:00:33 [INFORMATION] [/127.0.0.1:49541] <-> InitialHandler has pinged
+00:00:52 [INFORMATION] Using standard Java JCE cipher.
+00:00:52 [INFORMATION] Using standard Java compressor.
+00:00:52 [INFORMATION] Enabled BungeeCord version git:BungeeCord-Bootstrap:1.20-R0.3-SNAPSHOT:18eae8a:1842
+00:00:52 [INFORMATION] Discovered module: ModuleSpec(name=cmd_alert, file=modules\cmd_alert.jar, provider=JenkinsModuleSource())
+
+00:00:52 [INFORMATION] Discovered module: ModuleSpec(name=cmd_find, file=modules\cmd_find.jar, provider=JenkinsModuleSource())
+
+00:00:52 [INFORMATION] Discovered module: ModuleSpec(name=cmd_list, file=modules\cmd_list.jar, provider=JenkinsModuleSource())
+
+00:00:52 [INFORMATION] Discovered module: ModuleSpec(name=cmd_send, file=modules\cmd_send.jar, provider=JenkinsModuleSource())
+
+00:00:52 [INFORMATION] Discovered module: ModuleSpec(name=cmd_server, file=modules\cmd_server.jar, provider=JenkinsModuleSource())
+
+00:00:52 [INFORMATION] Discovered module: ModuleSpec(name=reconnect_yaml, file=modules\reconnect_yaml.jar, provider=JenkinsModuleSource())
+
+00:00:52 [INFORMATION] Loaded plugin reconnect_yaml version git:reconnect_yaml:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+00:00:52 [INFORMATION] Loaded plugin cmd_find version git:cmd_find:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+00:00:52 [INFORMATION] Loaded plugin cmd_server version git:cmd_server:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+00:00:52 [INFORMATION] Loaded plugin cmd_alert version git:cmd_alert:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+00:00:52 [INFORMATION] Loaded plugin cmd_send version git:cmd_send:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+00:00:52 [INFORMATION] Loaded plugin cmd_list version git:cmd_list:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+00:00:52 [WARNUNG] Forced host server pvp is not defined
+00:00:52 [INFORMATION] Enabled plugin reconnect_yaml version git:reconnect_yaml:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+00:00:52 [INFORMATION] Enabled plugin cmd_find version git:cmd_find:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+00:00:52 [INFORMATION] Enabled plugin cmd_server version git:cmd_server:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+00:00:52 [INFORMATION] Enabled plugin cmd_alert version git:cmd_alert:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+00:00:52 [INFORMATION] Enabled plugin cmd_send version git:cmd_send:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+00:00:52 [INFORMATION] Enabled plugin cmd_list version git:cmd_list:1.20-R0.3-SNAPSHOT:18eae8a:1842 by SpigotMC
+00:00:52 [INFORMATION] Listening on /0.0.0.0:25565
+00:00:54 [INFORMATION] [/127.0.0.1:49598] <-> InitialHandler has pinged
+00:01:04 [INFORMATION] [/127.0.0.1:58425] <-> InitialHandler has pinged
+00:01:14 [INFORMATION] [/127.0.0.1:58459] <-> InitialHandler has pinged
+00:01:20 [INFORMATION] [/127.0.0.1:58485] <-> InitialHandler has pinged
+00:01:20 [INFORMATION] [/127.0.0.1:58501] <-> InitialHandler has pinged
+00:01:21 [INFORMATION] [/127.0.0.1:58505] <-> InitialHandler has connected
+00:01:22 [INFORMATION] [Schotzgoblin] <-> ServerConnector [lobby] has connected
+00:01:22 [INFORMATION] Netty is not using direct IO buffers.
+
+00:01:24 [INFORMATION] [/127.0.0.1:58517] <-> InitialHandler has pinged
+00:01:34 [INFORMATION] [/127.0.0.1:58549] <-> InitialHandler has pinged
+00:01:44 [INFORMATION] [/127.0.0.1:58576] <-> InitialHandler has pinged
+00:01:54 [INFORMATION] [/127.0.0.1:58652] <-> InitialHandler has pinged
+00:02:04 [INFORMATION] [/127.0.0.1:58730] <-> InitialHandler has pinged
+00:02:15 [INFORMATION] [/127.0.0.1:58769] <-> InitialHandler has pinged
+00:02:25 [INFORMATION] [/127.0.0.1:58803] <-> InitialHandler has pinged
+00:02:35 [INFORMATION] [/127.0.0.1:58838] <-> InitialHandler has pinged
+00:02:45 [INFORMATION] [/127.0.0.1:58861] <-> InitialHandler has pinged
+00:02:55 [INFORMATION] [/127.0.0.1:58898] <-> InitialHandler has pinged
+00:03:05 [INFORMATION] [/127.0.0.1:58931] <-> InitialHandler has pinged
+00:03:15 [INFORMATION] [/127.0.0.1:58959] <-> InitialHandler has pinged
+00:03:25 [INFORMATION] [/127.0.0.1:58993] <-> InitialHandler has pinged
+00:03:35 [INFORMATION] [/127.0.0.1:59018] <-> InitialHandler has pinged
+00:03:46 [INFORMATION] [/127.0.0.1:59043] <-> InitialHandler has pinged
+00:03:56 [INFORMATION] [/127.0.0.1:59075] <-> InitialHandler has pinged
+00:04:06 [INFORMATION] [/127.0.0.1:59105] <-> InitialHandler has pinged
+00:04:16 [INFORMATION] [/127.0.0.1:59129] <-> InitialHandler has pinged
+00:04:26 [INFORMATION] [/127.0.0.1:59159] <-> InitialHandler has pinged
+00:04:36 [INFORMATION] [/127.0.0.1:59191] <-> InitialHandler has pinged
+00:04:46 [INFORMATION] [/127.0.0.1:59220] <-> InitialHandler has pinged
+00:04:56 [INFORMATION] [/127.0.0.1:59254] <-> InitialHandler has pinged
+00:05:07 [INFORMATION] [/127.0.0.1:59278] <-> InitialHandler has pinged
+00:05:17 [INFORMATION] [/127.0.0.1:59308] <-> InitialHandler has pinged
+00:05:27 [INFORMATION] [/127.0.0.1:59332] <-> InitialHandler has pinged
+00:05:37 [INFORMATION] [/127.0.0.1:59366] <-> InitialHandler has pinged
+00:05:47 [INFORMATION] [/127.0.0.1:59386] <-> InitialHandler has pinged
+00:05:57 [INFORMATION] [/127.0.0.1:59427] <-> InitialHandler has pinged
+00:06:07 [INFORMATION] [/127.0.0.1:59450] <-> InitialHandler has pinged
+00:06:17 [INFORMATION] [/127.0.0.1:59479] <-> InitialHandler has pinged
+00:06:27 [INFORMATION] [/127.0.0.1:59503] <-> InitialHandler has pinged
+00:06:37 [INFORMATION] [/127.0.0.1:59530] <-> InitialHandler has pinged
+00:06:48 [INFORMATION] [/127.0.0.1:59553] <-> InitialHandler has pinged
+00:06:58 [INFORMATION] [/127.0.0.1:59577] <-> InitialHandler has pinged
+00:07:08 [INFORMATION] [/127.0.0.1:59600] <-> InitialHandler has pinged
+00:07:18 [INFORMATION] [/127.0.0.1:59627] <-> InitialHandler has pinged
+00:07:28 [INFORMATION] [/127.0.0.1:59657] <-> InitialHandler has pinged
+00:07:38 [INFORMATION] [/127.0.0.1:59681] <-> InitialHandler has pinged
+00:07:48 [INFORMATION] [/127.0.0.1:59716] <-> InitialHandler has pinged
+00:07:58 [INFORMATION] [/127.0.0.1:59738] <-> InitialHandler has pinged
+00:08:08 [INFORMATION] [/127.0.0.1:59763] <-> InitialHandler has pinged
+00:08:19 [INFORMATION] [/127.0.0.1:59793] <-> InitialHandler has pinged
+00:08:29 [INFORMATION] [/127.0.0.1:59819] <-> InitialHandler has pinged
+00:08:39 [INFORMATION] [/127.0.0.1:59851] <-> InitialHandler has pinged
+00:08:49 [INFORMATION] [/127.0.0.1:59883] <-> InitialHandler has pinged
+00:08:59 [INFORMATION] [/127.0.0.1:59913] <-> InitialHandler has pinged
+00:09:09 [INFORMATION] [/127.0.0.1:59940] <-> InitialHandler has pinged
+00:09:19 [INFORMATION] [/127.0.0.1:59964] <-> InitialHandler has pinged
+00:09:29 [INFORMATION] [/127.0.0.1:59995] <-> InitialHandler has pinged
+00:09:39 [INFORMATION] [/127.0.0.1:60028] <-> InitialHandler has pinged
+00:09:49 [INFORMATION] [/127.0.0.1:60050] <-> InitialHandler has pinged
+00:09:59 [INFORMATION] [/127.0.0.1:60084] <-> InitialHandler has pinged
+00:10:10 [INFORMATION] [/127.0.0.1:60121] <-> InitialHandler has pinged
+00:10:20 [INFORMATION] [/127.0.0.1:60144] <-> InitialHandler has pinged
+00:10:30 [INFORMATION] [/127.0.0.1:60169] <-> InitialHandler has pinged
+00:10:40 [INFORMATION] [/127.0.0.1:60196] <-> InitialHandler has pinged
+00:10:50 [INFORMATION] [/127.0.0.1:60229] <-> InitialHandler has pinged
+00:11:00 [INFORMATION] [/127.0.0.1:60251] <-> InitialHandler has pinged
+00:11:10 [INFORMATION] [/127.0.0.1:60280] <-> InitialHandler has pinged
+00:11:20 [INFORMATION] [/127.0.0.1:60305] <-> InitialHandler has pinged
+00:11:30 [INFORMATION] [/127.0.0.1:60335] <-> InitialHandler has pinged
+00:11:41 [INFORMATION] [/127.0.0.1:60361] <-> InitialHandler has pinged
+00:11:51 [INFORMATION] [/127.0.0.1:60393] <-> InitialHandler has pinged
+00:12:01 [INFORMATION] [/127.0.0.1:60426] <-> InitialHandler has pinged
+00:12:11 [INFORMATION] [/127.0.0.1:60454] <-> InitialHandler has pinged
+00:12:21 [INFORMATION] [/127.0.0.1:60478] <-> InitialHandler has pinged
+00:12:31 [INFORMATION] [/127.0.0.1:60503] <-> InitialHandler has pinged
+00:12:41 [INFORMATION] [/127.0.0.1:60531] <-> InitialHandler has pinged
+00:12:51 [INFORMATION] [/127.0.0.1:60559] <-> InitialHandler has pinged
+00:13:01 [INFORMATION] [/127.0.0.1:60584] <-> InitialHandler has pinged
+00:13:11 [INFORMATION] [/127.0.0.1:60612] <-> InitialHandler has pinged
+00:13:22 [INFORMATION] [/127.0.0.1:60634] <-> InitialHandler has pinged
+00:13:32 [INFORMATION] [/127.0.0.1:60659] <-> InitialHandler has pinged
+00:13:42 [INFORMATION] [/127.0.0.1:60683] <-> InitialHandler has pinged
+00:13:52 [INFORMATION] [/127.0.0.1:60718] <-> InitialHandler has pinged
+00:14:02 [INFORMATION] [/127.0.0.1:60751] <-> InitialHandler has pinged
+00:14:12 [INFORMATION] [/127.0.0.1:60777] <-> InitialHandler has pinged
+00:14:22 [INFORMATION] [/127.0.0.1:60804] <-> InitialHandler has pinged
+00:14:32 [INFORMATION] [/127.0.0.1:60829] <-> InitialHandler has pinged
+00:14:42 [INFORMATION] [/127.0.0.1:60859] <-> InitialHandler has pinged
+00:14:52 [INFORMATION] [/127.0.0.1:60883] <-> InitialHandler has pinged
+00:15:03 [INFORMATION] [/127.0.0.1:60906] <-> InitialHandler has pinged
+00:15:13 [INFORMATION] [/127.0.0.1:60930] <-> InitialHandler has pinged
+00:15:23 [INFORMATION] [/127.0.0.1:60954] <-> InitialHandler has pinged
+00:15:33 [INFORMATION] [/127.0.0.1:61055] <-> InitialHandler has pinged
+00:15:43 [INFORMATION] [/127.0.0.1:61088] <-> InitialHandler has pinged
+00:15:53 [INFORMATION] [/127.0.0.1:61116] <-> InitialHandler has pinged
+00:16:03 [INFORMATION] [/127.0.0.1:61146] <-> InitialHandler has pinged
+00:16:13 [INFORMATION] [/127.0.0.1:61171] <-> InitialHandler has pinged
+00:16:23 [INFORMATION] [/127.0.0.1:61195] <-> InitialHandler has pinged
+00:16:34 [INFORMATION] [/127.0.0.1:61215] <-> InitialHandler has pinged
+00:16:44 [INFORMATION] [/127.0.0.1:61240] <-> InitialHandler has pinged
+00:16:54 [INFORMATION] [/127.0.0.1:61267] <-> InitialHandler has pinged
+00:17:04 [INFORMATION] [/127.0.0.1:61291] <-> InitialHandler has pinged
+00:17:14 [INFORMATION] [/127.0.0.1:61321] <-> InitialHandler has pinged
+00:17:24 [INFORMATION] [/127.0.0.1:61349] <-> InitialHandler has pinged
+00:17:34 [INFORMATION] [/127.0.0.1:61373] <-> InitialHandler has pinged
+00:17:44 [INFORMATION] [/127.0.0.1:61397] <-> InitialHandler has pinged
+00:17:55 [INFORMATION] [/127.0.0.1:61421] <-> InitialHandler has pinged
+00:18:05 [INFORMATION] [/127.0.0.1:61448] <-> InitialHandler has pinged
+00:18:15 [INFORMATION] [/127.0.0.1:61474] <-> InitialHandler has pinged
+00:18:25 [INFORMATION] [/127.0.0.1:61504] <-> InitialHandler has pinged
+00:18:35 [INFORMATION] [/127.0.0.1:61528] <-> InitialHandler has pinged
+00:18:45 [INFORMATION] [/127.0.0.1:61560] <-> InitialHandler has pinged
+00:18:55 [INFORMATION] [/127.0.0.1:61595] <-> InitialHandler has pinged
+00:19:05 [INFORMATION] [/127.0.0.1:61622] <-> InitialHandler has pinged
+00:19:15 [INFORMATION] [/127.0.0.1:61645] <-> InitialHandler has pinged
+00:19:25 [INFORMATION] [/127.0.0.1:61673] <-> InitialHandler has pinged
+00:19:35 [INFORMATION] [/127.0.0.1:61699] <-> InitialHandler has pinged
+00:19:45 [INFORMATION] [/127.0.0.1:61732] <-> InitialHandler has pinged
+00:19:55 [INFORMATION] [/127.0.0.1:61756] <-> InitialHandler has pinged
+00:20:06 [INFORMATION] [/127.0.0.1:61786] <-> InitialHandler has pinged
+00:20:16 [INFORMATION] [/127.0.0.1:61817] <-> InitialHandler has pinged
+00:20:26 [INFORMATION] [/127.0.0.1:61845] <-> InitialHandler has pinged
+00:20:36 [INFORMATION] [/127.0.0.1:61869] <-> InitialHandler has pinged
+00:20:46 [INFORMATION] [/127.0.0.1:61898] <-> InitialHandler has pinged
+00:20:56 [INFORMATION] [/127.0.0.1:61924] <-> InitialHandler has pinged
+00:21:06 [INFORMATION] [/127.0.0.1:61952] <-> InitialHandler has pinged
+00:21:16 [INFORMATION] [/127.0.0.1:61975] <-> InitialHandler has pinged
+00:21:26 [INFORMATION] [/127.0.0.1:62006] <-> InitialHandler has pinged
+00:21:36 [INFORMATION] [/127.0.0.1:62028] <-> InitialHandler has pinged
+00:21:47 [INFORMATION] [/127.0.0.1:62054] <-> InitialHandler has pinged
+00:21:57 [INFORMATION] [/127.0.0.1:62092] <-> InitialHandler has pinged
+00:22:07 [INFORMATION] [/127.0.0.1:62122] <-> InitialHandler has pinged
+00:22:17 [INFORMATION] [/127.0.0.1:62152] <-> InitialHandler has pinged
+00:22:27 [INFORMATION] [/127.0.0.1:62179] <-> InitialHandler has pinged
+00:22:37 [INFORMATION] [/127.0.0.1:62203] <-> InitialHandler has pinged
+00:22:47 [INFORMATION] [/127.0.0.1:62231] <-> InitialHandler has pinged
+00:22:57 [INFORMATION] [/127.0.0.1:62255] <-> InitialHandler has pinged
+00:23:08 [INFORMATION] [/127.0.0.1:62281] <-> InitialHandler has pinged
+00:23:18 [INFORMATION] [/127.0.0.1:62308] <-> InitialHandler has pinged
+00:23:28 [INFORMATION] [/127.0.0.1:62343] <-> InitialHandler has pinged
+00:23:38 [INFORMATION] [/127.0.0.1:62367] <-> InitialHandler has pinged
+00:23:48 [INFORMATION] [/127.0.0.1:62390] <-> InitialHandler has pinged
+00:23:58 [INFORMATION] [/127.0.0.1:62424] <-> InitialHandler has pinged
+00:24:08 [INFORMATION] [/127.0.0.1:62452] <-> InitialHandler has pinged
+00:24:18 [INFORMATION] [/127.0.0.1:62483] <-> InitialHandler has pinged
+00:24:28 [INFORMATION] [/127.0.0.1:62510] <-> InitialHandler has pinged
+00:24:38 [INFORMATION] [/127.0.0.1:62535] <-> InitialHandler has pinged
+00:24:49 [INFORMATION] [/127.0.0.1:62568] <-> InitialHandler has pinged
+00:24:59 [INFORMATION] [/127.0.0.1:62589] <-> InitialHandler has pinged
+00:25:09 [INFORMATION] [/127.0.0.1:62618] <-> InitialHandler has pinged
+00:25:19 [INFORMATION] [/127.0.0.1:62646] <-> InitialHandler has pinged
+00:25:29 [INFORMATION] [/127.0.0.1:62673] <-> InitialHandler has pinged
+00:25:39 [INFORMATION] [/127.0.0.1:62706] <-> InitialHandler has pinged
+00:25:49 [INFORMATION] [/127.0.0.1:62742] <-> InitialHandler has pinged
+00:25:59 [INFORMATION] [/127.0.0.1:62768] <-> InitialHandler has pinged
+00:26:09 [INFORMATION] [/127.0.0.1:62804] <-> InitialHandler has pinged
+00:26:20 [INFORMATION] [/127.0.0.1:62838] <-> InitialHandler has pinged
+00:26:30 [INFORMATION] [/127.0.0.1:62863] <-> InitialHandler has pinged
+00:26:40 [INFORMATION] [/127.0.0.1:62886] <-> InitialHandler has pinged
+00:26:50 [INFORMATION] [/127.0.0.1:62909] <-> InitialHandler has pinged
+00:27:00 [INFORMATION] [/127.0.0.1:62933] <-> InitialHandler has pinged
+00:27:10 [INFORMATION] [/127.0.0.1:62959] <-> InitialHandler has pinged
+00:27:20 [INFORMATION] [/127.0.0.1:62993] <-> InitialHandler has pinged
+00:27:30 [INFORMATION] [/127.0.0.1:63015] <-> InitialHandler has pinged
+00:27:40 [INFORMATION] [/127.0.0.1:63042] <-> InitialHandler has pinged
+00:27:50 [INFORMATION] [/127.0.0.1:63071] <-> InitialHandler has pinged
+00:28:01 [INFORMATION] [/127.0.0.1:63093] <-> InitialHandler has pinged
+00:28:11 [INFORMATION] [/127.0.0.1:63122] <-> InitialHandler has pinged
+00:28:21 [INFORMATION] [/127.0.0.1:63147] <-> InitialHandler has pinged
+00:28:31 [INFORMATION] [/127.0.0.1:63171] <-> InitialHandler has pinged
+00:28:41 [INFORMATION] [/127.0.0.1:63197] <-> InitialHandler has pinged
+00:28:51 [INFORMATION] [/127.0.0.1:63223] <-> InitialHandler has pinged
+00:29:01 [INFORMATION] [/127.0.0.1:63255] <-> InitialHandler has pinged
+00:29:11 [INFORMATION] [/127.0.0.1:63283] <-> InitialHandler has pinged
+00:29:21 [INFORMATION] [/127.0.0.1:63308] <-> InitialHandler has pinged
+00:29:31 [INFORMATION] [/127.0.0.1:63331] <-> InitialHandler has pinged
+00:29:42 [INFORMATION] [/127.0.0.1:63353] <-> InitialHandler has pinged
+00:29:52 [INFORMATION] [/127.0.0.1:63379] <-> InitialHandler has pinged
+00:30:02 [INFORMATION] [/127.0.0.1:63401] <-> InitialHandler has pinged
+00:30:12 [INFORMATION] [/127.0.0.1:63430] <-> InitialHandler has pinged
+00:30:22 [INFORMATION] [/127.0.0.1:63456] <-> InitialHandler has pinged
+00:30:32 [INFORMATION] [/127.0.0.1:63490] <-> InitialHandler has pinged
+00:30:42 [INFORMATION] [/127.0.0.1:63512] <-> InitialHandler has pinged
+00:30:52 [INFORMATION] [/127.0.0.1:63542] <-> InitialHandler has pinged
+00:31:02 [INFORMATION] [/127.0.0.1:63567] <-> InitialHandler has pinged
+00:31:13 [INFORMATION] [/127.0.0.1:63589] <-> InitialHandler has pinged
+00:31:23 [INFORMATION] [/127.0.0.1:63612] <-> InitialHandler has pinged
+00:31:33 [INFORMATION] [/127.0.0.1:63636] <-> InitialHandler has pinged
+00:31:43 [INFORMATION] [/127.0.0.1:63662] <-> InitialHandler has pinged
+00:31:53 [INFORMATION] [/127.0.0.1:63688] <-> InitialHandler has pinged
+00:32:03 [INFORMATION] [/127.0.0.1:63722] <-> InitialHandler has pinged
+00:32:13 [INFORMATION] [/127.0.0.1:63750] <-> InitialHandler has pinged
+00:32:23 [INFORMATION] [/127.0.0.1:63773] <-> InitialHandler has pinged
+00:32:33 [INFORMATION] [/127.0.0.1:63799] <-> InitialHandler has pinged
+00:32:44 [INFORMATION] [/127.0.0.1:63828] <-> InitialHandler has pinged
+00:32:54 [INFORMATION] [/127.0.0.1:63855] <-> InitialHandler has pinged
+00:33:04 [INFORMATION] [/127.0.0.1:63880] <-> InitialHandler has pinged
+00:33:14 [INFORMATION] [/127.0.0.1:63902] <-> InitialHandler has pinged
+00:33:24 [INFORMATION] [/127.0.0.1:63929] <-> InitialHandler has pinged
+00:33:34 [INFORMATION] [/127.0.0.1:63955] <-> InitialHandler has pinged
+00:33:44 [INFORMATION] [/127.0.0.1:63977] <-> InitialHandler has pinged
+00:33:54 [INFORMATION] [/127.0.0.1:64007] <-> InitialHandler has pinged
+00:34:04 [INFORMATION] [/127.0.0.1:64037] <-> InitialHandler has pinged
+00:34:14 [INFORMATION] [/127.0.0.1:64067] <-> InitialHandler has pinged
+00:34:25 [INFORMATION] [/127.0.0.1:64094] <-> InitialHandler has pinged
+00:34:35 [INFORMATION] [/127.0.0.1:64120] <-> InitialHandler has pinged
+00:34:45 [INFORMATION] [/127.0.0.1:64142] <-> InitialHandler has pinged
+00:34:55 [INFORMATION] [/127.0.0.1:64213] <-> InitialHandler has pinged
+00:35:05 [INFORMATION] [/127.0.0.1:64239] <-> InitialHandler has pinged
+00:35:15 [INFORMATION] [/127.0.0.1:64266] <-> InitialHandler has pinged
+00:35:25 [INFORMATION] [/127.0.0.1:64298] <-> InitialHandler has pinged
+00:35:35 [INFORMATION] [/127.0.0.1:64319] <-> InitialHandler has pinged
+00:35:45 [INFORMATION] [/127.0.0.1:64350] <-> InitialHandler has pinged
+00:35:56 [INFORMATION] [/127.0.0.1:64374] <-> InitialHandler has pinged
+00:36:06 [INFORMATION] [/127.0.0.1:64397] <-> InitialHandler has pinged
+00:36:16 [INFORMATION] [/127.0.0.1:64425] <-> InitialHandler has pinged
+00:36:26 [INFORMATION] [/127.0.0.1:64455] <-> InitialHandler has pinged
+00:36:36 [INFORMATION] [/127.0.0.1:64490] <-> InitialHandler has pinged
+00:36:46 [INFORMATION] [/127.0.0.1:64516] <-> InitialHandler has pinged
+00:36:56 [INFORMATION] [/127.0.0.1:64540] <-> InitialHandler has pinged
+00:37:06 [INFORMATION] [/127.0.0.1:64566] <-> InitialHandler has pinged
+00:37:16 [INFORMATION] [/127.0.0.1:64590] <-> InitialHandler has pinged
+00:37:27 [INFORMATION] [/127.0.0.1:64616] <-> InitialHandler has pinged
+00:37:37 [INFORMATION] [/127.0.0.1:64645] <-> InitialHandler has pinged
+00:37:47 [INFORMATION] [/127.0.0.1:64672] <-> InitialHandler has pinged
+00:37:57 [INFORMATION] [/127.0.0.1:64697] <-> InitialHandler has pinged
+00:38:07 [INFORMATION] [/127.0.0.1:64723] <-> InitialHandler has pinged
+00:38:17 [INFORMATION] [/127.0.0.1:64749] <-> InitialHandler has pinged
+00:38:27 [INFORMATION] [/127.0.0.1:64775] <-> InitialHandler has pinged
+00:38:37 [INFORMATION] [/127.0.0.1:64802] <-> InitialHandler has pinged
+00:38:47 [INFORMATION] [/127.0.0.1:64838] <-> InitialHandler has pinged
+00:38:57 [INFORMATION] [/127.0.0.1:64869] <-> InitialHandler has pinged
+00:39:07 [INFORMATION] [/127.0.0.1:64897] <-> InitialHandler has pinged
+00:39:17 [INFORMATION] [/127.0.0.1:64934] <-> InitialHandler has pinged
+00:39:28 [INFORMATION] [/127.0.0.1:64969] <-> InitialHandler has pinged
+00:39:38 [INFORMATION] [/127.0.0.1:64998] <-> InitialHandler has pinged
+00:39:48 [INFORMATION] [/127.0.0.1:65037] <-> InitialHandler has pinged
+00:39:58 [INFORMATION] [/127.0.0.1:65060] <-> InitialHandler has pinged
+00:40:08 [INFORMATION] [/127.0.0.1:65102] <-> InitialHandler has pinged
+00:40:18 [INFORMATION] [/127.0.0.1:65133] <-> InitialHandler has pinged
+00:40:28 [INFORMATION] [/127.0.0.1:65157] <-> InitialHandler has pinged
+00:40:38 [INFORMATION] [/127.0.0.1:65180] <-> InitialHandler has pinged
+00:40:48 [INFORMATION] [/127.0.0.1:61499] <-> InitialHandler has pinged
+00:40:59 [INFORMATION] [/127.0.0.1:61523] <-> InitialHandler has pinged
+00:41:09 [INFORMATION] [/127.0.0.1:61550] <-> InitialHandler has pinged
+00:41:19 [INFORMATION] [/127.0.0.1:61579] <-> InitialHandler has pinged
+00:41:29 [INFORMATION] [/127.0.0.1:61602] <-> InitialHandler has pinged
+00:41:39 [INFORMATION] [/127.0.0.1:61627] <-> InitialHandler has pinged
+00:41:49 [INFORMATION] [/127.0.0.1:61656] <-> InitialHandler has pinged
+00:41:59 [INFORMATION] [/127.0.0.1:61681] <-> InitialHandler has pinged
+00:42:09 [INFORMATION] [/127.0.0.1:61709] <-> InitialHandler has pinged
+00:42:19 [INFORMATION] [/127.0.0.1:61740] <-> InitialHandler has pinged
+00:42:29 [INFORMATION] [/127.0.0.1:61768] <-> InitialHandler has pinged
+00:42:40 [INFORMATION] [/127.0.0.1:61790] <-> InitialHandler has pinged
+00:42:50 [INFORMATION] [/127.0.0.1:61815] <-> InitialHandler has pinged
+00:43:00 [INFORMATION] [/127.0.0.1:61840] <-> InitialHandler has pinged
+00:43:10 [INFORMATION] [/127.0.0.1:61868] <-> InitialHandler has pinged
+00:43:20 [INFORMATION] [/127.0.0.1:61890] <-> InitialHandler has pinged
+00:43:30 [INFORMATION] [/127.0.0.1:61917] <-> InitialHandler has pinged
+00:43:40 [INFORMATION] [/127.0.0.1:61948] <-> InitialHandler has pinged
+00:43:50 [INFORMATION] [/127.0.0.1:61969] <-> InitialHandler has pinged
+00:44:00 [INFORMATION] [/127.0.0.1:61994] <-> InitialHandler has pinged
+00:44:11 [INFORMATION] [/127.0.0.1:62026] <-> InitialHandler has pinged
+00:44:21 [INFORMATION] [/127.0.0.1:62053] <-> InitialHandler has pinged
+00:44:31 [INFORMATION] [/127.0.0.1:62076] <-> InitialHandler has pinged
+00:44:41 [INFORMATION] [/127.0.0.1:62106] <-> InitialHandler has pinged
+00:44:51 [INFORMATION] [/127.0.0.1:62131] <-> InitialHandler has pinged
+00:45:01 [INFORMATION] [/127.0.0.1:62161] <-> InitialHandler has pinged
+00:45:11 [INFORMATION] [/127.0.0.1:62185] <-> InitialHandler has pinged
+00:45:21 [INFORMATION] [/127.0.0.1:62207] <-> InitialHandler has pinged
+00:45:31 [INFORMATION] [/127.0.0.1:62231] <-> InitialHandler has pinged
+00:45:42 [INFORMATION] [/127.0.0.1:62262] <-> InitialHandler has pinged
+00:45:52 [INFORMATION] [/127.0.0.1:62285] <-> InitialHandler has pinged
+00:46:02 [INFORMATION] [/127.0.0.1:62309] <-> InitialHandler has pinged
+00:46:12 [INFORMATION] [/127.0.0.1:62339] <-> InitialHandler has pinged
+00:46:22 [INFORMATION] [/127.0.0.1:62358] <-> InitialHandler has pinged
+00:46:32 [INFORMATION] [/127.0.0.1:62383] <-> InitialHandler has pinged
+00:46:42 [INFORMATION] [/127.0.0.1:62407] <-> InitialHandler has pinged
+00:46:52 [INFORMATION] [/127.0.0.1:62432] <-> InitialHandler has pinged
+00:47:02 [INFORMATION] [/127.0.0.1:62453] <-> InitialHandler has pinged
+00:47:12 [INFORMATION] [/127.0.0.1:62478] <-> InitialHandler has pinged
+00:47:22 [INFORMATION] [/127.0.0.1:62501] <-> InitialHandler has pinged
+00:47:33 [INFORMATION] [/127.0.0.1:62533] <-> InitialHandler has pinged
+00:47:43 [INFORMATION] [/127.0.0.1:62554] <-> InitialHandler has pinged
+00:47:53 [INFORMATION] [/127.0.0.1:62582] <-> InitialHandler has pinged
+00:48:03 [INFORMATION] [/127.0.0.1:62604] <-> InitialHandler has pinged
+00:48:13 [INFORMATION] [/127.0.0.1:62636] <-> InitialHandler has pinged
+00:48:23 [INFORMATION] [/127.0.0.1:62655] <-> InitialHandler has pinged
+00:48:33 [INFORMATION] [/127.0.0.1:62681] <-> InitialHandler has pinged
+00:48:43 [INFORMATION] [/127.0.0.1:62714] <-> InitialHandler has pinged
+00:48:53 [INFORMATION] [/127.0.0.1:62738] <-> InitialHandler has pinged
+00:49:03 [INFORMATION] [/127.0.0.1:62765] <-> InitialHandler has pinged
+00:49:14 [INFORMATION] [/127.0.0.1:62806] <-> InitialHandler has pinged
+00:49:24 [INFORMATION] [/127.0.0.1:62835] <-> InitialHandler has pinged
+00:49:34 [INFORMATION] [/127.0.0.1:62857] <-> InitialHandler has pinged
+00:49:44 [INFORMATION] [/127.0.0.1:62897] <-> InitialHandler has pinged
+00:49:54 [INFORMATION] [/127.0.0.1:62924] <-> InitialHandler has pinged
+00:50:04 [INFORMATION] [/127.0.0.1:62946] <-> InitialHandler has pinged
+00:50:14 [INFORMATION] [/127.0.0.1:55655] <-> InitialHandler has pinged
+00:50:24 [INFORMATION] [/127.0.0.1:55679] <-> InitialHandler has pinged
+00:50:35 [INFORMATION] [/127.0.0.1:55699] <-> InitialHandler has pinged
+00:50:45 [INFORMATION] [/127.0.0.1:55728] <-> InitialHandler has pinged
+00:50:55 [INFORMATION] [/127.0.0.1:55757] <-> InitialHandler has pinged
+00:51:05 [INFORMATION] [/127.0.0.1:55776] <-> InitialHandler has pinged
+00:51:15 [INFORMATION] [/127.0.0.1:55804] <-> InitialHandler has pinged
+00:51:25 [INFORMATION] [/127.0.0.1:55824] <-> InitialHandler has pinged
+00:51:35 [INFORMATION] [/127.0.0.1:55856] <-> InitialHandler has pinged
+00:51:45 [INFORMATION] [/127.0.0.1:55877] <-> InitialHandler has pinged
+00:51:55 [INFORMATION] [/127.0.0.1:55925] <-> InitialHandler has pinged
+00:52:05 [INFORMATION] [/127.0.0.1:55963] <-> InitialHandler has pinged
+00:52:16 [INFORMATION] [/127.0.0.1:56018] <-> InitialHandler has pinged
+00:52:26 [INFORMATION] [/127.0.0.1:56040] <-> InitialHandler has pinged
+00:52:36 [INFORMATION] [/127.0.0.1:56064] <-> InitialHandler has pinged
+00:52:46 [INFORMATION] [/127.0.0.1:56087] <-> InitialHandler has pinged
+00:52:56 [INFORMATION] [/127.0.0.1:56120] <-> InitialHandler has pinged
+00:53:06 [INFORMATION] [/127.0.0.1:56147] <-> InitialHandler has pinged
+00:53:16 [INFORMATION] [/127.0.0.1:56170] <-> InitialHandler has pinged
+00:53:26 [INFORMATION] [/127.0.0.1:56193] <-> InitialHandler has pinged
+00:53:36 [INFORMATION] [/127.0.0.1:56221] <-> InitialHandler has pinged
+00:53:46 [INFORMATION] [/127.0.0.1:56240] <-> InitialHandler has pinged
+00:53:56 [INFORMATION] [/127.0.0.1:56271] <-> InitialHandler has pinged
+00:54:07 [INFORMATION] [/127.0.0.1:56301] <-> InitialHandler has pinged
+00:54:17 [INFORMATION] [/127.0.0.1:56330] <-> InitialHandler has pinged
+00:54:27 [INFORMATION] [/127.0.0.1:56358] <-> InitialHandler has pinged
+00:54:37 [INFORMATION] [/127.0.0.1:56393] <-> InitialHandler has pinged
+00:54:47 [INFORMATION] [/127.0.0.1:56416] <-> InitialHandler has pinged
+00:54:57 [INFORMATION] [/127.0.0.1:56443] <-> InitialHandler has pinged
+00:55:07 [INFORMATION] [/127.0.0.1:56464] <-> InitialHandler has pinged
+00:55:17 [INFORMATION] [/127.0.0.1:56488] <-> InitialHandler has pinged
+00:55:27 [INFORMATION] [/127.0.0.1:56514] <-> InitialHandler has pinged
+00:55:37 [INFORMATION] [/127.0.0.1:56534] <-> InitialHandler has pinged
+00:55:47 [INFORMATION] [/127.0.0.1:56563] <-> InitialHandler has pinged
+00:55:57 [INFORMATION] [/127.0.0.1:56593] <-> InitialHandler has pinged
+00:56:08 [INFORMATION] [/127.0.0.1:56620] <-> InitialHandler has pinged
+00:56:18 [INFORMATION] [/127.0.0.1:56645] <-> InitialHandler has pinged
+00:56:28 [INFORMATION] [/127.0.0.1:56672] <-> InitialHandler has pinged
+00:56:38 [INFORMATION] [/127.0.0.1:56696] <-> InitialHandler has pinged
+00:56:48 [INFORMATION] [/127.0.0.1:56716] <-> InitialHandler has pinged
+00:56:58 [INFORMATION] [/127.0.0.1:56745] <-> InitialHandler has pinged
+00:57:08 [INFORMATION] [/127.0.0.1:56770] <-> InitialHandler has pinged
+00:57:18 [INFORMATION] [/127.0.0.1:56800] <-> InitialHandler has pinged
+00:57:28 [INFORMATION] [/127.0.0.1:56827] <-> InitialHandler has pinged
+00:57:38 [INFORMATION] [/127.0.0.1:56848] <-> InitialHandler has pinged
+00:57:49 [INFORMATION] [/127.0.0.1:56877] <-> InitialHandler has pinged
+00:57:59 [INFORMATION] [/127.0.0.1:56900] <-> InitialHandler has pinged
+00:58:09 [INFORMATION] [/127.0.0.1:56947] <-> InitialHandler has pinged

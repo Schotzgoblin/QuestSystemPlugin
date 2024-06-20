@@ -35,8 +35,8 @@ public class EditSingleObjectiveListener implements Listener {
 
     {
         actionMap.put("inventory.edit-objective.name.material", this::editObjectiveName);
-        actionMap.put("inventory.edit-objective.amount.material", this::editObjectiveAmount);
-        actionMap.put("inventory.edit-objective.objectiveTypeId.material", this::editObjectiveTypeId);
+        actionMap.put("inventory.edit-objective.count.material", this::editObjectiveAmount);
+        actionMap.put("inventory.edit-objective.type.material", this::editObjectiveTypeId);
         actionMap.put("inventory.edit-objective.value.material", this::editObjectiveValue);
         actionMap.put("inventory.edit-objective.save.material", (player, objective) -> saveQuest(player, EditQuestsUtils.editingQuest.get(player.getUniqueId()), objective));
         actionMap.put("inventory.edit-objective.cancel.material", (player, objective) -> cancelEdit(player, EditQuestsUtils.editingQuest.get(player.getUniqueId())));
@@ -89,7 +89,7 @@ public class EditSingleObjectiveListener implements Listener {
     }
 
     private void editObjectiveAmount(Player player, Objective objective) {
-        editObjectiveWithAnvil(player, objective, "inventory.edit-objective.amount.change-message", String.valueOf(objective.getCount()), text -> objective.setCount(Integer.parseInt(text)));
+        editObjectiveWithAnvil(player, objective, "inventory.edit-objective.count.change-message", String.valueOf(objective.getCount()), text -> objective.setCount(Integer.parseInt(text)));
     }
 
     private void editObjectiveName(Player player, Objective objective) {

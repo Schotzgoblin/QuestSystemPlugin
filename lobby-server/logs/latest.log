@@ -1,114 +1,83 @@
-[19:29:47] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[19:29:49] [ServerMain/INFO]: Loaded 1174 recipes
-[19:29:49] [ServerMain/INFO]: Loaded 1271 advancements
-[19:29:50] [Server thread/INFO]: Starting minecraft server version 1.20.4
-[19:29:50] [Server thread/INFO]: Loading properties
-[19:29:50] [Server thread/INFO]: This server is running Paper version git-Paper-496 (MC: 1.20.4) (Implementing API version 1.20.4-R0.1-SNAPSHOT) (Git: 7ac24a1 on ver/1.20.4)
-[19:29:51] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[19:29:51] [Server thread/INFO]: Using 4 threads for Netty based IO
-[19:29:51] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
+[00:01:02] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[00:01:05] [ServerMain/INFO]: Loaded 1174 recipes
+[00:01:05] [ServerMain/INFO]: Loaded 1271 advancements
+[00:01:05] [Server thread/INFO]: Starting minecraft server version 1.20.4
+[00:01:05] [Server thread/INFO]: Loading properties
+[00:01:05] [Server thread/INFO]: This server is running Paper version git-Paper-496 (MC: 1.20.4) (Implementing API version 1.20.4-R0.1-SNAPSHOT) (Git: 7ac24a1 on ver/1.20.4)
+[00:01:07] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[00:01:07] [Server thread/INFO]: Using 4 threads for Netty based IO
+[00:01:07] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
     We recommend installing the spark profiler as a replacement: https://spark.lucko.me/
     For more information please visit: https://github.com/PaperMC/Paper/issues/8948
-[19:29:51] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 3 worker threads, and gen parallelism of 3 threads
-[19:29:51] [Server thread/INFO]: Default game type: SURVIVAL
-[19:29:51] [Server thread/INFO]: Generating keypair
-[19:29:51] [Server thread/INFO]: Starting Minecraft server on *:25566
-[19:29:51] [Server thread/INFO]: Using default channel type
-[19:29:51] [Server thread/INFO]: Paper: Using Java compression from Velocity.
-[19:29:51] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
-[19:29:51] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
-[19:29:51] [Server thread/INFO]: [HeadDB] Loading server plugin HeadDB v5.0.0-rc.10
-[19:29:51] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[19:29:51] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
-[19:29:51] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
-[19:29:51] [Server thread/WARN]: Whilst this makes it possible to use BungeeCord, unless access to your server is properly restricted, it also opens up the ability for hackers to connect with any username they choose.
-[19:29:51] [Server thread/WARN]: Please see http://www.spigotmc.org/wiki/firewall-guide/ for further information.
-[19:29:51] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
-[19:29:51] [Server thread/INFO]: Preparing level "world"
-[19:29:52] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[19:29:52] [Server thread/INFO]: Time elapsed: 304 ms
-[19:29:52] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[19:29:52] [Server thread/INFO]: Time elapsed: 35 ms
-[19:29:52] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[19:29:52] [Server thread/INFO]: Time elapsed: 23 ms
-[19:29:52] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
-[19:29:53] [Server thread/INFO]: [HeadDB] Enabling HeadDB v5.0.0-rc.10
-[19:29:53] [Server thread/INFO]: [HeadDB] Loading HeadDB - 5.0.0-rc.10
-[19:29:53] [Server thread/INFO]: [HeadDB] Loaded 1 languages!
-[19:29:53] [Server thread/INFO]: [HeadDB] Done!
-[19:29:53] [Server thread/INFO]: Running delayed init tasks
-[19:29:53] [helper-scheduler-1/WARN]: [HeadDB] There is a new update available for HeadDB on spigot!
-[19:29:53] [helper-scheduler-1/WARN]: [HeadDB] Download: https://www.spigotmc.org/resources/84967
-[19:29:54] [Server thread/INFO]: Done (4.180s)! For help, type "help"
-[19:29:54] [Server thread/INFO]: Timings Reset
-[19:30:26] [User Authenticator #0/INFO]: UUID of player Schotzgoblin is cdfb5f90-21c3-4aa8-be6f-39d8780b88f7
-[19:30:27] [Server thread/INFO]: Schotzgoblin joined the game
-[19:30:27] [Server thread/INFO]: Schotzgoblin[/127.0.0.1:64906] logged in with entity id 126 at ([world]63.96442553042208, 145.0, 58.23559705279325)
-[19:30:56] [Server thread/INFO]: Schotzgoblin issued server command: /qa m
-[19:31:01] [Server thread/INFO]: Schotzgoblin issued server command: /q
-[19:34:09] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
-[19:34:09] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
-[19:34:09] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[19:34:09] [Server thread/INFO]: Using 4 threads for Netty based IO
-[19:34:10] [Server thread/INFO]: [HeadDB] Disabling HeadDB v5.0.0-rc.10
-[19:34:10] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
-[19:34:10] [Server thread/INFO]: [com.schotzgoblin.main.QuestSystem] Shutting down
-[19:34:10] [Server thread/INFO]: Loaded 1174 recipes
-[19:34:10] [Server thread/INFO]: Loaded 1271 advancements
-[19:34:10] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
-[19:34:10] [Server thread/INFO]: [HeadDB] Loading server plugin HeadDB v5.0.0-rc.10
-[19:34:10] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[19:34:10] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
-[19:34:11] [Server thread/INFO]: [HeadDB] Enabling HeadDB v5.0.0-rc.10
-[19:34:11] [Server thread/INFO]: [HeadDB] Loading HeadDB - 5.0.0-rc.10
-[19:34:11] [Server thread/INFO]: [HeadDB] Loaded 1 languages!
-[19:34:11] [Server thread/INFO]: [HeadDB] Done!
-[19:34:11] [Server thread/INFO]: CONSOLE: Reload complete.
-[19:34:11] [Server thread/INFO]: Timings Reset
-[19:34:11] [helper-scheduler-2/WARN]: [HeadDB] There is a new update available for HeadDB on spigot!
-[19:34:11] [helper-scheduler-2/WARN]: [HeadDB] Download: https://www.spigotmc.org/resources/84967
-[19:36:44] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
-[19:36:44] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
-[19:36:44] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[19:36:44] [Server thread/INFO]: Using 4 threads for Netty based IO
-[19:36:44] [Server thread/INFO]: [HeadDB] Disabling HeadDB v5.0.0-rc.10
-[19:36:44] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
-[19:36:44] [Server thread/INFO]: [com.schotzgoblin.main.QuestSystem] Shutting down
-[19:36:45] [Server thread/INFO]: Loaded 1174 recipes
-[19:36:45] [Server thread/INFO]: Loaded 1271 advancements
-[19:36:45] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
-[19:36:45] [Server thread/INFO]: [HeadDB] Loading server plugin HeadDB v5.0.0-rc.10
-[19:36:45] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[19:36:45] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
-[19:36:45] [Server thread/INFO]: [HeadDB] Enabling HeadDB v5.0.0-rc.10
-[19:36:45] [Server thread/INFO]: [HeadDB] Loading HeadDB - 5.0.0-rc.10
-[19:36:45] [Server thread/INFO]: [HeadDB] Loaded 1 languages!
-[19:36:45] [Server thread/INFO]: [HeadDB] Done!
-[19:36:45] [Server thread/INFO]: CONSOLE: Reload complete.
-[19:36:45] [Server thread/INFO]: Timings Reset
-[19:36:45] [helper-scheduler-2/WARN]: [HeadDB] There is a new update available for HeadDB on spigot!
-[19:36:45] [helper-scheduler-2/WARN]: [HeadDB] Download: https://www.spigotmc.org/resources/84967
-[19:36:49] [Server thread/INFO]: Schotzgoblin issued server command: /q
-[19:37:20] [Server thread/INFO]: Schotzgoblin issued server command: /q
-[19:37:55] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
-[19:37:55] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
-[19:37:55] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[19:37:55] [Server thread/INFO]: Using 4 threads for Netty based IO
-[19:37:55] [Server thread/INFO]: [HeadDB] Disabling HeadDB v5.0.0-rc.10
-[19:37:55] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
-[19:37:55] [Server thread/INFO]: [com.schotzgoblin.main.QuestSystem] Shutting down
-[19:37:55] [Server thread/INFO]: Loaded 1174 recipes
-[19:37:55] [Server thread/INFO]: Loaded 1271 advancements
-[19:37:56] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
-[19:37:56] [Server thread/INFO]: [HeadDB] Loading server plugin HeadDB v5.0.0-rc.10
-[19:37:56] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[19:37:56] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
-[19:37:56] [Server thread/INFO]: [HeadDB] Enabling HeadDB v5.0.0-rc.10
-[19:37:56] [Server thread/INFO]: [HeadDB] Loading HeadDB - 5.0.0-rc.10
-[19:37:56] [Server thread/INFO]: [HeadDB] Loaded 1 languages!
-[19:37:56] [Server thread/INFO]: [HeadDB] Done!
-[19:37:56] [Server thread/INFO]: CONSOLE: Reload complete.
-[19:37:56] [Server thread/INFO]: Timings Reset
-[19:37:56] [helper-scheduler-0/WARN]: [HeadDB] There is a new update available for HeadDB on spigot!
-[19:37:56] [helper-scheduler-0/WARN]: [HeadDB] Download: https://www.spigotmc.org/resources/84967
-[19:38:45] [Server thread/INFO]: Schotzgoblin issued server command: /qa m
+[00:01:07] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 3 worker threads, and gen parallelism of 3 threads
+[00:01:07] [Server thread/INFO]: Default game type: SURVIVAL
+[00:01:07] [Server thread/INFO]: Generating keypair
+[00:01:07] [Server thread/INFO]: Starting Minecraft server on *:25566
+[00:01:08] [Server thread/INFO]: Using default channel type
+[00:01:08] [Server thread/INFO]: Paper: Using Java compression from Velocity.
+[00:01:08] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[00:01:08] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[00:01:08] [Server thread/INFO]: [HeadDB] Loading server plugin HeadDB v5.0.0-rc.10
+[00:01:08] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[00:01:08] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[00:01:08] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[00:01:08] [Server thread/WARN]: Whilst this makes it possible to use BungeeCord, unless access to your server is properly restricted, it also opens up the ability for hackers to connect with any username they choose.
+[00:01:08] [Server thread/WARN]: Please see http://www.spigotmc.org/wiki/firewall-guide/ for further information.
+[00:01:08] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[00:01:08] [Server thread/INFO]: Preparing level "world"
+[00:01:08] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[00:01:08] [Server thread/INFO]: Time elapsed: 183 ms
+[00:01:08] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[00:01:08] [Server thread/INFO]: Time elapsed: 32 ms
+[00:01:08] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[00:01:08] [Server thread/INFO]: Time elapsed: 27 ms
+[00:01:08] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[00:01:09] [Server thread/INFO]: [HeadDB] Enabling HeadDB v5.0.0-rc.10
+[00:01:09] [Server thread/INFO]: [HeadDB] Loading HeadDB - 5.0.0-rc.10
+[00:01:09] [Server thread/INFO]: [HeadDB] Loaded 1 languages!
+[00:01:09] [Server thread/INFO]: [HeadDB] Done!
+[00:01:10] [Server thread/INFO]: Running delayed init tasks
+[00:01:10] [helper-scheduler-1/WARN]: [HeadDB] There is a new update available for HeadDB on spigot!
+[00:01:10] [helper-scheduler-1/WARN]: [HeadDB] Download: https://www.spigotmc.org/resources/84967
+[00:01:11] [Server thread/INFO]: Done (5.850s)! For help, type "help"
+[00:01:11] [Server thread/INFO]: Timings Reset
+[00:01:22] [User Authenticator #0/INFO]: UUID of player Schotzgoblin is cdfb5f90-21c3-4aa8-be6f-39d8780b88f7
+[00:01:23] [Server thread/INFO]: Schotzgoblin joined the game
+[00:01:23] [Server thread/INFO]: Schotzgoblin[/127.0.0.1:58509] logged in with entity id 127 at ([world]65.48449681663968, 145.0, 54.29113961781192)
+[00:01:28] [Server thread/INFO]: Schotzgoblin issued server command: /qa m
+[00:02:23] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
+[00:02:23] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
+[00:02:23] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[00:02:23] [Server thread/INFO]: Using 4 threads for Netty based IO
+[00:02:24] [Server thread/INFO]: [HeadDB] Disabling HeadDB v5.0.0-rc.10
+[00:02:24] [Server thread/INFO]: [QuestSystem] Disabling QuestSystem v1.0.0
+[00:02:24] [Server thread/INFO]: [com.schotzgoblin.main.QuestSystem] Shutting down
+[00:02:24] [Server thread/INFO]: Loaded 1174 recipes
+[00:02:24] [Server thread/INFO]: Loaded 1271 advancements
+[00:02:24] [Server thread/INFO]: [QuestSystem] Loading server plugin QuestSystem v1.0.0
+[00:02:24] [Server thread/INFO]: [HeadDB] Loading server plugin HeadDB v5.0.0-rc.10
+[00:02:24] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[00:02:24] [Server thread/INFO]: [QuestSystem] Enabling QuestSystem v1.0.0
+[00:02:24] [Server thread/INFO]: [HeadDB] Enabling HeadDB v5.0.0-rc.10
+[00:02:24] [Server thread/INFO]: [HeadDB] Loading HeadDB - 5.0.0-rc.10
+[00:02:25] [Server thread/INFO]: [HeadDB] Loaded 1 languages!
+[00:02:25] [Server thread/INFO]: [HeadDB] Done!
+[00:02:25] [Server thread/INFO]: CONSOLE: Reload complete.
+[00:02:25] [Server thread/INFO]: Timings Reset
+[00:02:25] [helper-scheduler-0/WARN]: [HeadDB] There is a new update available for HeadDB on spigot!
+[00:02:25] [helper-scheduler-0/WARN]: [HeadDB] Download: https://www.spigotmc.org/resources/84967
+[00:02:27] [Server thread/INFO]: Schotzgoblin issued server command: /qa m
+[00:04:34] [Server thread/INFO]: Schotzgoblin issued server command: /qa m
+[00:11:24] [Server thread/INFO]: Schotzgoblin issued server command: /gamemode survival
+[00:11:24] [Server thread/INFO]: [Schotzgoblin: Set own game mode to Survival Mode]
+[00:11:26] [Server thread/INFO]: Schotzgoblin issued server command: /gamemode creative
+[00:11:26] [Server thread/INFO]: [Schotzgoblin: Set own game mode to Creative Mode]
+[00:17:24] [Server thread/INFO]: Schotzgoblin issued server command: /q
+[00:17:34] [Server thread/INFO]: Schotzgoblin issued server command: /q
+[00:17:41] [Server thread/INFO]: Schotzgoblin issued server command: /gamemode adventure
+[00:17:41] [Server thread/INFO]: [Schotzgoblin: Set own game mode to Adventure Mode]
+[00:17:45] [Server thread/INFO]: Schotzgoblin issued server command: /qa m
+[00:18:04] [Server thread/INFO]: Schotzgoblin issued server command: /q
+[00:18:13] [Server thread/INFO]: Schotzgoblin issued server command: /qa m
+[00:18:28] [Server thread/INFO]: Schotzgoblin issued server command: /q
+[00:20:45] [Server thread/INFO]: Schotzgoblin issued server command: /qa m
