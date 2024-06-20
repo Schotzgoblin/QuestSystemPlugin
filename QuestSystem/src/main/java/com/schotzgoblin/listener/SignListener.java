@@ -1,13 +1,8 @@
 package com.schotzgoblin.listener;
 
-import com.google.common.base.Preconditions;
 import com.schotzgoblin.config.ConfigHandler;
-import com.schotzgoblin.database.PlayerQuest;
-import com.schotzgoblin.main.DatabaseHandler;
 import com.schotzgoblin.main.QuestSystem;
 import com.schotzgoblin.utils.SignUtils;
-import com.schotzgoblin.utils.Utils;
-import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -15,7 +10,6 @@ import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.block.Sign;
 import org.bukkit.block.sign.Side;
-import org.bukkit.block.sign.SignSide;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -23,8 +17,6 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.EquipmentSlot;
-
-import java.util.*;
 
 import static com.schotzgoblin.utils.SignUtils.*;
 

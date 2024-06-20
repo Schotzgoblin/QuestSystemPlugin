@@ -4,7 +4,7 @@ import com.schotzgoblin.config.ConfigHandler;
 import com.schotzgoblin.database.Quest;
 import com.schotzgoblin.database.Objective;
 import com.schotzgoblin.main.DatabaseHandler;
-import com.schotzgoblin.main.QuestManager;
+import com.schotzgoblin.listener.QuestManager;
 import com.schotzgoblin.main.QuestSystem;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
@@ -14,6 +14,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
@@ -22,6 +24,7 @@ import java.util.concurrent.CompletionException;
 import static com.schotzgoblin.utils.edit.EditUtils.*;
 
 public class EditObjectivesUtils {
+    private static final Logger logger = LoggerFactory.getLogger(EditObjectivesUtils.class);
     public static Map<UUID, Inventory> allObjectivesInventory = Collections.synchronizedMap(new HashMap<>());
     public static Map<UUID, Inventory> editObjectiveInventory = Collections.synchronizedMap(new HashMap<>());
     public static Map<UUID, Objective> editingObjective = Collections.synchronizedMap(new HashMap<>());
@@ -126,12 +129,12 @@ public class EditObjectivesUtils {
 
                 questManager.finaliseInventory(inv,27);
             } catch (CompletionException ex) {
-                ex.printStackTrace();
+                logger.error(ex.getMessage(),ex);
             }
             EditObjectivesUtils.editObjectiveInventory.put(player.getUniqueId(), inv);
             return CompletableFuture.completedFuture(inv);
         }).exceptionally(ex -> {
-            ex.printStackTrace();
+            logger.error(ex.getMessage(),ex);
             return null;
         });
     }
@@ -260,11 +263,11 @@ public class EditObjectivesUtils {
                 itemStack.setItemMeta(itemMeta);
                 return CompletableFuture.completedFuture(itemStack);
             } catch (Exception e) {
-                e.printStackTrace();
+                logger.error(e.getMessage(),e);
             }
             return CompletableFuture.completedFuture(new ItemStack(Material.AIR));
         }).exceptionally(ex -> {
-            ex.printStackTrace();
+            logger.error(ex.getMessage(),ex);
             return null;
         });
     }

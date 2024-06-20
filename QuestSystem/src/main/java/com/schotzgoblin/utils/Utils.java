@@ -8,6 +8,7 @@ import org.bukkit.*;
 import org.bukkit.entity.Player;
 
 public class Utils {
+
     public static String getTimeStringFromSecs(int time) {
         int hours = time / 3600;
         int minutes = (time % 3600) / 60;

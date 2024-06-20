@@ -1,13 +1,14 @@
 package com.schotzgoblin.main;
 
-import com.google.common.io.ByteArrayDataOutput;
-import com.google.common.io.ByteStreams;
 import com.schotzgoblin.commands.AdminQuestCommand;
 import com.schotzgoblin.commands.QuestCommand;
 import com.schotzgoblin.listener.*;
-import com.schotzgoblin.listener.edit.EditObjectivesListener;
-import com.schotzgoblin.listener.edit.EditQuestListener;
-import com.schotzgoblin.listener.edit.EditRewardsListener;
+import com.schotzgoblin.listener.edit.objective.EditAllObjectivesListener;
+import com.schotzgoblin.listener.edit.objective.EditSingleObjectiveListener;
+import com.schotzgoblin.listener.edit.quest.EditAllQuestsListener;
+import com.schotzgoblin.listener.edit.quest.EditSingleQuestListener;
+import com.schotzgoblin.listener.edit.reward.EditAllRewardsListener;
+import com.schotzgoblin.listener.edit.reward.EditSingleRewardListener;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.command.CommandExecutor;
@@ -19,8 +20,12 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.plugin.messaging.PluginMessageListener;
 import org.jetbrains.annotations.NotNull;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class QuestSystem extends JavaPlugin implements Listener, PluginMessageListener {
+
+    private static final Logger logger = LoggerFactory.getLogger(QuestSystem.class);
     final String bungeeCordChannelName = "BungeeCord";
 
     public static QuestSystem getInstance() {
@@ -38,17 +43,25 @@ public class QuestSystem extends JavaPlugin implements Listener, PluginMessageLi
         Bukkit.getPluginManager().registerEvents(this, this);
         Bukkit.getMessenger().registerOutgoingPluginChannel(this, bungeeCordChannelName);
         Bukkit.getMessenger().registerIncomingPluginChannel(this, bungeeCordChannelName, this);
-        addListener(QuestManager.getInstance());
-        addListener(new TrackPlayerQuestProgress());
-        addListener(new EditQuestListener());
-        addListener(new EditRewardsListener());
-        addListener(new EditObjectivesListener());
-        addListener(new QuestNpc());
-        addListener(new SignListener());
-        addListener(new ParticalListener());
+        registerAllListeners();
         registerCommand("quests",new QuestCommand());
         registerCommand("quest",new AdminQuestCommand());
     }
+
+    private void registerAllListeners() {
+        addListener(QuestManager.getInstance());
+        addListener(new TrackPlayerQuestProgress());
+        addListener(new EditAllQuestsListener());
+        addListener(new EditSingleQuestListener());
+        addListener(new EditAllRewardsListener());
+        addListener(new EditSingleRewardListener());
+        addListener(new EditAllObjectivesListener());
+        addListener(new EditSingleObjectiveListener());
+        addListener(new QuestNpc());
+        addListener(new SignListener());
+        addListener(new ParticalListener());
+    }
+
     private void addListener(Listener listener) {
         Bukkit.getPluginManager().registerEvents(listener, this);
     }
@@ -67,7 +80,7 @@ public class QuestSystem extends JavaPlugin implements Listener, PluginMessageLi
     @Override
     public void onDisable() {
         super.onDisable();
-        Bukkit.getLogger().info("Shutting down");
+        logger.info("Shutting down");
         Bukkit.getMessenger().unregisterOutgoingPluginChannel(this, bungeeCordChannelName);
         Bukkit.getMessenger().unregisterIncomingPluginChannel(this, bungeeCordChannelName);
     }
@@ -81,20 +94,14 @@ public class QuestSystem extends JavaPlugin implements Listener, PluginMessageLi
 
     @EventHandler
     public void onEntityDamageEvent(EntityDamageEvent event) {
-        if(event.getEntity()instanceof Player player){
+        if(event.getEntity()instanceof Player){
             event.setCancelled(true);
         }
     }
 
     @Override
-    public void onPluginMessageReceived(@NotNull String s, @NotNull Player player, @NotNull byte[] bytes) {
-
+    public void onPluginMessageReceived(@NotNull String s, @NotNull Player player, byte[] bytes) {
+        logger.info("Received message from BungeeCord");
     }
 
-    private void sendPlayerToServer(Player player, String serverName) {
-        ByteArrayDataOutput out = ByteStreams.newDataOutput();
-        out.writeUTF("Connect");
-        out.writeUTF(serverName);
-        player.sendPluginMessage(this, bungeeCordChannelName, out.toByteArray());
-    }
 }

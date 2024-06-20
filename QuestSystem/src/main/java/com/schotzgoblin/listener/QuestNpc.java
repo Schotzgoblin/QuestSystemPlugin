@@ -4,7 +4,6 @@ import com.schotzgoblin.config.ConfigHandler;
 import com.schotzgoblin.enums.QuestStatus;
 import com.schotzgoblin.main.DatabaseHandler;
 import com.schotzgoblin.dtos.InventoryMapping;
-import com.schotzgoblin.main.QuestManager;
 import com.schotzgoblin.main.QuestSystem;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
@@ -23,11 +22,14 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
 
 public class QuestNpc implements Listener {
+    private static final Logger logger = LoggerFactory.getLogger(QuestNpc.class);
 
     private final QuestSystem plugin;
     private BukkitTask task;
@@ -48,7 +50,7 @@ public class QuestNpc implements Listener {
             deleteEntities(npcLocation, 4);
             spawnNPC(npcLocation);
         }).exceptionally(ex -> {
-            ex.printStackTrace();
+            logger.error(ex.getMessage(),ex);
             return null;
         });
     }
@@ -70,7 +72,7 @@ public class QuestNpc implements Listener {
                 throw new RuntimeException(e);
             }
         }).exceptionally(ex -> {
-            ex.printStackTrace();
+            logger.error(ex.getMessage(),ex);
             return null;
         });
     }
@@ -114,10 +116,10 @@ public class QuestNpc implements Listener {
                 });
                 startNPCTask(configValues.interval, configValues.range);
             } catch (Exception e) {
-                e.printStackTrace();
+                logger.error(e.getMessage(), e);
             }
         }).exceptionally(ex -> {
-            ex.printStackTrace();
+            logger.error(ex.getMessage(), ex);
             return null;
         });
     }
@@ -158,7 +160,7 @@ public class QuestNpc implements Listener {
                 throw new RuntimeException(e);
             }
         }).exceptionally(ex -> {
-            ex.printStackTrace();
+            logger.error(ex.getMessage(), ex);
             return null;
         });
     }
@@ -316,14 +318,14 @@ public class QuestNpc implements Listener {
                     }
                     questManager.addQuestsToInventory(inv.getType(), player, inv.getInventory());
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    logger.error(e.getMessage(), e);
                 }
             }).exceptionally(ex -> {
-                ex.printStackTrace();
+                logger.error(ex.getMessage(), ex);
                 return null;
             });
         }).exceptionally(ex -> {
-            ex.printStackTrace();
+            logger.error(ex.getMessage(), ex);
             return null;
         });
     }

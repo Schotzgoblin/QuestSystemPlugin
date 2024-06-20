@@ -1,5 +1,7 @@
 package com.schotzgoblin.database;
 
+import java.util.Objects;
+
 public class Objective implements Identifiable{
     private int id;
     private String objective;
@@ -57,5 +59,18 @@ public class Objective implements Identifiable{
 
     public void setCount(int count) {
         this.count = count;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Objective objective = (Objective) o;
+        return id == objective.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
     }
 }

@@ -27,6 +27,8 @@ dependencies {
     compileOnly("net.md-5:bungeecord-api:1.19-R0.1-SNAPSHOT")
     implementation("com.github.TheSilentPro:HeadDB:5.0.0-rc.11")
     implementation("net.wesjd:anvilgui:1.9.4-SNAPSHOT")
+    implementation("org.slf4j:slf4j-api:2.0.7")
+    implementation("ch.qos.logback:logback-classic:1.4.5")
 }
 
 java {

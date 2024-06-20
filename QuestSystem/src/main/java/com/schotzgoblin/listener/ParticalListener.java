@@ -1,6 +1,5 @@
 package com.schotzgoblin.listener;
 
-import com.schotzgoblin.main.DatabaseHandler;
 import com.schotzgoblin.main.QuestSystem;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;

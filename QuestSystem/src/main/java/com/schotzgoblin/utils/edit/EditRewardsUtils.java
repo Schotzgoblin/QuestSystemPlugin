@@ -5,7 +5,7 @@ import com.schotzgoblin.database.Quest;
 import com.schotzgoblin.database.QuestReward;
 import com.schotzgoblin.database.Reward;
 import com.schotzgoblin.main.DatabaseHandler;
-import com.schotzgoblin.main.QuestManager;
+import com.schotzgoblin.listener.QuestManager;
 import com.schotzgoblin.main.QuestSystem;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
@@ -15,6 +15,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
@@ -23,6 +25,7 @@ import java.util.concurrent.CompletionException;
 import static com.schotzgoblin.utils.edit.EditUtils.*;
 
 public class EditRewardsUtils {
+    private static final Logger logger = LoggerFactory.getLogger(EditRewardsUtils.class);
     public static Map<UUID, Inventory> allRewardsInventory = Collections.synchronizedMap(new HashMap<>());
     public static Map<UUID, Inventory> editRewardInventory = Collections.synchronizedMap(new HashMap<>());
     public static Map<UUID, Reward> editingReward = Collections.synchronizedMap(new HashMap<>());
@@ -127,12 +130,12 @@ public class EditRewardsUtils {
 
                 questManager.finaliseInventory(inv,27);
             } catch (CompletionException ex) {
-                ex.printStackTrace();
+                logger.error(ex.getMessage(),ex);
             }
             EditRewardsUtils.editRewardInventory.put(player.getUniqueId(), inv);
             return CompletableFuture.completedFuture(inv);
         }).exceptionally(ex -> {
-            ex.printStackTrace();
+            logger.error(ex.getMessage(),ex);
             return null;
         });
     }
@@ -263,11 +266,11 @@ public class EditRewardsUtils {
                 itemStack.setItemMeta(itemMeta);
                 return CompletableFuture.completedFuture(itemStack);
             } catch (Exception e) {
-                e.printStackTrace();
+                logger.error(e.getMessage(),e);
             }
             return CompletableFuture.completedFuture(new ItemStack(Material.AIR));
         }).exceptionally(ex -> {
-            ex.printStackTrace();
+            logger.error(ex.getMessage(),ex);
             return null;
         });
     }

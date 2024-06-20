@@ -2,7 +2,6 @@ package com.schotzgoblin.utils;
 
 import com.schotzgoblin.config.ConfigHandler;
 import com.schotzgoblin.enums.ObjectiveType;
-import com.schotzgoblin.main.DatabaseHandler;
 import org.bukkit.Location;
 import org.bukkit.Particle;
 import org.bukkit.entity.Player;
@@ -35,39 +34,39 @@ public class ParticleUtils {
         return getParticleSettings("particle-settings.direction").thenAccept(settings -> {
             Location playerLocation = player.getLocation();
             Vector direction = location.toVector().subtract(playerLocation.toVector()).normalize();
-
-            double spacing = Double.parseDouble(settings.get("spacing"));
-            double distance = Double.parseDouble(settings.get("distance"));
-            Particle particle = Particle.valueOf(settings.get("particle"));
-            int count = Integer.parseInt(settings.get("count"));
-            double offsetX = Double.parseDouble(settings.get("offset-x"));
-            double offsetY = Double.parseDouble(settings.get("offset-y"));
-            double offsetZ = Double.parseDouble(settings.get("offset-z"));
-            double extra = Double.parseDouble(settings.get("extra"));
-
-            for (double d = 0; d < distance; d += spacing) {
-                Location particleLocation = playerLocation.clone().add(direction.clone().multiply(d));
-                player.spawnParticle(particle, particleLocation, count, offsetX, offsetY, offsetZ, extra);
-            }
+            spawnParticles(player, playerLocation, direction, settings);
         });
     }
 
     public static CompletableFuture<Void> spawnParticle(Player player, Location location) {
         return getParticleSettings("particle-settings.spawn").thenAccept(settings -> {
-            Particle particle = Particle.valueOf(settings.get("particle"));
-            int iterations = Integer.parseInt(settings.get("iterations"));
-            int count = Integer.parseInt(settings.get("count"));
-            double offsetX = Double.parseDouble(settings.get("offset-x"));
-            double offsetY = Double.parseDouble(settings.get("offset-y"));
-            double offsetZ = Double.parseDouble(settings.get("offset-z"));
-            double extra = Double.parseDouble(settings.get("extra"));
+            spawnParticles(player, location, null, settings);
+        });
+    }
 
+    private static void spawnParticles(Player player, Location location, Vector direction, Map<String, String> settings) {
+        Particle particle = Particle.valueOf(settings.get("particle"));
+        int count = Integer.parseInt(settings.get("count"));
+        double offsetX = Double.parseDouble(settings.get("offset-x"));
+        double offsetY = Double.parseDouble(settings.get("offset-y"));
+        double offsetZ = Double.parseDouble(settings.get("offset-z"));
+        double extra = Double.parseDouble(settings.get("extra"));
+
+        if (direction!= null) {
+            double spacing = Double.parseDouble(settings.get("spacing"));
+            double distance = Double.parseDouble(settings.get("distance"));
+            for (double d = 0; d < distance; d += spacing) {
+                Location particleLocation = location.clone().add(direction.clone().multiply(d));
+                player.spawnParticle(particle, particleLocation, count, offsetX, offsetY, offsetZ, extra);
+            }
+        } else {
+            int iterations = Integer.parseInt(settings.get("iterations"));
             for (int i = 0; i < iterations; i++) {
                 location.add(0, i, 0);
                 player.spawnParticle(particle, location, count, offsetX, offsetY, offsetZ, extra);
                 location.subtract(0, i, 0);
             }
-        });
+        }
     }
 
     private static CompletableFuture<Map<String, String>> getParticleSettings(String path) {

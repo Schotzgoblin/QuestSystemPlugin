@@ -4,6 +4,9 @@ import com.schotzgoblin.config.ConfigHandler;
 import com.schotzgoblin.database.*;
 import com.schotzgoblin.utils.Utils;
 import org.bukkit.Location;
+import org.jetbrains.annotations.Nullable;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.Field;
 import java.sql.*;
@@ -12,6 +15,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executors;
 
 public class DatabaseHandler {
+    private static final Logger logger = LoggerFactory.getLogger(DatabaseHandler.class);
     private static DatabaseHandler instance;
     private final Connection connection;
 
@@ -93,7 +97,7 @@ public class DatabaseHandler {
             }
             preparedStatement.executeUpdate();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error(e.getMessage(),e);
         }
     }
 
@@ -119,40 +123,40 @@ public class DatabaseHandler {
                     }
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                logger.error(e.getMessage(),e);
             }
             return null;
         });
     }
 
-    public <T> CompletableFuture<List<T>> getAllAsync(Class<T> clazz) {
-        return CompletableFuture.supplyAsync(() -> {
-            String tableName = camelToSnake(clazz.getSimpleName());
-            String query = "SELECT * FROM " + tableName;
-            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-                try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                    List<T> list = new ArrayList<>();
-                    ResultSetMetaData metaData = resultSet.getMetaData();
-                    int columnCount = metaData.getColumnCount();
-                    while (resultSet.next()) {
-                        T entity = clazz.getDeclaredConstructor().newInstance();
-                        for (int i = 1; i <= columnCount; i++) {
-                            String columnName = metaData.getColumnName(i);
-                            String camelCaseName = snakeToCamel(columnName);
-                            Field field = clazz.getDeclaredField(camelCaseName);
-                            field.setAccessible(true);
-                            field.set(entity, resultSet.getObject(columnName));
-                        }
-                        list.add(entity);
-                    }
-                    return list;
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-                return null;
-            }
-        });
-    }
+//    public <T> CompletableFuture<List<T>> getAllAsync(Class<T> clazz) {
+//        return CompletableFuture.supplyAsync(() -> {
+//            String tableName = camelToSnake(clazz.getSimpleName());
+//            String query = "SELECT * FROM " + tableName;
+//            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+//                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+//                    List<T> list = new ArrayList<>();
+//                    ResultSetMetaData metaData = resultSet.getMetaData();
+//                    int columnCount = metaData.getColumnCount();
+//                    while (resultSet.next()) {
+//                        T entity = clazz.getDeclaredConstructor().newInstance();
+//                        for (int i = 1; i <= columnCount; i++) {
+//                            String columnName = metaData.getColumnName(i);
+//                            String camelCaseName = snakeToCamel(columnName);
+//                            Field field = clazz.getDeclaredField(camelCaseName);
+//                            field.setAccessible(true);
+//                            field.set(entity, resultSet.getObject(columnName));
+//                        }
+//                        list.add(entity);
+//                    }
+//                    return list;
+//                }
+//            } catch (Exception e) {
+//                logger.error(e.getMessage(),e);
+//                return null;
+//            }
+//        });
+//    }
 
     public CompletableFuture<Quest> getQuestByNameAsync(String name) {
         String query = "SELECT * FROM Quest WHERE name = ?";
@@ -175,7 +179,7 @@ public class DatabaseHandler {
                     }
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                logger.error(e.getMessage(),e);
             }
             return null;
         });
@@ -186,17 +190,8 @@ public class DatabaseHandler {
             String query = "SELECT * FROM Objective WHERE id =?";
             try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
                 preparedStatement.setInt(1, id);
-                try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                    if (resultSet.next()) {
-                        Objective obj = new Objective();
-                        obj.setId(Integer.parseInt(resultSet.getString("id")));
-                        obj.setObjective(resultSet.getString("objective"));
-                        obj.setType(resultSet.getString("type"));
-                        obj.setValue(resultSet.getString("value"));
-                        obj.setCount(Integer.parseInt(resultSet.getString("count")));
-                        return obj;
-                    }
-                }
+                Objective obj = getObjective(preparedStatement);
+                if (obj != null) return obj;
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
@@ -232,7 +227,7 @@ public class DatabaseHandler {
                 preparedStatement.setObject(i, ((Identifiable) entity).getId());
                 preparedStatement.executeUpdate();
             } catch (Exception e) {
-                e.printStackTrace();
+                logger.error(e.getMessage(),e);
             }
         });
     }
@@ -247,7 +242,7 @@ public class DatabaseHandler {
                 preparedStatement.setInt(1, ((Identifiable) entity).getId());
                 preparedStatement.executeUpdate();
             } catch (Exception e) {
-                e.printStackTrace();
+                logger.error(e.getMessage(),e);
             }
         });
     }
@@ -284,7 +279,7 @@ public class DatabaseHandler {
                     }
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                logger.error(e.getMessage(),e);
             }
             return list;
         });
@@ -302,7 +297,7 @@ public class DatabaseHandler {
                     }
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                logger.error(e.getMessage(),e);
             }
             return new PlayerQuest();
         });
@@ -345,7 +340,7 @@ public class DatabaseHandler {
                     }
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                logger.error(e.getMessage(),e);
             }
             return null;
         });
@@ -375,7 +370,7 @@ public class DatabaseHandler {
                     }
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                logger.error(e.getMessage(),e);
             }
             return -1;
         });
@@ -405,7 +400,7 @@ public class DatabaseHandler {
                     }
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                logger.error(e.getMessage(),e);
             }
             return list;
         });
@@ -424,7 +419,7 @@ public class DatabaseHandler {
                     }
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                logger.error(e.getMessage(),e);
             }
             return rewards;
         });
@@ -437,18 +432,12 @@ public class DatabaseHandler {
                 preparedStatement.setInt(1, id);
                 try (ResultSet resultSet = preparedStatement.executeQuery()) {
                     if (resultSet.next()) {
-                        Reward reward = new Reward();
-                        reward.setId(resultSet.getInt("id"));
-                        reward.setName(resultSet.getString("name"));
-                        reward.setRewardTypeId(resultSet.getInt("reward_type_id"));
-                        reward.setAmount(resultSet.getInt("amount"));
-                        reward.setValue(resultSet.getString("value"));
-                        reward.setRewardType(getFromIdAsync(RewardType.class, reward.getRewardTypeId()).join());
+                        Reward reward = createReward(resultSet);
                         rewards.add(reward);
                     }
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                logger.error(e.getMessage(),e);
             }
         });
     }
@@ -461,18 +450,12 @@ public class DatabaseHandler {
             try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
                 try (ResultSet resultSet = preparedStatement.executeQuery()) {
                     while (resultSet.next()) {
-                        Reward reward = new Reward();
-                        reward.setId(Integer.parseInt(resultSet.getString("id")));
-                        reward.setName(resultSet.getString("name"));
-                        reward.setRewardTypeId(resultSet.getInt("reward_type_id"));
-                        reward.setAmount(resultSet.getInt("amount"));
-                        reward.setValue(resultSet.getString("value"));
-                        reward.setRewardType(getFromIdAsync(RewardType.class, reward.getRewardTypeId()).join());
+                        var reward = createReward(resultSet);
                         list.add(reward);
                     }
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                logger.error(e.getMessage(),e);
             }
             return list;
         });
@@ -485,23 +468,27 @@ public class DatabaseHandler {
                 preparedStatement.setString(1, content);
                 try (ResultSet resultSet = preparedStatement.executeQuery()) {
                     if (resultSet.next()) {
-                        Reward reward = new Reward();
-                        reward.setId(Integer.parseInt(resultSet.getString("id")));
-                        reward.setName(resultSet.getString("name"));
-                        reward.setRewardTypeId(resultSet.getInt("reward_type_id"));
-                        reward.setAmount(resultSet.getInt("amount"));
-                        reward.setValue(resultSet.getString("value"));
-                        reward.setRewardType(getFromIdAsync(RewardType.class, reward.getRewardTypeId()).join());
-                        return reward;
+                        return createReward(resultSet);
                     }
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    logger.error(e.getMessage(),e);
                 }
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
             return new Reward();
         });
+    }
+
+    private Reward createReward(ResultSet resultSet) throws SQLException {
+        Reward reward = new Reward();
+        reward.setId(Integer.parseInt(resultSet.getString("id")));
+        reward.setName(resultSet.getString("name"));
+        reward.setRewardTypeId(resultSet.getInt("reward_type_id"));
+        reward.setAmount(resultSet.getInt("amount"));
+        reward.setValue(resultSet.getString("value"));
+        reward.setRewardType(getFromIdAsync(RewardType.class, reward.getRewardTypeId()).join());
+        return reward;
     }
 
     public CompletableFuture<QuestReward> getQuestRewardAsync(Quest quest, Reward reward) {
@@ -522,7 +509,7 @@ public class DatabaseHandler {
                     }
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                logger.error(e.getMessage(),e);
             }
             return null;
         });
@@ -535,26 +522,22 @@ public class DatabaseHandler {
         return saveAsync(newQuestReward);
     }
 
-    public CompletableFuture<Void> deleteAllQuestRewardsAsync(Quest quest) {
-        String query = "DELETE FROM quest_reward WHERE quest_id =?";
-        return CompletableFuture.runAsync(() -> {
+    public void deleteAllQuestRewardsAsync(Identifiable object) {
+        var queryId = "";
+        if (object instanceof Quest) {
+            queryId = "quest_id";
+        } else if (object instanceof Reward) {
+            queryId = "reward_id";
+        }else{
+            return;
+        }
+        String query = "DELETE FROM quest_reward WHERE "+queryId+" =?";
+        CompletableFuture.runAsync(() -> {
             try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-                preparedStatement.setInt(1, quest.getId());
+                preparedStatement.setInt(1, object.getId());
                 preparedStatement.executeUpdate();
             } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
-    }
-
-    public CompletableFuture<Void> deleteAllQuestRewardsAsync(Reward reward) {
-        String query = "DELETE FROM quest_reward WHERE reward_id =?";
-        return CompletableFuture.runAsync(() -> {
-            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-                preparedStatement.setInt(1, reward.getId());
-                preparedStatement.executeUpdate();
-            } catch (Exception e) {
-                e.printStackTrace();
+                logger.error(e.getMessage(),e);
             }
         });
     }
@@ -564,22 +547,33 @@ public class DatabaseHandler {
         return CompletableFuture.supplyAsync(() -> {
             try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
                 preparedStatement.setString(1, content);
-                try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                    if (resultSet.next()) {
-                        Objective obj = new Objective();
-                        obj.setId(Integer.parseInt(resultSet.getString("id")));
-                        obj.setObjective(resultSet.getString("objective"));
-                        obj.setType(resultSet.getString("type"));
-                        obj.setValue(resultSet.getString("value"));
-                        obj.setCount(Integer.parseInt(resultSet.getString("count")));
-                        return obj;
-                    }
-                }
+                Objective obj = getObjective(preparedStatement);
+                if (obj != null) return obj;
             } catch (Exception e) {
-                e.printStackTrace();
+                logger.error(e.getMessage(),e);
             }
             return null;
         });
+    }
+
+    @Nullable
+    private Objective getObjective(PreparedStatement preparedStatement) throws SQLException {
+        try (ResultSet resultSet = preparedStatement.executeQuery()) {
+            if (resultSet.next()) {
+                return createObjective(resultSet);
+            }
+        }
+        return null;
+    }
+
+    private Objective createObjective(ResultSet resultSet) throws SQLException {
+        Objective obj = new Objective();
+        obj.setId(Integer.parseInt(resultSet.getString("id")));
+        obj.setObjective(resultSet.getString("objective"));
+        obj.setType(resultSet.getString("type"));
+        obj.setValue(resultSet.getString("value"));
+        obj.setCount(Integer.parseInt(resultSet.getString("count")));
+        return obj;
     }
 
     public CompletableFuture<List<Objective>> getAllObjectivesAsync() {
@@ -590,19 +584,35 @@ public class DatabaseHandler {
             try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
                 try (ResultSet resultSet = preparedStatement.executeQuery()) {
                     while (resultSet.next()) {
-                        Objective obj = new Objective();
-                        obj.setId(Integer.parseInt(resultSet.getString("id")));
-                        obj.setObjective(resultSet.getString("objective"));
-                        obj.setType(resultSet.getString("type"));
-                        obj.setValue(resultSet.getString("value"));
-                        obj.setCount(Integer.parseInt(resultSet.getString("count")));
+                        var obj = createObjective(resultSet);
                         list.add(obj);
                     }
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                logger.error(e.getMessage(),e);
             }
             return list;
         });
+    }
+
+    public void deleteAllPlayerQuests(Identifiable item) {
+        String query = "DELETE FROM player_quest WHERE quest_id =?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setInt(1, item.getId());
+            preparedStatement.executeUpdate();
+        } catch (Exception e) {
+            logger.error(e.getMessage(),e);
+        }
+    }
+
+    public void changeQuestObjectives(Identifiable item) {
+        String query = "UPDATE Quest SET objective_id =? WHERE id =?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setInt(1, 1);
+            preparedStatement.setInt(2, item.getId());
+            preparedStatement.executeUpdate();
+        } catch (Exception e) {
+            logger.error(e.getMessage(),e);
+        }
     }
 }

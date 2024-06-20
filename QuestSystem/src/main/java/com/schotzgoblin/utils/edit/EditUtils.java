@@ -1,8 +1,11 @@
 package com.schotzgoblin.utils.edit;
 
 import com.schotzgoblin.config.ConfigHandler;
+import com.schotzgoblin.database.Identifiable;
+import com.schotzgoblin.database.Objective;
+import com.schotzgoblin.database.Quest;
+import com.schotzgoblin.database.Reward;
 import com.schotzgoblin.main.DatabaseHandler;
-import com.schotzgoblin.main.QuestManager;
 import com.schotzgoblin.main.QuestSystem;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
@@ -14,23 +17,85 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.jetbrains.annotations.NotNull;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import tsp.headdb.core.api.HeadAPI;
 import tsp.headdb.implementation.head.Head;
 
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CompletionException;
 import java.util.concurrent.ExecutionException;
+import java.util.function.BiConsumer;
+import java.util.function.Supplier;
 
 public class EditUtils {
 
+    private static final Logger logger = LoggerFactory.getLogger(EditUtils.class);
 
     private static final QuestSystem questSystem = QuestSystem.getInstance();
     private static final DatabaseHandler databaseHandler = DatabaseHandler.getInstance();
     private static final ConfigHandler configHandler = ConfigHandler.getInstance();
-    private static final QuestManager questManager = QuestManager.getInstance();
     public static Map<UUID, Integer> playerPage = Collections.synchronizedMap(new HashMap<>());
     public static final int pageSize = 36;
 
+    public static void handleQuestItemDelete(Player player, TextComponent displayName, Inventory inv, String type) {
+        CompletableFuture<? extends Identifiable> itemFuture = Objects.equals(type, "reward")
+                ? databaseHandler.getRewardByNameAsync(displayName.content())
+                : Objects.equals(type, "objective")
+                ? databaseHandler.getObjectiveByNameAsync(displayName.content())
+                : databaseHandler.getQuestByNameAsync(displayName.content());
+
+        CompletableFuture<String> deleteSoundFuture = configHandler.getStringAsync("quest-manager.lore-entries.delete.sound");
+        CompletableFuture<Integer> deleteVolumeFuture = configHandler.getIntAsync("quest-manager.lore-entries.delete.volume");
+        CompletableFuture<Integer> deletePitchFuture = configHandler.getIntAsync("quest-manager.lore-entries.delete.pitch");
+
+        CompletableFuture.allOf(
+                itemFuture, deleteSoundFuture, deleteVolumeFuture, deletePitchFuture
+        ).thenAccept(x -> {
+            var item = itemFuture.join();
+            String deleteSound = deleteSoundFuture.join();
+            int deleteVolume = deleteVolumeFuture.join();
+            int deletePitch = deletePitchFuture.join();
+
+            if (item == null) return;
+
+            if (type.equals("quest") || type.equals("reward")) {
+                databaseHandler.deleteAllQuestRewardsAsync(item);
+            }
+            if (type.equals("quest")) {
+                databaseHandler.deleteAllPlayerQuests(item);
+            }
+            if (type.equals("objective")) {
+                databaseHandler.changeQuestObjectives(item);
+            }
+            databaseHandler.deleteAsync(item);
+
+            if (type.equals("reward")) {
+                EditRewardsUtils.rewards.remove((Reward) item);
+                Bukkit.getScheduler().runTask(questSystem, () -> {
+                    player.playSound(player.getLocation(), Sound.valueOf(deleteSound), deleteVolume, deletePitch);
+                    EditRewardsUtils.refreshInventory(EditRewardsUtils.rewards, EditQuestsUtils.editingQuest.get(player.getUniqueId()), inv, player);
+                });
+            } else if (type.equals("quest")) {
+                EditQuestsUtils.quests.remove((Quest) item);
+                Bukkit.getScheduler().runTask(questSystem, () -> {
+                    player.playSound(player.getLocation(), Sound.valueOf(deleteSound), deleteVolume, deletePitch);
+                    EditQuestsUtils.refreshInventory(EditQuestsUtils.quests, inv, player);
+                });
+            } else {
+                EditObjectivesUtils.objectives.remove((Objective) item);
+                Bukkit.getScheduler().runTask(questSystem, () -> {
+                    player.playSound(player.getLocation(), Sound.valueOf(deleteSound), deleteVolume, deletePitch);
+                    EditObjectivesUtils.refreshInventory(EditObjectivesUtils.objectives, EditQuestsUtils.editingQuest.get(player.getUniqueId()), inv, player);
+                });
+            }
+        }).exceptionally(ex -> {
+            logger.error(ex.getMessage(), ex);  // Use logger.error if applicable
+            return null;
+        });
+    }
 
     public static void handlePageSwitch(Player player, Inventory inv, String content) {
         CompletableFuture<String> nextPageNameFuture = configHandler.getStringAsync("inventory.next-page.display-name");
@@ -86,7 +151,7 @@ public class EditUtils {
                 EditObjectivesUtils.refreshInventory(EditObjectivesUtils.objectives, EditQuestsUtils.editingQuest.get(player.getUniqueId()), inv, player);
             }
         }).exceptionally(ex -> {
-            ex.printStackTrace();
+            logger.error(ex.getMessage(), ex);
             return null;
         });
 
@@ -125,9 +190,9 @@ public class EditUtils {
         CompletableFuture<String> prevPageNameFuture = configHandler.getStringAsync("inventory.prev-page.display-name");
         CompletableFuture<String> prevPageColourFuture = configHandler.getStringAsync("inventory.prev-page.colour");
 
-        CompletableFuture<String> createNameFuture = configHandler.getStringAsync("inventory.create-"+type+".display-name");
-        CompletableFuture<Material> createMaterialFuture = configHandler.getMaterialAsync("inventory.create-"+type+".material");
-        CompletableFuture<String> createColourFuture = configHandler.getStringAsync("inventory.create-"+type+".colour");
+        CompletableFuture<String> createNameFuture = configHandler.getStringAsync("inventory.create-" + type + ".display-name");
+        CompletableFuture<Material> createMaterialFuture = configHandler.getMaterialAsync("inventory.create-" + type + ".material");
+        CompletableFuture<String> createColourFuture = configHandler.getStringAsync("inventory.create-" + type + ".colour");
 
         return CompletableFuture.allOf(
                 backColourFuture, backNameFuture,
@@ -153,17 +218,17 @@ public class EditUtils {
                 String createName = createNameFuture.get();
                 Material createMaterial = createMaterialFuture.get();
                 var createColour = TextColor.fromHexString(createColourFuture.get());
-                var page = EditUtils.playerPage.get(player.getUniqueId())+"";
+                var page = EditUtils.playerPage.get(player.getUniqueId()) + "";
                 ItemStack prevPageItem;
                 ItemStack nextPageItem;
-                if(!getNextPage(player,size).equals(page)){
-                    nextPageItem = getPlayerHead(60386, nextPageName.replace("%page%", getNextPage(player,size)), nextPageColour);
-                }else{
+                if (!getNextPage(player, size).equals(page)) {
+                    nextPageItem = getPlayerHead(60386, nextPageName.replace("%page%", getNextPage(player, size)), nextPageColour);
+                } else {
                     nextPageItem = new ItemStack(Material.AIR);
                 }
-                if(!getPrevPage(player).equals(page)) {
+                if (!getPrevPage(player).equals(page)) {
                     prevPageItem = getPlayerHead(60384, prevPageName.replace("%page%", getPrevPage(player)), prevPageColour);
-                }else{
+                } else {
                     prevPageItem = new ItemStack(Material.AIR);
                 }
 
@@ -172,17 +237,18 @@ public class EditUtils {
                 createQuestMeta.displayName(Component.text(createName, createColour));
                 createQuestItem.setItemMeta(createQuestMeta);
 
-                if(Objects.equals(type, "reward")||Objects.equals(type, "objective"))
+                if (Objects.equals(type, "reward") || Objects.equals(type, "objective"))
                     inventory.setItem(0, backItem);
                 inventory.setItem(1, prevPageItem);
                 inventory.setItem(4, createQuestItem);
                 inventory.setItem(7, nextPageItem);
 
             } catch (InterruptedException | ExecutionException e) {
-                e.printStackTrace(); // Handle error fetching config values
+                logger.error(e.getMessage(), e); // Handle error fetching config values
             }
         });
     }
+
     public static String getPrevPage(Player player) {
         var page = playerPage.get(player.getUniqueId());
         if (page == 1) {
@@ -193,16 +259,40 @@ public class EditUtils {
 
     public static String getNextPage(Player player, int size) {
         var page = EditUtils.playerPage.get(player.getUniqueId());
-        if(page == getMaxPage(size)) {
+        if (page == getMaxPage(size)) {
             return String.valueOf(page);
         }
         return String.valueOf(page + 1);
     }
 
     public static int getMaxPage(int size) {
-        return (int) (double) (size / pageSize)+(size % pageSize == 0 ? 0 : 1);
+        return (int) (double) (size / pageSize) + (size % pageSize == 0 ? 0 : 1);
     }
 
+    public static <T> void handleClickedItem(Player player, ItemStack clickedItem,
+                                             Map<String, CompletableFuture<String>> futures,
+                                             Map<String, BiConsumer<Player, T>> actionMap,
+                                             Supplier<T> getObject) {
+        CompletableFuture.allOf(futures.values().toArray(new CompletableFuture[0])).thenAcceptAsync(v -> {
+            try {
+                T obj = getObject.get();
+                String clickedMaterialName = clickedItem.getType().name();
+
+                for (Map.Entry<String, CompletableFuture<String>> entry : futures.entrySet()) {
+                    String materialName = entry.getValue().join();
+                    if (clickedMaterialName.equals(materialName)) {
+                        actionMap.get(entry.getKey()).accept(player, obj);
+                        break;
+                    }
+                }
+            } catch (CompletionException ex) {
+                logger.error(ex.getMessage(), ex);
+            }
+        }).exceptionally(ex -> {
+            logger.error(ex.getMessage(), ex);
+            return null;
+        });
+    }
 
     public static ItemStack getPlayerHead(int id, String displayName, TextColor colour) {
         Optional<Head> headOptional = HeadAPI.getHeadById(id);
@@ -227,5 +317,31 @@ public class EditUtils {
             defaultHead.setItemMeta(defaultHeadMeta);
             return defaultHead;
         }
+    }
+
+    public static void updateAndReloadQuest(Player player, Quest quest, @NotNull CompletableFuture<Void> voidCompletableFuture, boolean isObjective) {
+        voidCompletableFuture.thenAccept(v2 -> navigateBack(player, quest, isObjective)).exceptionally(ex -> {
+            logger.error(ex.getMessage(), ex);
+            return null;
+        });
+    }
+
+    public static void navigateBack(Player player, Quest quest, boolean isObjective) {
+        CompletableFuture<Void> future;
+        if (isObjective)
+            future = EditObjectivesUtils.refreshObjectives(quest);
+        else
+            future = EditRewardsUtils.refreshRewards(quest);
+
+        future.thenAccept(v3 -> Bukkit.getScheduler().runTask(questSystem, () -> {
+            player.closeInventory();
+            if (isObjective)
+                player.openInventory(EditObjectivesUtils.allObjectivesInventory.get(player.getUniqueId()));
+            else
+                player.openInventory(EditRewardsUtils.allRewardsInventory.get(player.getUniqueId()));
+        })).exceptionally(ex -> {
+            logger.error(ex.getMessage(), ex);
+            return null;
+        });
     }
 }

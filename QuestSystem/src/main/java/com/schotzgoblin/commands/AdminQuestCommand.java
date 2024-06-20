@@ -1,8 +1,6 @@
 package com.schotzgoblin.commands;
 
 import com.schotzgoblin.config.ConfigHandler;
-import com.schotzgoblin.main.DatabaseHandler;
-import com.schotzgoblin.main.QuestManager;
 import com.schotzgoblin.main.QuestSystem;
 import com.schotzgoblin.utils.edit.EditQuestsUtils;
 import org.bukkit.Bukkit;
@@ -12,19 +10,16 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.jetbrains.annotations.NotNull;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.*;
 
 public class AdminQuestCommand implements CommandExecutor, Listener {
 
+    private static final Logger logger = LoggerFactory.getLogger(AdminQuestCommand.class);
     private final QuestSystem questSystem = QuestSystem.getInstance();
-    private final DatabaseHandler databaseHandler;
-    private final QuestManager questManager = QuestManager.getInstance();
     private final ConfigHandler configHandler = ConfigHandler.getInstance();
-
-    public AdminQuestCommand() {
-        this.databaseHandler = DatabaseHandler.getInstance();
-    }
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
@@ -45,7 +40,7 @@ public class AdminQuestCommand implements CommandExecutor, Listener {
                 });
             }
         }).exceptionally(ex -> {
-            ex.printStackTrace();
+            logger.error(ex.getMessage(), ex);
             return null;
         });
 

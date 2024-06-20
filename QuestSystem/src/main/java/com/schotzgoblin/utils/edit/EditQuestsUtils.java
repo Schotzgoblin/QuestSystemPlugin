@@ -4,8 +4,7 @@ import com.schotzgoblin.config.ConfigHandler;
 import com.schotzgoblin.database.Quest;
 import com.schotzgoblin.database.Reward;
 import com.schotzgoblin.main.DatabaseHandler;
-import com.schotzgoblin.main.QuestManager;
-import com.schotzgoblin.main.QuestSystem;
+import com.schotzgoblin.listener.QuestManager;
 import com.schotzgoblin.utils.Utils;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
@@ -15,6 +14,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
@@ -23,11 +24,11 @@ import java.util.concurrent.CompletionException;
 import static com.schotzgoblin.utils.edit.EditUtils.*;
 
 public class EditQuestsUtils {
+    private static final Logger logger = LoggerFactory.getLogger(EditQuestsUtils.class);
     public static Map<UUID, Inventory> allQuestsInventory = Collections.synchronizedMap(new HashMap<>());
     public static Map<UUID, Inventory> editQuestInventory = Collections.synchronizedMap(new HashMap<>());
     public static Map<UUID, Quest> editingQuest = Collections.synchronizedMap(new HashMap<>());
     public static List<Quest> quests = Collections.synchronizedList(new ArrayList<>());
-    private static final QuestSystem questSystem = QuestSystem.getInstance();
     private static final DatabaseHandler databaseHandler = DatabaseHandler.getInstance();
     private static final ConfigHandler configHandler = ConfigHandler.getInstance();
     private static final QuestManager questManager = QuestManager.getInstance();
@@ -161,12 +162,12 @@ public class EditQuestsUtils {
 
                 questManager.finaliseInventory(inv,27);
             } catch (CompletionException ex) {
-                ex.printStackTrace();
+                logger.error(ex.getMessage(),ex);
             }
             EditQuestsUtils.editQuestInventory.put(player.getUniqueId(), inv);
             return CompletableFuture.completedFuture(inv);
         }).exceptionally(ex -> {
-            ex.printStackTrace();
+            logger.error(ex.getMessage(),ex);
             return null;
         });
     }
@@ -272,11 +273,11 @@ public class EditQuestsUtils {
                 itemStack.setItemMeta(itemMeta);
                 return CompletableFuture.completedFuture(itemStack);
             } catch (Exception e) {
-                e.printStackTrace();
+                logger.error(e.getMessage(),e);
             }
             return CompletableFuture.completedFuture(new ItemStack(Material.AIR));
         }).exceptionally(ex -> {
-            ex.printStackTrace();
+            logger.error(ex.getMessage(),ex);
             return null;
         });
     }

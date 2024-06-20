@@ -24,6 +24,7 @@ public class Quest implements Identifiable{
         this.name = name;
         this.description = description;
         this.timeLimit = timeLimit;
+        objectiveId = 1;
     }
 
     public Objective getObjective() {
