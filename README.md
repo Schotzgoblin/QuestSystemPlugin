@@ -14,6 +14,7 @@ This plugin is a simple quest system. It allows you to create quests with differ
 - If a quest is in progress the player can see is progress at the boss bar
 - Sign can be places which show all players their individual quests. Including time and progress
 - One database for all servers
+- Usage of bungeecord, meaning you can send the player to a different server by using /send @a lobby2 for example
 - If you join the server, and you have a quest in progress you will get a message which will redirect you to the quest menu.
 
 ## How to use
