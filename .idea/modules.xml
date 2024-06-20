@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/QuestSystem.main.iml" filepath="$PROJECT_DIR$/.idea/modules/QuestSystem.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/QuestSystem.test.iml" filepath="$PROJECT_DIR$/.idea/modules/QuestSystem.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/QuestSystemPlugin.iml" filepath="$PROJECT_DIR$/.idea/QuestSystemPlugin.iml" />
     </modules>
   </component>

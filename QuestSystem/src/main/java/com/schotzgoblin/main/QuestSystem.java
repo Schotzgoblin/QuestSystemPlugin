@@ -26,7 +26,7 @@ import org.slf4j.LoggerFactory;
 public class QuestSystem extends JavaPlugin implements Listener, PluginMessageListener {
 
     private static final Logger logger = LoggerFactory.getLogger(QuestSystem.class);
-    final String bungeeCordChannelName = "BungeeCord";
+    public final String bungeeCordChannelName = "BungeeCord";
 
     public static QuestSystem getInstance() {
         return getPlugin(QuestSystem.class);
@@ -66,7 +66,7 @@ public class QuestSystem extends JavaPlugin implements Listener, PluginMessageLi
         Bukkit.getPluginManager().registerEvents(listener, this);
     }
 
-    private void registerCommand(String commandName, CommandExecutor executor) {
+    public void registerCommand(String commandName, CommandExecutor executor) {
         var commandKit = this.getCommand(commandName);
         if (commandKit != null) {
             commandKit.setExecutor(executor);

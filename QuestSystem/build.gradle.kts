@@ -23,12 +23,13 @@ repositories {
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
+    implementation("io.papermc.paper:paper-api:1.20.4-R0.1-SNAPSHOT")
     compileOnly("io.papermc.paper:paper-api:1.20.6-R0.1-SNAPSHOT")
     compileOnly("net.md-5:bungeecord-api:1.19-R0.1-SNAPSHOT")
     implementation("com.github.TheSilentPro:HeadDB:5.0.0-rc.11")
     implementation("net.wesjd:anvilgui:1.9.4-SNAPSHOT")
     implementation("org.slf4j:slf4j-api:2.0.7")
-    implementation("ch.qos.logback:logback-classic:1.4.5")
+    implementation("ch.qos.logback:logback-classic:1.4.12")
 }
 
 java {
